@@ -1,6 +1,6 @@
 VERSION 5.00
 Begin VB.Form FenetreIntegrale 
-   Caption         =   "Intégrale d'une fonction"
+   Caption         =   "IntÃ©grale d'une fonction"
    ClientHeight    =   3915
    ClientLeft      =   675
    ClientTop       =   1125
@@ -135,7 +135,7 @@ Begin VB.Form FenetreIntegrale
       Width           =   495
    End
    Begin VB.Label lblBornes 
-      Caption         =   "Bornes d'intégration :"
+      Caption         =   "Bornes d'intÃ©gration :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -152,7 +152,7 @@ Begin VB.Form FenetreIntegrale
       Width           =   1935
    End
    Begin VB.Label lblMethode 
-      Caption         =   "Calcul de l'intégrale :  I =  somme de Xa à Xb de f(t) dt  par la méthode de SIMPSON."
+      Caption         =   "Calcul de l'intÃ©grale :  I =  somme de Xa Ã  Xb de f(t) dt  par la mÃ©thode de SIMPSON."
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -186,7 +186,7 @@ Begin VB.Form FenetreIntegrale
       Width           =   615
    End
    Begin VB.Label lblFonction 
-      Caption         =   "Fonction à intégrer :"
+      Caption         =   "Fonction Ã  intÃ©grer :"
       Height          =   255
       Left            =   120
       TabIndex        =   10
@@ -238,12 +238,12 @@ Private Sub Form_Deactivate()
    On Error Resume Next
    Xa = CSng(txtXa.Text)
    If Err.Number <> 0 Then
-      MsgBox "Xa est incorrect", 48, "Intégrale"
+      MsgBox "Xa est incorrect", 48, "IntÃ©grale"
       Exit Sub
    End If
    Xb = CSng(txtXb.Text)
    If Err.Number <> 0 Then
-      MsgBox "Xb est incorrect", 48, "Intégrale"
+      MsgBox "Xb est incorrect", 48, "IntÃ©grale"
       Exit Sub
    End If
    lblSolEq = ""
@@ -253,7 +253,7 @@ End Sub
 
 Private Sub Form_Load()
    '-----------------------------------------------------
-   '---------------- valeurs par défaut -----------------
+   '---------------- valeurs par dÃ©faut -----------------
    '----------------   pour Integrale   -----------------
    '-----------------------------------------------------
    Xa = 0
@@ -269,7 +269,7 @@ End Sub
 Private Sub mnuCalculer_Click()
    If lblInteg.Caption = "" Then
       '-----------------------------------------------------
-      '---------   Vérifications avant calcul---------------
+      '---------   VÃ©rifications avant calcul---------------
       '-----------------------------------------------------
       On Error Resume Next
       Xa = CSng(txtXa.Text)
@@ -286,9 +286,9 @@ Private Sub mnuCalculer_Click()
       '-----------------------------------------------------
       DoEvents
       '--------------------------------------------------------------
-      '--------- Première manipulation des chaines DefVar : ---------
+      '--------- PremiÃ¨re manipulation des chaines DefVar : ---------
       '--------- Suppression des blancs dans les formules,  ---------
-      '--------- vérification du nombre de parenthèses et   ---------
+      '--------- vÃ©rification du nombre de parenthÃ¨ses et   ---------
       '--------- remplacement des constantes par leur valeur --------
       '--------------------------------------------------------------
       NombVar% = 1
@@ -305,17 +305,17 @@ Private Sub mnuCalculer_Click()
       Exit Sub
 Traite_ErreursInteg:
       Select Case Err
-         ' erreur 5  : appel de fonction illégal (illegal function call)
+         ' erreur 5  : appel de fonction illÃ©gal (illegal function call)
          ' erreur 6  : nombre trop grand (overflow)
-         ' erreur 11 : division par zéro
+         ' erreur 11 : division par zÃ©ro
          Case 5
-            MsgBox "Fonction non définie pour cette valeur !", 48, "INTEGRALE"
+            MsgBox "Fonction non dÃ©finie pour cette valeur !", 48, "INTEGRALE"
             lblInteg.Caption = ""
          Case 6
             MsgBox "Nombre trop grand !", 48, "INTEGRALE"
             lblInteg.Caption = ""
          Case 11
-            MsgBox "Division par zéro !", 48, "INTEGRALE"
+            MsgBox "Division par zÃ©ro !", 48, "INTEGRALE"
             lblInteg.Caption = ""
          Case Else
             Resume
