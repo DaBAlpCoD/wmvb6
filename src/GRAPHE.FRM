@@ -36,14 +36,14 @@ Dim car(1 To 100)
 
 Private Sub Form_Activate()
     '----------------------------------------------------
-    '---- Effacer éventuellement le dessin précédent ----
+    '---- Effacer Ã©ventuellement le dessin prÃ©cÃ©dent ----
     '----------------------------------------------------
     If Gap% = 1 Then
         Dessin.Picture = LoadPicture()
     End If
     '----------------------------------------------------
-    ' Donner une valeur non nulle à MX pour éviter
-    ' une erreur du type 'Division par zéro'
+    ' Donner une valeur non nulle Ã  MX pour Ã©viter
+    ' une erreur du type 'Division par zÃ©ro'
     ' dans la Function Xreel
     If MX = 0 Then
       MX = 45
@@ -78,7 +78,7 @@ End Sub
 Private Sub Form_Load()
     LX% = Dessin.ScaleWidth
     LY% = Dessin.ScaleHeight
-    ' Facteur d'échelle
+    ' Facteur d'Ã©chelle
     FE = LY% / LX%
     If Ech% = 1 Then
         Ymax = FE * (Xmax - Xmin) + Ymin
@@ -101,7 +101,7 @@ Private Sub Form_MouseMove(Button As Integer, Shift As Integer, Xmouse As Single
     Fenetre_Val.Print Space$(50)
     Fenetre_Val.ForeColor = NOIR
     Fenetre_Val.PSet (0, 3900), Fenetre_Val.BackColor
-    Fenetre_Val.Print " Coordonnées du pointeur :"
+    Fenetre_Val.Print " CoordonnÃ©es du pointeur :"
     Fenetre_Val.PSet (0, 4200), Fenetre_Val.BackColor
     Fenetre_Val.Print " X="; Xpoint
     Fenetre_Val.Print " Y="; Ypoint
@@ -110,7 +110,7 @@ End Sub
 Private Sub Form_Resize()
     LX% = Dessin.ScaleWidth
     LY% = Dessin.ScaleHeight
-    ' Facteur d'échelle
+    ' Facteur d'Ã©chelle
     FE = LY% / LX%
     If Ech% = 1 Then
         AX = Xmax - Xmin
