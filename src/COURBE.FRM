@@ -60,7 +60,7 @@ Begin VB.Form Fenetre_Prin
    Begin VB.Menu mnuAide 
       Caption         =   "&?"
       Begin VB.Menu mnuComProc 
-         Caption         =   "&Comment procéder"
+         Caption         =   "&Comment procÃ©der"
       End
    End
 End
@@ -75,14 +75,14 @@ Dim YA
 
 Private Sub EulerED2Moins()
 '----------------------------------------
-' Méthode d'EULER
-' Equation différentielle du second ordre
-' (X décroissant):
+' MÃ©thode d'EULER
+' Equation diffÃ©rentielle du second ordre
+' (X dÃ©croissant):
 ' Y'i+1 = Y'i + F(Xi,Yi,Y'i) dX
 ' Yi+1 = Yi + Y'i dX
 ' On pose Y'=Z
 '----------------------------------------
-' Progression vers les X négatifs :
+' Progression vers les X nÃ©gatifs :
 ' dx < 0    (dx = -RX)
 '----------------------------------------
 '------- Calcul de Yi+1 et Y'i+1 : ------
@@ -94,15 +94,15 @@ Call Traitement(ValVar2$, SorVar2$)
 f = CSng(SorVar2$)
 Y = Y - Z * RX
 Z = Z - f * RX
-'----------- incrémentation de X --------
+'----------- incrÃ©mentation de X --------
 X = X - RX
 '----------------------------------------
 End Sub
 
 Private Sub EulerED2Plus()
 '----------------------------------------
-' Méthode d'EULER
-' Equation différentielle du second ordre
+' MÃ©thode d'EULER
+' Equation diffÃ©rentielle du second ordre
 ' (X croissant):
 ' Y'i+1 = Y'i + F(Xi,Yi,Y'i) dX
 ' Yi+1 = Yi + Y'i dX
@@ -117,7 +117,7 @@ Call Traitement(ValVar2$, SorVar2$)
 f = CSng(SorVar2$)
 Y = Y + Z * RX
 Z = Z + f * RX
-'----------- incrémentation de X --------
+'----------- incrÃ©mentation de X --------
 X = X + RX
 '----------------------------------------
 End Sub
@@ -136,7 +136,7 @@ End Sub
 Private Sub GraduAx()
     Rem ----- Routine graduation cadre et/ou axes et grille -----
     LG% = Int((LX% + LY%) / 2)
-    Rem <<< détermination de l'intervalle de graduation >>>
+    Rem <<< dÃ©termination de l'intervalle de graduation >>>
     LAY = M * Log(AY)
     ILAY% = Int(LAY)
     YP = 10 ^ ILAY%
@@ -336,8 +336,8 @@ Private Sub mnuEnrPoints_Click()
    Maths.ctrlCMDialog.Flags = &H2&
    Maths.ctrlCMDialog.Action = 2
    '-----------------------------------------------------
-   ' Création du fichier de points
-   ' et écriture de leurs coordonnées Xpt() et Ypt()
+   ' CrÃ©ation du fichier de points
+   ' et Ã©criture de leurs coordonnÃ©es Xpt() et Ypt()
    ' ou autres...
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Output As #1
@@ -429,13 +429,13 @@ Private Sub mnuOuvPoints_Click()
    On Error GoTo Traite_ErreursOuvPts
    Maths.ctrlCMDialog.Filter = "Points (*.xy)|*.xy"
    ' nom de fichier et chemin doivent exister
-   ' sinon apparait un message d'erreur spécifique
+   ' sinon apparait un message d'erreur spÃ©cifique
    Maths.ctrlCMDialog.Flags = &H1000& Or &H800&
    Maths.ctrlCMDialog.CancelError = True
    Maths.ctrlCMDialog.Action = 1
    '-----------------------------------------------------
    ' Ouverture et lecture du fichier de points
-   ' et écriture de leurs coordonnées dans Xpt() et Ypt()
+   ' et Ã©criture de leurs coordonnÃ©es dans Xpt() et Ypt()
    ' ou autres...
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Input As #1
@@ -513,7 +513,7 @@ End Sub
 
 Private Sub RungeKuttaMoins()
 '--------------------------------------
-' Méthode de RUNGE-KUTTA (X décroissant):
+' MÃ©thode de RUNGE-KUTTA (X dÃ©croissant):
 ' Yi+1 = Yi + (k1 + 2 k2 + 2 k3 + k4)/6
 ' avec :
 ' k1 = F(Xi,Yi) dX
@@ -521,7 +521,7 @@ Private Sub RungeKuttaMoins()
 ' k3 = F(Xi+dX/2,Yi+k2/2) dX
 ' k4 = F(Xi+dX,Yi+k3) dX
 '----------------------------------
-' Progression vers les X négatifs :
+' Progression vers les X nÃ©gatifs :
 ' dx < 0    (dx = -RX)
 '----------------------------------
 YA = Y
@@ -563,7 +563,7 @@ End Sub
 
 Private Sub RungeKuttaPlus()
 '--------------------------------------
-' Méthode de RUNGE-KUTTA (X croissant):
+' MÃ©thode de RUNGE-KUTTA (X croissant):
 ' Yi+1 = Yi + (k1 + 2 k2 + 2 k3 + k4)/6
 ' avec :
 ' k1 = F(Xi,Yi) dX
@@ -610,14 +610,14 @@ End Sub
 
 Private Sub SimpsonPrimMoins()
 '--------------------------------------
-' Méthode de SIMPSON :
+' MÃ©thode de SIMPSON :
 ' Aire = (y1 + 4 y2 + 2 y3 + 4 y4 +...+ 4 yi-1 + yi) dX/3
-' [ où yi = f(Xi) ]
+' [ oÃ¹ yi = f(Xi) ]
 ' Application au calcul de la primitive de f(X) :
 ' Yi+2 = Yi + (yi + 4 yi+1 + yi+2) dX/3
 ' en sautant de 2 en 2 dX
 '----------------------------------
-' Progression vers les X négatifs :
+' Progression vers les X nÃ©gatifs :
 ' dx < 0    (dx = -RX/2)
 '-------------------------------------------
 '--------- Calcul et ajout de yi : ---------
@@ -643,9 +643,9 @@ End Sub
 
 Private Sub SimpsonPrimPlus()
 '--------------------------------------
-' Méthode de SIMPSON :
+' MÃ©thode de SIMPSON :
 ' Aire = (y1 + 4 y2 + 2 y3 + 4 y4 +...+ 4 yi-1 + yi) dX/3
-' [ où yi = f(Xi) ]
+' [ oÃ¹ yi = f(Xi) ]
 ' Application au calcul de la primitive de f(X) :
 ' Yi+2 = Yi + (yi + 4 yi+1 + yi+2) dX/3
 ' en sautant de 2 en 2 dX
@@ -683,21 +683,21 @@ Private Sub TraceCou0()
    mnuImprimer.Enabled = False
    mnuOuvrir.Enabled = False
    '-----------------------------------------------------------------
-   '-----------     Paramètres pour l'affichage       ---------------
-   '-----------   non réglables par l'utilisateur     ---------------
+   '-----------     ParamÃ¨tres pour l'affichage       ---------------
+   '-----------   non rÃ©glables par l'utilisateur     ---------------
    '-----------------------------------------------------------------
    LX% = Dessin.ScaleWidth
    LY% = Dessin.ScaleHeight
-   ' Facteur d'échelle
+   ' Facteur d'Ã©chelle
    FE = LY% / LX%
    Ymax = FE * (Xmax - Xmin) + Ymin
    '-----------------------------------------------------------------
-   '----------- Déterminations de différentes valeurs ---------------
-   '-----------             pour le tracé             ---------------
+   '----------- DÃ©terminations de diffÃ©rentes valeurs ---------------
+   '-----------             pour le tracÃ©             ---------------
    '-----------------------------------------------------------------
    AX = Xmax - Xmin
    If AX < 0 Then
-       MsgBox "Xmax doit être supérieur à Xmin !", 48, "COURBE"
+       MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin !", 48, "COURBE"
        Exit Sub
    End If
    AY = AX * FE
@@ -709,14 +709,14 @@ Private Sub TraceCou0()
    '---------------------------------------------------------------
    CouleurCou& = FenetreDefCourbe.pctColorCourbe.BackColor
    '--------------------------------------------------------------
-   '--------- Effacer le dessin précédent ------------------------
+   '--------- Effacer le dessin prÃ©cÃ©dent ------------------------
    '--------------------------------------------------------------
    If Gap% = 1 Then
        Dessin.Picture = LoadPicture()
    End If
    On Error GoTo Traite_Erreurs0
    '--------------------------------------------------------------
-   '--------- Tracé du cadre et des axes -------------------------
+   '--------- TracÃ© du cadre et des axes -------------------------
    '--------------------------------------------------------------
     If Trac% = 1 Then
         Dessin.Line (0, 0)-(0, LY%)
@@ -740,13 +740,13 @@ Private Sub TraceCou0()
     If Grax% = 1 Or Grac% = 1 Or Tric% = 1 Then Call GraduAx
     '--------------------------------------------------------------
     '--------- Affichage de la (des) formule(s) -------------------
-    '---------     définissant la courbe        -------------------
+    '---------     dÃ©finissant la courbe        -------------------
     '--------------------------------------------------------------
     Fenetre_Val.PSet (0, 0), Fenetre_Val.BackColor
     Fenetre_Val.lblFormule.ForeColor = CouleurCou&
     Fenetre_Val.lblFormule.Caption = " Y = ?"
     '--------------------------------------------------------------
-    '--------- Tracé de la courbe ---------------------------------
+    '--------- TracÃ© de la courbe ---------------------------------
     '--------------------------------------------------------------
     Dessin.ForeColor = CouleurCou&
     X = Xmin - RX
@@ -763,14 +763,14 @@ Private Sub TraceCou0()
         Fenetre_Val.Print Space$(50)
         Fenetre_Val.ForeColor = NOIR
         Fenetre_Val.PSet (0, 2500), Fenetre_Val.BackColor
-        Fenetre_Val.Print " Tracé :  "; Int((X - Xmin) / AX * 100); "%    effectué"
+        Fenetre_Val.Print " TracÃ© :  "; Int((X - Xmin) / AX * 100); "%    effectuÃ©"
         X = X + RX
         If X > Xmax Then Exit Do
         Y = 0.02 * X ^ 6 - 0.02 * X ^ 5 - 0.4 * X ^ 4 + 0.37 * X ^ 3 + 2.18 * X ^ 2 - 1.48 * X - 1.56
         If Erreur = True Then Exit Do
         'SE%=0 : point dans le cadre
-        'SE%=1 : point impossible à calculer, erreur
-        'SE%=2 : point calculé mais hors cadre
+        'SE%=1 : point impossible Ã  calculer, erreur
+        'SE%=2 : point calculÃ© mais hors cadre
         If SE% <> 1 Then
             If Y > Ymax Or Y < Ymin Then
                 SE% = 2
@@ -820,7 +820,7 @@ Traite_Erreurs0:
             SE% = 1
             Resume Next
         Case Else
-            Message$ = "Erreur n° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
+            Message$ = "Erreur nÂ° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
             MsgBox Message$, 48, "COURBE"
             Exit Sub
     End Select
@@ -836,23 +836,23 @@ Private Sub TraceCouCarExpl()
     mnuImprimer.Enabled = False
     mnuOuvrir.Enabled = False
     '-----------------------------------------------------------------
-    '-----------     Paramètres pour l'affichage       ---------------
-    '-----------   non réglables par l'utilisateur     ---------------
+    '-----------     ParamÃ¨tres pour l'affichage       ---------------
+    '-----------   non rÃ©glables par l'utilisateur     ---------------
     '-----------------------------------------------------------------
     LX% = Dessin.ScaleWidth
     LY% = Dessin.ScaleHeight
-    ' Facteur d'échelle
+    ' Facteur d'Ã©chelle
     FE = LY% / LX%
     If Ech% = 1 Then
         Ymax = FE * (Xmax - Xmin) + Ymin
     End If
     '-----------------------------------------------------------------
-    '----------- Déterminations de différentes valeurs ---------------
-    '-----------             pour le tracé             ---------------
+    '----------- DÃ©terminations de diffÃ©rentes valeurs ---------------
+    '-----------             pour le tracÃ©             ---------------
     '-----------------------------------------------------------------
     AX = Xmax - Xmin
     If AX < 0 Then
-        MsgBox "Xmax doit être supérieur à Xmin !", 48, "COURBE"
+        MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin !", 48, "COURBE"
         Exit Sub
     End If
     If Ech% = 1 Then
@@ -861,7 +861,7 @@ Private Sub TraceCouCarExpl()
     Else
         AY = Ymax - Ymin
         If AY < 0 Then
-            MsgBox "Ymax doit être supérieur à Ymin !", 48, "COURBE"
+            MsgBox "Ymax doit Ãªtre supÃ©rieur Ã  Ymin !", 48, "COURBE"
             Exit Sub
         End If
     End If
@@ -877,9 +877,9 @@ Private Sub TraceCouCarExpl()
     NombVar% = 1
     var$(1) = "X"
     '--------------------------------------------------------------
-    '--------- Première manipulation des chaines DefVar : ---------
+    '--------- PremiÃ¨re manipulation des chaines DefVar : ---------
     '--------- Suppression des blancs dans les formules,  ---------
-    '--------- vérification du nombre de parenthèses et   ---------
+    '--------- vÃ©rification du nombre de parenthÃ¨ses et   ---------
     '--------- remplacement des constantes par leur valeur --------
     '--------------------------------------------------------------
     TextVar2$ = UCase$(TextVar2$)
@@ -887,14 +887,14 @@ Private Sub TraceCouCarExpl()
     Call Constante(CorVar2$, ForVar2$)
     If Erreur = True Then Exit Sub
     '--------------------------------------------------------------
-    '--------- Effacer le dessin précédent ------------------------
+    '--------- Effacer le dessin prÃ©cÃ©dent ------------------------
     '--------------------------------------------------------------
     If Gap% = 1 Then
         Dessin.Picture = LoadPicture()
     End If
     On Error GoTo TraiteErreursCE
     '--------------------------------------------------------------
-    '--------- Tracé du cadre et des axes -------------------------
+    '--------- TracÃ© du cadre et des axes -------------------------
     '--------------------------------------------------------------
     If Trac% = 1 Then
         Dessin.Line (0, 0)-(0, LY%)
@@ -917,7 +917,7 @@ Private Sub TraceCouCarExpl()
     '--------------------------------------------------------------
     If Grax% = 1 Or Grac% = 1 Or Tric% = 1 Then Call GraduAx
     '--------------------------------------------------------------
-    '--------- Tracé de la courbe ---------------------------------
+    '--------- TracÃ© de la courbe ---------------------------------
     '--------------------------------------------------------------
     Dessin.ForeColor = CouleurCou&
     X = Xmin - RX
@@ -934,7 +934,7 @@ Private Sub TraceCouCarExpl()
       Fenetre_Val.Print Space$(50)
       Fenetre_Val.ForeColor = NOIR
       Fenetre_Val.PSet (0, 2500), Fenetre_Val.BackColor
-      Fenetre_Val.Print " Tracé :  "; Int((X - Xmin) / AX * 100); "%    effectué"
+      Fenetre_Val.Print " TracÃ© :  "; Int((X - Xmin) / AX * 100); "%    effectuÃ©"
       X = X + RX
       If X > Xmax Then Exit Do
       vvar$(1) = LTrim$(Format(X, "0.000000"))
@@ -943,8 +943,8 @@ Private Sub TraceCouCarExpl()
       Y = CSng(SorVar2$)
       If Erreur = True Then Exit Do
       'SE%=0 : point dans le cadre
-      'SE%=1 : point impossible à calculer, erreur
-      'SE%=2 : point calculé mais hors cadre
+      'SE%=1 : point impossible Ã  calculer, erreur
+      'SE%=2 : point calculÃ© mais hors cadre
       If SE% <> 1 Then
          If Y > Ymax Or Y < Ymin Then
             SE% = 2
@@ -994,7 +994,7 @@ TraiteErreursCE:
             SE% = 1
             Resume Next
         Case Else
-            Message$ = "Erreur n° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
+            Message$ = "Erreur nÂ° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
             MsgBox Message$, 48, "COURBE"
             Exit Sub
     End Select
@@ -1009,23 +1009,23 @@ Private Sub TraceCouEqDif()
    mnuImprimer.Enabled = False
    mnuOuvrir.Enabled = False
    '-----------------------------------------------------------------
-   '-----------     Paramètres pour l'affichage       ---------------
-   '-----------   non réglables par l'utilisateur     ---------------
+   '-----------     ParamÃ¨tres pour l'affichage       ---------------
+   '-----------   non rÃ©glables par l'utilisateur     ---------------
    '-----------------------------------------------------------------
    LX% = Dessin.ScaleWidth
    LY% = Dessin.ScaleHeight
-   ' Facteur d'échelle
+   ' Facteur d'Ã©chelle
    FE = LY% / LX%
    If Ech% = 1 Then
       Ymax = FE * (Xmax - Xmin) + Ymin
    End If
    '-----------------------------------------------------------------
-   '----------- Déterminations de différentes valeurs ---------------
-   '-----------             pour le tracé             ---------------
+   '----------- DÃ©terminations de diffÃ©rentes valeurs ---------------
+   '-----------             pour le tracÃ©             ---------------
    '-----------------------------------------------------------------
    AX = Xmax - Xmin
    If AX < 0 Then
-      MsgBox "Xmax doit être supérieur à Xmin !", 48, "COURBE"
+      MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin !", 48, "COURBE"
       Exit Sub
    End If
    If Ech% = 1 Then
@@ -1034,7 +1034,7 @@ Private Sub TraceCouEqDif()
    Else
       AY = Ymax - Ymin
       If AY < 0 Then
-         MsgBox "Ymax doit être supérieur à Ymin !", 48, "COURBE"
+         MsgBox "Ymax doit Ãªtre supÃ©rieur Ã  Ymin !", 48, "COURBE"
          Exit Sub
       End If
    End If
@@ -1049,9 +1049,9 @@ Private Sub TraceCouEqDif()
    var$(1) = "X"
    var$(2) = "Y"
    '--------------------------------------------------------------
-   '--------- Première manipulation des chaines DefVar : ---------
+   '--------- PremiÃ¨re manipulation des chaines DefVar : ---------
    '--------- Suppression des blancs dans les formules,  ---------
-   '--------- vérification du nombre de parenthèses et   ---------
+   '--------- vÃ©rification du nombre de parenthÃ¨ses et   ---------
    '--------- remplacement des constantes par leur valeur --------
    '--------------------------------------------------------------
    TextVar2$ = UCase$(TextVar2$)
@@ -1059,14 +1059,14 @@ Private Sub TraceCouEqDif()
    Call Constante(CorVar2$, ForVar2$)
    If Erreur = True Then Exit Sub
    '--------------------------------------------------------------
-   '--------- Effacer le dessin précédent ------------------------
+   '--------- Effacer le dessin prÃ©cÃ©dent ------------------------
    '--------------------------------------------------------------
    If Gap% = 1 Then
       Dessin.Picture = LoadPicture()
    End If
    On Error GoTo Traite_ErreursED
    '--------------------------------------------------------------
-   '--------- Tracé du cadre et des axes -------------------------
+   '--------- TracÃ© du cadre et des axes -------------------------
    '--------------------------------------------------------------
    If Trac% = 1 Then
       Dessin.Line (0, 0)-(0, LY%)
@@ -1089,7 +1089,7 @@ Private Sub TraceCouEqDif()
    '--------------------------------------------------------------
    If Grax% = 1 Or Grac% = 1 Or Tric% = 1 Then Call GraduAx
    '--------------------------------------------------------------
-   '--------- Tracé éventuel des points --------------------------
+   '--------- TracÃ© Ã©ventuel des points --------------------------
    '--------------------------------------------------------------
    If Trap% = 1 And NbPts% > 0 Then
       LG% = Int((LX% + LY%) / 2)
@@ -1100,7 +1100,7 @@ Private Sub TraceCouEqDif()
       Next i%
    End If
    '--------------------------------------------------------------
-   '--------- Reliure éventuelle des points --------------------------
+   '--------- Reliure Ã©ventuelle des points --------------------------
    '--------------------------------------------------------------
    If Rep% = 1 And NbPts% > 0 Then
       Dessin.ForeColor = CouleurPts&
@@ -1109,10 +1109,10 @@ Private Sub TraceCouEqDif()
       Next i%
    End If
    '--------------------------------------------------------------
-   '--------- Tracé de la courbe ---------------------------------
+   '--------- TracÃ© de la courbe ---------------------------------
    '--------------------------------------------------------------
    '--------------------------------------------------------------
-   ' 1) : tracé de (Xvnd, Yvnd) à Xmin
+   ' 1) : tracÃ© de (Xvnd, Yvnd) Ã  Xmin
    '--------------------------------------------------------------
    Dessin.ForeColor = CouleurCou&
    X = Xvnd
@@ -1130,13 +1130,13 @@ Private Sub TraceCouEqDif()
       Fenetre_Val.Print Space$(50)
       Fenetre_Val.ForeColor = NOIR
       Fenetre_Val.PSet (0, 2500), Fenetre_Val.BackColor
-      Fenetre_Val.Print " Tracé :  "; Int((Xvnd - X) / AX * 100); "%    effectué"
+      Fenetre_Val.Print " TracÃ© :  "; Int((Xvnd - X) / AX * 100); "%    effectuÃ©"
       If X < Xmin Then Exit Do
       Call RungeKuttaMoins
       If Erreur = True Then Exit Do
       'SE%=0 : point dans le cadre
-      'SE%=1 : point impossible à calculer, erreur
-      'SE%=2 : point calculé mais hors cadre
+      'SE%=1 : point impossible Ã  calculer, erreur
+      'SE%=2 : point calculÃ© mais hors cadre
       If SE% <> 1 Then
          If X > Xmax Or X < Xmin Or Y > Ymax Or Y < Ymin Then
                SE% = 2
@@ -1167,7 +1167,7 @@ Private Sub TraceCouEqDif()
       SE% = 0
    Loop
    '--------------------------------------------------------------
-   ' 2) : tracé de (Xvnd, Yvnd) à Xmax
+   ' 2) : tracÃ© de (Xvnd, Yvnd) Ã  Xmax
    '--------------------------------------------------------------
    X = Xvnd
    Y = Yvnd
@@ -1181,13 +1181,13 @@ Private Sub TraceCouEqDif()
       Fenetre_Val.Print Space$(50)
       Fenetre_Val.ForeColor = NOIR
       Fenetre_Val.PSet (0, 2500), Fenetre_Val.BackColor
-      Fenetre_Val.Print " Tracé :  "; Int((X - Xmin) / AX * 100); "%    effectué"
+      Fenetre_Val.Print " TracÃ© :  "; Int((X - Xmin) / AX * 100); "%    effectuÃ©"
       If X > Xmax Then Exit Do
       Call RungeKuttaPlus
       If Erreur = True Then Exit Do
       'SE%=0 : point dans le cadre
-      'SE%=1 : point impossible à calculer, erreur
-      'SE%=2 : point calculé mais hors cadre
+      'SE%=1 : point impossible Ã  calculer, erreur
+      'SE%=2 : point calculÃ© mais hors cadre
       If SE% <> 1 Then
          If X > Xmax Or X < Xmin Or Y > Ymax Or Y < Ymin Then
                SE% = 2
@@ -1236,7 +1236,7 @@ Traite_ErreursED:
          SE% = 1
          Resume Next
       Case Else
-         Message$ = "Erreur n° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
+         Message$ = "Erreur nÂ° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
          MsgBox Message$, 48, "COURBE"
          Exit Sub
       End Select
@@ -1251,23 +1251,23 @@ Private Sub TraceCouEqDif2()
    mnuImprimer.Enabled = False
    mnuOuvrir.Enabled = False
    '-----------------------------------------------------------------
-   '-----------     Paramètres pour l'affichage       ---------------
-   '-----------   non réglables par l'utilisateur     ---------------
+   '-----------     ParamÃ¨tres pour l'affichage       ---------------
+   '-----------   non rÃ©glables par l'utilisateur     ---------------
    '-----------------------------------------------------------------
    LX% = Dessin.ScaleWidth
    LY% = Dessin.ScaleHeight
-   ' Facteur d'échelle
+   ' Facteur d'Ã©chelle
    FE = LY% / LX%
    If Ech% = 1 Then
       Ymax = FE * (Xmax - Xmin) + Ymin
    End If
    '-----------------------------------------------------------------
-   '----------- Déterminations de différentes valeurs ---------------
-   '-----------             pour le tracé             ---------------
+   '----------- DÃ©terminations de diffÃ©rentes valeurs ---------------
+   '-----------             pour le tracÃ©             ---------------
    '-----------------------------------------------------------------
    AX = Xmax - Xmin
    If AX < 0 Then
-      MsgBox "Xmax doit être supérieur à Xmin !", 48, "COURBE"
+      MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin !", 48, "COURBE"
       Exit Sub
    End If
    If Ech% = 1 Then
@@ -1276,7 +1276,7 @@ Private Sub TraceCouEqDif2()
    Else
       AY = Ymax - Ymin
       If AY < 0 Then
-         MsgBox "Ymax doit être supérieur à Ymin !", 48, "COURBE"
+         MsgBox "Ymax doit Ãªtre supÃ©rieur Ã  Ymin !", 48, "COURBE"
          Exit Sub
       End If
    End If
@@ -1293,9 +1293,9 @@ Private Sub TraceCouEqDif2()
    ' dY/dX = Z
    var$(3) = "Z"
    '--------------------------------------------------------------
-   '--------- Première manipulation des chaines DefVar : ---------
+   '--------- PremiÃ¨re manipulation des chaines DefVar : ---------
    '--------- Suppression des blancs dans les formules,  ---------
-   '--------- vérification du nombre de parenthèses et   ---------
+   '--------- vÃ©rification du nombre de parenthÃ¨ses et   ---------
    '--------- remplacement des constantes par leur valeur --------
    '--------------------------------------------------------------
    TextVar2$ = UCase$(TextVar2$)
@@ -1303,14 +1303,14 @@ Private Sub TraceCouEqDif2()
    Call Constante(CorVar2$, ForVar2$)
    If Erreur = True Then Exit Sub
    '--------------------------------------------------------------
-   '--------- Effacer le dessin précédent ------------------------
+   '--------- Effacer le dessin prÃ©cÃ©dent ------------------------
    '--------------------------------------------------------------
    If Gap% = 1 Then
       Dessin.Picture = LoadPicture()
    End If
    On Error GoTo Traite_ErreursED2
    '--------------------------------------------------------------
-   '--------- Tracé du cadre et des axes -------------------------
+   '--------- TracÃ© du cadre et des axes -------------------------
    '--------------------------------------------------------------
    If Trac% = 1 Then
       Dessin.Line (0, 0)-(0, LY%)
@@ -1333,7 +1333,7 @@ Private Sub TraceCouEqDif2()
    '--------------------------------------------------------------
    If Grax% = 1 Or Grac% = 1 Or Tric% = 1 Then Call GraduAx
    '--------------------------------------------------------------
-   '--------- Tracé éventuel des points --------------------------
+   '--------- TracÃ© Ã©ventuel des points --------------------------
    '--------------------------------------------------------------
    If Trap% = 1 And NbPts% > 0 Then
       LG% = Int((LX% + LY%) / 2)
@@ -1344,7 +1344,7 @@ Private Sub TraceCouEqDif2()
       Next i%
    End If
    '--------------------------------------------------------------
-   '--------- Reliure éventuelle des points --------------------------
+   '--------- Reliure Ã©ventuelle des points --------------------------
    '--------------------------------------------------------------
    If Rep% = 1 And NbPts% > 0 Then
       Dessin.ForeColor = CouleurPts&
@@ -1353,10 +1353,10 @@ Private Sub TraceCouEqDif2()
       Next i%
    End If
    '--------------------------------------------------------------
-   '--------- Tracé de la courbe ---------------------------------
+   '--------- TracÃ© de la courbe ---------------------------------
    '--------------------------------------------------------------
    '--------------------------------------------------------------
-   ' 1) : tracé de (Xvnd, Yvnd) à Xmin
+   ' 1) : tracÃ© de (Xvnd, Yvnd) Ã  Xmin
    '--------------------------------------------------------------
    Dessin.ForeColor = CouleurCou&
    X = Xvnd
@@ -1375,13 +1375,13 @@ Private Sub TraceCouEqDif2()
       Fenetre_Val.Print Space$(50)
       Fenetre_Val.ForeColor = NOIR
       Fenetre_Val.PSet (0, 2500), Fenetre_Val.BackColor
-      Fenetre_Val.Print " Tracé :  "; Int((Xvnd - X) / AX * 100); "%    effectué"
+      Fenetre_Val.Print " TracÃ© :  "; Int((Xvnd - X) / AX * 100); "%    effectuÃ©"
       If X < Xmin Then Exit Do
       Call EulerED2Moins
       If Erreur = True Then Exit Do
       'SE%=0 : point dans le cadre
-      'SE%=1 : point impossible à calculer, erreur
-      'SE%=2 : point calculé mais hors cadre
+      'SE%=1 : point impossible Ã  calculer, erreur
+      'SE%=2 : point calculÃ© mais hors cadre
       If SE% <> 1 Then
          If X > Xmax Or X < Xmin Or Y > Ymax Or Y < Ymin Then
                SE% = 2
@@ -1412,7 +1412,7 @@ Private Sub TraceCouEqDif2()
       SE% = 0
    Loop
    '--------------------------------------------------------------
-   ' 2) : tracé de (Xvnd, Yvnd) à Xmax
+   ' 2) : tracÃ© de (Xvnd, Yvnd) Ã  Xmax
    '--------------------------------------------------------------
    X = Xvnd
    Y = Yvnd
@@ -1427,13 +1427,13 @@ Private Sub TraceCouEqDif2()
       Fenetre_Val.Print Space$(50)
       Fenetre_Val.ForeColor = NOIR
       Fenetre_Val.PSet (0, 2500), Fenetre_Val.BackColor
-      Fenetre_Val.Print " Tracé :  "; Int((X - Xmin) / AX * 100); "%    effectué"
+      Fenetre_Val.Print " TracÃ© :  "; Int((X - Xmin) / AX * 100); "%    effectuÃ©"
       If X > Xmax Then Exit Do
       Call EulerED2Plus
       If Erreur = True Then Exit Do
       'SE%=0 : point dans le cadre
-      'SE%=1 : point impossible à calculer, erreur
-      'SE%=2 : point calculé mais hors cadre
+      'SE%=1 : point impossible Ã  calculer, erreur
+      'SE%=2 : point calculÃ© mais hors cadre
       If SE% <> 1 Then
          If X > Xmax Or X < Xmin Or Y > Ymax Or Y < Ymin Then
                SE% = 2
@@ -1482,7 +1482,7 @@ Traite_ErreursED2:
          SE% = 1
          Resume Next
       Case Else
-         Message$ = "Erreur n° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
+         Message$ = "Erreur nÂ° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
          MsgBox Message$, 48, "COURBE"
          Exit Sub
       End Select
@@ -1497,26 +1497,26 @@ Private Sub TraceCouInPoLag()
    mnuImprimer.Enabled = False
    mnuOuvrir.Enabled = False
    '-----------------------------------------------------------------
-   '-----------     Paramètres pour l'affichage       ---------------
-   '-----------   non réglables par l'utilisateur     ---------------
+   '-----------     ParamÃ¨tres pour l'affichage       ---------------
+   '-----------   non rÃ©glables par l'utilisateur     ---------------
    '-----------------------------------------------------------------
    LX% = Dessin.ScaleWidth
    LY% = Dessin.ScaleHeight
-   ' Facteur d'échelle
+   ' Facteur d'Ã©chelle
    FE = LY% / LX%
    If Ech% = 1 Then
        Ymax = FE * (Xmax - Xmin) + Ymin
    End If
    '-----------------------------------------------------------------
-   '----------- Déterminations de différentes valeurs ---------------
-   '-----------             pour le tracé             ---------------
+   '----------- DÃ©terminations de diffÃ©rentes valeurs ---------------
+   '-----------             pour le tracÃ©             ---------------
    '-----------------------------------------------------------------
    If NbPtsI% < 2 Then
-      MsgBox "Le nombre de points doit être supérieur ou égal à 2 !", 48, "InPoLag"
+      MsgBox "Le nombre de points doit Ãªtre supÃ©rieur ou Ã©gal Ã  2 !", 48, "InPoLag"
    End If
    AX = Xmax - Xmin
    If AX < 0 Then
-       MsgBox "Xmax doit être supérieur à Xmin !", 48, "COURBE"
+       MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin !", 48, "COURBE"
        Exit Sub
    End If
    If Ech% = 1 Then
@@ -1525,7 +1525,7 @@ Private Sub TraceCouInPoLag()
    Else
        AY = Ymax - Ymin
        If AY < 0 Then
-           MsgBox "Ymax doit être supérieur à Ymin !", 48, "COURBE"
+           MsgBox "Ymax doit Ãªtre supÃ©rieur Ã  Ymin !", 48, "COURBE"
            Exit Sub
        End If
    End If
@@ -1534,14 +1534,14 @@ Private Sub TraceCouInPoLag()
    RX = 1 / MX
    RY = -1 / MY
    '--------------------------------------------------------------
-   '--------- Effacer le dessin précédent ------------------------
+   '--------- Effacer le dessin prÃ©cÃ©dent ------------------------
    '--------------------------------------------------------------
    If Gap% = 1 Then
        Dessin.Picture = LoadPicture()
    End If
    On Error GoTo TraiteErreursPL
    '--------------------------------------------------------------
-   '--------- Tracé du cadre et des axes -------------------------
+   '--------- TracÃ© du cadre et des axes -------------------------
    '--------------------------------------------------------------
    If Trac% = 1 Then               ' tracer le cadre
       Dessin.Line (0, 0)-(0, LY%)
@@ -1564,7 +1564,7 @@ Private Sub TraceCouInPoLag()
    '--------------------------------------------------------------
    If Grax% = 1 Or Grac% = 1 Or Tric% = 1 Then Call GraduAx
    '--------------------------------------------------------------
-   '--------- Tracé des points --------------------------
+   '--------- TracÃ© des points --------------------------
    '--------------------------------------------------------------
    LG% = Int((LX% + LY%) / 2)
    Dessin.ForeColor = CouleurPts&
@@ -1573,7 +1573,7 @@ Private Sub TraceCouInPoLag()
       Dessin.Line (Xdes(Xpl(i%)), Ydes(Ypl(i%)) - 0.01 * LG%)-(Xdes(Xpl(i%)), Ydes(Ypl(i%)) + 0.01 * LG%)
    Next i%
    '--------------------------------------------------------------
-   '--------- Tracé de la courbe ---------------------------------
+   '--------- TracÃ© de la courbe ---------------------------------
    '--------------------------------------------------------------
    Dessin.ForeColor = CouleurCou&
    X = Xmin - RX
@@ -1589,7 +1589,7 @@ Private Sub TraceCouInPoLag()
       Fenetre_Val.Print Space$(50)
       Fenetre_Val.ForeColor = NOIR
       Fenetre_Val.PSet (0, 2500), Fenetre_Val.BackColor
-      Fenetre_Val.Print " Tracé :  "; Int((X - Xmin) / AX * 100); "%    effectué"
+      Fenetre_Val.Print " TracÃ© :  "; Int((X - Xmin) / AX * 100); "%    effectuÃ©"
       X = X + RX
       If X > Xmax Then Exit Do
       ' ************************************************
@@ -1602,8 +1602,8 @@ Private Sub TraceCouInPoLag()
       ' ************************************************
       If Erreur = True Then Exit Do
       'SE%=0 : point dans le cadre
-      'SE%=1 : point impossible à calculer, erreur
-      'SE%=2 : point calculé mais hors cadre
+      'SE%=1 : point impossible Ã  calculer, erreur
+      'SE%=2 : point calculÃ© mais hors cadre
       If SE% <> 1 Then
          If X > Xmax Or X < Xmin Or Y > Ymax Or Y < Ymin Then
                SE% = 2
@@ -1652,7 +1652,7 @@ TraiteErreursPL:
          SE% = 1
          Resume Next
       Case Else
-         Message$ = "Erreur n° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
+         Message$ = "Erreur nÂ° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
          MsgBox Message$, 48, "COURBE"
          Exit Sub
       End Select
@@ -1667,23 +1667,23 @@ Private Sub TraceCouInteg()
    mnuImprimer.Enabled = False
    mnuOuvrir.Enabled = False
    '-----------------------------------------------------------------
-   '-----------     Paramètres pour l'affichage       ---------------
-   '-----------   non réglables par l'utilisateur     ---------------
+   '-----------     ParamÃ¨tres pour l'affichage       ---------------
+   '-----------   non rÃ©glables par l'utilisateur     ---------------
    '-----------------------------------------------------------------
    LX% = Dessin.ScaleWidth
    LY% = Dessin.ScaleHeight
-   ' Facteur d'échelle
+   ' Facteur d'Ã©chelle
    FE = LY% / LX%
    If Ech% = 1 Then
       Ymax = FE * (Xmax - Xmin) + Ymin
    End If
    '-----------------------------------------------------------------
-   '----------- Déterminations de différentes valeurs ---------------
-   '-----------             pour le tracé             ---------------
+   '----------- DÃ©terminations de diffÃ©rentes valeurs ---------------
+   '-----------             pour le tracÃ©             ---------------
    '-----------------------------------------------------------------
    AX = Xmax - Xmin
    If AX < 0 Then
-      MsgBox "Xmax doit être supérieur à Xmin !", 48, "COURBE"
+      MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin !", 48, "COURBE"
       Exit Sub
    End If
    If Ech% = 1 Then
@@ -1692,7 +1692,7 @@ Private Sub TraceCouInteg()
    Else
       AY = Ymax - Ymin
       If AY < 0 Then
-         MsgBox "Ymax doit être supérieur à Ymin !", 48, "COURBE"
+         MsgBox "Ymax doit Ãªtre supÃ©rieur Ã  Ymin !", 48, "COURBE"
          Exit Sub
       End If
    End If
@@ -1706,9 +1706,9 @@ Private Sub TraceCouInteg()
    NombVar% = 1
    var$(1) = "X"
    '--------------------------------------------------------------
-   '--------- Première manipulation des chaines DefVar : ---------
+   '--------- PremiÃ¨re manipulation des chaines DefVar : ---------
    '--------- Suppression des blancs dans les formules,  ---------
-   '--------- vérification du nombre de parenthèses et   ---------
+   '--------- vÃ©rification du nombre de parenthÃ¨ses et   ---------
    '--------- remplacement des constantes par leur valeur --------
    '--------------------------------------------------------------
    TextVar2$ = UCase$(TextVar2$)
@@ -1716,14 +1716,14 @@ Private Sub TraceCouInteg()
    Call Constante(CorVar2$, ForVar2$)
    If Erreur = True Then Exit Sub
    '--------------------------------------------------------------
-   '--------- Effacer le dessin précédent ------------------------
+   '--------- Effacer le dessin prÃ©cÃ©dent ------------------------
    '--------------------------------------------------------------
    If Gap% = 1 Then
       Dessin.Picture = LoadPicture()
    End If
    On Error GoTo TraiteErreursIN
    '--------------------------------------------------------------
-   '--------- Tracé du cadre et des axes -------------------------
+   '--------- TracÃ© du cadre et des axes -------------------------
    '--------------------------------------------------------------
    If Trac% = 1 Then
       Dessin.Line (0, 0)-(0, LY%)
@@ -1746,7 +1746,7 @@ Private Sub TraceCouInteg()
    '--------------------------------------------------------------
    If Grax% = 1 Or Grac% = 1 Or Tric% = 1 Then Call GraduAx
    '--------------------------------------------------------------
-   '--------- Tracé éventuel des points --------------------------
+   '--------- TracÃ© Ã©ventuel des points --------------------------
    '--------------------------------------------------------------
    If Trap% = 1 And NbPts% > 0 Then
       LG% = Int((LX% + LY%) / 2)
@@ -1757,7 +1757,7 @@ Private Sub TraceCouInteg()
       Next i%
    End If
    '--------------------------------------------------------------
-   '--------- Reliure éventuelle des points --------------------------
+   '--------- Reliure Ã©ventuelle des points --------------------------
    '--------------------------------------------------------------
    If Rep% = 1 And NbPts% > 0 Then
       Dessin.ForeColor = CouleurPts&
@@ -1766,7 +1766,7 @@ Private Sub TraceCouInteg()
       Next i%
    End If
    '--------------------------------------------------------------
-   '--------- Tracé de la courbe ---------------------------------
+   '--------- TracÃ© de la courbe ---------------------------------
    '--------------------------------------------------------------
    Dessin.ForeColor = CouleurCou&
    X = Xmin - RX
@@ -1783,7 +1783,7 @@ Private Sub TraceCouInteg()
    Fenetre_Val.Print Space$(50)
    Fenetre_Val.ForeColor = NOIR
    Fenetre_Val.PSet (0, 2500), Fenetre_Val.BackColor
-   Fenetre_Val.Print " Tracé :  "; Int((X - Xmin) / AX * 100); "%    effectué"
+   Fenetre_Val.Print " TracÃ© :  "; Int((X - Xmin) / AX * 100); "%    effectuÃ©"
    X = X + RX
    If X > Xmax Then Exit Do
    vvar$(1) = LTrim$(Format(X, "0.000000"))
@@ -1792,8 +1792,8 @@ Private Sub TraceCouInteg()
    Y = CSng(SorVar2$)
    If Erreur = True Then Exit Do
    'SE%=0 : point dans le cadre
-   'SE%=1 : point impossible à calculer, erreur
-   'SE%=2 : point calculé mais hors cadre
+   'SE%=1 : point impossible Ã  calculer, erreur
+   'SE%=2 : point calculÃ© mais hors cadre
    If SE% <> 1 Then
       If Y > Ymax Or Y < Ymin Then
          SE% = 2
@@ -1812,7 +1812,7 @@ Private Sub TraceCouInteg()
          End Select
       End If
       '*********************************************
-      ' hachures verticales pour zone intégrée
+      ' hachures verticales pour zone intÃ©grÃ©e
       '*********************************************
       If X >= Xa And X <= Xb Then
          Dessin.Line (Xdes(X), Ydes(0))-(Xdes(X), Ydes(Y)), CouleurHach&
@@ -1849,7 +1849,7 @@ TraiteErreursIN:
       SE% = 1
       Resume Next
    Case Else
-      Message$ = "Erreur n° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
+      Message$ = "Erreur nÂ° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
       MsgBox Message$, 48, "COURBE"
       Exit Sub
    End Select
@@ -1864,26 +1864,26 @@ Private Sub TraceCouMoinCar()
    mnuImprimer.Enabled = False
    mnuOuvrir.Enabled = False
    '-----------------------------------------------------------------
-   '-----------     Paramètres pour l'affichage       ---------------
-   '-----------   non réglables par l'utilisateur     ---------------
+   '-----------     ParamÃ¨tres pour l'affichage       ---------------
+   '-----------   non rÃ©glables par l'utilisateur     ---------------
    '-----------------------------------------------------------------
    LX% = Dessin.ScaleWidth
    LY% = Dessin.ScaleHeight
-   ' Facteur d'échelle
+   ' Facteur d'Ã©chelle
    FE = LY% / LX%
    If Ech% = 1 Then
        Ymax = FE * (Xmax - Xmin) + Ymin
    End If
    '-----------------------------------------------------------------
-   '----------- Déterminations de différentes valeurs ---------------
-   '-----------             pour le tracé             ---------------
+   '----------- DÃ©terminations de diffÃ©rentes valeurs ---------------
+   '-----------             pour le tracÃ©             ---------------
    '-----------------------------------------------------------------
    If NbPtsMoinCar% < NbPar% Then
-      MsgBox "Le nombre de points doit être supérieur ou égal au nombre de paramètres !", 48, "COURBE"
+      MsgBox "Le nombre de points doit Ãªtre supÃ©rieur ou Ã©gal au nombre de paramÃ¨tres !", 48, "COURBE"
    End If
    AX = Xmax - Xmin
    If AX < 0 Then
-       MsgBox "Xmax doit être supérieur à Xmin !", 48, "COURBE"
+       MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin !", 48, "COURBE"
        Exit Sub
    End If
    If Ech% = 1 Then
@@ -1892,7 +1892,7 @@ Private Sub TraceCouMoinCar()
    Else
        AY = Ymax - Ymin
        If AY < 0 Then
-           MsgBox "Ymax doit être supérieur à Ymin !", 48, "COURBE"
+           MsgBox "Ymax doit Ãªtre supÃ©rieur Ã  Ymin !", 48, "COURBE"
            Exit Sub
        End If
    End If
@@ -1904,9 +1904,9 @@ Private Sub TraceCouMoinCar()
    NombVar% = 1
    var$(1) = "X"
    '--------------------------------------------------------------
-   '--------- Première manipulation des chaines DefVar : ---------
+   '--------- PremiÃ¨re manipulation des chaines DefVar : ---------
    '--------- Suppression des blancs dans les formules,  ---------
-   '--------- vérification du nombre de parenthèses et   ---------
+   '--------- vÃ©rification du nombre de parenthÃ¨ses et   ---------
    '--------- remplacement des constantes par leur valeur --------
    '--------------------------------------------------------------
    TextVar2$ = UCase$(TextVar2$)
@@ -1915,14 +1915,14 @@ Private Sub TraceCouMoinCar()
    Call Parametre(ForVar2$, ParVar2$)
    If Erreur = True Then Exit Sub
    '--------------------------------------------------------------
-   '--------- Effacer le dessin précédent ------------------------
+   '--------- Effacer le dessin prÃ©cÃ©dent ------------------------
    '--------------------------------------------------------------
    If Gap% = 1 Then
        Dessin.Picture = LoadPicture()
    End If
    On Error GoTo TraiteErreursMC
    '--------------------------------------------------------------
-   '--------- Tracé du cadre et des axes -------------------------
+   '--------- TracÃ© du cadre et des axes -------------------------
    '--------------------------------------------------------------
    If Trac% = 1 Then               ' tracer le cadre
       Dessin.Line (0, 0)-(0, LY%)
@@ -1945,7 +1945,7 @@ Private Sub TraceCouMoinCar()
    '--------------------------------------------------------------
    If Grax% = 1 Or Grac% = 1 Or Tric% = 1 Then Call GraduAx
    '--------------------------------------------------------------
-   '--------- Tracé des points --------------------------
+   '--------- TracÃ© des points --------------------------
    '--------------------------------------------------------------
    LG% = Int((LX% + LY%) / 2)
    Dessin.ForeColor = CouleurPts&
@@ -1954,7 +1954,7 @@ Private Sub TraceCouMoinCar()
       Dessin.Line (Xdes(Xmc(i%)), Ydes(Ymc(i%)) - 0.01 * LG%)-(Xdes(Xmc(i%)), Ydes(Ymc(i%)) + 0.01 * LG%)
    Next i%
    '--------------------------------------------------------------
-   '--------- Tracé de la courbe ---------------------------------
+   '--------- TracÃ© de la courbe ---------------------------------
    '--------------------------------------------------------------
    Dessin.ForeColor = CouleurCou&
    X = Xmin - RX
@@ -1970,7 +1970,7 @@ Private Sub TraceCouMoinCar()
       Fenetre_Val.Print Space$(60)
       Fenetre_Val.ForeColor = NOIR
       Fenetre_Val.PSet (0, 2500), Fenetre_Val.BackColor
-      Fenetre_Val.Print " Tracé :  "; Int((X - Xmin) / AX * 100); "%    effectué"
+      Fenetre_Val.Print " TracÃ© :  "; Int((X - Xmin) / AX * 100); "%    effectuÃ©"
       X = X + RX
       If X > Xmax Then Exit Do
       vvar$(1) = LTrim$(Format(X, "0.000000"))
@@ -1979,8 +1979,8 @@ Private Sub TraceCouMoinCar()
       Y = CSng(SorVar2$)
       If Erreur = True Then Exit Do
       'SE%=0 : point dans le cadre
-      'SE%=1 : point impossible à calculer, erreur
-      'SE%=2 : point calculé mais hors cadre
+      'SE%=1 : point impossible Ã  calculer, erreur
+      'SE%=2 : point calculÃ© mais hors cadre
       If SE% <> 1 Then
          If X > Xmax Or X < Xmin Or Y > Ymax Or Y < Ymin Then
                SE% = 2
@@ -2030,7 +2030,7 @@ TraiteErreursMC:
          SE% = 1
          Resume Next
       Case Else
-         Message$ = "Erreur n° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
+         Message$ = "Erreur nÂ° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
          MsgBox Message$, 48, "COURBE"
          Exit Sub
    End Select
@@ -2046,21 +2046,21 @@ Private Sub TraceCouPolynome()
    mnuImprimer.Enabled = False
    mnuOuvrir.Enabled = False
    '-----------------------------------------------------------------
-   '-----------     Paramètres pour l'affichage       ---------------
-   '-----------   non réglables par l'utilisateur     ---------------
+   '-----------     ParamÃ¨tres pour l'affichage       ---------------
+   '-----------   non rÃ©glables par l'utilisateur     ---------------
    '-----------------------------------------------------------------
    LX% = Dessin.ScaleWidth
    LY% = Dessin.ScaleHeight
-   ' Facteur d'échelle
+   ' Facteur d'Ã©chelle
    FE = LY% / LX%
    Ymax = FE * (Xmax - Xmin) + Ymin
    '-----------------------------------------------------------------
-   '----------- Déterminations de différentes valeurs ---------------
-   '-----------             pour le tracé             ---------------
+   '----------- DÃ©terminations de diffÃ©rentes valeurs ---------------
+   '-----------             pour le tracÃ©             ---------------
    '-----------------------------------------------------------------
    AX = Xmax - Xmin
    If AX < 0 Then
-      MsgBox "Xmax doit être supérieur à Xmin !", 48, "COURBE"
+      MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin !", 48, "COURBE"
       Exit Sub
    End If
    AY = AX * FE
@@ -2070,14 +2070,14 @@ Private Sub TraceCouPolynome()
    RX = 1 / MX
    RY = -1 / MY
    '--------------------------------------------------------------
-   '--------- Effacer le dessin précédent ------------------------
+   '--------- Effacer le dessin prÃ©cÃ©dent ------------------------
    '--------------------------------------------------------------
    If Gap% = 1 Then
       Dessin.Picture = LoadPicture()
    End If
    On Error GoTo Traite_ErreursPO
    '--------------------------------------------------------------
-   '--------- Tracé du cadre et des axes -------------------------
+   '--------- TracÃ© du cadre et des axes -------------------------
    '--------------------------------------------------------------
    If Trac% = 1 Then
       Dessin.Line (0, 0)-(0, LY%)
@@ -2100,7 +2100,7 @@ Private Sub TraceCouPolynome()
    '--------------------------------------------------------------
    If Grax% = 1 Or Grac% = 1 Or Tric% = 1 Then Call GraduAx
    '--------------------------------------------------------------
-   '--------- Tracé éventuel des points --------------------------
+   '--------- TracÃ© Ã©ventuel des points --------------------------
    '--------------------------------------------------------------
    If Trap% = 1 And NbPts% > 0 Then
       LG% = Int((LX% + LY%) / 2)
@@ -2111,7 +2111,7 @@ Private Sub TraceCouPolynome()
       Next i%
    End If
    '--------------------------------------------------------------
-   '--------- Reliure éventuelle des points --------------------------
+   '--------- Reliure Ã©ventuelle des points --------------------------
    '--------------------------------------------------------------
    If Rep% = 1 And NbPts% > 0 Then
       Dessin.ForeColor = CouleurPts&
@@ -2120,7 +2120,7 @@ Private Sub TraceCouPolynome()
       Next i%
    End If
    '--------------------------------------------------------------
-   '--------- Tracé de la courbe ---------------------------------
+   '--------- TracÃ© de la courbe ---------------------------------
    '--------------------------------------------------------------
    Dessin.ForeColor = CouleurCou&
    X = Xmin - RX
@@ -2137,7 +2137,7 @@ Private Sub TraceCouPolynome()
       Fenetre_Val.Print Space$(50)
       Fenetre_Val.ForeColor = NOIR
       Fenetre_Val.PSet (0, 2500), Fenetre_Val.BackColor
-      Fenetre_Val.Print " Tracé :  "; Int((X - Xmin) / AX * 100); "%    effectué"
+      Fenetre_Val.Print " TracÃ© :  "; Int((X - Xmin) / AX * 100); "%    effectuÃ©"
       X = X + RX
       If X > Xmax Then Exit Do
       ' *************************************************
@@ -2150,8 +2150,8 @@ Private Sub TraceCouPolynome()
       ' *************************************************
       If Erreur = True Then Exit Do
       'SE%=0 : point dans le cadre
-      'SE%=1 : point impossible à calculer, erreur
-      'SE%=2 : point calculé mais hors cadre
+      'SE%=1 : point impossible Ã  calculer, erreur
+      'SE%=2 : point calculÃ© mais hors cadre
       If SE% <> 1 Then
          If Y > Ymax Or Y < Ymin Then
                SE% = 2
@@ -2200,7 +2200,7 @@ Traite_ErreursPO:
       SE% = 1
       Resume Next
    Case Else
-      Message$ = "Erreur n° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
+      Message$ = "Erreur nÂ° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
       MsgBox Message$, 48, "COURBE"
       Exit Sub
    End Select
@@ -2215,23 +2215,23 @@ Private Sub TraceCouPrimitive()
    mnuImprimer.Enabled = False
    mnuOuvrir.Enabled = False
    '-----------------------------------------------------------------
-   '-----------     Paramètres pour l'affichage       ---------------
-   '-----------   non réglables par l'utilisateur     ---------------
+   '-----------     ParamÃ¨tres pour l'affichage       ---------------
+   '-----------   non rÃ©glables par l'utilisateur     ---------------
    '-----------------------------------------------------------------
    LX% = Dessin.ScaleWidth
    LY% = Dessin.ScaleHeight
-   ' Facteur d'échelle
+   ' Facteur d'Ã©chelle
    FE = LY% / LX%
    If Ech% = 1 Then
       Ymax = FE * (Xmax - Xmin) + Ymin
    End If
    '-----------------------------------------------------------------
-   '----------- Déterminations de différentes valeurs ---------------
-   '-----------             pour le tracé             ---------------
+   '----------- DÃ©terminations de diffÃ©rentes valeurs ---------------
+   '-----------             pour le tracÃ©             ---------------
    '-----------------------------------------------------------------
    AX = Xmax - Xmin
    If AX < 0 Then
-      MsgBox "Xmax doit être supérieur à Xmin !", 48, "COURBE"
+      MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin !", 48, "COURBE"
       Exit Sub
    End If
    If Ech% = 1 Then
@@ -2240,7 +2240,7 @@ Private Sub TraceCouPrimitive()
    Else
       AY = Ymax - Ymin
       If AY < 0 Then
-         MsgBox "Ymax doit être supérieur à Ymin !", 48, "COURBE"
+         MsgBox "Ymax doit Ãªtre supÃ©rieur Ã  Ymin !", 48, "COURBE"
          Exit Sub
       End If
    End If
@@ -2254,9 +2254,9 @@ Private Sub TraceCouPrimitive()
    NombVar% = 1
    var$(1) = "X"
    '--------------------------------------------------------------
-   '--------- Première manipulation des chaines DefVar : ---------
+   '--------- PremiÃ¨re manipulation des chaines DefVar : ---------
    '--------- Suppression des blancs dans les formules,  ---------
-   '--------- vérification du nombre de parenthèses et   ---------
+   '--------- vÃ©rification du nombre de parenthÃ¨ses et   ---------
    '--------- remplacement des constantes par leur valeur --------
    '--------------------------------------------------------------
    TextVar2$ = UCase$(TextVar2$)
@@ -2264,14 +2264,14 @@ Private Sub TraceCouPrimitive()
    Call Constante(CorVar2$, ForVar2$)
    If Erreur = True Then Exit Sub
    '--------------------------------------------------------------
-   '--------- Effacer le dessin précédent ------------------------
+   '--------- Effacer le dessin prÃ©cÃ©dent ------------------------
    '--------------------------------------------------------------
    If Gap% = 1 Then
       Dessin.Picture = LoadPicture()
    End If
    On Error GoTo TraiteErreursPrim
    '--------------------------------------------------------------
-   '--------- Tracé du cadre et des axes -------------------------
+   '--------- TracÃ© du cadre et des axes -------------------------
    '--------------------------------------------------------------
    If Trac% = 1 Then
       Dessin.Line (0, 0)-(0, LY%)
@@ -2294,7 +2294,7 @@ Private Sub TraceCouPrimitive()
    '--------------------------------------------------------------
    If Grax% = 1 Or Grac% = 1 Or Tric% = 1 Then Call GraduAx
    '--------------------------------------------------------------
-   '--------- Tracé éventuel des points --------------------------
+   '--------- TracÃ© Ã©ventuel des points --------------------------
    '--------------------------------------------------------------
    If Trap% = 1 And NbPts% > 0 Then
       LG% = Int((LX% + LY%) / 2)
@@ -2305,7 +2305,7 @@ Private Sub TraceCouPrimitive()
       Next i%
    End If
    '--------------------------------------------------------------
-   '--------- Reliure éventuelle des points --------------------------
+   '--------- Reliure Ã©ventuelle des points --------------------------
    '--------------------------------------------------------------
    If Rep% = 1 And NbPts% > 0 Then
       Dessin.ForeColor = CouleurPts&
@@ -2314,10 +2314,10 @@ Private Sub TraceCouPrimitive()
       Next i%
    End If
    '--------------------------------------------------------------
-   '--------- Tracé de la courbe ---------------------------------
+   '--------- TracÃ© de la courbe ---------------------------------
    '--------------------------------------------------------------
    '--------------------------------------------------------------
-   ' 1) : tracé de Xvnd à Xmin
+   ' 1) : tracÃ© de Xvnd Ã  Xmin
    '--------------------------------------------------------------
    Dessin.ForeColor = CouleurCou&
    X = Xvnd
@@ -2336,13 +2336,13 @@ Private Sub TraceCouPrimitive()
    Fenetre_Val.Print Space$(50)
    Fenetre_Val.ForeColor = NOIR
    Fenetre_Val.PSet (0, 2500), Fenetre_Val.BackColor
-   Fenetre_Val.Print " Tracé :  "; Int((Xvnd - X) / AX * 100); "%    effectué"
+   Fenetre_Val.Print " TracÃ© :  "; Int((Xvnd - X) / AX * 100); "%    effectuÃ©"
    If X < Xmin Then Exit Do
    Call SimpsonPrimMoins
    If Erreur = True Then Exit Do
    'SE%=0 : point dans le cadre
-   'SE%=1 : point impossible à calculer, erreur
-   'SE%=2 : point calculé mais hors cadre
+   'SE%=1 : point impossible Ã  calculer, erreur
+   'SE%=2 : point calculÃ© mais hors cadre
    If SE% <> 1 Then
       If X > Xmax Or X < Xmin Or Y > Ymax Or Y < Ymin Then
             SE% = 2
@@ -2373,7 +2373,7 @@ Private Sub TraceCouPrimitive()
    SE% = 0
    Loop
    '--------------------------------------------------------------
-   ' 2) : tracé de Xvnd à Xmax
+   ' 2) : tracÃ© de Xvnd Ã  Xmax
    '--------------------------------------------------------------
    X = Xvnd
    Y = 0
@@ -2388,13 +2388,13 @@ Private Sub TraceCouPrimitive()
    Fenetre_Val.Print Space$(50)
    Fenetre_Val.ForeColor = NOIR
    Fenetre_Val.PSet (0, 2500), Fenetre_Val.BackColor
-   Fenetre_Val.Print " Tracé :  "; Int((X - Xmin) / AX * 100); "%    effectué"
+   Fenetre_Val.Print " TracÃ© :  "; Int((X - Xmin) / AX * 100); "%    effectuÃ©"
    If X > Xmax Then Exit Do
    Call SimpsonPrimPlus
    If Erreur = True Then Exit Do
    'SE%=0 : point dans le cadre
-   'SE%=1 : point impossible à calculer, erreur
-   'SE%=2 : point calculé mais hors cadre
+   'SE%=1 : point impossible Ã  calculer, erreur
+   'SE%=2 : point calculÃ© mais hors cadre
    If SE% <> 1 Then
       If X > Xmax Or X < Xmin Or Y > Ymax Or Y < Ymin Then
             SE% = 2
@@ -2443,7 +2443,7 @@ TraiteErreursPrim:
          SE% = 1
          Resume Next
       Case Else
-         Message$ = "Erreur n° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
+         Message$ = "Erreur nÂ° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
          MsgBox Message$, 48, "COURBE"
          Exit Sub
    End Select
@@ -2459,19 +2459,19 @@ Private Sub TraceCourbe()
    mnuImprimer.Enabled = False
    mnuOuvrir.Enabled = False
    '-----------------------------------------------------------------
-   '-----------     Paramètres pour l'affichage       ---------------
-   '-----------   non réglables par l'utilisateur     ---------------
+   '-----------     ParamÃ¨tres pour l'affichage       ---------------
+   '-----------   non rÃ©glables par l'utilisateur     ---------------
    '-----------------------------------------------------------------
    LX% = Dessin.ScaleWidth
    LY% = Dessin.ScaleHeight
-   ' Facteur d'échelle
+   ' Facteur d'Ã©chelle
    FE = LY% / LX%
    If Ech% = 1 Then
       Ymax = FE * (Xmax - Xmin) + Ymin
    End If
    '-----------------------------------------------------------------
-   '----------- Déterminations de différentes valeurs ---------------
-   '-----------             pour le tracé             ---------------
+   '----------- DÃ©terminations de diffÃ©rentes valeurs ---------------
+   '-----------             pour le tracÃ©             ---------------
    '-----------------------------------------------------------------
    AX = Xmax - Xmin
    If Ech% = 1 Then
@@ -2481,13 +2481,13 @@ Private Sub TraceCourbe()
       AY = Ymax - Ymin
    End If
    If AX < 0 Then
-      MsgBox "Xmax doit être supérieur à Xmin", 48, "COURBE"
+      MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin", 48, "COURBE"
       Exit Sub
    ElseIf AY < 0 Then
-      MsgBox "Ymax doit être supérieur à Ymin", 48, "COURBE"
+      MsgBox "Ymax doit Ãªtre supÃ©rieur Ã  Ymin", 48, "COURBE"
       Exit Sub
    ElseIf Tmax < Tmin Then
-      MsgBox "Tmax doit être supérieur à Tmin", 48, "COURBE"
+      MsgBox "Tmax doit Ãªtre supÃ©rieur Ã  Tmin", 48, "COURBE"
       Exit Sub
    End If
    MX = LX% / AX
@@ -2521,9 +2521,9 @@ Private Sub TraceCourbe()
          var$(1) = "T"
    End Select
    '--------------------------------------------------------------
-   '--------- Première manipulation des chaines DefVar : ---------
+   '--------- PremiÃ¨re manipulation des chaines DefVar : ---------
    '--------- Suppression des blancs dans les formules,  ---------
-   '--------- vérification du nombre de parenthèses et   ---------
+   '--------- vÃ©rification du nombre de parenthÃ¨ses et   ---------
    '--------- remplacement des constantes par leur valeur --------
    '--------------------------------------------------------------
    TextVar2$ = UCase$(TextVar2$)
@@ -2535,7 +2535,7 @@ Private Sub TraceCourbe()
    End If
    If Erreur = True Then Exit Sub
    '--------------------------------------------------------------
-   '--------- Effacer le dessin précédent ------------------------
+   '--------- Effacer le dessin prÃ©cÃ©dent ------------------------
    '--------------------------------------------------------------
    If Gap% = 1 Then
       Dessin.Picture = LoadPicture()
@@ -2545,7 +2545,7 @@ Private Sub TraceCourbe()
    '--------------------------------------------------------------
    On Error GoTo Traite_Erreurs
    '--------------------------------------------------------------
-   '--------- Tracé du cadre et des axes -------------------------
+   '--------- TracÃ© du cadre et des axes -------------------------
    '--------------------------------------------------------------
    If Trac% = 1 Then
       Dessin.Line (0, 0)-(0, LY%)
@@ -2568,7 +2568,7 @@ Private Sub TraceCourbe()
    '--------------------------------------------------------------
    If Grax% = 1 Or Grac% = 1 Or Tric% = 1 Then Call GraduAx
    '--------------------------------------------------------------
-   '--------- Tracé éventuel des points --------------------------
+   '--------- TracÃ© Ã©ventuel des points --------------------------
    '--------------------------------------------------------------
    If Trap% = 1 And NbPts% > 0 Then
       LG% = Int((LX% + LY%) / 2)
@@ -2579,7 +2579,7 @@ Private Sub TraceCourbe()
       Next i%
    End If
    '--------------------------------------------------------------
-   '--------- Reliure éventuelle des points --------------------------
+   '--------- Reliure Ã©ventuelle des points --------------------------
    '--------------------------------------------------------------
    If Rep% = 1 And NbPts% > 0 Then
       Dessin.ForeColor = CouleurPts&
@@ -2588,7 +2588,7 @@ Private Sub TraceCourbe()
       Next i%
    End If
    '--------------------------------------------------------------
-   '--------- Tracé éventuel de la tangente ----------------------
+   '--------- TracÃ© Ã©ventuel de la tangente ----------------------
    '--------------------------------------------------------------
    If Tran% = 1 Then
       Dessin.ForeColor = CouleurTan&
@@ -2600,7 +2600,7 @@ Private Sub TraceCourbe()
       Select Case Expr%
       Case 1 'explicite
         ' -----------------------------------------
-        ' calcul de la dérivée F'(Xo) ou R'(TETAo)
+        ' calcul de la dÃ©rivÃ©e F'(Xo) ou R'(TETAo)
         ' -----------------------------------------
         X = Xpar
         vvar$(1) = LTrim$(Format(X, "0.000000"))
@@ -2622,17 +2622,17 @@ Private Sub TraceCourbe()
         Select Case Coor%
             Case 1
                 ' ------------------------
-                ' coordonnées cartésiennes
+                ' coordonnÃ©es cartÃ©siennes
                 ' ------------------------
                 ' Y = F'(Xo)*X - F'(Xo)*Xo + Yo
                 atan = fprim
                 btan = Ypar - atan * Xpar
             Case 2
                 ' --------------------
-                ' coordonnées polaires
+                ' coordonnÃ©es polaires
                 ' --------------------
                 ' denom = R'(TETAo)*cos(TETAo) - R(TETAo)*sin(TETAo)
-                ' Y = (1/denom)*{[R'(TETAo)*sin(TETAo)+R(TETAo)*cos(TETAo)]*X-R²(TETAo)}
+                ' Y = (1/denom)*{[R'(TETAo)*sin(TETAo)+R(TETAo)*cos(TETAo)]*X-RÂ²(TETAo)}
                 denom = fprim * Cos(Xpar) - Ypar * Sin(Xpar)
                 If Abs(denom) < epsloc Then 'tangente verticale
                     tanvert = True
@@ -2675,11 +2675,11 @@ Private Sub TraceCourbe()
         Dessin.Line (Xdes(Xmit), Ydes(Ymit))-(Xdes(Xmat), Ydes(Ymat))
       Case 2  ' implicite
         ' ---------------------------------------------
-        ' calcul effectué plus loin, au moment du tracé
+        ' calcul effectuÃ© plus loin, au moment du tracÃ©
         ' ---------------------------------------------
-      Case 3  ' paramétrée
+      Case 3  ' paramÃ©trÃ©e
         ' -----------------------------------------
-        ' calcul des dérivées dX/dT(To) et dY/dT(To)
+        ' calcul des dÃ©rivÃ©es dX/dT(To) et dY/dT(To)
         ' -----------------------------------------
         T = Xpar
         vvar$(1) = LTrim$(Format(T, "0.000000"))
@@ -2706,15 +2706,15 @@ Private Sub TraceCourbe()
         ' tangente : y = atan * x + btan :
         ' ----------------------------------------------------------------------
         Select Case Coor%
-            Case 1 ' coordonnées cartésiennes
+            Case 1 ' coordonnÃ©es cartÃ©siennes
                 If Abs(fprimX) < epsloc Then 'tangente verticale
                     tanvert = True
                 Else
                     atan = fprimY / fprimX
                     btan = Y - atan * X
                 End If
-            Case 2 ' coordonnées polaires
-                Message$ = "calcul de la tangente non prévu dans ce cas"
+            Case 2 ' coordonnÃ©es polaires
+                Message$ = "calcul de la tangente non prÃ©vu dans ce cas"
                 MsgBox Message$, 48, "COURBE"
         End Select
         ' -----------------------------------------
@@ -2757,7 +2757,7 @@ Private Sub TraceCourbe()
       End Select
    End If
    '--------------------------------------------------------------
-   '--------- Tracé de la courbe ---------------------------------
+   '--------- TracÃ© de la courbe ---------------------------------
    '--------------------------------------------------------------
    Dessin.ForeColor = CouleurCou&
    Select Case Expr%
@@ -2788,7 +2788,7 @@ Private Sub TraceCourbe()
    Fenetre_Val.Print Space$(50)
    Fenetre_Val.ForeColor = NOIR
    Fenetre_Val.PSet (0, 2500), Fenetre_Val.BackColor
-   Fenetre_Val.Print " Tracé :  "; Int(i% / Imax% * 100); "%    effectué"
+   Fenetre_Val.Print " TracÃ© :  "; Int(i% / Imax% * 100); "%    effectuÃ©"
    i% = i% + 1
    If i% > Imax% Then Exit Do
    Select Case Expr%
@@ -2844,9 +2844,9 @@ Private Sub TraceCourbe()
                         ' calcul de la tangente
                         '-----------------------------
                         Select Case Coor%
-                            Case 1 ' coordonnées cartésiennes
+                            Case 1 ' coordonnÃ©es cartÃ©siennes
                                 ' ----------------------------------
-                                ' 1) calcul de la dérivée dF/dX (Xo)
+                                ' 1) calcul de la dÃ©rivÃ©e dF/dX (Xo)
                                 ' ----------------------------------
                                 X1 = X + epsloc
                                 vvar$(1) = LTrim$(Format(X1, "0.000000"))
@@ -2856,7 +2856,7 @@ Private Sub TraceCourbe()
                                 ZX = CSng(SorVar2$)
                                 fprimX = (ZX - Z) / epsloc  ' dF/dX(Xo)
                                 ' ----------------------------------
-                                ' 2) calcul de la dérivée dF/dY (Xo)
+                                ' 2) calcul de la dÃ©rivÃ©e dF/dY (Xo)
                                 ' ----------------------------------
                                 Y1 = Y + epsloc
                                 vvar$(1) = LTrim$(Format(X, "0.000000"))
@@ -2907,8 +2907,8 @@ Private Sub TraceCourbe()
                                     End If
                                 End If
                                 Dessin.Line (Xdes(Xmit), Ydes(Ymit))-(Xdes(Xmat), Ydes(Ymat))
-                            Case 2 ' coordonnées polaires
-                                Message$ = "calcul de la tangente non prévu dans ce cas"
+                            Case 2 ' coordonnÃ©es polaires
+                                Message$ = "calcul de la tangente non prÃ©vu dans ce cas"
                                 MsgBox Message$, 48, "COURBE"
                         End Select
                     End If
@@ -2937,8 +2937,8 @@ Private Sub TraceCourbe()
    End Select
    If Erreur = True Then Exit Do
    'SE%=0 : point dans le cadre
-   'SE%=1 : point impossible à calculer, erreur
-   'SE%=2 : point calculé mais hors cadre
+   'SE%=1 : point impossible Ã  calculer, erreur
+   'SE%=2 : point calculÃ© mais hors cadre
    If SE% <> 1 Then
       If X > Xmax Or X < Xmin Or Y > Ymax Or Y < Ymin Then
             SE% = 2
@@ -2988,7 +2988,7 @@ Traite_Erreurs:
          SE% = 1
          Resume Next
       Case Else
-         Message$ = "Erreur n° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
+         Message$ = "Erreur nÂ° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
          MsgBox Message$, 48, "COURBE"
          Exit Sub
    End Select
@@ -3004,24 +3004,24 @@ Private Sub TraceCouRegreLin()
    mnuImprimer.Enabled = False
    mnuOuvrir.Enabled = False
    '-----------------------------------------------------------------
-   '-----------     Paramètres pour l'affichage       ---------------
-   '-----------   non réglables par l'utilisateur     ---------------
+   '-----------     ParamÃ¨tres pour l'affichage       ---------------
+   '-----------   non rÃ©glables par l'utilisateur     ---------------
    '-----------------------------------------------------------------
    LX% = Dessin.ScaleWidth
    LY% = Dessin.ScaleHeight
-   ' Facteur d'échelle
+   ' Facteur d'Ã©chelle
    FE = LY% / LX%
    Ymax = FE * (Xmax - Xmin) + Ymin
    '-----------------------------------------------------------------
-   '----------- Déterminations de différentes valeurs ---------------
-   '-----------             pour le tracé             ---------------
+   '----------- DÃ©terminations de diffÃ©rentes valeurs ---------------
+   '-----------             pour le tracÃ©             ---------------
    '-----------------------------------------------------------------
    If NbPtsReLin% < 2 Then
-      MsgBox "Le nombre de points doit être supérieur ou égal à 2 !", 48, "COURBE"
+      MsgBox "Le nombre de points doit Ãªtre supÃ©rieur ou Ã©gal Ã  2 !", 48, "COURBE"
    End If
    AX = Xmax - Xmin
    If AX < 0 Then
-      MsgBox "Xmax doit être supérieur à Xmin !", 48, "COURBE"
+      MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin !", 48, "COURBE"
       Exit Sub
    End If
    AY = AX * FE
@@ -3031,14 +3031,14 @@ Private Sub TraceCouRegreLin()
    RX = 1 / MX
    RY = -1 / MY
    '--------------------------------------------------------------
-   '--------- Effacer le dessin précédent ------------------------
+   '--------- Effacer le dessin prÃ©cÃ©dent ------------------------
    '--------------------------------------------------------------
    If Gap% = 1 Then
       Dessin.Picture = LoadPicture()
    End If
    On Error GoTo Traite_ErreursRL
    '--------------------------------------------------------------
-   '--------- Tracé du cadre et des axes -------------------------
+   '--------- TracÃ© du cadre et des axes -------------------------
    '--------------------------------------------------------------
    
    If Trac% = 1 Then
@@ -3062,7 +3062,7 @@ Private Sub TraceCouRegreLin()
    '--------------------------------------------------------------
    If Grax% = 1 Or Grac% = 1 Or Tric% = 1 Then Call GraduAx
    '--------------------------------------------------------------
-   '--------- Tracé des points --------------------------
+   '--------- TracÃ© des points --------------------------
    '--------------------------------------------------------------
    LG% = Int((LX% + LY%) / 2)
    Dessin.ForeColor = CouleurPts&
@@ -3071,7 +3071,7 @@ Private Sub TraceCouRegreLin()
       Dessin.Line (Xdes(Xrl(i%)), Ydes(Yrl(i%)) - 0.01 * LG%)-(Xdes(Xrl(i%)), Ydes(Yrl(i%)) + 0.01 * LG%)
    Next i%
    '--------------------------------------------------------------
-   '--------- Tracé de la courbe ---------------------------------
+   '--------- TracÃ© de la courbe ---------------------------------
    '--------------------------------------------------------------
    Dessin.ForeColor = CouleurCou&
    X = Xmin - RX
@@ -3088,7 +3088,7 @@ Private Sub TraceCouRegreLin()
       Fenetre_Val.Print Space$(50)
       Fenetre_Val.ForeColor = NOIR
       Fenetre_Val.PSet (0, 2500), Fenetre_Val.BackColor
-      Fenetre_Val.Print " Tracé :  "; Int((X - Xmin) / AX * 100); "%    effectué"
+      Fenetre_Val.Print " TracÃ© :  "; Int((X - Xmin) / AX * 100); "%    effectuÃ©"
       X = X + RX
       If X > Xmax Then Exit Do
       ' *************************************************
@@ -3098,8 +3098,8 @@ Private Sub TraceCouRegreLin()
       ' *************************************************
       If Erreur = True Then Exit Do
       'SE%=0 : point dans le cadre
-      'SE%=1 : point impossible à calculer, erreur
-      'SE%=2 : point calculé mais hors cadre
+      'SE%=1 : point impossible Ã  calculer, erreur
+      'SE%=2 : point calculÃ© mais hors cadre
       If SE% <> 1 Then
          If Y > Ymax Or Y < Ymin Then
                SE% = 2
@@ -3148,7 +3148,7 @@ Traite_ErreursRL:
       SE% = 1
       Resume Next
    Case Else
-      Message$ = "Erreur n° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
+      Message$ = "Erreur nÂ° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
       MsgBox Message$, 48, "COURBE"
       Exit Sub
    End Select
@@ -3163,26 +3163,26 @@ Private Sub TraceCouSpline()
    mnuImprimer.Enabled = False
    mnuOuvrir.Enabled = False
    '-----------------------------------------------------------------
-   '-----------     Paramètres pour l'affichage       ---------------
-   '-----------   non réglables par l'utilisateur     ---------------
+   '-----------     ParamÃ¨tres pour l'affichage       ---------------
+   '-----------   non rÃ©glables par l'utilisateur     ---------------
    '-----------------------------------------------------------------
    LX% = Dessin.ScaleWidth
    LY% = Dessin.ScaleHeight
-   ' Facteur d'échelle
+   ' Facteur d'Ã©chelle
    FE = LY% / LX%
    If Ech% = 1 Then
        Ymax = FE * (Xmax - Xmin) + Ymin
    End If
    '-----------------------------------------------------------------
-   '----------- Déterminations de différentes valeurs ---------------
-   '-----------             pour le tracé             ---------------
+   '----------- DÃ©terminations de diffÃ©rentes valeurs ---------------
+   '-----------             pour le tracÃ©             ---------------
    '-----------------------------------------------------------------
    If NbPtsSp% < 2 Then
-      MsgBox "Le nombre de points doit être supérieur ou égal à 2 !", 48, "InPoLag"
+      MsgBox "Le nombre de points doit Ãªtre supÃ©rieur ou Ã©gal Ã  2 !", 48, "InPoLag"
    End If
    AX = Xmax - Xmin
    If AX < 0 Then
-       MsgBox "Xmax doit être supérieur à Xmin !", 48, "COURBE"
+       MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin !", 48, "COURBE"
        Exit Sub
    End If
    If Ech% = 1 Then
@@ -3191,7 +3191,7 @@ Private Sub TraceCouSpline()
    Else
        AY = Ymax - Ymin
        If AY < 0 Then
-           MsgBox "Ymax doit être supérieur à Ymin !", 48, "COURBE"
+           MsgBox "Ymax doit Ãªtre supÃ©rieur Ã  Ymin !", 48, "COURBE"
            Exit Sub
        End If
    End If
@@ -3200,14 +3200,14 @@ Private Sub TraceCouSpline()
    RX = 1 / MX
    RY = -1 / MY
    '--------------------------------------------------------------
-   '--------- Effacer le dessin précédent ------------------------
+   '--------- Effacer le dessin prÃ©cÃ©dent ------------------------
    '--------------------------------------------------------------
    If Gap% = 1 Then
        Dessin.Picture = LoadPicture()
    End If
    On Error GoTo TraiteErreursSp
    '--------------------------------------------------------------
-   '--------- Tracé du cadre et des axes -------------------------
+   '--------- TracÃ© du cadre et des axes -------------------------
    '--------------------------------------------------------------
    If Trac% = 1 Then               ' tracer le cadre
       Dessin.Line (0, 0)-(0, LY%)
@@ -3230,7 +3230,7 @@ Private Sub TraceCouSpline()
    '--------------------------------------------------------------
    If Grax% = 1 Or Grac% = 1 Or Tric% = 1 Then Call GraduAx
    '--------------------------------------------------------------
-   '--------- Tracé des points -----------------------------------
+   '--------- TracÃ© des points -----------------------------------
    '--------------------------------------------------------------
    LG% = Int((LX% + LY%) / 2)
    Dessin.ForeColor = CouleurPts&
@@ -3239,7 +3239,7 @@ Private Sub TraceCouSpline()
       Dessin.Line (Xdes(Xsp(i%)), Ydes(Ysp(i%)) - 0.01 * LG%)-(Xdes(Xsp(i%)), Ydes(Ysp(i%)) + 0.01 * LG%)
    Next i%
    '--------------------------------------------------------------
-   '--------- Tracé de la courbe ---------------------------------
+   '--------- TracÃ© de la courbe ---------------------------------
    '--------------------------------------------------------------
    Dessin.ForeColor = CouleurCou&
    XminSp = Xsp(1)
@@ -3261,7 +3261,7 @@ Private Sub TraceCouSpline()
       Fenetre_Val.Print Space$(50)
       Fenetre_Val.ForeColor = NOIR
       Fenetre_Val.PSet (0, 2500), Fenetre_Val.BackColor
-      Fenetre_Val.Print " Tracé :  "; Int((X - XminSp) / AXSp * 100); "%    effectué"
+      Fenetre_Val.Print " TracÃ© :  "; Int((X - XminSp) / AXSp * 100); "%    effectuÃ©"
       X = X + RX
       If X > XmaxSp Then Exit Do
       ' ************************************************
@@ -3275,8 +3275,8 @@ Private Sub TraceCouSpline()
       ' ************************************************
       If Erreur = True Then Exit Do
       'SE%=0 : point dans le cadre
-      'SE%=1 : point impossible à calculer, erreur
-      'SE%=2 : point calculé mais hors cadre
+      'SE%=1 : point impossible Ã  calculer, erreur
+      'SE%=2 : point calculÃ© mais hors cadre
       If SE% <> 1 Then
          If X > Xmax Or X < Xmin Or Y > Ymax Or Y < Ymin Then
                SE% = 2
@@ -3325,7 +3325,7 @@ TraiteErreursSp:
          SE% = 1
          Resume Next
       Case Else
-         Message$ = "Erreur n° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
+         Message$ = "Erreur nÂ° " & Str(Err.Number) & " provenant de " & Err.Source & Chr(13) & Err.Description
          MsgBox Message$, 48, "COURBE"
          Exit Sub
    End Select
@@ -3362,7 +3362,7 @@ Public Sub TraceStop()
       mnuTraceStop.Caption = "&Tracer"
       DoFlag = False
    Case False
-      mnuTraceStop.Caption = "&Arrêter le tracé"
+      mnuTraceStop.Caption = "&ArrÃªter le tracÃ©"
       DoFlag = True
       Select Case NumChoisi%
       Case NUMINTEGRALE
