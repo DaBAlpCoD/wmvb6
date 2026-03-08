@@ -19,7 +19,7 @@ Begin VB.Form FenetreVisuS3D
    ScaleHeight     =   7410
    ScaleWidth      =   10080
    Begin VB.CheckBox chkGarder 
-      Caption         =   "Garder tracé précédent"
+      Caption         =   "Garder tracÃ© prÃ©cÃ©dent"
       Height          =   375
       Left            =   7440
       TabIndex        =   3
@@ -96,12 +96,12 @@ Dim FermeVisuS3D%
 Private Sub CalculeS3D()
 ' ******************************************
 ' Surface d'une fonction Z=F(X,Y) en 3D
-' Théoric n°25 p 32
+' ThÃ©oric nÂ°25 p 32
 ' ******************************************
 ' *******************
 ' programme principal
 ' *******************
-' Effacer le dessin précédent
+' Effacer le dessin prÃ©cÃ©dent
 If Gap3D% = 0 Then
    pctVueS3D.Picture = LoadPicture()
 End If
@@ -125,8 +125,8 @@ EcartXp = 0.8 * MidX
 EcartYp = 0.1 * MidY
 MXs3d = Abs(EcartXm + EcartXp) / (Xmax - Xmin)
 '  *********************************************
-'       Tracé en pointillé des contours du
-'  domaine de définition dans le plan horizontal
+'       TracÃ© en pointillÃ© des contours du
+'  domaine de dÃ©finition dans le plan horizontal
 '  *********************************************
 If FenetreSurf3D.chkPlanXOY.Value = 1 Then
    pctVueS3D.DrawStyle = 2
@@ -137,14 +137,14 @@ If FenetreSurf3D.chkPlanXOY.Value = 1 Then
    pctVueS3D.DrawStyle = 0
 End If
 '  ******************************************
-'  Domaine de définition
+'  Domaine de dÃ©finition
 '  ******************************************
 For is3d% = 0 To 2 * NbPasS3D%
    MX%(is3d%) = -10000
    MI%(is3d%) = 10000
 Next is3d%
 '  ****************************************
-'  Tracé
+'  TracÃ©
 '  ****************************************
 On Error GoTo TraiteErreursS3D
 pctVueS3D.ForeColor = FenetreSurf3D.pctColorCourbe.BackColor
@@ -232,8 +232,8 @@ Private Sub mnuTraceStop_Click()
       lblMessage.Caption = ""
       LanceTrace% = False
    Case False
-      mnuTraceStop.Caption = "&Arrêter le tracé"
-      lblMessage.Caption = "Tracé en cours ..."
+      mnuTraceStop.Caption = "&ArrÃªter le tracÃ©"
+      lblMessage.Caption = "TracÃ© en cours ..."
       LanceTrace% = True
       Call CalculeS3D
       pctVueS3D.ForeColor = NOIR
@@ -286,7 +286,7 @@ End Sub
 Private Sub Form_Activate()
    '--------------------------------------------------
    ' *************************************************
-   ' ****       paramètres pour le tracé        ******
+   ' ****       paramÃ¨tres pour le tracÃ©        ******
    ' ****    dans la zone d'image pctVueS3D     ******
    ' *************************************************
    DES3D% = FenetreVisuS3D.pctVueS3D.ScaleWidth
@@ -297,7 +297,7 @@ End Sub
 
 Private Sub LigneCachee()
 '  ********************************************
-'  Ligne cachée
+'  Ligne cachÃ©e
 '  ********************************************
    ks3d% = is3d% - LongPasS3D% * js3d% + NbPasS3D%
    If (CY > MI%(ks3d%)) And (CY <= MX%(ks3d%)) Then
@@ -382,7 +382,7 @@ End Sub
 
 Private Sub PointDeDepart()
 '  ******************************************
-'  Point de départ
+'  Point de dÃ©part
 '  ******************************************
    XP = XM
    YP = YM
@@ -430,8 +430,8 @@ Select Case LanceTrace%
       lblMessage.Caption = ""
       LanceTrace% = False
    Case False
-      mnuTraceStop.Caption = "&Arrêter le tracé"
-      lblMessage.Caption = "Tracé en cours ..."
+      mnuTraceStop.Caption = "&ArrÃªter le tracÃ©"
+      lblMessage.Caption = "TracÃ© en cours ..."
       LanceTrace% = True
       Call CalculeS3D
       pctVueS3D.ForeColor = NOIR
