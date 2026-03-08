@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form FenetreSysNonLin 
-   Caption         =   "Système non linéaire"
+   Caption         =   "SystÃ¨me non linÃ©aire"
    ClientHeight    =   5880
    ClientLeft      =   210
    ClientTop       =   990
@@ -110,7 +110,7 @@ Begin VB.Form FenetreSysNonLin
       Width           =   1095
    End
    Begin VB.Label lblNbEq 
-      Caption         =   "Nombre d'équations :"
+      Caption         =   "Nombre d'Ã©quations :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -127,7 +127,7 @@ Begin VB.Form FenetreSysNonLin
       Width           =   1815
    End
    Begin VB.Label lblMmat 
-      Caption         =   "Système :"
+      Caption         =   "SystÃ¨me :"
       Height          =   255
       Left            =   120
       TabIndex        =   3
@@ -166,14 +166,14 @@ Private Sub Form_Load()
    pctExplic.Cls
    pctExplic.ForeColor = BLEU
    pctExplic.Font.underline = False
-   pctExplic.Print " Système de n équations non linéaires à n inconnues :"
+   pctExplic.Print " SystÃ¨me de n Ã©quations non linÃ©aires Ã  n inconnues :"
    pctExplic.Print
    pctExplic.Print " F1[U(1),U(2),...,U(n)] = 0"
    pctExplic.Print " F2[U(1),U(2),...,U(n)] = 0"
    pctExplic.Print " . . . . . . . . . . ."
    pctExplic.Print " Fn[U(1),U(2),...,U(n)] = 0"
    pctExplic.Print
-   pctExplic.Print " Où U(1),U(2),...,U(n) sont les inconnues"
+   pctExplic.Print " OÃ¹ U(1),U(2),...,U(n) sont les inconnues"
    pctExplic.Print " et F1,F2,...,Fn des fonctions de ces inconnues."
    '***************************************
    NbEq% = 3
@@ -194,7 +194,7 @@ Private Sub Form_Load()
    gridUpar.FixedAlignment(1) = 2
    gridUpar.ColWidth(1) = 1000
    ' ********************************
-   ' numérotation 1ères lignes
+   ' numÃ©rotation 1Ã¨res lignes
    ' ********************************
    gridSENL.Row = 0
    gridSENL.Col = 1
@@ -203,7 +203,7 @@ Private Sub Form_Load()
    gridUpar.Col = 1
    gridUpar.Text = ""
    ' *********************************
-   ' numérotation 1ères colonnes
+   ' numÃ©rotation 1Ã¨res colonnes
    ' *********************************
    gridSENL.Col = 0
    gridUpar.Col = 0
@@ -214,7 +214,7 @@ Private Sub Form_Load()
       gridUpar.Text = "U(" & i% & ") ="
    Next i%
    ' ****************************************
-   '       Valeurs par défaut
+   '       Valeurs par dÃ©faut
    ' ****************************************
    SENL$(1) = "6*U(1)+U(2)*U(3)+U(3)-15"
    SENL$(2) = "U(1)^2+7*U(2)-U(3)-12"
@@ -226,7 +226,7 @@ Private Sub Form_Load()
    Upar(3) = 0
    ' -------------
    ' *****************************************
-   ' placement des valeurs par défaut de SENL$
+   ' placement des valeurs par dÃ©faut de SENL$
    ' *****************************************
    gridSENL.Col = 1
    For i% = 1 To NbEq%
@@ -316,13 +316,13 @@ Public Sub OuvreMat()
    On Error GoTo Traite_ErreursOuvMat
    Maths.ctrlCMDialog.Filter = "Matrice (*.mat)|*.mat"
    ' nom de fichier et chemin doivent exister
-   ' sinon apparait un message d'erreur spécifique
+   ' sinon apparait un message d'erreur spÃ©cifique
    Maths.ctrlCMDialog.Flags = &H1000& Or &H800&
    Maths.ctrlCMDialog.CancelError = True
    Maths.ctrlCMDialog.Action = 1
    '-----------------------------------------------------
-   ' Ouverture et lecture du fichier d'éléments de matrice
-   ' et écriture de ces éléments dans SENL(i%,j%)
+   ' Ouverture et lecture du fichier d'Ã©lÃ©ments de matrice
+   ' et Ã©criture de ces Ã©lÃ©ments dans SENL(i%,j%)
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Input As #1
    Input #1, OrdreMatLoc%
@@ -344,7 +344,7 @@ Public Sub OuvreMat()
    Erase Upar
    ReDim Upar(1 To NbEq%)
    ' *************************************************
-   ' lecture des éléments de la matrice
+   ' lecture des Ã©lÃ©ments de la matrice
    ' *************************************************
    For i% = 1 To NbEq%
       If NoSNLMatVec$ = "Y" Then
@@ -406,7 +406,7 @@ Public Sub EnregMat()
    ReDim Upar(1 To NbEq%)
    ReDim Vvec(1 To NbEq%)
    ' *****************************************
-   ' affectation de leurs valeurs aux éléments
+   ' affectation de leurs valeurs aux Ã©lÃ©ments
    ' des matrices et vecteurs
    ' *****************************************
    For i% = 1 To NbEq%
@@ -442,8 +442,8 @@ Public Sub EnregMat()
    Next i%
    ' *************************************************
    '-----------------------------------------------------
-   ' Création du fichier d'éléments de matrice
-   ' et écriture de ces éléments dans le fichier
+   ' CrÃ©ation du fichier d'Ã©lÃ©ments de matrice
+   ' et Ã©criture de ces Ã©lÃ©ments dans le fichier
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Output As #1
       Write #1, NbEq%
@@ -484,12 +484,12 @@ Private Sub txtNbEq_Change()
    End If
    If NbEq% < 1 Then
       Beep
-      MsgBox "le nombre d'équations doit être supérieur ou égal à 1 !", 48, "SYSNONLIN"
+      MsgBox "le nombre d'Ã©quations doit Ãªtre supÃ©rieur ou Ã©gal Ã  1 !", 48, "SYSNONLIN"
       NbEq% = 1
       txtNbEq.Text = "1"
    ElseIf NbEq% > 30000 Then
       Beep
-      MsgBox "le nombre d'équations doit être inférieur à 30000 !", 48, "SYSNONLIN"
+      MsgBox "le nombre d'Ã©quations doit Ãªtre infÃ©rieur Ã  30000 !", 48, "SYSNONLIN"
       NbEq% = 1
    End If
    gridSENL.Rows = NbEq% + 1
@@ -502,24 +502,24 @@ Private Sub txtNbEq_Change()
    gridSENL.FixedAlignment(1) = 2
    gridSENL.ColWidth(1) = 8000
    ' ********************************
-   ' renumérotation 1ère ligne SENL
+   ' renumÃ©rotation 1Ã¨re ligne SENL
    gridSENL.Row = 0
    gridSENL.Col = 1
    gridSENL.Text = ""
    ' ********************************
-   ' renumérotation 1ère colonne SENL
+   ' renumÃ©rotation 1Ã¨re colonne SENL
    gridSENL.Col = 0
    For i% = 1 To NbEq%
       gridSENL.Row = i%
       gridSENL.Text = "F" & i% & "="
    Next i%
    ' ********************************
-   ' renumérotation 1ère ligne Upar
+   ' renumÃ©rotation 1Ã¨re ligne Upar
    gridUpar.Row = 0
    gridUpar.Col = 1
    gridUpar.Text = ""
    ' ********************************
-   ' renumérotation 1ère colonne Upar
+   ' renumÃ©rotation 1Ã¨re colonne Upar
    gridUpar.Col = 0
    For i% = 1 To NbEq%
       gridUpar.Row = i%
@@ -532,16 +532,16 @@ End Sub
 
 Public Sub SolSysNonLin()
    '----------------------------------------------------------
-   ' Résolution d'un système non linéaire
-   ' de NbEq% équations à NbEq% inconnues
+   ' RÃ©solution d'un systÃ¨me non linÃ©aire
+   ' de NbEq% Ã©quations Ã  NbEq% inconnues
    ' ---------------------------------------------------------
-   ' Système : F1[UApar(1),UApar(2),...,UApar(n)]=0
+   ' SystÃ¨me : F1[UApar(1),UApar(2),...,UApar(n)]=0
    '           F2[UApar(1),UApar(2),...,UApar(n)]=0
    '           ..................
    '           Fn[UApar(1),UApar(2),...,UApar(n)]=0
    '
    ' On cherche les Upar(i) = UApar(i) + Uvec(i)
-   ' qui améliorent le système.
+   ' qui amÃ©liorent le systÃ¨me.
    '
    ' On pose :
    '           Mmat(i,j) = dFi/dUj
@@ -579,19 +579,19 @@ Public Sub SolSysNonLin()
    gridUpar.FixedAlignment(1) = 2
    gridUpar.ColWidth(1) = 1000
    ' ********************************
-   ' renumérotation 1ère ligne Upar
+   ' renumÃ©rotation 1Ã¨re ligne Upar
    gridUpar.Row = 0
    gridUpar.Col = 1
    gridUpar.Text = ""
    ' ********************************
-   ' renumérotation 1ère colonne Upar
+   ' renumÃ©rotation 1Ã¨re colonne Upar
    gridUpar.Col = 0
    For i% = 1 To NbEq%
       gridUpar.Row = i%
       gridUpar.Text = "U(" & i% & ") ="
    Next i%
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de SENL$
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de SENL$
    ' *************************************************
    gridSENL.Col = 1
    For i% = 1 To NbEq%
@@ -616,8 +616,8 @@ Public Sub SolSysNonLin()
    Converge = False
    ' *************************************************
    ' Boucle d'essais de calcul des Upar.
-   ' Si le premier essai donne un système indéterminé,
-   ' on prend d'autres valeurs de départ pour les Upar
+   ' Si le premier essai donne un systÃ¨me indÃ©terminÃ©,
+   ' on prend d'autres valeurs de dÃ©part pour les Upar
    ' *************************************************
    Do
       NbEssai% = NbEssai% + 1
@@ -677,7 +677,7 @@ Public Sub SolSysNonLin()
          Call TrianMat
          If Erreur = True Then
             If NbEssai% = NbEssaiMax% Then
-               Message$ = "Système indéterminé"
+               Message$ = "SystÃ¨me indÃ©terminÃ©"
                MsgBox Message$, 48
                Exit Sub
             Else
@@ -713,7 +713,7 @@ Public Sub SolSysNonLin()
          ' -----------------------------
          If NbAf% = NbAfMax% Then
             If NbEssai% = NbEssaiMax% Then
-               Message$ = "Pas de convergence après" & NbAfMax% & "itérations."
+               Message$ = "Pas de convergence aprÃ¨s" & NbAfMax% & "itÃ©rations."
                MsgBox Message$, 48
                Exit Sub
             Else
@@ -727,7 +727,7 @@ Public Sub SolSysNonLin()
       End If
    Loop
    ' *************************************************
-   ' affichage des éléments de Upar
+   ' affichage des Ã©lÃ©ments de Upar
    ' *************************************************
    gridUpar.Col = 1
    For i% = 1 To NbEq%
@@ -741,7 +741,7 @@ Public Sub SolSysNonLin()
 Traite_ErreursSysNonLin:
 Select Case Err
       Case 13
-         Message$ = "Erreur dans la frappe des données"
+         Message$ = "Erreur dans la frappe des donnÃ©es"
          MsgBox Message$, 48
          Exit Sub
       Case Else
