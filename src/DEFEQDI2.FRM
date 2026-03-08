@@ -1,6 +1,6 @@
 VERSION 5.00
 Begin VB.Form FenetreDefEqDif2 
-   Caption         =   "Définition de la courbe [équation différentielle du second ordre]"
+   Caption         =   "DÃ©finition de la courbe [Ã©quation diffÃ©rentielle du second ordre]"
    ClientHeight    =   6705
    ClientLeft      =   495
    ClientTop       =   1020
@@ -426,7 +426,7 @@ Begin VB.Form FenetreDefEqDif2
       Width           =   1695
    End
    Begin VB.CheckBox MemeEchelle 
-      Caption         =   "même echelle sur les deux axes"
+      Caption         =   "mÃªme echelle sur les deux axes"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -551,7 +551,7 @@ Begin VB.Form FenetreDefEqDif2
       Width           =   855
    End
    Begin VB.Frame CadreGarder 
-      Caption         =   "Tracés précédents"
+      Caption         =   "TracÃ©s prÃ©cÃ©dents"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -716,7 +716,7 @@ Begin VB.Form FenetreDefEqDif2
       Width           =   3015
    End
    Begin VB.Label EtiquetteDefiniCour2 
-      Caption         =   "d²Y/dX² = F(X,Y,dY/dX) = F(X,Y,Z)   avec Z=dY/dX"
+      Caption         =   "dÂ²Y/dXÂ² = F(X,Y,dY/dX) = F(X,Y,Z)   avec Z=dY/dX"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -809,7 +809,7 @@ Begin VB.Form FenetreDefEqDif2
       Width           =   975
    End
    Begin VB.Label EtiquetteDefiniCour 
-      Caption         =   "Fonction définissant la courbe :"
+      Caption         =   "Fonction dÃ©finissant la courbe :"
       Height          =   255
       Left            =   240
       TabIndex        =   25
@@ -868,7 +868,7 @@ Begin VB.Form FenetreDefEqDif2
       Width           =   495
    End
    Begin VB.Label EtiquetteLimitesY 
-      Caption         =   "Limites de l'axe des ordonnées "
+      Caption         =   "Limites de l'axe des ordonnÃ©es "
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -1041,7 +1041,7 @@ Begin VB.Form FenetreDefEqDif2
       End
    End
    Begin VB.Menu mnuDefPts 
-      Caption         =   "&Définir un ensemble de points"
+      Caption         =   "&DÃ©finir un ensemble de points"
    End
    Begin VB.Menu mnuTracer 
       Caption         =   "&Tracer..."
@@ -1218,7 +1218,7 @@ End Sub
 
 Private Sub Form_Load()
    '-----------------------------------------------------------------
-   '-----------        Valeurs par défaut             ---------------
+   '-----------        Valeurs par dÃ©faut             ---------------
    '-----------      de certaines variables           ---------------
    '-----------------------------------------------------------------
    DoFlag = False
@@ -1240,12 +1240,12 @@ Private Sub Form_Load()
    Yvnd = 0
    Zvnd = 1
    TextVar2$ = "Y"
-   ' La solution de d²Y/dX² = Y avec X0 = 0, Y0 = 0 et Z0 = 1
+   ' La solution de dÂ²Y/dXÂ² = Y avec X0 = 0, Y0 = 0 et Z0 = 1
    ' est : Y = sh(X)
    CouleurCou& = ROUGE
    CouleurPts& = BLEU
    '-----------------------------------------------------------------
-   '-----------        Valeurs par défaut             ---------------
+   '-----------        Valeurs par dÃ©faut             ---------------
    '-----------        d'autres variables             ---------------
    '-----------------------------------------------------------------
    LX% = Dessin.ScaleWidth
@@ -1299,8 +1299,8 @@ Private Sub mnuEnrPoints_Click()
    Maths.ctrlCMDialog.Flags = &H2&
    Maths.ctrlCMDialog.Action = 2
    '-----------------------------------------------------
-   ' Création du fichier de points
-   ' et écriture de leurs coordonnées Xpt() et Ypt()
+   ' CrÃ©ation du fichier de points
+   ' et Ã©criture de leurs coordonnÃ©es Xpt() et Ypt()
    ' ou autres...
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Output As #1
@@ -1346,13 +1346,13 @@ Private Sub mnuOuvPoints_Click()
    On Error GoTo Traite_ErreursOuvPts
    Maths.ctrlCMDialog.Filter = "Points (*.xy)|*.xy"
    ' nom de fichier et chemin doivent exister
-   ' sinon apparait un message d'erreur spécifique
+   ' sinon apparait un message d'erreur spÃ©cifique
    Maths.ctrlCMDialog.Flags = &H1000& Or &H800&
    Maths.ctrlCMDialog.CancelError = True
    Maths.ctrlCMDialog.Action = 1
    '-----------------------------------------------------
    ' Ouverture et lecture du fichier de points
-   ' et écriture de leurs coordonnées dans Xpt() et Ypt()
+   ' et Ã©criture de leurs coordonnÃ©es dans Xpt() et Ypt()
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Input As #1
    Input #1, NbPts%
@@ -1366,13 +1366,13 @@ Private Sub mnuOuvPoints_Click()
    '-----------------------------------------------------
    ' activation de certaines cases
    '-------------------------------
-   EtiquettePoints.ForeColor = &H80000012     'Texte activé
-   PointsTracer.ForeColor = &H80000012        'Texte activé
+   EtiquettePoints.ForeColor = &H80000012     'Texte activÃ©
+   PointsTracer.ForeColor = &H80000012        'Texte activÃ©
    PointsTracer.Value = 1                         'Checked
-   PointsRelier.ForeColor = &H80000012        'Texte activé
+   PointsRelier.ForeColor = &H80000012        'Texte activÃ©
    PointsRelier.Value = 0                         'Unchecked
-   EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activé
-   EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activé
+   EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activÃ©
+   EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activÃ©
    '-----------------------------------------------------
    Exit Sub
 Traite_ErreursOuvPts:
@@ -1395,10 +1395,10 @@ End Sub
 
 Private Sub mnuTracer_Click()
    '-----------------------------------------------------
-   '---------   Vérifications avant   -------------------
-   '--------- fermeture de la fenêtre -------------------
+   '---------   VÃ©rifications avant   -------------------
+   '--------- fermeture de la fenÃªtre -------------------
    '-----------------------------------------------------
-   '-----  1- Bornes écrites correctement  --------------
+   '-----  1- Bornes Ã©crites correctement  --------------
    On Error Resume Next
    Xmax = CSng(DefXmax.Text)
    If Err.Number <> 0 Then
@@ -1430,30 +1430,30 @@ Private Sub mnuTracer_Click()
       AY = Ymax - Ymin
    End If
    If AX < 0 Then
-      MsgBox "Xmax doit être supérieur à Xmin", 48, "COURBE"
+      MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin", 48, "COURBE"
       Exit Sub
    ElseIf AY < 0 Then
-      MsgBox "Ymax doit être supérieur à Ymin", 48, "COURBE"
+      MsgBox "Ymax doit Ãªtre supÃ©rieur Ã  Ymin", 48, "COURBE"
       Exit Sub
    End If
    '-----------------------------------------------------
    '--------         Ouverture           ----------------
-   '--------  des fenêtres pour le tracé ----------------
+   '--------  des fenÃªtres pour le tracÃ© ----------------
    '-----------------------------------------------------
    Fenetre_Prin.Show
    Fenetre_Val.Show
    Dessin.Show
    '--------------------------------------------------------------
    '--------- Affichage de la formule ----------------------------
-   '---------     définissant la courbe        -------------------
+   '---------     dÃ©finissant la courbe        -------------------
    '--------------------------------------------------------------
-   Fenetre_Prin.Caption = "Equation différentielle du second ordre"
+   Fenetre_Prin.Caption = "Equation diffÃ©rentielle du second ordre"
    Fenetre_Prin.LabelExplications.ForeColor = MAGENTA
-   Fenetre_Prin.LabelExplications.Caption = "Courbe Y(X) solution de l'équation différentielle du second ordre" & Chr$(13) & " d²Y/dX² = F(X,Y,Z=dY/dX).    Résolution par la méthode d'EULER."
+   Fenetre_Prin.LabelExplications.Caption = "Courbe Y(X) solution de l'Ã©quation diffÃ©rentielle du second ordre" & Chr$(13) & " dÂ²Y/dXÂ² = F(X,Y,Z=dY/dX).    RÃ©solution par la mÃ©thode d'EULER."
    Fenetre_Val.Cls
    Fenetre_Val.ForeColor = CouleurCou&
    Fenetre_Val.lblFormule.ForeColor = CouleurCou&
-   Fenetre_Val.lblFormule.Caption = "d²Y/dX² = " & TextVar2$
+   Fenetre_Val.lblFormule.Caption = "dÂ²Y/dXÂ² = " & TextVar2$
    Fenetre_Val.lblNote.ForeColor = CouleurCou&
    TexteNote$ = "Point particulier : X0 = "
    TexteNote$ = TexteNote$ & Format(DefXvnd.Text, "0.0000")
