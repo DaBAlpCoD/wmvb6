@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form FenetrePolynome 
-   Caption         =   "Polynômes"
+   Caption         =   "PolynÃ´mes"
    ClientHeight    =   6480
    ClientLeft      =   300
    ClientTop       =   630
@@ -155,7 +155,7 @@ Begin VB.Form FenetrePolynome
       Width           =   615
    End
    Begin VB.Label lblDegR 
-      Caption         =   "Degré :"
+      Caption         =   "DegrÃ© :"
       Height          =   255
       Left            =   6480
       TabIndex        =   27
@@ -163,7 +163,7 @@ Begin VB.Form FenetrePolynome
       Width           =   735
    End
    Begin VB.Label lblRpol 
-      Caption         =   "Polynôme R reste de la division de P par P2 :"
+      Caption         =   "PolynÃ´me R reste de la division de P par P2 :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -286,7 +286,7 @@ Begin VB.Form FenetrePolynome
       Width           =   1215
    End
    Begin VB.Label lblDegQ 
-      Caption         =   "Degré :"
+      Caption         =   "DegrÃ© :"
       Height          =   255
       Left            =   4200
       TabIndex        =   16
@@ -310,7 +310,7 @@ Begin VB.Form FenetrePolynome
       Width           =   615
    End
    Begin VB.Label lblDegPP 
-      Caption         =   "Degré :"
+      Caption         =   "DegrÃ© :"
       Height          =   255
       Left            =   1920
       TabIndex        =   21
@@ -318,7 +318,7 @@ Begin VB.Form FenetrePolynome
       Width           =   735
    End
    Begin VB.Label lblDegP2 
-      Caption         =   "Degré :"
+      Caption         =   "DegrÃ© :"
       Height          =   255
       Left            =   6480
       TabIndex        =   20
@@ -342,7 +342,7 @@ Begin VB.Form FenetrePolynome
       Width           =   1215
    End
    Begin VB.Label lblQpol 
-      Caption         =   "Polynôme Q quotient de P et P2 :"
+      Caption         =   "PolynÃ´me Q quotient de P et P2 :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -359,7 +359,7 @@ Begin VB.Form FenetrePolynome
       Width           =   1815
    End
    Begin VB.Label lblPPpol 
-      Caption         =   "Polynôme PP produit de P et P2 :"
+      Caption         =   "PolynÃ´me PP produit de P et P2 :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -376,7 +376,7 @@ Begin VB.Form FenetrePolynome
       Width           =   1695
    End
    Begin VB.Label lblP2pol 
-      Caption         =   "Polynôme P2 :"
+      Caption         =   "PolynÃ´me P2 :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -393,7 +393,7 @@ Begin VB.Form FenetrePolynome
       Width           =   1335
    End
    Begin VB.Label lblDegP 
-      Caption         =   "Degré : n ="
+      Caption         =   "DegrÃ© : n ="
       Height          =   255
       Left            =   4200
       TabIndex        =   3
@@ -401,7 +401,7 @@ Begin VB.Form FenetrePolynome
       Width           =   975
    End
    Begin VB.Label lblPpol 
-      Caption         =   "Polynôme P :"
+      Caption         =   "PolynÃ´me P :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -422,28 +422,28 @@ Begin VB.Form FenetrePolynome
       Begin VB.Menu mnuOuvrir 
          Caption         =   "&Ouvrir..."
          Begin VB.Menu mnuOuvrirP 
-            Caption         =   "Polynôme P"
+            Caption         =   "PolynÃ´me P"
          End
          Begin VB.Menu mnuOuvrirP2 
-            Caption         =   "Polynôme P2"
+            Caption         =   "PolynÃ´me P2"
          End
       End
       Begin VB.Menu mnuEnreg 
          Caption         =   "&Enregistrer..."
          Begin VB.Menu mnuEnregP 
-            Caption         =   "Polynôme P"
+            Caption         =   "PolynÃ´me P"
          End
          Begin VB.Menu mnuEnregP2 
-            Caption         =   "Polynôme P2"
+            Caption         =   "PolynÃ´me P2"
          End
          Begin VB.Menu mnuEnregPP 
-            Caption         =   "Polynôme PP"
+            Caption         =   "PolynÃ´me PP"
          End
          Begin VB.Menu mnuEnregQ 
-            Caption         =   "Polynôme Q"
+            Caption         =   "PolynÃ´me Q"
          End
          Begin VB.Menu mnuEnregR 
-            Caption         =   "Poynôme R"
+            Caption         =   "PoynÃ´me R"
          End
       End
    End
@@ -452,13 +452,13 @@ Begin VB.Form FenetrePolynome
       Begin VB.Menu mnuRacines 
          Caption         =   "&Racines"
          Begin VB.Menu mnuRacinesExactes 
-            Caption         =   "Méthodes exactes (n<5)"
+            Caption         =   "MÃ©thodes exactes (n<5)"
          End
          Begin VB.Menu mnuRacinesMatComp 
-            Caption         =   "Méthode de la matrice compagne (n>2)"
+            Caption         =   "MÃ©thode de la matrice compagne (n>2)"
          End
          Begin VB.Menu mnuRacinesBair 
-            Caption         =   "Méthode de BAIRSTOW"
+            Caption         =   "MÃ©thode de BAIRSTOW"
          End
       End
       Begin VB.Menu mnuValeur 
@@ -514,7 +514,7 @@ Private Sub Form_Activate()
    FenetrePolynome.gridRacines.Rows = DegPpol% + 1
    FenetrePolynome.gridRacines.Cols = 3
    ' ********************************
-   ' numérotation 1ères colonnes
+   ' numÃ©rotation 1Ã¨res colonnes
    ' ********************************
    FenetrePolynome.gridPpol.Col = 0
    For i% = 0 To DegPpol%
@@ -568,16 +568,16 @@ Private Sub Form_Activate()
    Next i%
    ' ****************************************
    ' ne pas placer cette ligne avant le placement des
-   ' valeurs de Ppol car elle provoque un évènement
+   ' valeurs de Ppol car elle provoque un Ã©vÃ¨nement
    ' txtValDegP_Change qui provoque un ReDim Ppol et
-   ' remet les valeurs de Ppol à 0
+   ' remet les valeurs de Ppol Ã  0
    FenetrePolynome.txtValDegP.Text = Format(DegPpol%, "0")
    ' ******************************************
 End Sub
 
 Private Sub Form_Deactivate()
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de Ppol
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de Ppol
    ' *************************************************
    FenetrePolynome.gridPpol.Col = 1
    For i% = 0 To DegPpol%
@@ -590,7 +590,7 @@ Private Sub Form_Deactivate()
       End If
    Next i%
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de P2pol
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de P2pol
    ' *************************************************
    FenetrePolynome.gridP2pol.Col = 1
    For i% = 0 To DegP2pol%
@@ -641,7 +641,7 @@ Private Sub Form_Load()
    FenetrePolynome.gridRacines.Cols = 3
    ' ********************************
    ' largeur des colonnes et
-   ' mentions dans les 1ères lignes
+   ' mentions dans les 1Ã¨res lignes
    ' ********************************
    FenetrePolynome.gridPpol.FixedAlignment(0) = 2
    FenetrePolynome.gridPpol.FixedAlignment(1) = 2
@@ -701,13 +701,13 @@ Private Sub Form_Load()
    FenetrePolynome.gridRacines.ColWidth(2) = 1400
    FenetrePolynome.gridRacines.Row = 0
    FenetrePolynome.gridRacines.Col = 0
-   FenetrePolynome.gridRacines.Text = "N°"
+   FenetrePolynome.gridRacines.Text = "NÂ°"
    FenetrePolynome.gridRacines.Col = 1
-   FenetrePolynome.gridRacines.Text = "Partie réelle"
+   FenetrePolynome.gridRacines.Text = "Partie rÃ©elle"
    FenetrePolynome.gridRacines.Col = 2
    FenetrePolynome.gridRacines.Text = "et imaginaire"
    ' ********************************
-   ' numérotation 1ères colonnes
+   ' numÃ©rotation 1Ã¨res colonnes
    ' ********************************
    FenetrePolynome.gridPpol.Col = 0
    For i% = 0 To DegPpol%
@@ -739,7 +739,7 @@ Private Sub Form_Load()
       FenetrePolynome.gridRacines.Text = Format(i%, "0")
    Next i%
    ' ********************************
-   '       Valeurs par défaut
+   '       Valeurs par dÃ©faut
    ' ********************************
    Ppol(0) = -2
    Ppol(1) = 2
@@ -754,7 +754,7 @@ Private Sub Form_Load()
    Xpol = 1
    FenetrePolynome.txtValX.Text = Format(Xpol, "0.000")
    ' ********************************
-   ' placement des valeurs par défaut
+   ' placement des valeurs par dÃ©faut
    ' ********************************
    FenetrePolynome.gridPpol.Col = 1
    For i% = 0 To DegPpol%
@@ -771,7 +771,7 @@ End Sub
 
 Private Sub gridP2pol_KeyPress(KeyAscii As Integer)
    '-------------------------------------------
-   ' Remises à zéro
+   ' Remises Ã  zÃ©ro
    '-------------------------------------------
    ' ********************************
    ' placement des 'blancs'
@@ -815,7 +815,7 @@ End Sub
 
 Private Sub gridPpol_KeyPress(KeyAscii As Integer)
    '-------------------------------------------
-   ' Remises à zéro
+   ' Remises Ã  zÃ©ro
    '-------------------------------------------
    lblValRacines.Caption = ""
    lblValP.Caption = ""
@@ -885,7 +885,7 @@ Private Sub ProduitPol()
    FenetrePolynome.gridPPpol.Rows = DegPPpol% + 2
    FenetrePolynome.gridPPpol.Cols = 2
    ' ********************************
-   ' numérotation 1ère colonnes
+   ' numÃ©rotation 1Ã¨re colonnes
    ' ********************************
    FenetrePolynome.gridPPpol.Col = 0
    For i% = 0 To DegPPpol%
@@ -893,7 +893,7 @@ Private Sub ProduitPol()
       FenetrePolynome.gridPPpol.Text = Format(i%, "0")
    Next i%
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de Ppol
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de Ppol
    ' *************************************************
    FenetrePolynome.gridPpol.Col = 1
    For i% = 0 To DegPpol%
@@ -906,7 +906,7 @@ Private Sub ProduitPol()
       End If
    Next i%
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de P2pol
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de P2pol
    ' *************************************************
    FenetrePolynome.gridP2pol.Col = 1
    For i% = 0 To DegP2pol%
@@ -931,7 +931,7 @@ Private Sub ProduitPol()
       Next j%
    Next i%
    ' *************************************************
-   ' affichage des éléments de PPpol
+   ' affichage des Ã©lÃ©ments de PPpol
    ' *************************************************
    FenetrePolynome.gridPPpol.Col = 1
    For i% = 0 To DegPPpol%
@@ -945,7 +945,7 @@ End Sub
 
 Private Sub QuotientPol()
    If DegPpol% < DegP2pol% Then
-      MsgBox "le degré de P doit être supérieur ou égal à celui de P2 !", 48, "POLYNOME"
+      MsgBox "le degrÃ© de P doit Ãªtre supÃ©rieur ou Ã©gal Ã  celui de P2 !", 48, "POLYNOME"
       Exit Sub
    End If
    DegQpol% = DegPpol% - DegP2pol%
@@ -974,7 +974,7 @@ Private Sub QuotientPol()
    FenetrePolynome.gridRpol.Rows = DegRpol% + 2
    FenetrePolynome.gridRpol.Cols = 2
    ' ********************************
-   ' numérotation 1ères colonnes
+   ' numÃ©rotation 1Ã¨res colonnes
    ' ********************************
    FenetrePolynome.gridQpol.Col = 0
    For i% = 0 To DegQpol%
@@ -987,7 +987,7 @@ Private Sub QuotientPol()
       FenetrePolynome.gridRpol.Text = Format(i%, "0")
    Next i%
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de Ppol
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de Ppol
    ' *************************************************
    FenetrePolynome.gridPpol.Col = 1
    For i% = 0 To DegPpol%
@@ -1000,7 +1000,7 @@ Private Sub QuotientPol()
       End If
    Next i%
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de P2pol
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de P2pol
    ' *************************************************
    FenetrePolynome.gridP2pol.Col = 1
    For i% = 0 To DegP2pol%
@@ -1029,7 +1029,7 @@ Private Sub QuotientPol()
       Next j%
    Next i%
    ' *************************************************
-   ' affichage des éléments de Qpol et Rpol
+   ' affichage des Ã©lÃ©ments de Qpol et Rpol
    ' *************************************************
    FenetrePolynome.gridQpol.Col = 1
    For i% = 0 To DegQpol%
@@ -1163,14 +1163,14 @@ Private Sub txtValDegP_Change()
       If Val(txtValDegP.Text) = 0 Then
          DegPpol% = 0
       Else
-         MsgBox "le degré de P est incorrect", 48, "POLYNOME"
+         MsgBox "le degrÃ© de P est incorrect", 48, "POLYNOME"
          Exit Sub
       End If
    End If
    On Error GoTo 0
    If DegPpol% < 0 Then
       Beep
-      MsgBox "le degré de P doit être supérieur ou égal à 0 !", 48, "POLYNOME"
+      MsgBox "le degrÃ© de P doit Ãªtre supÃ©rieur ou Ã©gal Ã  0 !", 48, "POLYNOME"
       DegPpol% = 0
       txtValDegP.Text = "0"
    End If
@@ -1199,7 +1199,7 @@ Private Sub txtValDegP_Change()
    '***************************************
    ReDim Ppol(0 To DegPpol%)
    '***************************************
-   ' renumérotation 1ère colonne Ppol
+   ' renumÃ©rotation 1Ã¨re colonne Ppol
    ' ********************************
    FenetrePolynome.gridPpol.Col = 0
    For i% = 0 To DegPpol%
@@ -1207,7 +1207,7 @@ Private Sub txtValDegP_Change()
       FenetrePolynome.gridPpol.Text = Format(i%, "0")
    Next i%
    '***************************************
-   ' renumérotation 1ère colonne gridRacines
+   ' renumÃ©rotation 1Ã¨re colonne gridRacines
    ' et effacement valeurs racines
    ' ********************************
    For i% = 1 To DegPpol%
@@ -1228,14 +1228,14 @@ Private Sub txtValDegP2_Change()
       If CInt(txtValDegP2.Text) = 0 Then
          DegP2pol% = 0
       Else
-         MsgBox "le degré de P2 est incorrect", 48, "POLYNOME"
+         MsgBox "le degrÃ© de P2 est incorrect", 48, "POLYNOME"
          Exit Sub
       End If
    End If
    On Error GoTo 0
    If DegP2pol% < 0 Then
       Beep
-      MsgBox "le degré de P2 doit être supérieur ou égal à 0 !", 48, "POLYNOME"
+      MsgBox "le degrÃ© de P2 doit Ãªtre supÃ©rieur ou Ã©gal Ã  0 !", 48, "POLYNOME"
       DegP2pol% = 0
       txtValDegP2.Text = "0"
    End If
@@ -1261,7 +1261,7 @@ Private Sub txtValDegP2_Change()
    '***************************************
    ReDim P2pol(0 To DegP2pol%)
    '***************************************
-   ' renumérotation 1ères colonnes
+   ' renumÃ©rotation 1Ã¨res colonnes
    ' ********************************
    FenetrePolynome.gridP2pol.Col = 0
    For i% = 0 To DegP2pol%
@@ -1281,7 +1281,7 @@ End Sub
 
 Public Sub Racines()
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de Ppol
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de Ppol
    ' *************************************************
    FenetrePolynome.gridPpol.Col = 1
    For i% = 0 To DegPpol%
@@ -1297,16 +1297,16 @@ Public Sub Racines()
    Select Case DegPpol%
    Case Is < 1
       Beep
-      MsgBox "le degré de P doit être supérieur ou égal à 1 !", 48, "POLYNOME"
+      MsgBox "le degrÃ© de P doit Ãªtre supÃ©rieur ou Ã©gal Ã  1 !", 48, "POLYNOME"
       Exit Sub
    Case 1
       If Ppol(1) = 0 Then
          Beep
-         MsgBox "le polynôme P est de degré zéro !", 48, "POLYNOME"
+         MsgBox "le polynÃ´me P est de degrÃ© zÃ©ro !", 48, "POLYNOME"
          Exit Sub
       End If
       '*****************************************************************
-      '*************  Racines d'un polynôme de degré 1  ****************
+      '*************  Racines d'un polynÃ´me de degrÃ© 1  ****************
       '*****************************************************************
       XPol1 = -Ppol(0) / Ppol(1)
       TexteRacines$ = " Une racine :"
@@ -1319,11 +1319,11 @@ Public Sub Racines()
    Case 2
       If Ppol(2) = 0 Then
          Beep
-         MsgBox "le polynôme P est de degré inférieur à 2 !", 48, "POLYNOME"
+         MsgBox "le polynÃ´me P est de degrÃ© infÃ©rieur Ã  2 !", 48, "POLYNOME"
          Exit Sub
       End If
       '*****************************************************************
-      '*************  Racines d'un polynôme de degré 2  ****************
+      '*************  Racines d'un polynÃ´me de degrÃ© 2  ****************
       '*****************************************************************
       Dis = Ppol(1) ^ 2 - 4 * Ppol(2) * Ppol(0)
       ReelPol = -Ppol(1) / Ppol(2) / 2
@@ -1344,7 +1344,7 @@ Public Sub Racines()
          ImPol = RacDis / Ppol(2) / 2
          XPol1 = ReelPol - ImPol
          XPol2 = ReelPol + ImPol
-         TexteRacines$ = " Deux racines réelles :"
+         TexteRacines$ = " Deux racines rÃ©elles :"
          FenetrePolynome.gridRacines.Row = 1
          FenetrePolynome.gridRacines.Col = 1
          FenetrePolynome.gridRacines.Text = Format(XPol1, "0.000")
@@ -1358,7 +1358,7 @@ Public Sub Racines()
       Else
          RacDis = Sqr(-Dis)
          ImPol = Abs(RacDis / Ppol(2) / 2)
-         TexteRacines$ = " Deux racines complexes conjuguées :"
+         TexteRacines$ = " Deux racines complexes conjuguÃ©es :"
          FenetrePolynome.gridRacines.Row = 1
          FenetrePolynome.gridRacines.Col = 1
          FenetrePolynome.gridRacines.Text = Format(ReelPol, "0.000")
@@ -1374,14 +1374,14 @@ Public Sub Racines()
    Case 3
       If Ppol(3) = 0 Then
          Beep
-         MsgBox "le polynôme P est de degré inférieur à 3 !", 48, "POLYNOME"
+         MsgBox "le polynÃ´me P est de degrÃ© infÃ©rieur Ã  3 !", 48, "POLYNOME"
          Exit Sub
       End If
       '*****************************************************************
-      '*************  Racines d'un polynôme de degré 3  ****************
-      '*************          Méthode de CARDAN         ****************
+      '*************  Racines d'un polynÃ´me de degrÃ© 3  ****************
+      '*************          MÃ©thode de CARDAN         ****************
       '*****************************************************************
-      TexteRacines$ = " Méthode de CARDAN; "
+      TexteRacines$ = " MÃ©thode de CARDAN; "
       Ploc = Ppol(1) / Ppol(3) / 3 - Ppol(2) * Ppol(2) / Ppol(3) / Ppol(3) / 9
       Qloc = Ppol(2) * Ppol(2) * Ppol(2) / Ppol(3) / Ppol(3) / Ppol(3) / 27 - Ppol(2) * Ppol(1) / Ppol(3) / Ppol(3) / 6 + Ppol(0) / Ppol(3) / 2
       Dis = Qloc * Qloc + Ploc * Ploc * Ploc
@@ -1407,7 +1407,7 @@ Public Sub Racines()
          Else
             XPol1 = 2 * Qloc / Ploc - Ppol(2) / Ppol(3) / 3
             XPol2 = -Qloc / Ploc - Ppol(2) / Ppol(3) / 3
-            TexteRacines$ = TexteRacines$ & " Deux racines réelles : une simple et une double :"
+            TexteRacines$ = TexteRacines$ & " Deux racines rÃ©elles : une simple et une double :"
             FenetrePolynome.gridRacines.Row = 1
             FenetrePolynome.gridRacines.Col = 1
             FenetrePolynome.gridRacines.Text = Format(XPol1, "0.000")
@@ -1431,7 +1431,7 @@ Public Sub Racines()
          ReelPol1 = GAloc + GBloc - Ppol(2) / 3 / Ppol(3)
          ReelPol2 = (-GAloc - GBloc) / 2 - Ppol(2) / 3 / Ppol(3)
          ImPol = Abs(Sqr(3) / 2 * (GAloc - GBloc))
-         TexteRacines$ = TexteRacines$ & " Trois racines : une réelle et deux complexes conjuguées"
+         TexteRacines$ = TexteRacines$ & " Trois racines : une rÃ©elle et deux complexes conjuguÃ©es"
          FenetrePolynome.gridRacines.Row = 1
          FenetrePolynome.gridRacines.Col = 1
          FenetrePolynome.gridRacines.Text = Format(ReelPol1, "0.000")
@@ -1470,7 +1470,7 @@ Public Sub Racines()
          XPol1 = 2 * GPloc - Ppol(2) / 3 / Ppol(3)
          XPol2 = -GPloc - GQloc - Ppol(2) / 3 / Ppol(3)
          XPol3 = -GPloc + GQloc - Ppol(2) / 3 / Ppol(3)
-         TexteRacines$ = TexteRacines$ & " Trois racines réelles :"
+         TexteRacines$ = TexteRacines$ & " Trois racines rÃ©elles :"
          FenetrePolynome.gridRacines.Row = 1
          FenetrePolynome.gridRacines.Col = 1
          FenetrePolynome.gridRacines.Text = Format(XPol1, "0.000")
@@ -1491,14 +1491,14 @@ Public Sub Racines()
    Case 4
       If Ppol(4) = 0 Then
          Beep
-         MsgBox "le polynôme P est de degré inférieur à 4 !", 48, "POLYNOME"
+         MsgBox "le polynÃ´me P est de degrÃ© infÃ©rieur Ã  4 !", 48, "POLYNOME"
          Exit Sub
       End If
       '*****************************************************************
-      '*************  Racines d'un polynôme de degré 4  ****************
-      '*************          Méthode de FERRARI        ****************
+      '*************  Racines d'un polynÃ´me de degrÃ© 4  ****************
+      '*************          MÃ©thode de FERRARI        ****************
       '*****************************************************************
-      TexteRacines$ = "      Méthode de FERRARI"
+      TexteRacines$ = "      MÃ©thode de FERRARI"
       A3loc = 2
       A2loc = -Ppol(2) / Ppol(4)
       A1loc = Ppol(3) * Ppol(1) / Ppol(4) / Ppol(4) / 2 - 2 * Ppol(0) / Ppol(4)
@@ -1511,12 +1511,12 @@ Public Sub Racines()
             Zloc = -A2loc / A3loc / 3
             APloc = Ppol(3) * Ppol(3) / Ppol(4) / Ppol(4) / 4 - Ppol(2) / Ppol(4) + 2 * Zloc
             If APloc < 0 Then
-               MsgBox "erreur : quantité négative !", 48, "POLYNOME"
+               MsgBox "erreur : quantitÃ© nÃ©gative !", 48, "POLYNOME"
                Exit Sub
             End If
             BPloc = Zloc * Zloc - Ppol(0) / Ppol(4)
             If BPloc < 0 Then
-               MsgBox "erreur : quantité négative !", 48, "POLYNOME"
+               MsgBox "erreur : quantitÃ© nÃ©gative !", 48, "POLYNOME"
                Exit Sub
             End If
          Else
@@ -1529,12 +1529,12 @@ Public Sub Racines()
                Zloc = -Qloc / Ploc - A2loc / A3loc / 3
                APloc = Ppol(3) * Ppol(3) / Ppol(4) / Ppol(4) / 4 - Ppol(2) / Ppol(4) + 2 * Zloc
                If APloc < 0 Then
-                  MsgBox "erreur : quantité négative !", 48, "POLYNOME"
+                  MsgBox "erreur : quantitÃ© nÃ©gative !", 48, "POLYNOME"
                   Exit Sub
                End If
                BPloc = Zloc * Zloc - Ppol(0) / Ppol(4)
                If BPloc < 0 Then
-                  MsgBox "erreur : quantité négative !", 48, "POLYNOME"
+                  MsgBox "erreur : quantitÃ© nÃ©gative !", 48, "POLYNOME"
                   Exit Sub
                End If
             End If
@@ -1546,12 +1546,12 @@ Public Sub Racines()
          Zloc = GAloc + GBloc - A2loc / 3 / A3loc
          APloc = Ppol(3) * Ppol(3) / Ppol(4) / Ppol(4) / 4 - Ppol(2) / Ppol(4) + 2 * Zloc
          If APloc < 0 Then
-            MsgBox "erreur : quantité négative !", 48, "POLYNOME"
+            MsgBox "erreur : quantitÃ© nÃ©gative !", 48, "POLYNOME"
             Exit Sub
          End If
          BPloc = Zloc * Zloc - Ppol(0) / Ppol(4)
          If BPloc < 0 Then
-            MsgBox "erreur : quantité négative !", 48, "POLYNOME"
+            MsgBox "erreur : quantitÃ© nÃ©gative !", 48, "POLYNOME"
             Exit Sub
          End If
       Else
@@ -1589,12 +1589,12 @@ Public Sub Racines()
                Zloc = -GPloc + GQloc - A2loc / 3 / A3loc
                APloc = Ppol(3) * Ppol(3) / Ppol(4) / Ppol(4) / 4 - Ppol(2) / Ppol(4) + 2 * Zloc
                If APloc < 0 Then
-                  MsgBox "erreur : quantité négative !", 48, "POLYNOME"
+                  MsgBox "erreur : quantitÃ© nÃ©gative !", 48, "POLYNOME"
                   Exit Sub
                End If
                BPloc = Zloc * Zloc - Ppol(0) / Ppol(4)
                If BPloc < 0 Then
-                  MsgBox "erreur : quantité négative !", 48, "POLYNOME"
+                  MsgBox "erreur : quantitÃ© nÃ©gative !", 48, "POLYNOME"
                   Exit Sub
                End If
             End If
@@ -1696,7 +1696,7 @@ Public Sub Racines()
       If Erreur = True Then
          TexteRacine$ = "Impossible de calculer les racines !"
       Else
-         TexteRacines$ = "      Calcul par la méthode de BAIRSTOW" & Chr$(13) & Chr$(13)
+         TexteRacines$ = "      Calcul par la mÃ©thode de BAIRSTOW" & Chr$(13) & Chr$(13)
          For iloc% = 1 To DegPpol%
             FenetrePolynome.gridRacines.Row = iloc%
             FenetrePolynome.gridRacines.Col = 1
@@ -1715,7 +1715,7 @@ Public Sub Valeur()
    ' ********************************************
    ReDim Ppol(0 To DegPpol%)
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de Ppol
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de Ppol
    ' *************************************************
    FenetrePolynome.gridPpol.Col = 1
    For i% = 0 To DegPpol%
@@ -1739,22 +1739,22 @@ End Sub
 Public Sub OuvrePol()
    '-----------------------------------------------------
    On Error GoTo Traite_ErreursOuvPol
-   Maths.ctrlCMDialog.Filter = "Polynôme (*.pol)|*.pol"
+   Maths.ctrlCMDialog.Filter = "PolynÃ´me (*.pol)|*.pol"
    ' nom de fichier et chemin doivent exister
-   ' sinon apparait un message d'erreur spécifique
+   ' sinon apparait un message d'erreur spÃ©cifique
    Maths.ctrlCMDialog.Flags = &H1000& Or &H800&
    Maths.ctrlCMDialog.CancelError = True
    Maths.ctrlCMDialog.Action = 1
    '-----------------------------------------------------
    ' Ouverture et lecture du fichier
-   ' coefficients d'un polynôme
-   ' et écriture de ces coefficients
+   ' coefficients d'un polynÃ´me
+   ' et Ã©criture de ces coefficients
    ' dans Ppol(i%) ou P2pol(i%)
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Input As #1
    Input #1, DegPolLoc%
    ' *************************************************
-   ' placement du degré du polynôme, ce qui provoque
+   ' placement du degrÃ© du polynÃ´me, ce qui provoque
    ' le redimentionnement des grilles
    ' *************************************************
    If NomPol$ = "P" Then
@@ -1763,7 +1763,7 @@ Public Sub OuvrePol()
       txtValDegP2.Text = Format(DegPolLoc%, "0")
    End If
    ' *************************************************
-   ' lecture des coefficients du polynôme
+   ' lecture des coefficients du polynÃ´me
    ' *************************************************
    For i% = 0 To DegPolLoc%
       If NomPol$ = "P" Then
@@ -1774,7 +1774,7 @@ Public Sub OuvrePol()
    Next i%
    Close #1
    ' ***********************************************
-   ' placement des nouveaux coefficients du polynôme
+   ' placement des nouveaux coefficients du polynÃ´me
    ' ***********************************************
    If NomPol$ = "P" Then
       FenetrePolynome.gridPpol.Col = 1
@@ -1806,7 +1806,7 @@ End Sub
 Public Sub EnregPol()
    On Error GoTo Traite_ErreursEnregPol
    Maths.ctrlCMDialog.DefaultExt = "pol"
-   Maths.ctrlCMDialog.Filter = "Polynôme (*.pol)|*.pol"
+   Maths.ctrlCMDialog.Filter = "PolynÃ´me (*.pol)|*.pol"
    Maths.ctrlCMDialog.Flags = &H2&
    Maths.ctrlCMDialog.Action = 2
    ' ********************************************
@@ -1819,7 +1819,7 @@ Public Sub EnregPol()
    ReDim Qpol(0 To DegQpol%)
    ReDim Rpol(0 To DegRpol%)
    ' ***********************************************************
-   ' affectation de leurs valeurs aux coefficients des polynômes
+   ' affectation de leurs valeurs aux coefficients des polynÃ´mes
    ' ***********************************************************
    FenetrePolynome.gridPpol.Col = 1
    For i% = 0 To DegPpol%
@@ -1877,8 +1877,8 @@ Public Sub EnregPol()
    Next i%
    ' *************************************************
    '-----------------------------------------------------
-   ' Création du fichier de coefficients du polynôme
-   ' et écriture de ces éléments dans le fichier
+   ' CrÃ©ation du fichier de coefficients du polynÃ´me
+   ' et Ã©criture de ces Ã©lÃ©ments dans le fichier
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Output As #1
    If NomPol$ = "P" Then
@@ -1933,7 +1933,7 @@ End Sub
 
 Public Sub RacinesExactes()
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de Ppol
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de Ppol
    ' *************************************************
    FenetrePolynome.gridPpol.Col = 1
    For i% = 0 To DegPpol%
@@ -1949,16 +1949,16 @@ Public Sub RacinesExactes()
    Select Case DegPpol%
    Case Is < 1
       Beep
-      MsgBox "le degré de P doit être supérieur ou égal à 1 !", 48, "POLYNOME"
+      MsgBox "le degrÃ© de P doit Ãªtre supÃ©rieur ou Ã©gal Ã  1 !", 48, "POLYNOME"
       Exit Sub
    Case 1
       If Ppol(1) = 0 Then
          Beep
-         MsgBox "le polynôme P est de degré zéro !", 48, "POLYNOME"
+         MsgBox "le polynÃ´me P est de degrÃ© zÃ©ro !", 48, "POLYNOME"
          Exit Sub
       End If
       '*****************************************************************
-      '*************  Racines d'un polynôme de degré 1  ****************
+      '*************  Racines d'un polynÃ´me de degrÃ© 1  ****************
       '*****************************************************************
       XPol1 = -Ppol(0) / Ppol(1)
       TexteRacines$ = " Une racine :"
@@ -1971,11 +1971,11 @@ Public Sub RacinesExactes()
    Case 2
       If Ppol(2) = 0 Then
          Beep
-         MsgBox "le polynôme P est de degré inférieur à 2 !", 48, "POLYNOME"
+         MsgBox "le polynÃ´me P est de degrÃ© infÃ©rieur Ã  2 !", 48, "POLYNOME"
          Exit Sub
       End If
       '*****************************************************************
-      '*************  Racines d'un polynôme de degré 2  ****************
+      '*************  Racines d'un polynÃ´me de degrÃ© 2  ****************
       '*****************************************************************
       Dis = Ppol(1) ^ 2 - 4 * Ppol(2) * Ppol(0)
       ReelPol = -Ppol(1) / Ppol(2) / 2
@@ -1996,7 +1996,7 @@ Public Sub RacinesExactes()
          ImPol = RacDis / Ppol(2) / 2
          XPol1 = ReelPol - ImPol
          XPol2 = ReelPol + ImPol
-         TexteRacines$ = " Deux racines réelles :"
+         TexteRacines$ = " Deux racines rÃ©elles :"
          FenetrePolynome.gridRacines.Row = 1
          FenetrePolynome.gridRacines.Col = 1
          FenetrePolynome.gridRacines.Text = Format(XPol1, "0.000")
@@ -2010,7 +2010,7 @@ Public Sub RacinesExactes()
       Else
          RacDis = Sqr(-Dis)
          ImPol = Abs(RacDis / Ppol(2) / 2)
-         TexteRacines$ = " Deux racines complexes conjuguées :"
+         TexteRacines$ = " Deux racines complexes conjuguÃ©es :"
          FenetrePolynome.gridRacines.Row = 1
          FenetrePolynome.gridRacines.Col = 1
          FenetrePolynome.gridRacines.Text = Format(ReelPol, "0.000")
@@ -2026,14 +2026,14 @@ Public Sub RacinesExactes()
    Case 3
       If Ppol(3) = 0 Then
          Beep
-         MsgBox "le polynôme P est de degré inférieur à 3 !", 48, "POLYNOME"
+         MsgBox "le polynÃ´me P est de degrÃ© infÃ©rieur Ã  3 !", 48, "POLYNOME"
          Exit Sub
       End If
       '*****************************************************************
-      '*************  Racines d'un polynôme de degré 3  ****************
-      '*************          Méthode de CARDAN         ****************
+      '*************  Racines d'un polynÃ´me de degrÃ© 3  ****************
+      '*************          MÃ©thode de CARDAN         ****************
       '*****************************************************************
-      TexteRacines$ = " Méthode de CARDAN; "
+      TexteRacines$ = " MÃ©thode de CARDAN; "
       Ploc = Ppol(1) / Ppol(3) / 3 - Ppol(2) * Ppol(2) / Ppol(3) / Ppol(3) / 9
       Qloc = Ppol(2) * Ppol(2) * Ppol(2) / Ppol(3) / Ppol(3) / Ppol(3) / 27 - Ppol(2) * Ppol(1) / Ppol(3) / Ppol(3) / 6 + Ppol(0) / Ppol(3) / 2
       Dis = Qloc * Qloc + Ploc * Ploc * Ploc
@@ -2059,7 +2059,7 @@ Public Sub RacinesExactes()
          Else
             XPol1 = 2 * Qloc / Ploc - Ppol(2) / Ppol(3) / 3
             XPol2 = -Qloc / Ploc - Ppol(2) / Ppol(3) / 3
-            TexteRacines$ = TexteRacines$ & " Deux racines réelles : une simple et une double :"
+            TexteRacines$ = TexteRacines$ & " Deux racines rÃ©elles : une simple et une double :"
             FenetrePolynome.gridRacines.Row = 1
             FenetrePolynome.gridRacines.Col = 1
             FenetrePolynome.gridRacines.Text = Format(XPol1, "0.000")
@@ -2083,7 +2083,7 @@ Public Sub RacinesExactes()
          ReelPol1 = GAloc + GBloc - Ppol(2) / 3 / Ppol(3)
          ReelPol2 = (-GAloc - GBloc) / 2 - Ppol(2) / 3 / Ppol(3)
          ImPol = Abs(Sqr(3) / 2 * (GAloc - GBloc))
-         TexteRacines$ = TexteRacines$ & " Trois racines : une réelle et deux complexes conjuguées"
+         TexteRacines$ = TexteRacines$ & " Trois racines : une rÃ©elle et deux complexes conjuguÃ©es"
          FenetrePolynome.gridRacines.Row = 1
          FenetrePolynome.gridRacines.Col = 1
          FenetrePolynome.gridRacines.Text = Format(ReelPol1, "0.000")
@@ -2122,7 +2122,7 @@ Public Sub RacinesExactes()
          XPol1 = 2 * GPloc - Ppol(2) / 3 / Ppol(3)
          XPol2 = -GPloc - GQloc - Ppol(2) / 3 / Ppol(3)
          XPol3 = -GPloc + GQloc - Ppol(2) / 3 / Ppol(3)
-         TexteRacines$ = TexteRacines$ & " Trois racines réelles :"
+         TexteRacines$ = TexteRacines$ & " Trois racines rÃ©elles :"
          FenetrePolynome.gridRacines.Row = 1
          FenetrePolynome.gridRacines.Col = 1
          FenetrePolynome.gridRacines.Text = Format(XPol1, "0.000")
@@ -2143,14 +2143,14 @@ Public Sub RacinesExactes()
    Case 4
       If Ppol(4) = 0 Then
          Beep
-         MsgBox "le polynôme P est de degré inférieur à 4 !", 48, "POLYNOME"
+         MsgBox "le polynÃ´me P est de degrÃ© infÃ©rieur Ã  4 !", 48, "POLYNOME"
          Exit Sub
       End If
       '*****************************************************************
-      '*************  Racines d'un polynôme de degré 4  ****************
-      '*************          Méthode de FERRARI        ****************
+      '*************  Racines d'un polynÃ´me de degrÃ© 4  ****************
+      '*************          MÃ©thode de FERRARI        ****************
       '*****************************************************************
-      TexteRacines$ = "      Méthode de FERRARI"
+      TexteRacines$ = "      MÃ©thode de FERRARI"
       A3loc = 2
       A2loc = -Ppol(2) / Ppol(4)
       A1loc = Ppol(3) * Ppol(1) / Ppol(4) / Ppol(4) / 2 - 2 * Ppol(0) / Ppol(4)
@@ -2163,12 +2163,12 @@ Public Sub RacinesExactes()
             Zloc = -A2loc / A3loc / 3
             APloc = Ppol(3) * Ppol(3) / Ppol(4) / Ppol(4) / 4 - Ppol(2) / Ppol(4) + 2 * Zloc
             If APloc < 0 Then
-               MsgBox "erreur : quantité négative !", 48, "POLYNOME"
+               MsgBox "erreur : quantitÃ© nÃ©gative !", 48, "POLYNOME"
                Exit Sub
             End If
             BPloc = Zloc * Zloc - Ppol(0) / Ppol(4)
             If BPloc < 0 Then
-               MsgBox "erreur : quantité négative !", 48, "POLYNOME"
+               MsgBox "erreur : quantitÃ© nÃ©gative !", 48, "POLYNOME"
                Exit Sub
             End If
          Else
@@ -2181,12 +2181,12 @@ Public Sub RacinesExactes()
                Zloc = -Qloc / Ploc - A2loc / A3loc / 3
                APloc = Ppol(3) * Ppol(3) / Ppol(4) / Ppol(4) / 4 - Ppol(2) / Ppol(4) + 2 * Zloc
                If APloc < 0 Then
-                  MsgBox "erreur : quantité négative !", 48, "POLYNOME"
+                  MsgBox "erreur : quantitÃ© nÃ©gative !", 48, "POLYNOME"
                   Exit Sub
                End If
                BPloc = Zloc * Zloc - Ppol(0) / Ppol(4)
                If BPloc < 0 Then
-                  MsgBox "erreur : quantité négative !", 48, "POLYNOME"
+                  MsgBox "erreur : quantitÃ© nÃ©gative !", 48, "POLYNOME"
                   Exit Sub
                End If
             End If
@@ -2198,12 +2198,12 @@ Public Sub RacinesExactes()
          Zloc = GAloc + GBloc - A2loc / 3 / A3loc
          APloc = Ppol(3) * Ppol(3) / Ppol(4) / Ppol(4) / 4 - Ppol(2) / Ppol(4) + 2 * Zloc
          If APloc < 0 Then
-            MsgBox "erreur : quantité négative !", 48, "POLYNOME"
+            MsgBox "erreur : quantitÃ© nÃ©gative !", 48, "POLYNOME"
             Exit Sub
          End If
          BPloc = Zloc * Zloc - Ppol(0) / Ppol(4)
          If BPloc < 0 Then
-            MsgBox "erreur : quantité négative !", 48, "POLYNOME"
+            MsgBox "erreur : quantitÃ© nÃ©gative !", 48, "POLYNOME"
             Exit Sub
          End If
       Else
@@ -2241,12 +2241,12 @@ Public Sub RacinesExactes()
                Zloc = -GPloc + GQloc - A2loc / 3 / A3loc
                APloc = Ppol(3) * Ppol(3) / Ppol(4) / Ppol(4) / 4 - Ppol(2) / Ppol(4) + 2 * Zloc
                If APloc < 0 Then
-                  MsgBox "erreur : quantité négative !", 48, "POLYNOME"
+                  MsgBox "erreur : quantitÃ© nÃ©gative !", 48, "POLYNOME"
                   Exit Sub
                End If
                BPloc = Zloc * Zloc - Ppol(0) / Ppol(4)
                If BPloc < 0 Then
-                  MsgBox "erreur : quantité négative !", 48, "POLYNOME"
+                  MsgBox "erreur : quantitÃ© nÃ©gative !", 48, "POLYNOME"
                   Exit Sub
                End If
             End If
@@ -2344,15 +2344,15 @@ Public Sub RacinesExactes()
       End If
       lblValRacines.Caption = TexteRacines$
    Case Is > 4
-      Message$ = "Impossible de calculer de manière exacte"
-      Message$ = Message$ & Chr$(13) & "les racines d'un polynôme de degré supérieur à 4 !"
+      Message$ = "Impossible de calculer de maniÃ¨re exacte"
+      Message$ = Message$ & Chr$(13) & "les racines d'un polynÃ´me de degrÃ© supÃ©rieur Ã  4 !"
       MsgBox Message$, 48, "POLYNOME"
    End Select
 End Sub
 
 Public Sub RacinesBairstow()
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de Ppol
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de Ppol
    ' *************************************************
    FenetrePolynome.gridPpol.Col = 1
    For i% = 0 To DegPpol%
@@ -2368,12 +2368,12 @@ Public Sub RacinesBairstow()
    Select Case DegPpol%
    Case Is < 1
       Beep
-      MsgBox "le degré de P doit être supérieur ou égal à 1 !", 48, "POLYNOME"
+      MsgBox "le degrÃ© de P doit Ãªtre supÃ©rieur ou Ã©gal Ã  1 !", 48, "POLYNOME"
       Exit Sub
    Case 1
       If Ppol(1) = 0 Then
          Beep
-         MsgBox "le polynôme P est de degré zéro !", 48, "POLYNOME"
+         MsgBox "le polynÃ´me P est de degrÃ© zÃ©ro !", 48, "POLYNOME"
          Exit Sub
       End If
    End Select
@@ -2381,7 +2381,7 @@ Public Sub RacinesBairstow()
    If Erreur = True Then
       TexteRacine$ = "Impossible de calculer les racines !"
    Else
-      TexteRacines$ = "      Calcul par la méthode de BAIRSTOW" & Chr$(13) & Chr$(13)
+      TexteRacines$ = "      Calcul par la mÃ©thode de BAIRSTOW" & Chr$(13) & Chr$(13)
       For iloc% = 1 To DegPpol%
          FenetrePolynome.gridRacines.Row = iloc%
          FenetrePolynome.gridRacines.Col = 1
@@ -2395,7 +2395,7 @@ End Sub
 
 Public Sub RacinesMatComp()
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de Ppol
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de Ppol
    ' *************************************************
    FenetrePolynome.gridPpol.Col = 1
    For i% = 0 To DegPpol%
@@ -2411,12 +2411,12 @@ Public Sub RacinesMatComp()
    Select Case DegPpol%
    Case Is < 1
       Beep
-      MsgBox "le degré de P doit être supérieur ou égal à 1 !", 48, "POLYNOME"
+      MsgBox "le degrÃ© de P doit Ãªtre supÃ©rieur ou Ã©gal Ã  1 !", 48, "POLYNOME"
       Exit Sub
    Case 1
       If Ppol(1) = 0 Then
          Beep
-         MsgBox "le polynôme P est de degré zéro !", 48, "POLYNOME"
+         MsgBox "le polynÃ´me P est de degrÃ© zÃ©ro !", 48, "POLYNOME"
          Exit Sub
       End If
    End Select
@@ -2424,7 +2424,7 @@ Public Sub RacinesMatComp()
    If Erreur = True Then
       TexteRacine$ = "Impossible de calculer les racines !"
    Else
-      TexteRacines$ = "Calcul par la méthode de la matrice compagne" & Chr$(13) & Chr$(13)
+      TexteRacines$ = "Calcul par la mÃ©thode de la matrice compagne" & Chr$(13) & Chr$(13)
       For iloc% = 1 To DegPpol%
          FenetrePolynome.gridRacines.Row = iloc%
          FenetrePolynome.gridRacines.Col = 1
