@@ -1,6 +1,6 @@
 VERSION 5.00
 Begin VB.Form FenetreDefCourbe 
-   Caption         =   "Définition de la courbe"
+   Caption         =   "DÃ©finition de la courbe"
    ClientHeight    =   7245
    ClientLeft      =   210
    ClientTop       =   825
@@ -574,7 +574,7 @@ Begin VB.Form FenetreDefCourbe
       Width           =   1695
    End
    Begin VB.CheckBox MemeEchelle 
-      Caption         =   "même echelle sur les deux axes"
+      Caption         =   "mÃªme echelle sur les deux axes"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -700,7 +700,7 @@ Begin VB.Form FenetreDefCourbe
       Width           =   855
    End
    Begin VB.Frame CadreGarder 
-      Caption         =   "Tracés précédents"
+      Caption         =   "TracÃ©s prÃ©cÃ©dents"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -768,7 +768,7 @@ Begin VB.Form FenetreDefCourbe
       Top             =   0
       Width           =   3615
       Begin VB.OptionButton OptionPar 
-         Caption         =   "paramétrée"
+         Caption         =   "paramÃ©trÃ©e"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -872,7 +872,7 @@ Begin VB.Form FenetreDefCourbe
       End
    End
    Begin VB.Frame CadreCoor 
-      Caption         =   "Coordonnées"
+      Caption         =   "CoordonnÃ©es"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -905,7 +905,7 @@ Begin VB.Form FenetreDefCourbe
          Width           =   1935
       End
       Begin VB.OptionButton OptionCart 
-         Caption         =   "cartésiennes (X,Y)"
+         Caption         =   "cartÃ©siennes (X,Y)"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   8.25
@@ -1150,7 +1150,7 @@ Begin VB.Form FenetreDefCourbe
       Width           =   255
    End
    Begin VB.Label EtiquetteLimitesT 
-      Caption         =   "Limites de variation du paramètre :"
+      Caption         =   "Limites de variation du paramÃ¨tre :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -1203,7 +1203,7 @@ Begin VB.Form FenetreDefCourbe
       Width           =   615
    End
    Begin VB.Label EtiquetteDefiniCour 
-      Caption         =   "Fonction(s) définissant la courbe :"
+      Caption         =   "Fonction(s) dÃ©finissant la courbe :"
       Height          =   255
       Left            =   360
       TabIndex        =   29
@@ -1262,7 +1262,7 @@ Begin VB.Form FenetreDefCourbe
       Width           =   495
    End
    Begin VB.Label EtiquetteLimitesY 
-      Caption         =   "Limites de l'axe des ordonnées "
+      Caption         =   "Limites de l'axe des ordonnÃ©es "
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -1435,7 +1435,7 @@ Begin VB.Form FenetreDefCourbe
       End
    End
    Begin VB.Menu mnuDefPts 
-      Caption         =   "&Définir un ensemble de points"
+      Caption         =   "&DÃ©finir un ensemble de points"
    End
    Begin VB.Menu mnuTracer 
       Caption         =   "&Tracer..."
@@ -1674,7 +1674,7 @@ End Sub
 
 Private Sub Form_Load()
    '-----------------------------------------------------------------
-   '-----------        Valeurs par défaut             ---------------
+   '-----------        Valeurs par dÃ©faut             ---------------
    '-----------      de certaines variables           ---------------
    '-----------------------------------------------------------------
    DoFlag = False
@@ -1700,12 +1700,12 @@ Private Sub Form_Load()
    CouleurPts& = BLEU
    CouleurTan& = VERT
    '-----------------------------------------------------------------
-   '-----------        Valeurs par défaut             ---------------
+   '-----------        Valeurs par dÃ©faut             ---------------
    '-----------        d'autres variables             ---------------
    '-----------------------------------------------------------------
    LX% = Dessin.ScaleWidth
    LY% = Dessin.ScaleHeight
-   ' Facteur d'échelle
+   ' Facteur d'Ã©chelle
    FE = LY% / LX%
    AX = Xmax - Xmin
    AY = Ymax - Ymin
@@ -1758,8 +1758,8 @@ Private Sub mnuEnrPoints_Click()
    Maths.ctrlCMDialog.Flags = &H2&
    Maths.ctrlCMDialog.Action = 2
    '-----------------------------------------------------
-   ' Création du fichier de points
-   ' et écriture de leurs coordonnées Xpt() et Ypt()
+   ' CrÃ©ation du fichier de points
+   ' et Ã©criture de leurs coordonnÃ©es Xpt() et Ypt()
    ' ou autres...
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Output As #1
@@ -1805,13 +1805,13 @@ Private Sub mnuOuvPoints_Click()
    On Error GoTo Traite_ErreursOuvPts
    Maths.ctrlCMDialog.Filter = "Points (*.xy)|*.xy"
    ' nom de fichier et chemin doivent exister
-   ' sinon apparait un message d'erreur spécifique
+   ' sinon apparait un message d'erreur spÃ©cifique
    Maths.ctrlCMDialog.Flags = &H1000& Or &H800&
    Maths.ctrlCMDialog.CancelError = True
    Maths.ctrlCMDialog.Action = 1
    '-----------------------------------------------------
    ' Ouverture et lecture du fichier de points
-   ' et écriture de leurs coordonnées dans Xpt() et Ypt()
+   ' et Ã©criture de leurs coordonnÃ©es dans Xpt() et Ypt()
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Input As #1
    Input #1, NbPts%
@@ -1825,13 +1825,13 @@ Private Sub mnuOuvPoints_Click()
    '-----------------------------------------------------
    ' activation de certaines cases
    '-------------------------------
-   EtiquettePoints.ForeColor = &H80000012     'Texte activé
-   PointsTracer.ForeColor = &H80000012        'Texte activé
+   EtiquettePoints.ForeColor = &H80000012     'Texte activÃ©
+   PointsTracer.ForeColor = &H80000012        'Texte activÃ©
    PointsTracer.Value = 1                         'Checked
-   PointsRelier.ForeColor = &H80000012        'Texte activé
+   PointsRelier.ForeColor = &H80000012        'Texte activÃ©
    PointsRelier.Value = 0                         'Unchecked
-   EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activé
-   EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activé
+   EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activÃ©
+   EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activÃ©
    '-----------------------------------------------------
    Exit Sub
 Traite_ErreursOuvPts:
@@ -1854,10 +1854,10 @@ End Sub
 
 Private Sub mnuTracer_Click()
    '-----------------------------------------------------
-   '---------   Vérifications avant   -------------------
-   '---------------   tracé   ---------------------------
+   '---------   VÃ©rifications avant   -------------------
+   '---------------   tracÃ©   ---------------------------
    '-----------------------------------------------------
-   '-----  1- Bornes écrites correctement  --------------
+   '-----  1- Bornes Ã©crites correctement  --------------
    On Error Resume Next
    Xmax = CSng(DefXmax.Text)
    If Err.Number <> 0 Then
@@ -1901,30 +1901,30 @@ Private Sub mnuTracer_Click()
       AY = Ymax - Ymin
    End If
    If AX < 0 Then
-      MsgBox "Xmax doit être supérieur à Xmin", 48, "COURBE"
+      MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin", 48, "COURBE"
       Exit Sub
    ElseIf AY < 0 Then
-      MsgBox "Ymax doit être supérieur à Ymin", 48, "COURBE"
+      MsgBox "Ymax doit Ãªtre supÃ©rieur Ã  Ymin", 48, "COURBE"
       Exit Sub
    ElseIf Tmax < Tmin Then
-      MsgBox "Tmax doit être supérieur à Tmin", 48, "COURBE"
+      MsgBox "Tmax doit Ãªtre supÃ©rieur Ã  Tmin", 48, "COURBE"
       Exit Sub
    End If
    On Error GoTo 0
    '-----------------------------------------------------
    '--------         Ouverture           ----------------
-   '--------  des fenêtres pour le tracé ----------------
+   '--------  des fenÃªtres pour le tracÃ© ----------------
    '-----------------------------------------------------
    Fenetre_Prin.Show
    Fenetre_Val.Show
    Dessin.Show
    '--------------------------------------------------------------
    '--------- Affichage de la (des) formule(s) -------------------
-   '---------     définissant la courbe        -------------------
+   '---------     dÃ©finissant la courbe        -------------------
    '--------------------------------------------------------------
    Fenetre_Prin.Caption = "Courbe"
    Fenetre_Prin.LabelExplications.ForeColor = MAGENTA
-   Fenetre_Prin.LabelExplications.Caption = "Courbe en coordonnées cartésiennes ou polaires; définie de manière explicite, implicite, ou paramétrée."
+   Fenetre_Prin.LabelExplications.Caption = "Courbe en coordonnÃ©es cartÃ©siennes ou polaires; dÃ©finie de maniÃ¨re explicite, implicite, ou paramÃ©trÃ©e."
    Fenetre_Val.Cls
    Fenetre_Val.ForeColor = CouleurCou&
    Fenetre_Val.lblFormule.ForeColor = CouleurCou&
@@ -1949,7 +1949,7 @@ Private Sub mnuTracer_Click()
       Fenetre_Val.lblNote.Caption = "Tmin=" & Tmin & Chr$(13) & " Tmax=" & Tmax
    End Select
    '------------------------------------------------
-   '--------- Lancement du tracé -------------------
+   '--------- Lancement du tracÃ© -------------------
    '--------------------------------------------------------------
    Rem Fenetre_Prin.mnuTraceStop_Click
    Rem ne trace pas les axes !
