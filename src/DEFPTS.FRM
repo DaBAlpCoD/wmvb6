@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form FenetreDefPts 
-   Caption         =   "Définition des points"
+   Caption         =   "DÃ©finition des points"
    ClientHeight    =   5820
    ClientLeft      =   1950
    ClientTop       =   945
@@ -98,7 +98,7 @@ Begin VB.Form FenetreDefPts
       Width           =   2055
    End
    Begin VB.Label lblCoorPts 
-      Caption         =   "Coordonnées :"
+      Caption         =   "CoordonnÃ©es :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -154,7 +154,7 @@ Private Sub Form_Deactivate()
       Erase Xpt, Ypt
       ReDim Xpt(1 To NbPts%), Ypt(1 To NbPts%)
       ' ********************************************
-      ' affectation de leurs valeurs aux coordonnées
+      ' affectation de leurs valeurs aux coordonnÃ©es
       ' ********************************************
       For i% = 1 To NbPts%
          FenetreDefPts.gridPts.Row = i%
@@ -174,69 +174,69 @@ Private Sub Form_Deactivate()
          End If
       Next i%
       ' ************************************************
-      ' activation de certaines cases dans la fenêtre à
-      ' partir de laquelle a été ouvert cette fenêtre-ci
+      ' activation de certaines cases dans la fenÃªtre Ã 
+      ' partir de laquelle a Ã©tÃ© ouvert cette fenÃªtre-ci
       ' ************************************************
       Select Case NumChoisi%
       Case NUMINTEGRALE
         '-----------------------------------------------------
-        FenetreDefInteg.EtiquettePoints.ForeColor = &H80000012     'Texte activé
-        FenetreDefInteg.PointsTracer.ForeColor = &H80000012        'Texte activé
+        FenetreDefInteg.EtiquettePoints.ForeColor = &H80000012     'Texte activÃ©
+        FenetreDefInteg.PointsTracer.ForeColor = &H80000012        'Texte activÃ©
         FenetreDefInteg.PointsTracer.Value = 1                         'Checked
-        FenetreDefInteg.PointsRelier.ForeColor = &H80000012        'Texte activé
+        FenetreDefInteg.PointsRelier.ForeColor = &H80000012        'Texte activÃ©
         FenetreDefInteg.PointsRelier.Value = 0                         'Checked
-        FenetreDefInteg.EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activé
-        FenetreDefInteg.EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activé
+        FenetreDefInteg.EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activÃ©
+        FenetreDefInteg.EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activÃ©
         '-----------------------------------------------------
       Case NUMCOUR
         '-----------------------------------------------------
-        FenetreDefCourbe.EtiquettePoints.ForeColor = &H80000012     'Texte activé
-        FenetreDefCourbe.PointsTracer.ForeColor = &H80000012        'Texte activé
+        FenetreDefCourbe.EtiquettePoints.ForeColor = &H80000012     'Texte activÃ©
+        FenetreDefCourbe.PointsTracer.ForeColor = &H80000012        'Texte activÃ©
         FenetreDefCourbe.PointsTracer.Value = 1                         'Checked
-        FenetreDefCourbe.PointsRelier.ForeColor = &H80000012        'Texte activé
+        FenetreDefCourbe.PointsRelier.ForeColor = &H80000012        'Texte activÃ©
         FenetreDefCourbe.PointsRelier.Value = 0                         'Checked
-        FenetreDefCourbe.EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activé
-        FenetreDefCourbe.EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activé
+        FenetreDefCourbe.EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activÃ©
+        FenetreDefCourbe.EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activÃ©
         '-----------------------------------------------------
       Case NUMSOLEQ
         '-----------------------------------------------------
-        FenetreDefSolEq.EtiquettePoints.ForeColor = &H80000012     'Texte activé
-        FenetreDefSolEq.PointsTracer.ForeColor = &H80000012        'Texte activé
+        FenetreDefSolEq.EtiquettePoints.ForeColor = &H80000012     'Texte activÃ©
+        FenetreDefSolEq.PointsTracer.ForeColor = &H80000012        'Texte activÃ©
         FenetreDefSolEq.PointsTracer.Value = 1                         'Checked
-        FenetreDefSolEq.PointsRelier.ForeColor = &H80000012        'Texte activé
+        FenetreDefSolEq.PointsRelier.ForeColor = &H80000012        'Texte activÃ©
         FenetreDefSolEq.PointsRelier.Value = 0                         'Checked
-        FenetreDefSolEq.EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activé
-        FenetreDefSolEq.EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activé
+        FenetreDefSolEq.EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activÃ©
+        FenetreDefSolEq.EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activÃ©
         '-----------------------------------------------------
       Case NUMEQUADIF
         '-----------------------------------------------------
-        FenetreDefEqDif.EtiquettePoints.ForeColor = &H80000012     'Texte activé
-        FenetreDefEqDif.PointsTracer.ForeColor = &H80000012        'Texte activé
+        FenetreDefEqDif.EtiquettePoints.ForeColor = &H80000012     'Texte activÃ©
+        FenetreDefEqDif.PointsTracer.ForeColor = &H80000012        'Texte activÃ©
         FenetreDefEqDif.PointsTracer.Value = 1                         'Checked
-        FenetreDefEqDif.PointsRelier.ForeColor = &H80000012        'Texte activé
+        FenetreDefEqDif.PointsRelier.ForeColor = &H80000012        'Texte activÃ©
         FenetreDefEqDif.PointsRelier.Value = 0                         'Checked
-        FenetreDefEqDif.EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activé
-        FenetreDefEqDif.EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activé
+        FenetreDefEqDif.EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activÃ©
+        FenetreDefEqDif.EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activÃ©
         '-----------------------------------------------------
       Case NUMEQUADIF2
         '-----------------------------------------------------
-        FenetreDefEqDif2.EtiquettePoints.ForeColor = &H80000012     'Texte activé
-        FenetreDefEqDif2.PointsTracer.ForeColor = &H80000012        'Texte activé
+        FenetreDefEqDif2.EtiquettePoints.ForeColor = &H80000012     'Texte activÃ©
+        FenetreDefEqDif2.PointsTracer.ForeColor = &H80000012        'Texte activÃ©
         FenetreDefEqDif2.PointsTracer.Value = 1                         'Checked
-        FenetreDefEqDif2.PointsRelier.ForeColor = &H80000012        'Texte activé
+        FenetreDefEqDif2.PointsRelier.ForeColor = &H80000012        'Texte activÃ©
         FenetreDefEqDif2.PointsRelier.Value = 0                         'Checked
-        FenetreDefEqDif2.EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activé
-        FenetreDefEqDif2.EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activé
+        FenetreDefEqDif2.EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activÃ©
+        FenetreDefEqDif2.EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activÃ©
         '-----------------------------------------------------
       Case NUMPRIMITIVE
         '-----------------------------------------------------
-        FenetreDefPrim.EtiquettePoints.ForeColor = &H80000012     'Texte activé
-        FenetreDefPrim.PointsTracer.ForeColor = &H80000012        'Texte activé
+        FenetreDefPrim.EtiquettePoints.ForeColor = &H80000012     'Texte activÃ©
+        FenetreDefPrim.PointsTracer.ForeColor = &H80000012        'Texte activÃ©
         FenetreDefPrim.PointsTracer.Value = 1                         'Checked
-        FenetreDefPrim.PointsRelier.ForeColor = &H80000012        'Texte activé
+        FenetreDefPrim.PointsRelier.ForeColor = &H80000012        'Texte activÃ©
         FenetreDefPrim.PointsRelier.Value = 0                         'Checked
-        FenetreDefPrim.EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activé
-        FenetreDefPrim.EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activé
+        FenetreDefPrim.EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activÃ©
+        FenetreDefPrim.EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activÃ©
         '-----------------------------------------------------
       Case NUMOINCAR
          '
@@ -248,13 +248,13 @@ Private Sub Form_Deactivate()
          '
       Case NUMPOLYNOME
         '-----------------------------------------------------
-        FenetreDefPolynome.EtiquettePoints.ForeColor = &H80000012     'Texte activé
-        FenetreDefPolynome.PointsTracer.ForeColor = &H80000012        'Texte activé
+        FenetreDefPolynome.EtiquettePoints.ForeColor = &H80000012     'Texte activÃ©
+        FenetreDefPolynome.PointsTracer.ForeColor = &H80000012        'Texte activÃ©
         FenetreDefPolynome.PointsTracer.Value = 1                         'Checked
-        FenetreDefPolynome.PointsRelier.ForeColor = &H80000012        'Texte activé
+        FenetreDefPolynome.PointsRelier.ForeColor = &H80000012        'Texte activÃ©
         FenetreDefPolynome.PointsRelier.Value = 0                         'Checked
-        FenetreDefPolynome.EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activé
-        FenetreDefPolynome.EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activé
+        FenetreDefPolynome.EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activÃ©
+        FenetreDefPolynome.EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activÃ©
         '-----------------------------------------------------
       End Select
       ' ************************************************
@@ -263,7 +263,7 @@ Private Sub Form_Deactivate()
 Traite_ErreursDEFPTS:
    Select Case Err
       Case 13
-         Message$ = "Erreur dans la frappe des données"
+         Message$ = "Erreur dans la frappe des donnÃ©es"
          MsgBox Message$, 48
       Case Else
          MsgBox Error$, 48
@@ -315,7 +315,7 @@ Private Sub txtNbPts_Change()
    NbPts% = CInt(txtNbPts.Text)
    gridPts.Rows = NbPts% + 1
    ' ********************************
-   ' renumérotation 1ère colonne
+   ' renumÃ©rotation 1Ã¨re colonne
    gridPts.Col = 0
    For i% = 1 To NbPts%
       gridPts.Row = i%
@@ -323,4 +323,5 @@ Private Sub txtNbPts_Change()
    Next i%
    ' ********************************
 End Sub
+
 
