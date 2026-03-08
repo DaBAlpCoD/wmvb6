@@ -1,6 +1,6 @@
 VERSION 5.00
 Begin VB.Form FenetreDefSolEq 
-   Caption         =   "Définition de la courbe [solution de l'équation F(X)=0]"
+   Caption         =   "DÃ©finition de la courbe [solution de l'Ã©quation F(X)=0]"
    ClientHeight    =   6945
    ClientLeft      =   270
    ClientTop       =   690
@@ -515,7 +515,7 @@ Begin VB.Form FenetreDefSolEq
       Width           =   855
    End
    Begin VB.Frame CadreGarder 
-      Caption         =   "Tracés précédents"
+      Caption         =   "TracÃ©s prÃ©cÃ©dents"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -645,7 +645,7 @@ Begin VB.Form FenetreDefSolEq
       Width           =   495
    End
    Begin VB.Label lblMethode 
-      Caption         =   " Recherche des solutions de l'équation F(X)=0 par la méthode de NEWTON-RAPHSON."
+      Caption         =   " Recherche des solutions de l'Ã©quation F(X)=0 par la mÃ©thode de NEWTON-RAPHSON."
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -679,7 +679,7 @@ Begin VB.Form FenetreDefSolEq
       Width           =   495
    End
    Begin VB.Label lblValAp 
-      Caption         =   "Valeur approchée de la solution :"
+      Caption         =   "Valeur approchÃ©e de la solution :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -729,7 +729,7 @@ Begin VB.Form FenetreDefSolEq
       Width           =   4335
    End
    Begin VB.Label lblMemeEch 
-      Caption         =   "même échelle sur les deux axes"
+      Caption         =   "mÃªme Ã©chelle sur les deux axes"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -864,7 +864,7 @@ Begin VB.Form FenetreDefSolEq
       Width           =   495
    End
    Begin VB.Label EtiquetteLimitesY 
-      Caption         =   "Limites de l'axe des ordonnées "
+      Caption         =   "Limites de l'axe des ordonnÃ©es "
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -1037,7 +1037,7 @@ Begin VB.Form FenetreDefSolEq
       End
    End
    Begin VB.Menu mnuDefPts 
-      Caption         =   "&Définir un ensemble de points"
+      Caption         =   "&DÃ©finir un ensemble de points"
    End
    Begin VB.Menu mnuCalculer 
       Caption         =   "&Calculer"
@@ -1178,8 +1178,8 @@ End Sub
 
 Private Sub Form_Activate()
    '*****************************************
-   '***** actualisations des paramètres *****
-   '*****        pour le tracé          *****
+   '***** actualisations des paramÃ¨tres *****
+   '*****        pour le tracÃ©          *****
    '*****************************************
    If Gap% = 2 Then
       OptionGarder.Value = True
@@ -1197,8 +1197,8 @@ Private Sub Form_Activate()
    DefYmin.Text = Format(Ymin, "0.000000")
    DefYmax.Text = Format(Ymax, "0.000000")
    '****************************************
-   '*****  actualisations spécifiques  *****
-   '*****       à cette fenêtre        *****
+   '*****  actualisations spÃ©cifiques  *****
+   '*****       Ã  cette fenÃªtre        *****
    '****************************************
    FenetreDefSolEq.txtXa.Text = Format(Xapproche, "0.000000")
    FenetreDefSolEq.DefVarf.Text = TextVar2$
@@ -1211,7 +1211,7 @@ End Sub
 
 Private Sub Form_Load()
    '-----------------------------------------------------------------
-   '-----------        Valeurs par défaut             ---------------
+   '-----------        Valeurs par dÃ©faut             ---------------
    '-----------      de certaines variables           ---------------
    '-----------------------------------------------------------------
    DoFlag = False
@@ -1238,7 +1238,7 @@ Private Sub Form_Load()
    CouleurCou& = ROUGE
    CouleurPts& = BLEU
    '-----------------------------------------------------------------
-   '-----------        Valeurs par défaut             ---------------
+   '-----------        Valeurs par dÃ©faut             ---------------
    '-----------        d'autres variables             ---------------
    '-----------------------------------------------------------------
    LX% = Dessin.ScaleWidth
@@ -1273,9 +1273,9 @@ Private Sub mnuCalculer_Click()
       FenetreDefSolEq.lblMessage.Caption = " CALCUL EN COURS ..."
       DoEvents
       '--------------------------------------------------------------
-      '--------- Première manipulation des chaines DefVar : ---------
+      '--------- PremiÃ¨re manipulation des chaines DefVar : ---------
       '--------- Suppression des blancs dans les formules,  ---------
-      '--------- vérification du nombre de parenthèses et   ---------
+      '--------- vÃ©rification du nombre de parenthÃ¨ses et   ---------
       '--------- remplacement des constantes par leur valeur --------
       '--------------------------------------------------------------
       NombVar% = 1
@@ -1329,8 +1329,8 @@ Private Sub mnuEnrPoints_Click()
    Maths.ctrlCMDialog.Flags = &H2&
    Maths.ctrlCMDialog.Action = 2
    '-----------------------------------------------------
-   ' Création du fichier de points
-   ' et écriture de leurs coordonnées Xpt() et Ypt()
+   ' CrÃ©ation du fichier de points
+   ' et Ã©criture de leurs coordonnÃ©es Xpt() et Ypt()
    ' ou autres...
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Output As #1
@@ -1376,13 +1376,13 @@ Private Sub mnuOuvPoints_Click()
    On Error GoTo Traite_ErreursOuvPts
    Maths.ctrlCMDialog.Filter = "Points (*.xy)|*.xy"
    ' nom de fichier et chemin doivent exister
-   ' sinon apparait un message d'erreur spécifique
+   ' sinon apparait un message d'erreur spÃ©cifique
    Maths.ctrlCMDialog.Flags = &H1000& Or &H800&
    Maths.ctrlCMDialog.CancelError = True
    Maths.ctrlCMDialog.Action = 1
    '-----------------------------------------------------
    ' Ouverture et lecture du fichier de points
-   ' et écriture de leurs coordonnées dans Xpt() et Ypt()
+   ' et Ã©criture de leurs coordonnÃ©es dans Xpt() et Ypt()
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Input As #1
    Input #1, NbPts%
@@ -1396,13 +1396,13 @@ Private Sub mnuOuvPoints_Click()
    '-----------------------------------------------------
    ' activation de certaines cases
    '-------------------------------
-   EtiquettePoints.ForeColor = &H80000012     'Texte activé
-   PointsTracer.ForeColor = &H80000012        'Texte activé
+   EtiquettePoints.ForeColor = &H80000012     'Texte activÃ©
+   PointsTracer.ForeColor = &H80000012        'Texte activÃ©
    PointsTracer.Value = 1                         'Checked
-   PointsRelier.ForeColor = &H80000012        'Texte activé
+   PointsRelier.ForeColor = &H80000012        'Texte activÃ©
    PointsRelier.Value = 0                         'Unchecked
-   EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activé
-   EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activé
+   EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activÃ©
+   EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activÃ©
    '-----------------------------------------------------
    Exit Sub
 Traite_ErreursOuvPts:
@@ -1425,10 +1425,10 @@ End Sub
 
 Private Sub mnuTracer_Click()
    '-----------------------------------------------------
-   '---------   Vérifications avant   -------------------
-   '--------- fermeture de la fenêtre -------------------
+   '---------   VÃ©rifications avant   -------------------
+   '--------- fermeture de la fenÃªtre -------------------
    '-----------------------------------------------------
-   '-----  1- Bornes écrites correctement  --------------
+   '-----  1- Bornes Ã©crites correctement  --------------
    On Error Resume Next
    Xmax = CSng(DefXmax.Text)
    If Err.Number <> 0 Then
@@ -1460,24 +1460,24 @@ Private Sub mnuTracer_Click()
       AY = Ymax - Ymin
    End If
    If AX < 0 Then
-      MsgBox "Xmax doit être supérieur à Xmin", 48, "FenetreDefInteg.mnuTracer"
+      MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin", 48, "FenetreDefInteg.mnuTracer"
       Exit Sub
    ElseIf AY < 0 Then
-      MsgBox "Ymax doit être supérieur à Ymin", 48, "FenetreDefInteg.mnuTracer"
+      MsgBox "Ymax doit Ãªtre supÃ©rieur Ã  Ymin", 48, "FenetreDefInteg.mnuTracer"
       Exit Sub
    End If
    '-----------------------------------------------------
    '--------   si la formule de la fonction   -----------
-   '--------   ou Xapproche ont été modifiés, -----------
+   '--------   ou Xapproche ont Ã©tÃ© modifiÃ©s, -----------
    '--------       calculer d'abord           -----------
    '-----------------------------------------------------
    If FenetreDefSolEq.lblSolEq.Caption = "" Then
       mnuCalculer_Click
    End If
    '-----------------------------------------------------
-   '--------   fermeture de la fenêtre   ----------------
+   '--------   fermeture de la fenÃªtre   ----------------
    '--------      et ouverture           ----------------
-   '--------  des fenêtres pour le tracé ----------------
+   '--------  des fenÃªtres pour le tracÃ© ----------------
    '-----------------------------------------------------
    FenetreDefSolEq.Hide
    Fenetre_Prin.Show
@@ -1485,11 +1485,11 @@ Private Sub mnuTracer_Click()
    Dessin.Show
    '--------------------------------------------------------------
    '--------- Affichage de la formule ----------------------------
-   '---------     définissant la courbe        -------------------
+   '---------     dÃ©finissant la courbe        -------------------
    '--------------------------------------------------------------
    Fenetre_Prin.Caption = "Courbe"
    Fenetre_Prin.LabelExplications.ForeColor = MAGENTA
-   Fenetre_Prin.LabelExplications.Caption = "Courbe en coordonnées cartésiennes; définie par :    Y=F(X).  Un des zéros de la fonction F(X) est calculé."
+   Fenetre_Prin.LabelExplications.Caption = "Courbe en coordonnÃ©es cartÃ©siennes; dÃ©finie par :    Y=F(X).  Un des zÃ©ros de la fonction F(X) est calculÃ©."
    Fenetre_Val.Cls
    Fenetre_Val.lblFormule.ForeColor = CouleurCou&
    Fenetre_Val.lblFormule.Caption = "F(X) = " & TextVar2$
@@ -1497,7 +1497,7 @@ Private Sub mnuTracer_Click()
    If NewtonConverge = True Then
       Fenetre_Val.lblNote.Caption = " F(" & Format(Xsolution, "0.000") & ")= 0"
    Else
-      Fenetre_Val.lblNote.Caption = " Aucun zéro de F(X) n'a été trouvé"
+      Fenetre_Val.lblNote.Caption = " Aucun zÃ©ro de F(X) n'a Ã©tÃ© trouvÃ©"
    End If
 End Sub
 
