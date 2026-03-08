@@ -19,7 +19,7 @@ Begin VB.Form FenetreNbPremiers
    ScaleHeight     =   5280
    ScaleWidth      =   7365
    Begin VB.CommandButton CommandDebutNbP 
-      Caption         =   "Début"
+      Caption         =   "DÃ©but"
       Default         =   -1  'True
       Height          =   495
       Left            =   480
