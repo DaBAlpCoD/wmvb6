@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form FenetrePolyedre 
-   Caption         =   "Polyèdres"
+   Caption         =   "PolyÃ¨dres"
    ClientHeight    =   5790
    ClientLeft      =   975
    ClientTop       =   975
@@ -59,7 +59,7 @@ Begin VB.Form FenetrePolyedre
       Width           =   735
    End
    Begin VB.Label lblNomPol 
-      Caption         =   "Tétraèdre"
+      Caption         =   "TÃ©traÃ¨dre"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -77,7 +77,7 @@ Begin VB.Form FenetrePolyedre
       Width           =   6855
    End
    Begin VB.Label lblTypePol 
-      Caption         =   "Polyèdre régulier :"
+      Caption         =   "PolyÃ¨dre rÃ©gulier :"
       Height          =   255
       Left            =   240
       TabIndex        =   4
@@ -102,7 +102,7 @@ Begin VB.Form FenetrePolyedre
       Width           =   1935
    End
    Begin VB.Label lblCoorPts 
-      Caption         =   "Coordonnées des sommets :"
+      Caption         =   "CoordonnÃ©es des sommets :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -128,23 +128,23 @@ Begin VB.Form FenetrePolyedre
       End
    End
    Begin VB.Menu mnuPolyedre 
-      Caption         =   "&Polyèdre"
+      Caption         =   "&PolyÃ¨dre"
       Begin VB.Menu mnuRegulier 
-         Caption         =   "&Régulier"
+         Caption         =   "&RÃ©gulier"
          Begin VB.Menu mnuTetraedre 
-            Caption         =   "&Tétraèdre"
+            Caption         =   "&TÃ©traÃ¨dre"
          End
          Begin VB.Menu mnuOctaedre 
-            Caption         =   "&Octaèdre"
+            Caption         =   "&OctaÃ¨dre"
          End
          Begin VB.Menu mnuCube 
             Caption         =   "&Cube"
          End
          Begin VB.Menu mnuIcosaedre 
-            Caption         =   "&Icosaèdre"
+            Caption         =   "&IcosaÃ¨dre"
          End
          Begin VB.Menu mnuPentagonoDodecaedre 
-            Caption         =   "&Pentagono-dodécaèdre"
+            Caption         =   "&Pentagono-dodÃ©caÃ¨dre"
          End
       End
       Begin VB.Menu mnuParticulier 
@@ -156,20 +156,20 @@ Begin VB.Form FenetrePolyedre
             Caption         =   "Cuboctaedre 2"
          End
          Begin VB.Menu mnuPentagonoDoIco 
-            Caption         =   "Pentagono-dodécaèdre icosaedre"
+            Caption         =   "Pentagono-dodÃ©caÃ¨dre icosaedre"
          End
          Begin VB.Menu mnuBallFoot 
             Caption         =   """Ballon de &football"""
          End
          Begin VB.Menu mnuRhombododecaedre 
-            Caption         =   "Rhombododécaèdre"
+            Caption         =   "RhombododÃ©caÃ¨dre"
          End
          Begin VB.Menu mnuTetragonoTriOctaedre 
-            Caption         =   "Tétragono-tri-octaèdre"
+            Caption         =   "TÃ©tragono-tri-octaÃ¨dre"
          End
       End
       Begin VB.Menu mnuDefiniUt 
-         Caption         =   "&Défini par l'utilisateur"
+         Caption         =   "&DÃ©fini par l'utilisateur"
       End
    End
    Begin VB.Menu mnuVisu 
@@ -189,8 +189,8 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 ' Bascule :
 Dim DefiniUt As Boolean
-' FALSE si le polyèdre choisi est pré-défini,
-' TRUE s'il est défini par l'utilisateur.
+' FALSE si le polyÃ¨dre choisi est prÃ©-dÃ©fini,
+' TRUE s'il est dÃ©fini par l'utilisateur.
 
 
 
@@ -199,7 +199,7 @@ Private Sub ballondefoot()
    NbFacMax% = 116     ' Nombre de faces
    Call PolReDim
    ' ****************************************************
-   ' ******  valeurs des coordonnées des sommets : ******
+   ' ******  valeurs des coordonnÃ©es des sommets : ******
    ' ****************************************************
    Xsom(1) = UAT
    Ysom(1) = 0
@@ -393,7 +393,7 @@ Private Sub cube()
    NbFacMax% = 12     ' Nombre de faces
    Call PolReDim
    ' ****************************************************
-   ' ******  valeurs des coordonnées des sommets : ******
+   ' ******  valeurs des coordonnÃ©es des sommets : ******
    ' ****************************************************
    Xsom(1) = 1
    Ysom(1) = 1
@@ -421,7 +421,7 @@ Private Sub cube()
    Zsom(8) = -1
    ' ****************************************************
    ' *****************************************************
-   ' ***************  valeurs des arêtes : ***************
+   ' ***************  valeurs des arÃªtes : ***************
    ' *****************************************************
    Arete%(1, 2) = 1
    Arete%(1, 3) = 0
@@ -461,7 +461,7 @@ Private Sub cuboctaedre1()
    NbFacMax% = 24     ' Nombre de faces
    Call PolReDim
    ' ****************************************************
-   ' ******  valeurs des coordonnées des sommets : ******
+   ' ******  valeurs des coordonnÃ©es des sommets : ******
    ' ****************************************************
    Xsom(1) = 1
    Ysom(1) = 0
@@ -507,7 +507,7 @@ Private Sub cuboctaedre2()
    NbFacMax% = 48     ' Nombre de faces
    Call PolReDim
    ' ****************************************************
-   ' ******  valeurs des coordonnées des sommets : ******
+   ' ******  valeurs des coordonnÃ©es des sommets : ******
    ' ****************************************************
    Xsom(1) = 1
    Ysom(1) = 0
@@ -587,7 +587,7 @@ End Sub
 Private Sub Form_Load()
    mnuOuvrir.Enabled = False
    DefiniUt = False
-   NomPolyedre$ = "Tétraèdre"
+   NomPolyedre$ = "TÃ©traÃ¨dre"
    Call tetraedre
    '***************************************
    '***** mise en place de la grille ******
@@ -609,7 +609,7 @@ Private Sub Form_Load()
    FenetrePolyedre.GridSom.Col = 3
    FenetrePolyedre.GridSom.Text = "Z"
    ' ********************************
-   ' numérotation 1ère colonne
+   ' numÃ©rotation 1Ã¨re colonne
    ' ********************************
    FenetrePolyedre.GridSom.Col = 0
    For i% = 1 To NbSom%
@@ -617,13 +617,13 @@ Private Sub Form_Load()
       FenetrePolyedre.GridSom.Text = Format(i%, "0")
    Next i%
    ' ********************************
-   ' alignement des nombres à droite
+   ' alignement des nombres Ã  droite
    ' ********************************
    For i% = 1 To 3
       FenetrePolyedre.GridSom.ColAlignment(i%) = 1
    Next i%
    ' ********************************
-   ' placement des valeurs par défaut
+   ' placement des valeurs par dÃ©faut
    ' ********************************
    For i% = 1 To NbSom%
       FenetrePolyedre.GridSom.Row = i%
@@ -638,7 +638,7 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub gridSom_KeyPress(KeyAscii As Integer)
-   If DefiniUt = True Then ' si polyèdre quelconque
+   If DefiniUt = True Then ' si polyÃ¨dre quelconque
       SomText$ = GridSom.Text
       Select Case KeyAscii
       Case 32 To 168
@@ -661,7 +661,7 @@ Private Sub icosaedre()
    NbFacMax% = 20     ' Nombre de faces
    Call PolReDim
    ' ****************************************************
-   ' ******  valeurs des coordonnées des sommets : ******
+   ' ******  valeurs des coordonnÃ©es des sommets : ******
    ' ****************************************************
    Xsom(1) = 1
    Ysom(1) = 0
@@ -710,7 +710,7 @@ End Sub
 Private Sub mnuBallFoot_Click()
    DefiniUt = False
    mnuOuvrir.Enabled = False
-   lblTypePol.Caption = "Polyèdre particulier"
+   lblTypePol.Caption = "PolyÃ¨dre particulier"
    NomPolyedre$ = "'Ballon de Football'"
    lblNomPol.Caption = NomPolyedre$
    Call ballondefoot
@@ -720,7 +720,7 @@ End Sub
 Private Sub mnuCube_Click()
    DefiniUt = False
    mnuOuvrir.Enabled = False
-   lblTypePol.Caption = "Polyèdre régulier"
+   lblTypePol.Caption = "PolyÃ¨dre rÃ©gulier"
    NomPolyedre$ = "Cube"
    lblNomPol.Caption = NomPolyedre$
    Call cube
@@ -731,8 +731,8 @@ End Sub
 Private Sub mnuCuboctaedre1_Click()
    DefiniUt = False
    mnuOuvrir.Enabled = False
-   lblTypePol.Caption = "Polyèdre particulier"
-   NomPolyedre$ = "Cuboctaèdre 1"
+   lblTypePol.Caption = "PolyÃ¨dre particulier"
+   NomPolyedre$ = "CuboctaÃ¨dre 1"
    lblNomPol.Caption = NomPolyedre$
    Call cuboctaedre1
    Call ActuGrille
@@ -741,8 +741,8 @@ End Sub
 Private Sub mnuCuboctaedre2_Click()
    DefiniUt = False
    mnuOuvrir.Enabled = False
-   lblTypePol.Caption = "Polyèdre particulier"
-   NomPolyedre$ = "Cuboctaèdre 2"
+   lblTypePol.Caption = "PolyÃ¨dre particulier"
+   NomPolyedre$ = "CuboctaÃ¨dre 2"
    lblNomPol.Caption = NomPolyedre$
    Call cuboctaedre2
    Call ActuGrille
@@ -753,7 +753,7 @@ End Sub
 Private Sub mnuDefiniUt_Click()
    DefiniUt = True
    mnuOuvrir.Enabled = True
-   lblTypePol.Caption = "Polyèdre défini par l'utilisateur"
+   lblTypePol.Caption = "PolyÃ¨dre dÃ©fini par l'utilisateur"
    NomPolyedre$ = ""
    lblNomPol.Caption = NomPolyedre$
 End Sub
@@ -769,7 +769,7 @@ Private Sub mnuEnregistrer_Click()
    ' ********************************************
    Call PolReDim
    ' ********************************************
-   ' affectation de leurs valeurs aux coordonnées
+   ' affectation de leurs valeurs aux coordonnÃ©es
    ' ********************************************
    For i% = 1 To NbSom%
       FenetrePolyedre.GridSom.Row = i%
@@ -782,8 +782,8 @@ Private Sub mnuEnregistrer_Click()
    Next i%
    ' ********************************************
    '-----------------------------------------------------
-   ' Création du fichier de points 3D
-   ' et écriture de leurs coordonnées dans le fichier
+   ' CrÃ©ation du fichier de points 3D
+   ' et Ã©criture de leurs coordonnÃ©es dans le fichier
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Output As #1
    Write #1, NbSom%
@@ -812,8 +812,8 @@ End Sub
 Private Sub mnuIcosaedre_Click()
    DefiniUt = False
    mnuOuvrir.Enabled = False
-   lblTypePol.Caption = "Polyèdre régulier"
-   NomPolyedre$ = "Icosaèdre"
+   lblTypePol.Caption = "PolyÃ¨dre rÃ©gulier"
+   NomPolyedre$ = "IcosaÃ¨dre"
    lblNomPol.Caption = NomPolyedre$
    Call icosaedre
    Call ActuGrille
@@ -822,8 +822,8 @@ End Sub
 Private Sub mnuOctaedre_Click()
    DefiniUt = False
    mnuOuvrir.Enabled = False
-   lblTypePol.Caption = "Polyèdre régulier"
-   NomPolyedre$ = "Octaèdre"
+   lblTypePol.Caption = "PolyÃ¨dre rÃ©gulier"
+   NomPolyedre$ = "OctaÃ¨dre"
    lblNomPol.Caption = NomPolyedre$
    Call octaedre
    Call ActuGrille
@@ -834,13 +834,13 @@ Private Sub mnuOuvrir_Click()
    On Error GoTo Traite_ErreursOuvPolyedre
    Maths.ctrlCMDialog.Filter = "Points (*.xyz)|*.xyz"
    ' nom de fichier et chemin doivent exister
-   ' sinon apparait un message d'erreur spécifique
+   ' sinon apparait un message d'erreur spÃ©cifique
    Maths.ctrlCMDialog.Flags = &H1000& Or &H800&
    Maths.ctrlCMDialog.CancelError = True
    Maths.ctrlCMDialog.Action = 1
    '-----------------------------------------------------
    ' Ouverture et lecture du fichier de points
-   ' et écriture de ces points dans Xsom(i%)
+   ' et Ã©criture de ces points dans Xsom(i%)
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Input As #1
    Input #1, NbSom%
@@ -849,7 +849,7 @@ Private Sub mnuOuvrir_Click()
    ' ********************************************
    Call PolReDim
    ' *************************************************
-   ' lecture des éléments de Xsom, Ysom et Zsom
+   ' lecture des Ã©lÃ©ments de Xsom, Ysom et Zsom
    ' *************************************************
    For i% = 1 To NbSom%
       Input #1, Xsom(i%)
@@ -892,8 +892,8 @@ End Sub
 Private Sub mnuPentagonoDodecaedre_Click()
    DefiniUt = False
    mnuOuvrir.Enabled = False
-   lblTypePol.Caption = "Polyèdre régulier"
-   NomPolyedre$ = "Pentagono-dodécaèdre"
+   lblTypePol.Caption = "PolyÃ¨dre rÃ©gulier"
+   NomPolyedre$ = "Pentagono-dodÃ©caÃ¨dre"
    lblNomPol.Caption = NomPolyedre$
    Call pentagonododecaedre
    Call ActuGrille
@@ -903,8 +903,8 @@ End Sub
 Private Sub mnuPentagonoDoIco_Click()
    DefiniUt = False
    mnuOuvrir.Enabled = False
-   lblTypePol.Caption = "Polyèdre particulier"
-   NomPolyedre$ = "Pentagono-dodécaèdre icosaèdre"
+   lblTypePol.Caption = "PolyÃ¨dre particulier"
+   NomPolyedre$ = "Pentagono-dodÃ©caÃ¨dre icosaÃ¨dre"
    lblNomPol.Caption = NomPolyedre$
    Call pentagonododecaedreicosaedre
    Call ActuGrille
@@ -921,7 +921,7 @@ Private Sub octaedre()
    NbFacMax% = 8     ' Nombre de faces
    Call PolReDim
    ' ****************************************************
-   ' ******  valeurs des coordonnées des sommets : ******
+   ' ******  valeurs des coordonnÃ©es des sommets : ******
    ' ****************************************************
    Xsom(1) = 1
    Ysom(1) = 0
@@ -942,7 +942,7 @@ Private Sub octaedre()
    Ysom(6) = 0
    Zsom(6) = -1
    ' *****************************************************
-   ' ***************  valeurs des arêtes : ***************
+   ' ***************  valeurs des arÃªtes : ***************
    ' *****************************************************
    Arete%(1, 2) = 1
    Arete%(1, 3) = 0
@@ -969,8 +969,8 @@ End Sub
 Private Sub mnuRhombododecaedre_Click()
    DefiniUt = False
    mnuOuvrir.Enabled = False
-   lblTypePol.Caption = "Polyèdre particulier"
-   NomPolyedre$ = "Rhombododécaèdre"
+   lblTypePol.Caption = "PolyÃ¨dre particulier"
+   NomPolyedre$ = "RhombododÃ©caÃ¨dre"
    lblNomPol.Caption = NomPolyedre$
    Call rhombododecaedre
    Call ActuGrille
@@ -979,8 +979,8 @@ End Sub
 Private Sub mnuTetraedre_Click()
    DefiniUt = False
    mnuOuvrir.Enabled = False
-   lblTypePol.Caption = "Polyèdre régulier"
-   NomPolyedre$ = "Tétraèdre"
+   lblTypePol.Caption = "PolyÃ¨dre rÃ©gulier"
+   NomPolyedre$ = "TÃ©traÃ¨dre"
    lblNomPol.Caption = NomPolyedre$
    Call tetraedre
    Call ActuGrille
@@ -990,8 +990,8 @@ End Sub
 Private Sub mnuTetragonoTriOctaedre_Click()
    DefiniUt = False
    mnuOuvrir.Enabled = False
-   lblTypePol.Caption = "Polyèdre particulier"
-   NomPolyedre$ = "Tétragono-tri-octaèdre"
+   lblTypePol.Caption = "PolyÃ¨dre particulier"
+   NomPolyedre$ = "TÃ©tragono-tri-octaÃ¨dre"
    lblNomPol.Caption = NomPolyedre$
    Call tetragonotrioctaedre
    Call ActuGrille
@@ -1007,7 +1007,7 @@ Private Sub pentagonododecaedre()
    NbFacMax% = 36     ' Nombre de faces
    Call PolReDim
    ' ****************************************************
-   ' ******  valeurs des coordonnées des sommets : ******
+   ' ******  valeurs des coordonnÃ©es des sommets : ******
    ' ****************************************************
    Xsom(1) = 0
    Ysom(1) = UAT
@@ -1077,7 +1077,7 @@ Private Sub pentagonododecaedreicosaedre()
    NbFacMax% = 60     ' Nombre de faces
    Call PolReDim
    ' ****************************************************
-   ' ******  valeurs des coordonnées des sommets : ******
+   ' ******  valeurs des coordonnÃ©es des sommets : ******
    ' ****************************************************
    Xsom(1) = 0
    Ysom(1) = 0
@@ -1173,24 +1173,24 @@ Private Sub pentagonododecaedreicosaedre()
 End Sub
 
 Private Sub PolReDim()
-   ' -------------- ReDims pour polyèdres ----------------
-   ' Coordonnées de sommets :
+   ' -------------- ReDims pour polyÃ¨dres ----------------
+   ' CoordonnÃ©es de sommets :
    ReDim Xsom(1 To NbSom%), Ysom(1 To NbSom%), Zsom(1 To NbSom%)
-   ' Arêtes :
-   ' 0 : pas d'arête; 1 : arête visible; 2 : arête invisible
+   ' ArÃªtes :
+   ' 0 : pas d'arÃªte; 1 : arÃªte visible; 2 : arÃªte invisible
    ReDim Arete%(1 To NbSom%, 1 To NbSom%)
    ' Rayon
    ReDim Rayon(1 To NbSom%)
-   ' Numéro du point constituant
-   ' le NSième sommet de la face JF
+   ' NumÃ©ro du point constituant
+   ' le NSiÃ¨me sommet de la face JF
    ReDim NumSomFac%(1 To NbFacMax%, 1 To NbSom%)
-   ' signe +1 ou -1 à appliquer au produit vectoriel V des
-   ' 2 premières arêtes de la face JF pour qu'il soit dirigé
-   ' vers l'extérieur du polyèdre
+   ' signe +1 ou -1 Ã  appliquer au produit vectoriel V des
+   ' 2 premiÃ¨res arÃªtes de la face JF pour qu'il soit dirigÃ©
+   ' vers l'extÃ©rieur du polyÃ¨dre
    ReDim SignePV%(1 To NbFacMax%)
    ' nombre de sommets de la face JF
    ReDim NbSomFac%(1 To NbFacMax%)
-   ' coordonnées du centre de gravité de la face JF
+   ' coordonnÃ©es du centre de gravitÃ© de la face JF
    ReDim Xfac(1 To NbFacMax%), Yfac(1 To NbFacMax%), Zfac(1 To NbFacMax%)
    '------------------------------------------------------
 End Sub
@@ -1200,7 +1200,7 @@ Private Sub rhombododecaedre()
    NbFacMax% = 24     ' Nombre de faces
    Call PolReDim
    ' ****************************************************
-   ' ******  valeurs des coordonnées des sommets : ******
+   ' ******  valeurs des coordonnÃ©es des sommets : ******
    ' ****************************************************
    Xsom(1) = 0
    Ysom(1) = 0
@@ -1254,7 +1254,7 @@ Private Sub tetraedre()
    NbAr% = 6
    NbFac% = 4
    ' ****************************************************
-   ' ******  valeurs des coordonnées des sommets : ******
+   ' ******  valeurs des coordonnÃ©es des sommets : ******
    ' ****************************************************
    Xsom(1) = 1
    Ysom(1) = 1
@@ -1269,7 +1269,7 @@ Private Sub tetraedre()
    Ysom(4) = 1
    Zsom(4) = -1
    ' *****************************************************
-   ' ***************  valeurs des arêtes : ***************
+   ' ***************  valeurs des arÃªtes : ***************
    ' *****************************************************
    Arete%(1, 2) = 1
    Arete%(1, 3) = 1
@@ -1309,7 +1309,7 @@ Private Sub tetragonotrioctaedre()
    NbFacMax% = 48     ' Nombre de faces
    Call PolReDim
    ' ****************************************************
-   ' ******  valeurs des coordonnées des sommets : ******
+   ' ******  valeurs des coordonnÃ©es des sommets : ******
    ' ****************************************************
    Xsom(1) = 0
    Ysom(1) = 0
@@ -1393,11 +1393,11 @@ Private Sub tetragonotrioctaedre()
 End Sub
 
 Private Sub txtNbSom_Change()
-   If DefiniUt = True Then ' si polyèdre quelconque
+   If DefiniUt = True Then ' si polyÃ¨dre quelconque
       NbSom% = CInt(txtNbSom.Text)
       GridSom.Rows = NbSom% + 1
       ' ********************************
-      ' renumérotation 1ère colonne
+      ' renumÃ©rotation 1Ã¨re colonne
       GridSom.Col = 0
       For i% = 1 To NbSom%
          GridSom.Row = i%
@@ -1412,16 +1412,16 @@ End Sub
 
 Public Sub Visu()
    On Error GoTo Traite_ErreursVisuPol
-   If DefiniUt = True Then ' si polyèdre quelconque
+   If DefiniUt = True Then ' si polyÃ¨dre quelconque
       If NbSom% < 4 Then
          Beep
-         MsgBox "Un polyèdre comporte au moins 4 sommets !", 48, "POLYEDRE"
+         MsgBox "Un polyÃ¨dre comporte au moins 4 sommets !", 48, "POLYEDRE"
          Exit Sub
       End If
       NbFacMax% = 2 * NbSom% - 4
       Call PolReDim
       ' ********************************************
-      ' affectation de leurs valeurs aux coordonnées
+      ' affectation de leurs valeurs aux coordonnÃ©es
       ' ********************************************
       For i% = 1 To NbSom%
          FenetrePolyedre.GridSom.Row = i%
@@ -1439,7 +1439,7 @@ Public Sub Visu()
 Traite_ErreursVisuPol:
    Select Case Err
       Case 13
-         Message$ = "Erreur dans la frappe des données"
+         Message$ = "Erreur dans la frappe des donnÃ©es"
          MsgBox Message$, 48
       Case Else
          MsgBox Error$, 48
@@ -1451,7 +1451,7 @@ Public Sub ActuGrille()
    txtNbSom.Text = CStr(NbSom%)
    GridSom.Rows = NbSom% + 1
    ' ********************************
-   ' renumérotation 1ère colonne
+   ' renumÃ©rotation 1Ã¨re colonne
    GridSom.Col = 0
    For i% = 1 To NbSom%
       GridSom.Row = i%
