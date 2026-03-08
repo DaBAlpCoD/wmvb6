@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form FenetreDefSpline 
-   Caption         =   "Définition de la courbe [Spline]"
+   Caption         =   "DÃ©finition de la courbe [Spline]"
    ClientHeight    =   6885
    ClientLeft      =   210
    ClientTop       =   825
@@ -562,7 +562,7 @@ Begin VB.Form FenetreDefSpline
       Width           =   855
    End
    Begin VB.Frame CadreGarder 
-      Caption         =   "Tracés précédents"
+      Caption         =   "TracÃ©s prÃ©cÃ©dents"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -645,7 +645,7 @@ Begin VB.Form FenetreDefSpline
       Y2              =   5280
    End
    Begin VB.Label lblMemeEch 
-      Caption         =   "même échelle sur les deux axes"
+      Caption         =   "mÃªme Ã©chelle sur les deux axes"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -679,7 +679,7 @@ Begin VB.Form FenetreDefSpline
       Width           =   1215
    End
    Begin VB.Label lblPts 
-      Caption         =   "Points par où doit passer la courbe"
+      Caption         =   "Points par oÃ¹ doit passer la courbe"
       Height          =   255
       Left            =   4680
       TabIndex        =   42
@@ -687,7 +687,7 @@ Begin VB.Form FenetreDefSpline
       Width           =   3135
    End
    Begin VB.Label lblCoorPts 
-      Caption         =   "Coordonnées :"
+      Caption         =   "CoordonnÃ©es :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -755,7 +755,7 @@ Begin VB.Form FenetreDefSpline
       Width           =   1095
    End
    Begin VB.Label lblPar 
-      Caption         =   "Paramètres entrant dans la définition de la courbe"
+      Caption         =   "ParamÃ¨tres entrant dans la dÃ©finition de la courbe"
       Height          =   255
       Left            =   120
       TabIndex        =   36
@@ -839,7 +839,7 @@ Begin VB.Form FenetreDefSpline
       Width           =   4935
    End
    Begin VB.Label lblDefiniCour 
-      Caption         =   "Fonction définissant la courbe :"
+      Caption         =   "Fonction dÃ©finissant la courbe :"
       Height          =   255
       Left            =   120
       TabIndex        =   25
@@ -898,7 +898,7 @@ Begin VB.Form FenetreDefSpline
       Width           =   495
    End
    Begin VB.Label EtiquetteLimitesY 
-      Caption         =   "Limites de l'axe des ordonnées "
+      Caption         =   "Limites de l'axe des ordonnÃ©es "
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -1212,7 +1212,7 @@ Private Sub Form_Activate()
       FenetreDefSpline.GridPts.Text = Format(Ysp(i%), "0.000")
    Next i%
    ' **************************************
-   ' ***** 2) grille des paramètres  ******
+   ' ***** 2) grille des paramÃ¨tres  ******
    ' **************************************
    FenetreDefSpline.GridPar.Col = 1
    For i% = 1 To NbPtsSp% - 1
@@ -1249,7 +1249,7 @@ Private Sub Form_Deactivate()
    ReDim Cspline(1 To NbPtsSp% - 1)
    ReDim Dspline(1 To NbPtsSp% - 1)
    ' ********************************************
-   ' affectation de leurs valeurs aux coordonnées
+   ' affectation de leurs valeurs aux coordonnÃ©es
    ' ********************************************
    For i% = 1 To NbPtsSp%
       FenetreDefSpline.GridPts.Row = i%
@@ -1274,7 +1274,7 @@ Private Sub Form_Deactivate()
    ' ************************
    Call OrdonnePoints(NbPtsSp%, Xsp(), Ysp())
    ' ********************************************
-   ' affectation de leurs valeurs aux paramètres
+   ' affectation de leurs valeurs aux paramÃ¨tres
    ' ********************************************
    FenetreDefSpline.GridPar.Col = 1
    For i% = 1 To NbPtsSp% - 1
@@ -1321,7 +1321,7 @@ Private Sub Form_Deactivate()
 Traite_ErreursFoDeSpline:
    Select Case Err
       Case 13
-         Message$ = "Erreur dans la frappe des données"
+         Message$ = "Erreur dans la frappe des donnÃ©es"
          MsgBox Message$, 48, "FenetreDefSpline.Deactivate"
       Case Else
          MsgBox Error$, 48, "FenetreDefSpline.Deactivate"
@@ -1332,7 +1332,7 @@ End Sub
 
 Private Sub Form_Load()
    '-----------------------------------------------------------------
-   '-----------        Valeurs par défaut             ---------------
+   '-----------        Valeurs par dÃ©faut             ---------------
    '-----------      de certaines variables           ---------------
    '-----------------------------------------------------------------
    DoFlag = False
@@ -1353,7 +1353,7 @@ Private Sub Form_Load()
    CouleurCou& = ROUGE
    CouleurPts& = BLEU
    '-----------------------------------------------------------------
-   '-----------        Valeurs par défaut             ---------------
+   '-----------        Valeurs par dÃ©faut             ---------------
    '-----------        d'autres variables             ---------------
    '-----------------------------------------------------------------
    LX% = Dessin.ScaleWidth
@@ -1363,10 +1363,10 @@ Private Sub Form_Load()
    MX = LX% / AX
    MY = -LY% / AY
    '-----------------------------------------------------
-   '---------------- valeurs par défaut -----------------
+   '---------------- valeurs par dÃ©faut -----------------
    '----------------     pour Spline    -----------------
    '-----------------------------------------------------
-   lblCalcul.Caption = "Calcul non effectué"
+   lblCalcul.Caption = "Calcul non effectuÃ©"
    NbPtsSp% = 7    ' nombre de points
    ReDim Xsp(1 To NbPtsSp%), Ysp(1 To NbPtsSp%)
    ReDim Aspline(1 To NbPtsSp% - 1)
@@ -1409,7 +1409,7 @@ Private Sub Form_Load()
    FenetreDefSpline.GridPts.Col = 2
    FenetreDefSpline.GridPts.Text = "Y"
    ' ********************************
-   ' numérotation 1ère colonne
+   ' numÃ©rotation 1Ã¨re colonne
    ' ********************************
    FenetreDefSpline.GridPts.Col = 0
    For i% = 1 To NbPtsSp%
@@ -1417,7 +1417,7 @@ Private Sub Form_Load()
       FenetreDefSpline.GridPts.Text = Format(i%, "0")
    Next i%
    ' **************************************
-   ' ***** 2) grille des paramètres  ******
+   ' ***** 2) grille des paramÃ¨tres  ******
    ' **************************************
    FenetreDefSpline.GridPar.Cols = 5
    FenetreDefSpline.GridPar.Rows = NbPtsSp%
@@ -1437,7 +1437,7 @@ Private Sub Form_Load()
    FenetreDefSpline.GridPar.Col = 4
    FenetreDefSpline.GridPar.Text = "D"
    ' ********************************
-   ' numérotation 1ère colonne
+   ' numÃ©rotation 1Ã¨re colonne
    ' ********************************
    FenetreDefSpline.GridPar.Col = 0
    For i% = 1 To NbPtsSp% - 1
@@ -1448,7 +1448,7 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub gridPts_KeyPress(KeyAscii As Integer)
-   lblCalcul.Caption = "Calcul non effectué"
+   lblCalcul.Caption = "Calcul non effectuÃ©"
    PtsText$ = GridPts.Text
    Select Case KeyAscii
    Case 32 To 168
@@ -1481,7 +1481,7 @@ End Sub
 
 
 Private Sub mnuCalculer_Click()
-   If lblCalcul.Caption = "Calcul non effectué" Then
+   If lblCalcul.Caption = "Calcul non effectuÃ©" Then
       On Error GoTo Traite_ErreursCalSpline
       ' ********************************************
       '               ReDims
@@ -1493,7 +1493,7 @@ Private Sub mnuCalculer_Click()
       ReDim Cspline(1 To NbPtsSp% - 1)
       ReDim Dspline(1 To NbPtsSp% - 1)
       ' ********************************************
-      ' affectation de leurs valeurs aux coordonnées
+      ' affectation de leurs valeurs aux coordonnÃ©es
       ' ********************************************
       For i% = 1 To NbPtsSp%
          FenetreDefSpline.GridPts.Row = i%
@@ -1518,13 +1518,13 @@ Private Sub mnuCalculer_Click()
       ' ************************
       Call OrdonnePoints(NbPtsSp%, Xsp(), Ysp())
       ' ******************************
-      ' calcul des paramètres A,B,C,D
+      ' calcul des paramÃ¨tres A,B,C,D
       ' ******************************
       Call ParSpline
       ' ******************************
       '***************************************
       '*****   actualisation de la   *********
-      '*****  grille des paramètres  *********
+      '*****  grille des paramÃ¨tres  *********
       '***************************************
       FenetreDefSpline.GridPar.Col = 1
       For i% = 1 To NbPtsSp% - 1
@@ -1547,12 +1547,12 @@ Private Sub mnuCalculer_Click()
          FenetreDefSpline.GridPar.Text = Format(Dspline(i%), "0.000")
       Next i%
       ' **************************************
-      lblCalcul.Caption = "Calcul effectué !"
+      lblCalcul.Caption = "Calcul effectuÃ© !"
       Exit Sub
 Traite_ErreursCalSpline:
       Select Case Err
          Case 13
-            Message$ = "Erreur dans la frappe des données"
+            Message$ = "Erreur dans la frappe des donnÃ©es"
             MsgBox Message$, 48, "FenetreDefSpline.mnuCalculer"
          Case Else
             MsgBox Error$, 48, "FenetreDefSpline.mnuCalculer"
@@ -1587,8 +1587,8 @@ Private Sub mnuEnrPoints_Click()
    Maths.ctrlCMDialog.Flags = &H2&
    Maths.ctrlCMDialog.Action = 2
    '-----------------------------------------------------
-   ' Création du fichier de points
-   ' et écriture de leurs coordonnées Xsp() et Ysp()
+   ' CrÃ©ation du fichier de points
+   ' et Ã©criture de leurs coordonnÃ©es Xsp() et Ysp()
    ' ou autres...
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Output As #1
@@ -1634,13 +1634,13 @@ Private Sub mnuOuvPoints_Click()
    On Error GoTo Traite_ErreursOuvPts
    Maths.ctrlCMDialog.Filter = "Points (*.xy)|*.xy"
    ' nom de fichier et chemin doivent exister
-   ' sinon apparait un message d'erreur spécifique
+   ' sinon apparait un message d'erreur spÃ©cifique
    Maths.ctrlCMDialog.Flags = &H1000& Or &H800&
    Maths.ctrlCMDialog.CancelError = True
    Maths.ctrlCMDialog.Action = 1
    '-----------------------------------------------------
    ' Ouverture et lecture du fichier de points
-   ' et écriture de leurs coordonnées dans Xpt() et Ypt()
+   ' et Ã©criture de leurs coordonnÃ©es dans Xpt() et Ypt()
    ' ou autres...
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Input As #1
@@ -1671,7 +1671,7 @@ Private Sub mnuOuvPoints_Click()
       FenetreDefSpline.GridPts.Text = Format(Ysp(i%), "0.000")
    Next i%
    ' **************************************
-   ' ***** 2) grille des paramètres  ******
+   ' ***** 2) grille des paramÃ¨tres  ******
    ' **************************************
    FenetreDefSpline.GridPar.Col = 1
    For i% = 1 To NbPtsSp% - 1
@@ -1716,10 +1716,10 @@ End Sub
 
 Private Sub mnuTracer_Click()
    '-----------------------------------------------------
-   '---------   Vérifications avant   -------------------
-   '--------- fermeture de la fenêtre -------------------
+   '---------   VÃ©rifications avant   -------------------
+   '--------- fermeture de la fenÃªtre -------------------
    '-----------------------------------------------------
-   '-----  1- Bornes écrites correctement  --------------
+   '-----  1- Bornes Ã©crites correctement  --------------
    On Error Resume Next
    Xmax = CSng(DefXmax.Text)
    If Err.Number <> 0 Then
@@ -1751,37 +1751,37 @@ Private Sub mnuTracer_Click()
       AY = Ymax - Ymin
    End If
    If NbPtsSp% < 2 Then
-      MsgBox "Le nombre de points doit être supérieur ou égal à 2 !", 48, "FenetreDefSpline.mnuTracer"
+      MsgBox "Le nombre de points doit Ãªtre supÃ©rieur ou Ã©gal Ã  2 !", 48, "FenetreDefSpline.mnuTracer"
       Exit Sub
    ElseIf AX < 0 Then
-      MsgBox "Xmax doit être supérieur à Xmin", 48, "FenetreDefSpline.mnuTracer"
+      MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin", 48, "FenetreDefSpline.mnuTracer"
       Exit Sub
    ElseIf AY < 0 Then
-      MsgBox "Ymax doit être supérieur à Ymin", 48, "FenetreDefSpline.mnuTracer"
+      MsgBox "Ymax doit Ãªtre supÃ©rieur Ã  Ymin", 48, "FenetreDefSpline.mnuTracer"
       Exit Sub
    End If
    '-----------------------------------------
    '--------   si quelque chose   -----------
-   '--------    a été modifié,    -----------
+   '--------    a Ã©tÃ© modifiÃ©,    -----------
    '--------   calculer d'abord   -----------
    '-----------------------------------------
-   If lblCalcul.Caption = "Calcul non effectué" Then
+   If lblCalcul.Caption = "Calcul non effectuÃ©" Then
       mnuCalculer_Click
    End If
    '-----------------------------------------------------
    '--------         Ouverture           ----------------
-   '--------  des fenêtres pour le tracé ----------------
+   '--------  des fenÃªtres pour le tracÃ© ----------------
    '-----------------------------------------------------
    Fenetre_Prin.Show
    Fenetre_Val.Show
    Dessin.Show
    '--------------------------------------------------------------
    '--------- Affichage de la formule ----------------------------
-   '---------     définissant la courbe        -------------------
+   '---------     dÃ©finissant la courbe        -------------------
    '--------------------------------------------------------------
    Fenetre_Prin.Caption = "Passage d'une courbe par un nuage de points (Spline)"
    Fenetre_Prin.LabelExplications.ForeColor = MAGENTA
-   Fenetre_Prin.LabelExplications.Caption = "Détermination de la fonction Spline, union de n-1 polynômes du troisième degré, passant par n points."
+   Fenetre_Prin.LabelExplications.Caption = "DÃ©termination de la fonction Spline, union de n-1 polynÃ´mes du troisiÃ¨me degrÃ©, passant par n points."
    Fenetre_Val.Cls
    Fenetre_Val.ForeColor = CouleurCou&
    Fenetre_Val.lblFormule.ForeColor = CouleurCou&
@@ -1808,14 +1808,14 @@ Private Sub pctColorPts_Click(Index As Integer)
 End Sub
 
 Private Sub txtNbPts_Change()
-   lblCalcul.Caption = "Calcul non effectué"
+   lblCalcul.Caption = "Calcul non effectuÃ©"
    NbPtsSp% = CInt(txtNbPts.Text)
    '***************************************
    '***** 1) grille des points ************
    '***************************************
    GridPts.Rows = NbPtsSp% + 1
    ' ********************************
-   ' renumérotation 1ère colonne
+   ' renumÃ©rotation 1Ã¨re colonne
    ' ********************************
    GridPts.Col = 0
    For i% = 1 To NbPtsSp%
@@ -1823,11 +1823,11 @@ Private Sub txtNbPts_Change()
       GridPts.Text = Format(i%, "0")
    Next i%
    ' **************************************
-   ' ***** 2) grille des paramètres  ******
+   ' ***** 2) grille des paramÃ¨tres  ******
    ' **************************************
    FenetreDefSpline.GridPar.Rows = NbPtsSp%
    ' ********************************
-   ' renumérotation 1ère colonne
+   ' renumÃ©rotation 1Ã¨re colonne
    ' ********************************
    FenetreDefSpline.GridPar.Col = 0
    For i% = 1 To NbPtsSp% - 1
@@ -1841,8 +1841,8 @@ End Sub
 Public Sub ParSpline()
    '------------------------------------------------------
    ' *****************************************************
-   ' ******  Calcul des coefficients des polynômes *******
-   ' ******   du 3ième degré formant la fonction   *******
+   ' ******  Calcul des coefficients des polynÃ´mes *******
+   ' ******   du 3iÃ¨me degrÃ© formant la fonction   *******
    ' ******                SPLINE                  *******
    ' *****************************************************
    ' ------------------ ReDims ---------------------------
