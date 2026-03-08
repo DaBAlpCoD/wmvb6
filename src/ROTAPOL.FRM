@@ -1,6 +1,6 @@
 VERSION 5.00
 Begin VB.Form FenetreRotaPol 
-   Caption         =   "Polyèdre : rotations"
+   Caption         =   "PolyÃ¨dre : rotations"
    ClientHeight    =   6240
    ClientLeft      =   300
    ClientTop       =   735
@@ -263,7 +263,7 @@ Begin VB.Form FenetreRotaPol
       Width           =   1815
    End
    Begin VB.Label lblNbAr 
-      Caption         =   "Nombre d'arêtes :"
+      Caption         =   "Nombre d'arÃªtes :"
       Height          =   255
       Left            =   6240
       TabIndex        =   17
@@ -354,7 +354,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Dim AnglElem   ' angle de rotation élémentaire
+Dim AnglElem   ' angle de rotation Ã©lÃ©mentaire
 Dim DEP%       ' largeur et hauteur de pctVuePol  (en twips)
 Dim DAPol
 Dim MPol
@@ -362,7 +362,7 @@ Dim RotFlag%
 
 Private Sub AretesVisibles()
 ' ----------------------------------
-' Routine arêtes visibles et cachées
+' Routine arÃªtes visibles et cachÃ©es
 ' ----------------------------------
 For i% = 1 To NbSom% - 1
    For j% = i% To NbSom%
@@ -395,7 +395,7 @@ End Sub
 
 
 Private Sub cmdRotXNeg_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
-' ------ Rotation négative autour de l'axe des X --------
+' ------ Rotation nÃ©gative autour de l'axe des X --------
    RotFlag% = 1
    Do
       FenetreRotaPol.pctVuePol.ForeColor = FenetreRotaPol.pctVuePol.BackColor
@@ -441,7 +441,7 @@ Private Sub cmdRotXPos_MouseUp(Button As Integer, Shift As Integer, X As Single,
 End Sub
 
 Private Sub cmdRotYNeg_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
-' ------ Rotation négative autour de l'axe des Y --------
+' ------ Rotation nÃ©gative autour de l'axe des Y --------
    RotFlag% = 1
    Do
       FenetreRotaPol.pctVuePol.ForeColor = COULEUR_ARRIERE
@@ -487,7 +487,7 @@ Private Sub cmdRotYPos_MouseUp(Button As Integer, Shift As Integer, X As Single,
 End Sub
 
 Private Sub cmdRotZNeg_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
-' ------ Rotation négative autour de l'axe des Z --------
+' ------ Rotation nÃ©gative autour de l'axe des Z --------
    RotFlag% = 1
    Do
       FenetreRotaPol.pctVuePol.ForeColor = COULEUR_ARRIERE
@@ -542,7 +542,7 @@ Private Sub Form_Activate()
    Call TrouveAretes
    lblMessage.Caption = NomPolyedre$
    If NomPolyedre$ = "" Then
-      ' polyèdre défini par l'utilisateur
+      ' polyÃ¨dre dÃ©fini par l'utilisateur
       Call AretesVisibles
    End If
    lblMessage.Caption = NomPolyedre$
@@ -551,7 +551,7 @@ Private Sub Form_Activate()
    lblValNbFac.Caption = CStr(NbFac%)
    '-----------------------------------------------
    ' **********************************************
-   ' ******     paramètres pour le tracé     ******
+   ' ******     paramÃ¨tres pour le tracÃ©     ******
    ' ******  dans la zone d'image pctVuePol  ******
    ' **********************************************
    DEP% = FenetreRotaPol.pctVuePol.ScaleWidth
@@ -568,7 +568,7 @@ End Sub
 
 Private Sub TraceAretes()
 ' --------------------
-' Routine tracé arêtes
+' Routine tracÃ© arÃªtes
 ' --------------------
 For i% = 1 To NbSom% - 1
    For j% = i% + 1 To NbSom%
@@ -585,7 +585,7 @@ Next i%
 End Sub
 
 Private Sub TrouveAretes()
-'----- centre de gravité -----
+'----- centre de gravitÃ© -----
 XG = 0
 YG = 0
 ZG = 0
@@ -597,7 +597,7 @@ Next i%
 XG = XG / NbSom%
 YG = YG / NbSom%
 ZG = ZG / NbSom%
-'----- origine au centre de gravité -----
+'----- origine au centre de gravitÃ© -----
 RayonMax = 0
 For i% = 1 To NbSom%
 Xsom(i%) = Xsom(i%) - XG
@@ -661,8 +661,8 @@ For i% = 1 To NbSom% - 2
                   Arete%(j%, k%) = 2
                   NbAr% = NbAr% + 3
                Else
-                  Rem --- Début: faces polygonales de plus de trois sommets ---
-                  Rem Centre de gravité de la face
+                  Rem --- DÃ©but: faces polygonales de plus de trois sommets ---
+                  Rem Centre de gravitÃ© de la face
                   XF = 0
                   YF = 0
                   ZF = 0
