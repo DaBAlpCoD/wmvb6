@@ -1,6 +1,6 @@
 VERSION 5.00
 Begin VB.Form FenetreDefInteg 
-   Caption         =   "Définition de la courbe [intégrale d'une fonction]"
+   Caption         =   "DÃ©finition de la courbe [intÃ©grale d'une fonction]"
    ClientHeight    =   7200
    ClientLeft      =   345
    ClientTop       =   735
@@ -548,7 +548,7 @@ Begin VB.Form FenetreDefInteg
       Width           =   1695
    End
    Begin VB.CheckBox MemeEchelle 
-      Caption         =   "même echelle sur les deux axes"
+      Caption         =   "mÃªme echelle sur les deux axes"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -673,7 +673,7 @@ Begin VB.Form FenetreDefInteg
       Width           =   855
    End
    Begin VB.Frame CadreGarder 
-      Caption         =   "Tracés précédents"
+      Caption         =   "TracÃ©s prÃ©cÃ©dents"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -770,7 +770,7 @@ Begin VB.Form FenetreDefInteg
       Width           =   735
    End
    Begin VB.Label lblMethode 
-      Caption         =   "Calcul de l'intégrale :  I =  somme de Xa à Xb de f(t) dt  par la méthode de SIMPSON."
+      Caption         =   "Calcul de l'intÃ©grale :  I =  somme de Xa Ã  Xb de f(t) dt  par la mÃ©thode de SIMPSON."
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -821,7 +821,7 @@ Begin VB.Form FenetreDefInteg
       Width           =   735
    End
    Begin VB.Label lblZoneInt 
-      Caption         =   "Couleur de la zone intégrée :"
+      Caption         =   "Couleur de la zone intÃ©grÃ©e :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -905,7 +905,7 @@ Begin VB.Form FenetreDefInteg
       Width           =   495
    End
    Begin VB.Label lblBornes 
-      Caption         =   "Bornes d'intégration :"
+      Caption         =   "Bornes d'intÃ©gration :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -998,7 +998,7 @@ Begin VB.Form FenetreDefInteg
       Width           =   615
    End
    Begin VB.Label lblFonction 
-      Caption         =   "Fonction à intégrer :"
+      Caption         =   "Fonction Ã  intÃ©grer :"
       Height          =   255
       Left            =   120
       TabIndex        =   25
@@ -1057,7 +1057,7 @@ Begin VB.Form FenetreDefInteg
       Width           =   495
    End
    Begin VB.Label EtiquetteLimitesY 
-      Caption         =   "Limites de l'axe des ordonnées "
+      Caption         =   "Limites de l'axe des ordonnÃ©es "
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -1213,7 +1213,7 @@ Begin VB.Form FenetreDefInteg
       End
    End
    Begin VB.Menu mnuDefPts 
-      Caption         =   "&Définir un ensemble de points"
+      Caption         =   "&DÃ©finir un ensemble de points"
    End
    Begin VB.Menu mnuCalculer 
       Caption         =   "&Calculer"
@@ -1290,11 +1290,11 @@ Private Sub CommandeOK_Click()
       AY = Ymax - Ymin
    End If
    If AX < 0 Then
-      MsgBox "Xmax doit être supérieur à Xmin", 48, "COURBE"
+      MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin", 48, "COURBE"
    ElseIf AY < 0 Then
-      MsgBox "Ymax doit être supérieur à Ymin", 48, "COURBE"
+      MsgBox "Ymax doit Ãªtre supÃ©rieur Ã  Ymin", 48, "COURBE"
    ElseIf Tmax < Tmin Then
-      MsgBox "Tmax doit être supérieur à Tmin", 48, "COURBE"
+      MsgBox "Tmax doit Ãªtre supÃ©rieur Ã  Tmin", 48, "COURBE"
    Else
       FenetreDefInteg.Hide
    End If
@@ -1375,8 +1375,8 @@ Private Sub DefYmin_Change()
 End Sub
 Private Sub Form_Activate()
    '*****************************************
-   '***** actualisations des paramètres *****
-   '*****        pour le tracé          *****
+   '***** actualisations des paramÃ¨tres *****
+   '*****        pour le tracÃ©          *****
    '*****************************************
    If Gap% = 2 Then
      OptionGarder.Value = True
@@ -1397,8 +1397,8 @@ Private Sub Form_Activate()
    CouleurCou& = FenetreDefInteg.pctColorCourbe.BackColor
    CouleurHach& = FenetreDefInteg.pctColorZone.BackColor
    '****************************************
-   '*****  actualisations spécifiques  *****
-   '*****       à cette fenêtre        *****
+   '*****  actualisations spÃ©cifiques  *****
+   '*****       Ã  cette fenÃªtre        *****
    '****************************************
    FenetreDefInteg.txtXa.Text = Format(Xa, "0.000000")
    FenetreDefInteg.txtXb.Text = Format(Xb, "0.000000")
@@ -1408,7 +1408,7 @@ End Sub
 
 Private Sub Form_Load()
    '-----------------------------------------------------------------
-   '-----------        Valeurs par défaut             ---------------
+   '-----------        Valeurs par dÃ©faut             ---------------
    '-----------      de certaines variables           ---------------
    '-----------------------------------------------------------------
    DoFlag = False
@@ -1427,14 +1427,14 @@ Private Sub Form_Load()
    Ymin = -4
    Ymax = 4
    'TextVar2$ = "X"
-   ' La primitive de f(X) = X est X²/2 et
-   ' L'intégrale I de f(X) entre 0 et 1
+   ' La primitive de f(X) = X est XÂ²/2 et
+   ' L'intÃ©grale I de f(X) entre 0 et 1
    ' est : I = 0.5
    CouleurCou& = ROUGE
    CouleurPts& = BLEU
    CouleurHach& = BLEU
    '-----------------------------------------------------------------
-   '-----------        Valeurs par défaut             ---------------
+   '-----------        Valeurs par dÃ©faut             ---------------
    '-----------        d'autres variables             ---------------
    '-----------------------------------------------------------------
    LX% = Dessin.ScaleWidth
@@ -1463,9 +1463,9 @@ Private Sub mnuCalculer_Click()
    If FenetreDefInteg.lblInteg.Caption = "" Then
       DoEvents
       '--------------------------------------------------------------
-      '--------- Première manipulation des chaines DefVar : ---------
+      '--------- PremiÃ¨re manipulation des chaines DefVar : ---------
       '--------- Suppression des blancs dans les formules,  ---------
-      '--------- vérification du nombre de parenthèses et   ---------
+      '--------- vÃ©rification du nombre de parenthÃ¨ses et   ---------
       '--------- remplacement des constantes par leur valeur --------
       '--------------------------------------------------------------
       NombVar% = 1
@@ -1516,8 +1516,8 @@ Private Sub mnuEnrPoints_Click()
    Maths.ctrlCMDialog.Flags = &H2&
    Maths.ctrlCMDialog.Action = 2
    '-----------------------------------------------------
-   ' Création du fichier de points
-   ' et écriture de leurs coordonnées Xpt() et Ypt()
+   ' CrÃ©ation du fichier de points
+   ' et Ã©criture de leurs coordonnÃ©es Xpt() et Ypt()
    ' ou autres...
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Output As #1
@@ -1563,13 +1563,13 @@ Private Sub mnuOuvPoints_Click()
    On Error GoTo Traite_ErreursOuvPts
    Maths.ctrlCMDialog.Filter = "Points (*.xy)|*.xy"
    ' nom de fichier et chemin doivent exister
-   ' sinon apparait un message d'erreur spécifique
+   ' sinon apparait un message d'erreur spÃ©cifique
    Maths.ctrlCMDialog.Flags = &H1000& Or &H800&
    Maths.ctrlCMDialog.CancelError = True
    Maths.ctrlCMDialog.Action = 1
    '-----------------------------------------------------
    ' Ouverture et lecture du fichier de points
-   ' et écriture de leurs coordonnées dans Xpt() et Ypt()
+   ' et Ã©criture de leurs coordonnÃ©es dans Xpt() et Ypt()
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Input As #1
    Input #1, NbPts%
@@ -1583,13 +1583,13 @@ Private Sub mnuOuvPoints_Click()
    '-----------------------------------------------------
    ' activation de certaines cases
    '-------------------------------
-   EtiquettePoints.ForeColor = &H80000012     'Texte activé
-   PointsTracer.ForeColor = &H80000012        'Texte activé
+   EtiquettePoints.ForeColor = &H80000012     'Texte activÃ©
+   PointsTracer.ForeColor = &H80000012        'Texte activÃ©
    PointsTracer.Value = 1                         'Checked
-   PointsRelier.ForeColor = &H80000012        'Texte activé
+   PointsRelier.ForeColor = &H80000012        'Texte activÃ©
    PointsRelier.Value = 0                         'Unchecked
-   EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activé
-   EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activé
+   EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activÃ©
+   EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activÃ©
    '-----------------------------------------------------
    Exit Sub
 Traite_ErreursOuvPts:
@@ -1612,10 +1612,10 @@ End Sub
 
 Private Sub mnuTracer_Click()
    '-----------------------------------------------------
-   '---------   Vérifications avant   -------------------
-   '--------- fermeture de la fenêtre -------------------
+   '---------   VÃ©rifications avant   -------------------
+   '--------- fermeture de la fenÃªtre -------------------
    '-----------------------------------------------------
-   '-----  1- Bornes écrites correctement  --------------
+   '-----  1- Bornes Ã©crites correctement  --------------
    On Error Resume Next
    Xmax = CSng(DefXmax.Text)
    If Err.Number <> 0 Then
@@ -1657,24 +1657,24 @@ Private Sub mnuTracer_Click()
       AY = Ymax - Ymin
    End If
    If AX < 0 Then
-      MsgBox "Xmax doit être supérieur à Xmin", 48, "FenetreDefInteg.mnuTracer"
+      MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin", 48, "FenetreDefInteg.mnuTracer"
       Exit Sub
    ElseIf AY < 0 Then
-      MsgBox "Ymax doit être supérieur à Ymin", 48, "FenetreDefInteg.mnuTracer"
+      MsgBox "Ymax doit Ãªtre supÃ©rieur Ã  Ymin", 48, "FenetreDefInteg.mnuTracer"
       Exit Sub
    End If
    '-----------------------------------------------------
    '--------   si la formule de la fonction   -----------
-   '--------      f(X) a été modifiée,        -------------
+   '--------      f(X) a Ã©tÃ© modifiÃ©e,        -------------
    '--------       calculer d'abord           -----------
    '-----------------------------------------------------
    If FenetreDefInteg.lblInteg.Caption = "" Then
       mnuCalculer_Click
    End If
    '-----------------------------------------------------
-   '--------   fermeture de la fenêtre   ----------------
+   '--------   fermeture de la fenÃªtre   ----------------
    '--------      et ouverture           ----------------
-   '--------  des fenêtres pour le tracé ----------------
+   '--------  des fenÃªtres pour le tracÃ© ----------------
    '-----------------------------------------------------
    FenetreDefInteg.Hide
    Fenetre_Prin.Show
@@ -1682,17 +1682,17 @@ Private Sub mnuTracer_Click()
    Dessin.Show
    '--------------------------------------------------------------
    '--------- Affichage de la formule ----------------------------
-   '---------     définissant la courbe        -------------------
+   '---------     dÃ©finissant la courbe        -------------------
    '--------------------------------------------------------------
-   Fenetre_Prin.Caption = "Intégrale d'une fonction"
+   Fenetre_Prin.Caption = "IntÃ©grale d'une fonction"
    Fenetre_Prin.LabelExplications.ForeColor = MAGENTA
-   Fenetre_Prin.LabelExplications.Caption = "Intégrale = somme de Xa à Xb de f(t) dt" & Chr$(13) & "Résolution par la méthode de SIMPSON."
+   Fenetre_Prin.LabelExplications.Caption = "IntÃ©grale = somme de Xa Ã  Xb de f(t) dt" & Chr$(13) & "RÃ©solution par la mÃ©thode de SIMPSON."
    Fenetre_Val.Cls
    Fenetre_Val.ForeColor = CouleurCou&
    Fenetre_Val.lblFormule.ForeColor = CouleurCou&
    Fenetre_Val.lblFormule.Caption = "f(X) = " & TextVar2$
    Fenetre_Val.lblNote.ForeColor = CouleurHach&
-   Fenetre_Val.lblNote.Caption = " Intégrale entre " & Format(Xa, "0.00") & " et " & Format(Xb, "0.00") & " de f(X) :" & Chr$(13) & " I = " & Format(Integrale, "0.00")
+   Fenetre_Val.lblNote.Caption = " IntÃ©grale entre " & Format(Xa, "0.00") & " et " & Format(Xb, "0.00") & " de f(X) :" & Chr$(13) & " I = " & Format(Integrale, "0.00")
 End Sub
 
 Private Sub OptionEffacer_Click()
