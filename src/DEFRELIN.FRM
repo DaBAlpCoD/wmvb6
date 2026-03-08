@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form FenetreDefRegreLin 
-   Caption         =   "Définition de la droite [régression linéaire]"
+   Caption         =   "DÃ©finition de la droite [rÃ©gression linÃ©aire]"
    ClientHeight    =   6390
    ClientLeft      =   255
    ClientTop       =   645
@@ -562,7 +562,7 @@ Begin VB.Form FenetreDefRegreLin
       Width           =   855
    End
    Begin VB.Frame CadreGarder 
-      Caption         =   "Tracés précédents"
+      Caption         =   "TracÃ©s prÃ©cÃ©dents"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -647,7 +647,7 @@ Begin VB.Form FenetreDefRegreLin
       Width           =   1695
    End
    Begin VB.Label lblCor 
-      Caption         =   "Coefficient de corrélation R :"
+      Caption         =   "Coefficient de corrÃ©lation R :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -670,7 +670,7 @@ Begin VB.Form FenetreDefRegreLin
       Y2              =   5400
    End
    Begin VB.Label lblMemeEch 
-      Caption         =   "même échelle sur les deux axes"
+      Caption         =   "mÃªme Ã©chelle sur les deux axes"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -704,7 +704,7 @@ Begin VB.Form FenetreDefRegreLin
       Width           =   855
    End
    Begin VB.Label lblPts 
-      Caption         =   "Points par où on cherche à faire passer la droite"
+      Caption         =   "Points par oÃ¹ on cherche Ã  faire passer la droite"
       Height          =   255
       Left            =   4680
       TabIndex        =   42
@@ -712,7 +712,7 @@ Begin VB.Form FenetreDefRegreLin
       Width           =   4335
    End
    Begin VB.Label lblCoorPts 
-      Caption         =   "Coordonnées :"
+      Caption         =   "CoordonnÃ©es :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -763,7 +763,7 @@ Begin VB.Form FenetreDefRegreLin
       Width           =   735
    End
    Begin VB.Label lblPar 
-      Caption         =   "Paramètres entrant dans la définition de la droite"
+      Caption         =   "ParamÃ¨tres entrant dans la dÃ©finition de la droite"
       Height          =   255
       Left            =   120
       TabIndex        =   36
@@ -847,7 +847,7 @@ Begin VB.Form FenetreDefRegreLin
       Width           =   1455
    End
    Begin VB.Label lblDefiniDroi 
-      Caption         =   "Fonction définissant la droite :"
+      Caption         =   "Fonction dÃ©finissant la droite :"
       Height          =   255
       Left            =   120
       TabIndex        =   25
@@ -906,7 +906,7 @@ Begin VB.Form FenetreDefRegreLin
       Width           =   495
    End
    Begin VB.Label EtiquetteLimitesY 
-      Caption         =   "Limites de l'axe des ordonnées "
+      Caption         =   "Limites de l'axe des ordonnÃ©es "
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -1079,7 +1079,7 @@ Begin VB.Form FenetreDefRegreLin
       End
    End
    Begin VB.Menu mnuDefPts 
-      Caption         =   "&Définir un ensemble de points"
+      Caption         =   "&DÃ©finir un ensemble de points"
    End
    Begin VB.Menu mnuCalculer 
       Caption         =   "&Calculer"
@@ -1245,7 +1245,7 @@ Private Sub Form_Activate()
       FenetreDefRegreLin.GridPts.Text = Format(Yrl(i%), "0.0000")
    Next i%
    ' **************************************
-   ' ***** 2) grille des paramètres  ******
+   ' ***** 2) grille des paramÃ¨tres  ******
    ' **************************************
    FenetreDefRegreLin.GridPar.Col = 1
    FenetreDefRegreLin.GridPar.Row = 1
@@ -1263,7 +1263,7 @@ Private Sub Form_Deactivate()
    Erase Xrl, Yrl
    ReDim Xrl(1 To NbPtsReLin%), Yrl(1 To NbPtsReLin%)
    ' ********************************************
-   ' affectation de leurs valeurs aux coordonnées
+   ' affectation de leurs valeurs aux coordonnÃ©es
    ' ********************************************
    For i% = 1 To NbPtsReLin%
       FenetreDefRegreLin.GridPts.Row = i%
@@ -1277,7 +1277,7 @@ Private Sub Form_Deactivate()
 Traite_ErreursFoDeReLin:
    Select Case Err
       Case 13
-         Message$ = "Erreur dans la frappe des données"
+         Message$ = "Erreur dans la frappe des donnÃ©es"
          MsgBox Message$, 48
       Case Else
          MsgBox Error$, 48
@@ -1287,7 +1287,7 @@ End Sub
 
 Private Sub Form_Load()
    '-----------------------------------------------------------------
-   '-----------        Valeurs par défaut             ---------------
+   '-----------        Valeurs par dÃ©faut             ---------------
    '-----------      de certaines variables           ---------------
    '-----------------------------------------------------------------
    DoFlag = False
@@ -1308,7 +1308,7 @@ Private Sub Form_Load()
    CouleurCou& = ROUGE
    CouleurPts& = BLEU
    '-----------------------------------------------------------------
-   '-----------        Valeurs par défaut             ---------------
+   '-----------        Valeurs par dÃ©faut             ---------------
    '-----------        d'autres variables             ---------------
    '-----------------------------------------------------------------
    LX% = Dessin.ScaleWidth
@@ -1318,11 +1318,11 @@ Private Sub Form_Load()
    MX = LX% / AX
    MY = -LY% / AY
    '-----------------------------------------------------
-   '---------------- valeurs par défaut -----------------
+   '---------------- valeurs par dÃ©faut -----------------
    '----------------    pour RegreLin   -----------------
    '-----------------------------------------------------
    NbPtsReLin% = 20    ' nombre de points
-   ' nombre de paramètres = 2
+   ' nombre de paramÃ¨tres = 2
    ReDim Xrl(1 To NbPtsReLin%), Yrl(1 To NbPtsReLin%)
    ' coeficients de la droite
    Adroite = 0.8
@@ -1370,9 +1370,9 @@ Private Sub Form_Load()
    Yrl(20) = 3.15
    '***************************************
    RemCor$ = "Remarque :    0 < R < 1" & Chr$(13)
-   RemCor$ = RemCor$ + "     si R -> 0 : pas de corrélation"
+   RemCor$ = RemCor$ + "     si R -> 0 : pas de corrÃ©lation"
    RemCor$ = RemCor$ + Chr$(13)
-   RemCor$ = RemCor$ + "     si R -> 1 : trés bonne corrélation"
+   RemCor$ = RemCor$ + "     si R -> 1 : trÃ©s bonne corrÃ©lation"
    FenetreDefRegreLin.lblRemCor.Caption = RemCor$
    '***************************************
    '***** mise en place des 2 grilles *****
@@ -1392,7 +1392,7 @@ Private Sub Form_Load()
    FenetreDefRegreLin.GridPts.Col = 2
    FenetreDefRegreLin.GridPts.Text = "Y"
    ' ********************************
-   ' numérotation 1ère colonne
+   ' numÃ©rotation 1Ã¨re colonne
    ' ********************************
    FenetreDefRegreLin.GridPts.Col = 0
    For i% = 1 To NbPtsReLin%
@@ -1400,7 +1400,7 @@ Private Sub Form_Load()
       FenetreDefRegreLin.GridPts.Text = Format(i%, "0")
    Next i%
    ' **************************************
-   ' ***** 2) grille des paramètres  ******
+   ' ***** 2) grille des paramÃ¨tres  ******
    ' **************************************
    FenetreDefRegreLin.GridPar.Rows = 3
    FenetreDefRegreLin.GridPar.Cols = 2
@@ -1408,7 +1408,7 @@ Private Sub Form_Load()
    FenetreDefRegreLin.GridPar.FixedAlignment(1) = 2
    FenetreDefRegreLin.GridPar.ColWidth(1) = 2500
    ' ********************************
-   ' première colonne
+   ' premiÃ¨re colonne
    ' ********************************
    FenetreDefRegreLin.GridPar.Col = 0
    FenetreDefRegreLin.GridPar.Row = 1
@@ -1497,8 +1497,8 @@ Private Sub mnuEnrPoints_Click()
    Maths.ctrlCMDialog.Flags = &H2&
    Maths.ctrlCMDialog.Action = 2
    '-----------------------------------------------------
-   ' Création du fichier de points
-   ' et écriture de leurs coordonnées Xrlt() et Yrl()
+   ' CrÃ©ation du fichier de points
+   ' et Ã©criture de leurs coordonnÃ©es Xrlt() et Yrl()
    ' ou autres...
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Output As #1
@@ -1544,13 +1544,13 @@ Private Sub mnuOuvPoints_Click()
    On Error GoTo Traite_ErreursOuvPts
    Maths.ctrlCMDialog.Filter = "Points (*.xy)|*.xy"
    ' nom de fichier et chemin doivent exister
-   ' sinon apparait un message d'erreur spécifique
+   ' sinon apparait un message d'erreur spÃ©cifique
    Maths.ctrlCMDialog.Flags = &H1000& Or &H800&
    Maths.ctrlCMDialog.CancelError = True
    Maths.ctrlCMDialog.Action = 1
    '-----------------------------------------------------
    ' Ouverture et lecture du fichier de points
-   ' et écriture de leurs coordonnées dans Xpt() et Ypt()
+   ' et Ã©criture de leurs coordonnÃ©es dans Xpt() et Ypt()
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Input As #1
    Input #1, NbPtsReLin%
@@ -1595,10 +1595,10 @@ End Sub
 
 Private Sub mnuTracer_Click()
    '-----------------------------------------------------
-   '---------   Vérifications avant   -------------------
-   '--------- fermeture de la fenêtre -------------------
+   '---------   VÃ©rifications avant   -------------------
+   '--------- fermeture de la fenÃªtre -------------------
    '-----------------------------------------------------
-   '-----  1- Bornes écrites correctement  --------------
+   '-----  1- Bornes Ã©crites correctement  --------------
    On Error Resume Next
    Xmax = CSng(DefXmax.Text)
    If Err.Number <> 0 Then
@@ -1630,18 +1630,18 @@ Private Sub mnuTracer_Click()
       AY = Ymax - Ymin
    End If
    If NbPtsReLin% < 2 Then
-      MsgBox "Le nombre de points doit être supérieur ou égal à 2 !", 48, "FenetreDefRegreLin.mnuTracer"
+      MsgBox "Le nombre de points doit Ãªtre supÃ©rieur ou Ã©gal Ã  2 !", 48, "FenetreDefRegreLin.mnuTracer"
       Exit Sub
    ElseIf AX < 0 Then
-      MsgBox "Xmax doit être supérieur à Xmin", 48, "FenetreDefRegreLin.mnuTracer"
+      MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin", 48, "FenetreDefRegreLin.mnuTracer"
       Exit Sub
    ElseIf AY < 0 Then
-      MsgBox "Ymax doit être supérieur à Ymin", 48, "FenetreDefRegreLin.mnuTracer"
+      MsgBox "Ymax doit Ãªtre supÃ©rieur Ã  Ymin", 48, "FenetreDefRegreLin.mnuTracer"
       Exit Sub
    End If
    '-----------------------------------------
    '--------   si quelque chose   -----------
-   '--------    a été modifié,    -----------
+   '--------    a Ã©tÃ© modifiÃ©,    -----------
    '--------   calculer d'abord   -----------
    '-----------------------------------------
    If FenetreDefRegreLin.lblValCor.Caption = "" Then
@@ -1649,28 +1649,28 @@ Private Sub mnuTracer_Click()
    End If
    '-----------------------------------------------------
    '--------         Ouverture           ----------------
-   '--------  des fenêtres pour le tracé ----------------
+   '--------  des fenÃªtres pour le tracÃ© ----------------
    '-----------------------------------------------------
    Fenetre_Prin.Show
    Fenetre_Val.Show
    Dessin.Show
    '--------------------------------------------------------------
    '--------- Affichage de la formule ----------------------------
-   '---------     définissant la courbe        -------------------
+   '---------     dÃ©finissant la courbe        -------------------
    '--------------------------------------------------------------
-   Fenetre_Prin.Caption = "Régression linéaire"
+   Fenetre_Prin.Caption = "RÃ©gression linÃ©aire"
    Fenetre_Prin.LabelExplications.ForeColor = MAGENTA
-   Fenetre_Prin.LabelExplications.Caption = "Détermination par la méthode des moindres carrés des paramètres d'une droite pour qu'elle soit le mieux ajustée à un nuage de points."
+   Fenetre_Prin.LabelExplications.Caption = "DÃ©termination par la mÃ©thode des moindres carrÃ©s des paramÃ¨tres d'une droite pour qu'elle soit le mieux ajustÃ©e Ã  un nuage de points."
    Fenetre_Val.Cls
    Fenetre_Val.ForeColor = CouleurCou&
    Fenetre_Val.lblFormule.ForeColor = CouleurCou&
    TextVar2$ = Format(Adroite, "0.000000") & " X + " & Format(Bdroite, "0.000000")
    Fenetre_Val.lblFormule.Caption = "F(X) = " & TextVar2$
    '--------------------------------------------------------------
-   '--------- Affichage du coefficient de corrélation R ----------
+   '--------- Affichage du coefficient de corrÃ©lation R ----------
    '--------------------------------------------------------------
    Fenetre_Val.lblNote.ForeColor = CouleurCou&
-   Fenetre_Val.lblNote.Caption = " Coefficient de corrélation :" & Chr$(13) & " R = " & Format(Rrl, "0.0000")
+   Fenetre_Val.lblNote.Caption = " Coefficient de corrÃ©lation :" & Chr$(13) & " R = " & Format(Rrl, "0.0000")
    '--------------------------------------------------------------
 End Sub
 
@@ -1718,7 +1718,7 @@ Private Sub RegreLin()
    '               Moyennes :
    '******************************************************
    '------------------------------------------------------
-   '               Centre de gravité ( X et Y moyens )
+   '               Centre de gravitÃ© ( X et Y moyens )
    '------------------------------------------------------
    '  X moyen :
    XG = XG / NbPtsReLin%
@@ -1727,9 +1727,9 @@ Private Sub RegreLin()
    '------------------------------------------------------
    '               Autres moyennes
    '------------------------------------------------------
-   '  X² moyen :
+   '  XÂ² moyen :
    XX = XX / NbPtsReLin%
-   '  Y² moyen :
+   '  YÂ² moyen :
    YY = YY / NbPtsReLin%
    '  XY moyen :
    XY = XY / NbPtsReLin%
@@ -1750,7 +1750,7 @@ Private Sub RegreLin()
    End If
    Bdroite = YG - Adroite * XG
    '******************************************************
-   '               Coefficient de corrélation R
+   '               Coefficient de corrÃ©lation R
    '******************************************************
    If SS = 0 Then
       Rrl = 1
@@ -1762,7 +1762,7 @@ Private Sub RegreLin()
 Traite_ErreursReLin:
    Select Case Err
       Case 13
-         Message$ = "Erreur dans la frappe des données"
+         Message$ = "Erreur dans la frappe des donnÃ©es"
          MsgBox Message$, 48
       Case Else
          MsgBox Error$, 48
@@ -1774,7 +1774,7 @@ Private Sub txtNbPts_Change()
    NbPtsReLin% = CInt(txtNbPts.Text)
    GridPts.Rows = NbPtsReLin% + 1
    ' ********************************
-   ' renumérotation 1ère colonne
+   ' renumÃ©rotation 1Ã¨re colonne
    GridPts.Col = 0
    For i% = 1 To NbPtsReLin%
       GridPts.Row = i%
@@ -1788,14 +1788,14 @@ Public Sub CalculeRegreLin()
    '--------------------------------------------------------------
    If NbPtsReLin% < 2 Then
       Beep
-      MsgBox "Le nombre de points doit être supérieur ou égal à 2 !", 48, "REGRELIN"
+      MsgBox "Le nombre de points doit Ãªtre supÃ©rieur ou Ã©gal Ã  2 !", 48, "REGRELIN"
       Exit Sub
    End If
    '--------------------------------------------------------------
    Erase Xrl, Yrl
    ReDim Xrl(1 To NbPtsReLin%), Yrl(1 To NbPtsReLin%)
    ' ********************************************
-   ' affectation de leurs valeurs aux coordonnées
+   ' affectation de leurs valeurs aux coordonnÃ©es
    ' ********************************************
    For i% = 1 To NbPtsReLin%
       FenetreDefRegreLin.GridPts.Row = i%
@@ -1807,8 +1807,8 @@ Public Sub CalculeRegreLin()
    ' ********************************************
    Call RegreLin
    '--------------------------------------------------------------
-   '------ Affichage des paramètres de la droite -----------------
-   '---------------- après l'affinement --------------------------
+   '------ Affichage des paramÃ¨tres de la droite -----------------
+   '---------------- aprÃ¨s l'affinement --------------------------
    '--------------------------------------------------------------
    FenetreDefRegreLin.GridPar.Col = 1
    FenetreDefRegreLin.GridPar.Row = 1
@@ -1816,7 +1816,7 @@ Public Sub CalculeRegreLin()
    FenetreDefRegreLin.GridPar.Row = 2
    FenetreDefRegreLin.GridPar.Text = Format(Bdroite, "0.000000")
    '--------------------------------------------------------------
-   '----------- Affichage du coefficient de corrélation  Rrl -----
+   '----------- Affichage du coefficient de corrÃ©lation  Rrl -----
    '--------------------------------------------------------------
    lblValCor.Caption = Format(Rrl, "0.000000")
    '--------------------------------------------------------------
