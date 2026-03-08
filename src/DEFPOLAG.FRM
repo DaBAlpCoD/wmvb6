@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form FenetreDefInPoLag 
-   Caption         =   "Définition de la courbe [polynômes d'interpolation de Lagrange]"
+   Caption         =   "DÃ©finition de la courbe [polynÃ´mes d'interpolation de Lagrange]"
    ClientHeight    =   6870
    ClientLeft      =   270
    ClientTop       =   870
@@ -600,7 +600,7 @@ Begin VB.Form FenetreDefInPoLag
       Width           =   855
    End
    Begin VB.Frame CadreGarder 
-      Caption         =   "Tracés précédents"
+      Caption         =   "TracÃ©s prÃ©cÃ©dents"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -692,7 +692,7 @@ Begin VB.Form FenetreDefInPoLag
       Y2              =   5280
    End
    Begin VB.Label lblMemeEch 
-      Caption         =   "même échelle sur les deux axes"
+      Caption         =   "mÃªme Ã©chelle sur les deux axes"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -726,7 +726,7 @@ Begin VB.Form FenetreDefInPoLag
       Width           =   1215
    End
    Begin VB.Label lblPts 
-      Caption         =   "Points par où doit passer la courbe"
+      Caption         =   "Points par oÃ¹ doit passer la courbe"
       Height          =   255
       Left            =   4680
       TabIndex        =   42
@@ -734,7 +734,7 @@ Begin VB.Form FenetreDefInPoLag
       Width           =   3135
    End
    Begin VB.Label lblCoorPts 
-      Caption         =   "Coordonnées :"
+      Caption         =   "CoordonnÃ©es :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -802,7 +802,7 @@ Begin VB.Form FenetreDefInPoLag
       Width           =   735
    End
    Begin VB.Label lblPar 
-      Caption         =   "Paramètres entrant dans la définition de la courbe"
+      Caption         =   "ParamÃ¨tres entrant dans la dÃ©finition de la courbe"
       Height          =   255
       Left            =   240
       TabIndex        =   36
@@ -886,7 +886,7 @@ Begin VB.Form FenetreDefInPoLag
       Width           =   3855
    End
    Begin VB.Label lblDefiniCour 
-      Caption         =   "Fonction définissant la courbe :"
+      Caption         =   "Fonction dÃ©finissant la courbe :"
       Height          =   255
       Left            =   120
       TabIndex        =   25
@@ -945,7 +945,7 @@ Begin VB.Form FenetreDefInPoLag
       Width           =   495
    End
    Begin VB.Label EtiquetteLimitesY 
-      Caption         =   "Limites de l'axe des ordonnées "
+      Caption         =   "Limites de l'axe des ordonnÃ©es "
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -1258,7 +1258,7 @@ Private Sub Form_Activate()
       FenetreDefInPoLag.gridPts.Text = Format(Ypl(i%), "0.0000")
    Next i%
    ' **************************************
-   ' ***** 2) grille des paramètres  ******
+   ' ***** 2) grille des paramÃ¨tres  ******
    ' **************************************
    FenetreDefInPoLag.gridPar.Col = 1
    For i% = 0 To DegPoLag%
@@ -1277,7 +1277,7 @@ Private Sub Form_Deactivate()
    ReDim Xpl(1 To NbPtsI%), Ypl(1 To NbPtsI%)
    ReDim UparI(0 To DegPoLag%)
    ' ********************************************
-   ' affectation de leurs valeurs aux coordonnées
+   ' affectation de leurs valeurs aux coordonnÃ©es
    ' ********************************************
    For i% = 1 To NbPtsI%
       FenetreDefInPoLag.gridPts.Row = i%
@@ -1297,7 +1297,7 @@ Private Sub Form_Deactivate()
       End If
    Next i%
    ' ********************************************
-   ' affectation de leurs valeurs aux paramètres
+   ' affectation de leurs valeurs aux paramÃ¨tres
    ' ********************************************
    FenetreDefInPoLag.gridPar.Col = 1
    For i% = 0 To DegPoLag%
@@ -1314,7 +1314,7 @@ Private Sub Form_Deactivate()
 Traite_ErreursFoDePoLag:
    Select Case Err
       Case 13
-         Message$ = "Erreur dans la frappe des données"
+         Message$ = "Erreur dans la frappe des donnÃ©es"
          MsgBox Message$, 48, "FenetreDefInPoLag.Deactivate"
       Case Else
          MsgBox Error$, 48, "FenetreDefInPoLag.Deactivate"
@@ -1325,7 +1325,7 @@ End Sub
 
 Private Sub Form_Load()
    '-----------------------------------------------------------------
-   '-----------        Valeurs par défaut             ---------------
+   '-----------        Valeurs par dÃ©faut             ---------------
    '-----------      de certaines variables           ---------------
    '-----------------------------------------------------------------
    DoFlag = False
@@ -1346,7 +1346,7 @@ Private Sub Form_Load()
    CouleurCou& = ROUGE
    CouleurPts& = BLEU
    '-----------------------------------------------------------------
-   '-----------        Valeurs par défaut             ---------------
+   '-----------        Valeurs par dÃ©faut             ---------------
    '-----------        d'autres variables             ---------------
    '-----------------------------------------------------------------
    LX% = Dessin.ScaleWidth
@@ -1356,15 +1356,15 @@ Private Sub Form_Load()
    MX = LX% / AX
    MY = -LY% / AY
    '-----------------------------------------------------
-   '---------------- valeurs par défaut -----------------
+   '---------------- valeurs par dÃ©faut -----------------
    '----------------    pour InPoLag    -----------------
    '-----------------------------------------------------
-   lblCalcul.Caption = "Calcul non effectué"
+   lblCalcul.Caption = "Calcul non effectuÃ©"
    NbPtsI% = 7    ' nombre de points
-   DegPoLag% = NbPtsI% - 1 ' Degré du polynôme de Lagrange
+   DegPoLag% = NbPtsI% - 1 ' DegrÃ© du polynÃ´me de Lagrange
    ReDim Xpl(1 To NbPtsI%), Ypl(1 To NbPtsI%)
    ReDim UparI(0 To DegPoLag%)
-   '************ valeurs des paramètres **************
+   '************ valeurs des paramÃ¨tres **************
    For i% = 0 To DegPoLag%
       UparI(i%) = 0
    Next i%
@@ -1402,7 +1402,7 @@ Private Sub Form_Load()
    FenetreDefInPoLag.gridPts.Col = 2
    FenetreDefInPoLag.gridPts.Text = "Y"
    ' ********************************
-   ' numérotation 1ère colonne
+   ' numÃ©rotation 1Ã¨re colonne
    ' ********************************
    FenetreDefInPoLag.gridPts.Col = 0
    For i% = 1 To NbPtsI%
@@ -1410,7 +1410,7 @@ Private Sub Form_Load()
       FenetreDefInPoLag.gridPts.Text = Format(i%, "0")
    Next i%
    ' **************************************
-   ' ***** 2) grille des paramètres  ******
+   ' ***** 2) grille des paramÃ¨tres  ******
    ' **************************************
    FenetreDefInPoLag.gridPar.Cols = 2
    FenetreDefInPoLag.gridPar.Rows = DegPoLag% + 2
@@ -1421,7 +1421,7 @@ Private Sub Form_Load()
    FenetreDefInPoLag.gridPar.Col = 1
    FenetreDefInPoLag.gridPar.Text = "U"
    ' ********************************
-   ' numérotation 1ère colonne
+   ' numÃ©rotation 1Ã¨re colonne
    ' ********************************
    FenetreDefInPoLag.gridPar.Col = 0
    For i% = 0 To DegPoLag%
@@ -1432,7 +1432,7 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub gridPts_KeyPress(KeyAscii As Integer)
-   lblCalcul.Caption = "Calcul non effectué"
+   lblCalcul.Caption = "Calcul non effectuÃ©"
    PtsText$ = gridPts.Text
    Select Case KeyAscii
    Case 32 To 168
@@ -1466,7 +1466,7 @@ End Sub
 
 
 Private Sub mnuCalculer_Click()
-   If lblCalcul.Caption = "Calcul non effectué" Then
+   If lblCalcul.Caption = "Calcul non effectuÃ©" Then
       On Error GoTo Traite_ErreursCalPoLag
       ' ********************************************
       '               ReDims
@@ -1475,7 +1475,7 @@ Private Sub mnuCalculer_Click()
       ReDim Xpl(1 To NbPtsI%), Ypl(1 To NbPtsI%)
       ReDim UparI(0 To DegPoLag%)
       ' ********************************************
-      ' affectation de leurs valeurs aux coordonnées
+      ' affectation de leurs valeurs aux coordonnÃ©es
       ' ********************************************
       For i% = 1 To NbPtsI%
          FenetreDefInPoLag.gridPts.Row = i%
@@ -1495,13 +1495,13 @@ Private Sub mnuCalculer_Click()
          End If
       Next i%
       ' ********************************************
-      ' Calcul des paramètres Upar
+      ' Calcul des paramÃ¨tres Upar
       ' par l'algorithme d' AITKEN
       ' ********************************************
       Call Aitken
       '***************************************
       '*****  actualisation de la   **********
-      '***** grille des paramètres  **********
+      '***** grille des paramÃ¨tres  **********
       '***************************************
       FenetreDefInPoLag.gridPar.Col = 1
       For i% = 0 To DegPoLag%
@@ -1509,12 +1509,12 @@ Private Sub mnuCalculer_Click()
          FenetreDefInPoLag.gridPar.Text = Format(UparI(i%), "0.000000")
       Next i%
       ' **************************************
-      lblCalcul.Caption = "Calcul effectué !"
+      lblCalcul.Caption = "Calcul effectuÃ© !"
       Exit Sub
 Traite_ErreursCalPoLag:
       Select Case Err
          Case 13
-            Message$ = "Erreur dans la frappe des données"
+            Message$ = "Erreur dans la frappe des donnÃ©es"
             MsgBox Message$, 48, "FenetreDefInPoLag.mnuCalculer"
          Case Else
             MsgBox Error$, 48, "FenetreDefInPoLag.mnuCalculer"
@@ -1548,8 +1548,8 @@ Private Sub mnuEnrPoints_Click()
    Maths.ctrlCMDialog.Flags = &H2&
    Maths.ctrlCMDialog.Action = 2
    '-----------------------------------------------------
-   ' Création du fichier de points
-   ' et écriture de leurs coordonnées Xpt() et Ypt()
+   ' CrÃ©ation du fichier de points
+   ' et Ã©criture de leurs coordonnÃ©es Xpt() et Ypt()
    ' ou autres...
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Output As #1
@@ -1595,13 +1595,13 @@ Private Sub mnuOuvPoints_Click()
    On Error GoTo Traite_ErreursOuvPts
    Maths.ctrlCMDialog.Filter = "Points (*.xy)|*.xy"
    ' nom de fichier et chemin doivent exister
-   ' sinon apparait un message d'erreur spécifique
+   ' sinon apparait un message d'erreur spÃ©cifique
    Maths.ctrlCMDialog.Flags = &H1000& Or &H800&
    Maths.ctrlCMDialog.CancelError = True
    Maths.ctrlCMDialog.Action = 1
    '-----------------------------------------------------
    ' Ouverture et lecture du fichier de points
-   ' et écriture de leurs coordonnées dans Xpt() et Ypt()
+   ' et Ã©criture de leurs coordonnÃ©es dans Xpt() et Ypt()
    ' ou autres...
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Input As #1
@@ -1629,7 +1629,7 @@ Private Sub mnuOuvPoints_Click()
       FenetreDefInPoLag.gridPts.Text = Format(Ypl(i%), "0.0000")
    Next i%
    ' **************************************
-   ' ***** 2) grille des paramètres  ******
+   ' ***** 2) grille des paramÃ¨tres  ******
    ' **************************************
    FenetreDefInPoLag.gridPar.Col = 1
    For i% = 0 To DegPoLag%
@@ -1659,10 +1659,10 @@ End Sub
 
 Private Sub mnuTracer_Click()
    '-----------------------------------------------------
-   '---------   Vérifications avant   -------------------
-   '--------- fermeture de la fenêtre -------------------
+   '---------   VÃ©rifications avant   -------------------
+   '--------- fermeture de la fenÃªtre -------------------
    '-----------------------------------------------------
-   '-----  1- Bornes écrites correctement  --------------
+   '-----  1- Bornes Ã©crites correctement  --------------
    On Error Resume Next
    Xmax = CSng(DefXmax.Text)
    If Err.Number <> 0 Then
@@ -1694,37 +1694,37 @@ Private Sub mnuTracer_Click()
       AY = Ymax - Ymin
    End If
    If NbPtsI% < 2 Then
-      MsgBox "Le nombre de points doit être supérieur ou égal à 2 !", 48, "FenetreDefInPoLag.mnuTracer"
+      MsgBox "Le nombre de points doit Ãªtre supÃ©rieur ou Ã©gal Ã  2 !", 48, "FenetreDefInPoLag.mnuTracer"
       Exit Sub
    ElseIf AX < 0 Then
-      MsgBox "Xmax doit être supérieur à Xmin", 48, "FenetreDefInPoLag.mnuTracer"
+      MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin", 48, "FenetreDefInPoLag.mnuTracer"
       Exit Sub
    ElseIf AY < 0 Then
-      MsgBox "Ymax doit être supérieur à Ymin", 48, "FenetreDefInPoLag.mnuTracer"
+      MsgBox "Ymax doit Ãªtre supÃ©rieur Ã  Ymin", 48, "FenetreDefInPoLag.mnuTracer"
       Exit Sub
    End If
    '-----------------------------------------
    '--------   si quelque chose   -----------
-   '--------    a été modifié,    -----------
+   '--------    a Ã©tÃ© modifiÃ©,    -----------
    '--------   calculer d'abord   -----------
    '-----------------------------------------
-   If lblCalcul.Caption = "Calcul non effectué" Then
+   If lblCalcul.Caption = "Calcul non effectuÃ©" Then
       mnuCalculer_Click
    End If
    '-----------------------------------------------------
    '--------        Ouverture           ----------------
-   '--------  des fenêtres pour le tracé ----------------
+   '--------  des fenÃªtres pour le tracÃ© ----------------
    '-----------------------------------------------------
    Fenetre_Prin.Show
    Fenetre_Val.Show
    Dessin.Show
    '--------------------------------------------------------------
    '--------- Affichage de la formule ----------------------------
-   '---------     définissant la courbe        -------------------
+   '---------     dÃ©finissant la courbe        -------------------
    '--------------------------------------------------------------
-   Fenetre_Prin.Caption = "Passage d'une courbe par un nuage de points (polynômes de Lagrange)"
+   Fenetre_Prin.Caption = "Passage d'une courbe par un nuage de points (polynÃ´mes de Lagrange)"
    Fenetre_Prin.LabelExplications.ForeColor = MAGENTA
-   Fenetre_Prin.LabelExplications.Caption = "Détermination du polynôme de Lagrange de degré n-1 passant par n points." & Chr$(13) & "On utilise l'algorithme d'Aitken."
+   Fenetre_Prin.LabelExplications.Caption = "DÃ©termination du polynÃ´me de Lagrange de degrÃ© n-1 passant par n points." & Chr$(13) & "On utilise l'algorithme d'Aitken."
    Fenetre_Val.Cls
    Fenetre_Val.ForeColor = CouleurCou&
    Fenetre_Val.lblFormule.ForeColor = CouleurCou&
@@ -1758,7 +1758,7 @@ Private Sub pctColorPts_Click(Index As Integer)
 End Sub
 
 Private Sub txtNbPts_Change()
-   lblCalcul.Caption = "Calcul non effectué"
+   lblCalcul.Caption = "Calcul non effectuÃ©"
    NbPtsI% = CInt(txtNbPts.Text)
    DegPoLag% = NbPtsI% - 1
    '***************************************
@@ -1766,7 +1766,7 @@ Private Sub txtNbPts_Change()
    '***************************************
    gridPts.Rows = NbPtsI% + 1
    ' ********************************
-   ' renumérotation 1ère colonne
+   ' renumÃ©rotation 1Ã¨re colonne
    ' ********************************
    gridPts.Col = 0
    For i% = 1 To NbPtsI%
@@ -1774,11 +1774,11 @@ Private Sub txtNbPts_Change()
       gridPts.Text = Format(i%, "0")
    Next i%
    ' **************************************
-   ' ***** 2) grille des paramètres  ******
+   ' ***** 2) grille des paramÃ¨tres  ******
    ' **************************************
    FenetreDefInPoLag.gridPar.Rows = DegPoLag% + 2
    ' ********************************
-   ' renumérotation 1ère colonne
+   ' renumÃ©rotation 1Ã¨re colonne
    ' ********************************
    FenetreDefInPoLag.gridPar.Col = 0
    For i% = 0 To DegPoLag%
@@ -1817,7 +1817,7 @@ Public Sub Aitken()
    ' -----------------------------------------------------
    ' *****************************************************
    ' *************  Calcul des coefficients  *************
-   ' *************  du polynôme de Lagrange  *************
+   ' *************  du polynÃ´me de Lagrange  *************
    ' *****************************************************
    UparI(0) = Fpolag(DegPoLag%)
    For i% = 1 To DegPoLag%
@@ -1841,7 +1841,7 @@ On Error GoTo Traite_ErreursMemPoLag
    ReDim Xpl(1 To NbPtsI%), Ypl(1 To NbPtsI%)
    ReDim UparI(0 To DegPoLag%)
    ' ********************************************
-   ' affectation de leurs valeurs aux coordonnées
+   ' affectation de leurs valeurs aux coordonnÃ©es
    ' ********************************************
    For i% = 1 To NbPtsI%
       FenetreDefInPoLag.gridPts.Row = i%
@@ -1861,7 +1861,7 @@ On Error GoTo Traite_ErreursMemPoLag
       End If
    Next i%
    ' ********************************************
-   ' affectation de leurs valeurs aux paramètres
+   ' affectation de leurs valeurs aux paramÃ¨tres
    ' ********************************************
    FenetreDefInPoLag.gridPar.Col = 1
    For i% = 0 To DegPoLag%
@@ -1877,7 +1877,7 @@ On Error GoTo Traite_ErreursMemPoLag
 Traite_ErreursMemPoLag:
    Select Case Err
       Case 13
-         Message$ = "Erreur dans la frappe des données"
+         Message$ = "Erreur dans la frappe des donnÃ©es"
          MsgBox Message$, 48
       Case Else
          MsgBox Error$, 48
