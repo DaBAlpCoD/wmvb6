@@ -320,7 +320,7 @@ Begin VB.Form FenetreTriangle
       Width           =   855
    End
    Begin VB.Label lblDemiPer 
-      Caption         =   "Demi-périmètre :"
+      Caption         =   "Demi-pÃ©rimÃ¨tre :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -353,22 +353,22 @@ Begin VB.Form FenetreTriangle
             Caption         =   "&Rectangle"
          End
          Begin VB.Menu mnuIsocele 
-            Caption         =   "&Isocèle"
+            Caption         =   "&IsocÃ¨le"
          End
          Begin VB.Menu mnuRectIso 
-            Caption         =   "Rectang&le isocèle"
+            Caption         =   "Rectang&le isocÃ¨le"
          End
          Begin VB.Menu mnuEquilateral 
-            Caption         =   "Equil&atéral"
+            Caption         =   "Equil&atÃ©ral"
          End
       End
       Begin VB.Menu mnuTriangleDef 
-         Caption         =   "Triangle à &définir"
+         Caption         =   "Triangle Ã  &dÃ©finir"
          Begin VB.Menu mnuDonneesCoor 
-            Caption         =   "Données : coordonnées des &sommets"
+            Caption         =   "DonnÃ©es : coordonnÃ©es des &sommets"
          End
          Begin VB.Menu mnuDonneesCotAng 
-            Caption         =   "Données : côtés et a&ngles"
+            Caption         =   "DonnÃ©es : cÃ´tÃ©s et a&ngles"
          End
       End
    End
@@ -388,9 +388,9 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 ' ------------------------------------------------
-' Drapeau : égal à FALSE si les calculs
-' n'ont pas été fait depuis le dernier changement,
-' à TRUE sinon.
+' Drapeau : Ã©gal Ã  FALSE si les calculs
+' n'ont pas Ã©tÃ© fait depuis le dernier changement,
+' Ã  TRUE sinon.
 Dim TrianFlag As Boolean
 ' ------------------------------------------------
 ' Erreur dans les calculs : FALSE si pas d'erreur,
@@ -400,11 +400,11 @@ Dim ErrTrian As Boolean
 
 Private Sub AngCotVersSom()
 ' ----------------------------------------------------
-' Calcule les sommets à partir des angles et des côtés
+' Calcule les sommets Ã  partir des angles et des cÃ´tÃ©s
 ' ----------------------------------------------------
-' coordonnées des sommets
+' coordonnÃ©es des sommets
 'Global Xtrian(1 To 3), Ytrian(1 To 3)
-' différences de coordonnées des sommets
+' diffÃ©rences de coordonnÃ©es des sommets
 'Global DXtrian(1 To 3), DYtrian(1 To 3)
 ' angles (en radians) et sommets
 'Global AngleTrian(1 To 3), Cote(1 To 3)
@@ -425,17 +425,17 @@ For i% = 1 To 3
    DYtrian(i%) = Ytrian(k%) - Ytrian(j%)
 Next i%
 Cote(2) = Sqr(DXtrian(2) ^ 2 + DYtrian(2) ^ 2)
-' demi-périmètre :
+' demi-pÃ©rimÃ¨tre :
 DemiPerTrian = (Cote(1) + Cote(2) + Cote(3)) / 2
 If DemiPerTrian <= 0 Then
    ErrTrian = True
    Beep
-   MsgBox "Erreur dans les données !", 48, "TRIANGLE"
+   MsgBox "Erreur dans les donnÃ©es !", 48, "TRIANGLE"
    Exit Sub
 End If
 ' aire
 AireTrian = 0
-' rayon du cercle circonscrit (médiatrices)
+' rayon du cercle circonscrit (mÃ©diatrices)
 RayonCirc = 1
 For i% = 1 To 3
    DemiPerMoinsCote(i%) = DemiPerTrian - Cote(i%)
@@ -445,9 +445,9 @@ Next i%
 AireTrian = AireTrian / 2
 If AireTrian <= 0 Then
    AireTrian = -AireTrian
-   ' A, B et C ne se succèdent pas
-   ' dans le sens trigonométrique
-   MsgBox "A, B et C ne se succèdent pas dans le sens trigonométrique", 64, "TRIANGLE"
+   ' A, B et C ne se succÃ¨dent pas
+   ' dans le sens trigonomÃ©trique
+   MsgBox "A, B et C ne se succÃ¨dent pas dans le sens trigonomÃ©trique", 64, "TRIANGLE"
 End If
 RayonInscrit = AireTrian / DemiPerTrian
 RayonCirc = RayonCirc / AireTrian / 4
@@ -473,7 +473,7 @@ For i% = 1 To 3
    GridSom.Text = Format(Ytrian(i%), "0.000")
 Next i%
 ' ***************************************************
-'           Affichage angles et côtés
+'           Affichage angles et cÃ´tÃ©s
 ' ***************************************************
 For i% = 1 To 3
    GridAngCot.Row = i%
@@ -495,7 +495,7 @@ For i% = 1 To 3
    If k% = 4 Then k% = 1
    Xloc = Xtrian(i%)
    Yloc = Ytrian(i%)
-   ' ****** Médiane ******
+   ' ****** MÃ©diane ******
    Xloc1 = (Xtrian(j%) + Xtrian(k%)) / 2
    Yloc1 = (Ytrian(j%) + Ytrian(k%)) / 2
    Xmediane(i%) = Xloc1
@@ -515,7 +515,7 @@ For i% = 1 To 3
    Xbissec(i%) = Xloc2
    Ybissec(i%) = Yloc2
    Lbissec(i%) = Sqr((Xloc - Xloc2) ^ 2 + (Yloc - Yloc2) ^ 2)
-   ' ****** Médiatrice ******
+   ' ****** MÃ©diatrice ******
    If Cote(j%) >= Cote(k%) Then
       Rloc1 = DXtrian(j%)
       Rloc2 = DYtrian(j%)
@@ -537,8 +537,8 @@ For i% = 1 To 3
    Lmediat(i%) = Sqr((Xloc3 - Xloc1) ^ 2 + (Yloc3 - Yloc1) ^ 2)
 Next i%
 ' ***************************************************************
-' ************* Centre de gravité (ou Barycentre) ***************
-' ************* point d'intersection des médianes ***************
+' ************* Centre de gravitÃ© (ou Barycentre) ***************
+' ************* point d'intersection des mÃ©dianes ***************
 ' ***************************************************************
 Xbar = (Xtrian(1) + Xtrian(2) + Xtrian(3)) / 3
 Ybar = (Ytrian(1) + Ytrian(2) + Ytrian(3)) / 3
@@ -558,7 +558,7 @@ Xins = Xtrian(1) + (Cote(3) * DYtrian(2) + Cote(2) * DYtrian(3)) * DemiPerMoinsC
 Yins = Ytrian(1) - (Cote(3) * DXtrian(2) + Cote(2) * DXtrian(3)) * DemiPerMoinsCote(1) / Lloc0
 ' ******************************************************************
 ' *************     Centre du cercle circonscrit     ***************
-' ************* point d'intersection des médiatrices ***************
+' ************* point d'intersection des mÃ©diatrices ***************
 ' ******************************************************************
 Xcir = (2 * Xmediane(1) * DXtrian(1) * DYtrian(2) + DYtrian(1) * DYtrian(2) * DYtrian(3) - 2 * Xmediane(2) * DXtrian(2) * DYtrian(1)) / 2 / lloc
 Ycir = -(2 * Ymediane(1) * DYtrian(1) * DXtrian(2) + DXtrian(1) * DXtrian(2) * DXtrian(3) - 2 * Ymediane(2) * DYtrian(2) * DXtrian(1)) / 2 / lloc
@@ -592,7 +592,7 @@ Private Sub Form_Load()
    FenetreTriangle.GridSom.Col = 2
    FenetreTriangle.GridSom.Text = "Y"
    ' ********************************
-   ' numérotation 1ère colonne
+   ' numÃ©rotation 1Ã¨re colonne
    ' ********************************
    FenetreTriangle.GridSom.Col = 0
    FenetreTriangle.GridSom.Row = 1
@@ -602,7 +602,7 @@ Private Sub Form_Load()
    FenetreTriangle.GridSom.Row = 3
    FenetreTriangle.GridSom.Text = "C"
    ' ********************************
-   '     Valeurs par défaut
+   '     Valeurs par dÃ©faut
    ' ********************************
    Xtrian(1) = 4
    Ytrian(1) = 4
@@ -611,7 +611,7 @@ Private Sub Form_Load()
    Xtrian(3) = 6
    Ytrian(3) = 0
    ' *********************************************
-   ' ***** affichages des valeurs par défaut *****
+   ' ***** affichages des valeurs par dÃ©faut *****
    ' *********************************************
    For i% = 1 To 3
       FenetreTriangle.GridSom.Row = i%
@@ -621,7 +621,7 @@ Private Sub Form_Load()
       FenetreTriangle.GridSom.Text = Format(Ytrian(i%), "0.000")
    Next i%
    '*****************************************************
-   '** mise en place de la grille des angles et côtés ***
+   '** mise en place de la grille des angles et cÃ´tÃ©s ***
    '*****************************************************
    FenetreTriangle.GridAngCot.FixedAlignment(0) = 2
    FenetreTriangle.GridAngCot.FixedAlignment(1) = 2
@@ -630,17 +630,17 @@ Private Sub Form_Load()
    FenetreTriangle.GridAngCot.ColWidth(1) = 1700
    FenetreTriangle.GridAngCot.ColWidth(2) = 1700
    ' ********************************
-   ' libellés 1ère ligne
+   ' libellÃ©s 1Ã¨re ligne
    ' ********************************
    FenetreTriangle.GridAngCot.Row = 0
    'FenetreTriangle.gridAngCot.Col = 0
-   'FenetreTriangle.gridAngCot.Text = "Angles et côtés"
+   'FenetreTriangle.gridAngCot.Text = "Angles et cÃ´tÃ©s"
    FenetreTriangle.GridAngCot.Col = 1
-   FenetreTriangle.GridAngCot.Text = "Angle (°)"
+   FenetreTriangle.GridAngCot.Text = "Angle (Â°)"
    FenetreTriangle.GridAngCot.Col = 2
-   FenetreTriangle.GridAngCot.Text = "Côté opposé"
+   FenetreTriangle.GridAngCot.Text = "CÃ´tÃ© opposÃ©"
    ' ********************************
-   ' numérotation 1ère colonne
+   ' numÃ©rotation 1Ã¨re colonne
    ' ********************************
    FenetreTriangle.GridAngCot.Col = 0
    FenetreTriangle.GridAngCot.Row = 1
@@ -651,7 +651,7 @@ Private Sub Form_Load()
    FenetreTriangle.GridAngCot.Text = "C et c"
    '******************************************************************
    '***      mise en place de la grille des             **************
-   '*** médianes, hauteurs,bissectrices et médiatrices  **************              ******
+   '*** mÃ©dianes, hauteurs,bissectrices et mÃ©diatrices  **************              ******
    '******************************************************************
    FenetreTriangle.GridMHBM.FixedAlignment(0) = 2
    FenetreTriangle.GridMHBM.FixedAlignment(1) = 2
@@ -662,7 +662,7 @@ Private Sub Form_Load()
    FenetreTriangle.GridMHBM.ColWidth(2) = 800
    FenetreTriangle.GridMHBM.ColWidth(3) = 800
    ' ********************************
-   ' libellés 1ère ligne
+   ' libellÃ©s 1Ã¨re ligne
    ' ********************************
    FenetreTriangle.GridMHBM.Row = 0
    FenetreTriangle.GridMHBM.Col = 1
@@ -672,19 +672,19 @@ Private Sub Form_Load()
    FenetreTriangle.GridMHBM.Col = 3
    FenetreTriangle.GridMHBM.Text = "C"
    ' ********************************
-   ' libellés 1ère colonne
+   ' libellÃ©s 1Ã¨re colonne
    ' ********************************
    FenetreTriangle.GridMHBM.Col = 0
    FenetreTriangle.GridMHBM.Row = 0
    FenetreTriangle.GridMHBM.Text = "longueurs :"
    FenetreTriangle.GridMHBM.Row = 1
-   FenetreTriangle.GridMHBM.Text = "Médianes"
+   FenetreTriangle.GridMHBM.Text = "MÃ©dianes"
    FenetreTriangle.GridMHBM.Row = 2
    FenetreTriangle.GridMHBM.Text = "Hauteurs"
    FenetreTriangle.GridMHBM.Row = 3
    FenetreTriangle.GridMHBM.Text = "Bissectrices"
    FenetreTriangle.GridMHBM.Row = 4
-   FenetreTriangle.GridMHBM.Text = "Médiatrices"
+   FenetreTriangle.GridMHBM.Text = "MÃ©diatrices"
    '*****************************************************
    '       mise en place de la grille des    ************
    '         Barycentre, Orthocentre,        ************
@@ -699,7 +699,7 @@ Private Sub Form_Load()
    FenetreTriangle.GridCentres.ColWidth(2) = 800
    FenetreTriangle.GridCentres.ColWidth(3) = 800
    ' ********************************
-   ' libellés 1ère ligne
+   ' libellÃ©s 1Ã¨re ligne
    ' ********************************
    FenetreTriangle.GridCentres.Row = 0
    FenetreTriangle.GridCentres.Col = 1
@@ -709,7 +709,7 @@ Private Sub Form_Load()
    FenetreTriangle.GridCentres.Col = 3
    FenetreTriangle.GridCentres.Text = "rayon"
    ' ********************************
-   ' libellés 1ère colonne
+   ' libellÃ©s 1Ã¨re colonne
    ' ********************************
    FenetreTriangle.GridCentres.Col = 0
    FenetreTriangle.GridCentres.Row = 0
@@ -726,7 +726,7 @@ Private Sub Form_Load()
    FenetreTriangle.GridCentres.Text = "Cercle d'Euler"
    ' ***********************************
    ' Drapeau indiquant si CalculsDivers
-   ' a été effectué ou non
+   ' a Ã©tÃ© effectuÃ© ou non
    ' ***********************************
    TrianFlag = False
    ' ***********************************
@@ -737,7 +737,7 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub gridAngCot_KeyPress(KeyAscii As Integer)
-   If lblCaracTriangle.Caption = "Données : côtés et angles" Then
+   If lblCaracTriangle.Caption = "DonnÃ©es : cÃ´tÃ©s et angles" Then
       If FenetreTriangle.GridAngCot.Row = 1 And FenetreTriangle.GridAngCot.Col = 1 Then
          Beep
          Exit Sub
@@ -767,7 +767,7 @@ End Sub
 
 
 Private Sub gridSom_KeyPress(KeyAscii As Integer)
-   If lblCaracTriangle.Caption = "Données : coordonnées des sommets" Then
+   If lblCaracTriangle.Caption = "DonnÃ©es : coordonnÃ©es des sommets" Then
       SomText$ = GridSom.Text
       Select Case KeyAscii
       Case 32 To 168
@@ -789,7 +789,7 @@ End Sub
 
 Private Sub mnuCalculer_Click()
    ErrTrian = False
-   If lblCaracTriangle.Caption = "Données : côtés et angles" Then
+   If lblCaracTriangle.Caption = "DonnÃ©es : cÃ´tÃ©s et angles" Then
       GridAngCot.Row = 1
       GridAngCot.Col = 2
       Cote(1) = CSng(GridAngCot.Text)
@@ -824,12 +824,12 @@ End Sub
 
 
 Private Sub mnuDonneesCoor_Click()
-   ' données : coordonnées des sommets
+   ' donnÃ©es : coordonnÃ©es des sommets
    TrianFlag = False
-   lblTypeTriangle.Caption = "Triangle à définir :"
-   lblCaracTriangle.Caption = "Données : coordonnées des sommets"
+   lblTypeTriangle.Caption = "Triangle Ã  dÃ©finir :"
+   lblCaracTriangle.Caption = "DonnÃ©es : coordonnÃ©es des sommets"
    ' **********************************************
-   ' **** remise à zéro grille angles et côtés ****
+   ' **** remise Ã  zÃ©ro grille angles et cÃ´tÃ©s ****
    ' **********************************************
    For i% = 1 To 3
       GridAngCot.Row = i%
@@ -840,7 +840,7 @@ Private Sub mnuDonneesCoor_Click()
    Next i%
    ' ***************************************************
    ' **************************************
-   ' **** remise à zéro grille MHBM ****
+   ' **** remise Ã  zÃ©ro grille MHBM ****
    ' **************************************
    For i% = 1 To 4
       FenetreTriangle.GridMHBM.Row = i%
@@ -852,7 +852,7 @@ Private Sub mnuDonneesCoor_Click()
       FenetreTriangle.GridMHBM.Text = ""
    Next i%
    ' **************************************
-   ' **** remise à zéro grille Centres ****
+   ' **** remise Ã  zÃ©ro grille Centres ****
    ' **************************************
    For i% = 1 To 5
       FenetreTriangle.GridCentres.Row = i%
@@ -864,11 +864,11 @@ Private Sub mnuDonneesCoor_Click()
       FenetreTriangle.GridCentres.Text = ""
    Next i%
    ' *********************************************
-   ' **** remise à zéro étiquette lblValDemiP ****
+   ' **** remise Ã  zÃ©ro Ã©tiquette lblValDemiP ****
    ' *********************************************
    FenetreTriangle.lblValDemiP.Caption = ""
    ' ********************************************
-   ' **** remise à zéro étiquette lblValSurf ****
+   ' **** remise Ã  zÃ©ro Ã©tiquette lblValSurf ****
    ' ********************************************
    FenetreTriangle.lblValSurf.Caption = ""
    ' ********************************************
@@ -876,12 +876,12 @@ End Sub
 
 
 Private Sub mnuDonneesCotAng_Click()
-   ' données : angles et côtés
+   ' donnÃ©es : angles et cÃ´tÃ©s
    TrianFlag = False
-   lblTypeTriangle.Caption = "Triangle à définir :"
-   lblCaracTriangle.Caption = "Données : côtés et angles"
+   lblTypeTriangle.Caption = "Triangle Ã  dÃ©finir :"
+   lblCaracTriangle.Caption = "DonnÃ©es : cÃ´tÃ©s et angles"
    ' **************************************
-   ' **** remise à zéro grille sommets ****
+   ' **** remise Ã  zÃ©ro grille sommets ****
    ' **************************************
    For i% = 1 To 3
       FenetreTriangle.GridSom.Row = i%
@@ -904,7 +904,7 @@ Private Sub mnuDonneesCotAng_Click()
    FenetreTriangle.GridAngCot.Text = "XXXXX"
    ' ******************************************
    ' **************************************
-   ' **** remise à zéro grille MHBM ****
+   ' **** remise Ã  zÃ©ro grille MHBM ****
    ' **************************************
    For i% = 1 To 4
       FenetreTriangle.GridMHBM.Row = i%
@@ -916,7 +916,7 @@ Private Sub mnuDonneesCotAng_Click()
       FenetreTriangle.GridMHBM.Text = ""
    Next i%
    ' **************************************
-   ' **** remise à zéro grille Centres ****
+   ' **** remise Ã  zÃ©ro grille Centres ****
    ' **************************************
    For i% = 1 To 5
       FenetreTriangle.GridCentres.Row = i%
@@ -928,21 +928,21 @@ Private Sub mnuDonneesCotAng_Click()
       FenetreTriangle.GridCentres.Text = ""
    Next i%
    ' *********************************************
-   ' **** remise à zéro étiquette lblValDemiP ****
+   ' **** remise Ã  zÃ©ro Ã©tiquette lblValDemiP ****
    ' *********************************************
    FenetreTriangle.lblValDemiP.Caption = ""
    ' ********************************************
-   ' **** remise à zéro étiquette lblValSurf ****
+   ' **** remise Ã  zÃ©ro Ã©tiquette lblValSurf ****
    ' ********************************************
    FenetreTriangle.lblValSurf.Caption = ""
    ' ********************************************
 End Sub
 
 Private Sub mnuEquilateral_Click()
-   ' triangle équilatéral
+   ' triangle Ã©quilatÃ©ral
    TrianFlag = False
    lblTypeTriangle.Caption = "Triangle exemple :"
-   lblCaracTriangle.Caption = "Equilatéral"
+   lblCaracTriangle.Caption = "EquilatÃ©ral"
    Xtrian(1) = 0
    Ytrian(1) = 1.732051
    Xtrian(2) = -1
@@ -960,7 +960,7 @@ Private Sub mnuEquilateral_Click()
       FenetreTriangle.GridSom.Text = Format(Ytrian(i%), "0.000000")
    Next i%
    ' **********************************************
-   ' **** remise à zéro grille angles et côtés ****
+   ' **** remise Ã  zÃ©ro grille angles et cÃ´tÃ©s ****
    ' **********************************************
    For i% = 1 To 3
       GridAngCot.Row = i%
@@ -971,7 +971,7 @@ Private Sub mnuEquilateral_Click()
    Next i%
    ' ***************************************************
    ' **************************************
-   ' **** remise à zéro grille MHBM ****
+   ' **** remise Ã  zÃ©ro grille MHBM ****
    ' **************************************
    For i% = 1 To 4
       FenetreTriangle.GridMHBM.Row = i%
@@ -983,7 +983,7 @@ Private Sub mnuEquilateral_Click()
       FenetreTriangle.GridMHBM.Text = ""
    Next i%
    ' **************************************
-   ' **** remise à zéro grille Centres ****
+   ' **** remise Ã  zÃ©ro grille Centres ****
    ' **************************************
    For i% = 1 To 5
       FenetreTriangle.GridCentres.Row = i%
@@ -995,21 +995,21 @@ Private Sub mnuEquilateral_Click()
       FenetreTriangle.GridCentres.Text = ""
    Next i%
    ' *********************************************
-   ' **** remise à zéro étiquette lblValDemiP ****
+   ' **** remise Ã  zÃ©ro Ã©tiquette lblValDemiP ****
    ' *********************************************
    FenetreTriangle.lblValDemiP.Caption = ""
    ' ********************************************
-   ' **** remise à zéro étiquette lblValSurf ****
+   ' **** remise Ã  zÃ©ro Ã©tiquette lblValSurf ****
    ' ********************************************
    FenetreTriangle.lblValSurf.Caption = ""
    ' ********************************************
 End Sub
 
 Private Sub mnuIsocele_Click()
-   ' triangle isocèle
+   ' triangle isocÃ¨le
    TrianFlag = False
    lblTypeTriangle.Caption = "Triangle exemple :"
-   lblCaracTriangle.Caption = "Isocèle"
+   lblCaracTriangle.Caption = "IsocÃ¨le"
    Xtrian(1) = 0
    Ytrian(1) = 5
    Xtrian(2) = -2
@@ -1027,7 +1027,7 @@ Private Sub mnuIsocele_Click()
       FenetreTriangle.GridSom.Text = Format(Ytrian(i%), "0.000000")
    Next i%
    ' **********************************************
-   ' **** remise à zéro grille angles et côtés ****
+   ' **** remise Ã  zÃ©ro grille angles et cÃ´tÃ©s ****
    ' **********************************************
    For i% = 1 To 3
       GridAngCot.Row = i%
@@ -1038,7 +1038,7 @@ Private Sub mnuIsocele_Click()
    Next i%
    ' ***************************************************
    ' **************************************
-   ' **** remise à zéro grille MHBM ****
+   ' **** remise Ã  zÃ©ro grille MHBM ****
    ' **************************************
    For i% = 1 To 4
       FenetreTriangle.GridMHBM.Row = i%
@@ -1050,7 +1050,7 @@ Private Sub mnuIsocele_Click()
       FenetreTriangle.GridMHBM.Text = ""
    Next i%
    ' **************************************
-   ' **** remise à zéro grille Centres ****
+   ' **** remise Ã  zÃ©ro grille Centres ****
    ' **************************************
    For i% = 1 To 5
       FenetreTriangle.GridCentres.Row = i%
@@ -1062,11 +1062,11 @@ Private Sub mnuIsocele_Click()
       FenetreTriangle.GridCentres.Text = ""
    Next i%
    ' *********************************************
-   ' **** remise à zéro étiquette lblValDemiP ****
+   ' **** remise Ã  zÃ©ro Ã©tiquette lblValDemiP ****
    ' *********************************************
    FenetreTriangle.lblValDemiP.Caption = ""
    ' ********************************************
-   ' **** remise à zéro étiquette lblValSurf ****
+   ' **** remise Ã  zÃ©ro Ã©tiquette lblValSurf ****
    ' ********************************************
    FenetreTriangle.lblValSurf.Caption = ""
    ' ********************************************
@@ -1083,7 +1083,7 @@ Private Sub mnuRectangle_Click()
    ' triangle rectangle
    TrianFlag = False
    lblTypeTriangle.Caption = "Triangle exemple :"
-   lblCaracTriangle.Caption = "Isocèle"
+   lblCaracTriangle.Caption = "IsocÃ¨le"
    Xtrian(1) = 0
    Ytrian(1) = 2
    Xtrian(2) = 0
@@ -1101,7 +1101,7 @@ Private Sub mnuRectangle_Click()
       FenetreTriangle.GridSom.Text = Format(Ytrian(i%), "0.000000")
    Next i%
    ' **********************************************
-   ' **** remise à zéro grille angles et côtés ****
+   ' **** remise Ã  zÃ©ro grille angles et cÃ´tÃ©s ****
    ' **********************************************
    For i% = 1 To 3
       GridAngCot.Row = i%
@@ -1112,7 +1112,7 @@ Private Sub mnuRectangle_Click()
    Next i%
    ' ***************************************************
    ' **************************************
-   ' **** remise à zéro grille MHBM ****
+   ' **** remise Ã  zÃ©ro grille MHBM ****
    ' **************************************
    For i% = 1 To 4
       FenetreTriangle.GridMHBM.Row = i%
@@ -1124,7 +1124,7 @@ Private Sub mnuRectangle_Click()
       FenetreTriangle.GridMHBM.Text = ""
    Next i%
    ' **************************************
-   ' **** remise à zéro grille Centres ****
+   ' **** remise Ã  zÃ©ro grille Centres ****
    ' **************************************
    For i% = 1 To 5
       FenetreTriangle.GridCentres.Row = i%
@@ -1136,11 +1136,11 @@ Private Sub mnuRectangle_Click()
       FenetreTriangle.GridCentres.Text = ""
    Next i%
    ' *********************************************
-   ' **** remise à zéro étiquette lblValDemiP ****
+   ' **** remise Ã  zÃ©ro Ã©tiquette lblValDemiP ****
    ' *********************************************
    FenetreTriangle.lblValDemiP.Caption = ""
    ' ********************************************
-   ' **** remise à zéro étiquette lblValSurf ****
+   ' **** remise Ã  zÃ©ro Ã©tiquette lblValSurf ****
    ' ********************************************
    FenetreTriangle.lblValSurf.Caption = ""
    ' ********************************************
@@ -1148,10 +1148,10 @@ End Sub
 
 
 Private Sub mnuRectIso_Click()
-   ' triangle rectangle isocèle
+   ' triangle rectangle isocÃ¨le
    TrianFlag = False
    lblTypeTriangle.Caption = "Triangle exemple :"
-   lblCaracTriangle.Caption = "Rectangle isocèle"
+   lblCaracTriangle.Caption = "Rectangle isocÃ¨le"
    Xtrian(1) = 0
    Ytrian(1) = 1
    Xtrian(2) = -1
@@ -1169,7 +1169,7 @@ Private Sub mnuRectIso_Click()
       FenetreTriangle.GridSom.Text = Format(Ytrian(i%), "0.000000")
    Next i%
    ' **********************************************
-   ' **** remise à zéro grille angles et côtés ****
+   ' **** remise Ã  zÃ©ro grille angles et cÃ´tÃ©s ****
    ' **********************************************
    For i% = 1 To 3
       GridAngCot.Row = i%
@@ -1180,7 +1180,7 @@ Private Sub mnuRectIso_Click()
    Next i%
    ' ***************************************************
    ' **************************************
-   ' **** remise à zéro grille MHBM ****
+   ' **** remise Ã  zÃ©ro grille MHBM ****
    ' **************************************
    For i% = 1 To 4
       FenetreTriangle.GridMHBM.Row = i%
@@ -1192,7 +1192,7 @@ Private Sub mnuRectIso_Click()
       FenetreTriangle.GridMHBM.Text = ""
    Next i%
    ' **************************************
-   ' **** remise à zéro grille Centres ****
+   ' **** remise Ã  zÃ©ro grille Centres ****
    ' **************************************
    For i% = 1 To 5
       FenetreTriangle.GridCentres.Row = i%
@@ -1204,11 +1204,11 @@ Private Sub mnuRectIso_Click()
       FenetreTriangle.GridCentres.Text = ""
    Next i%
    ' *********************************************
-   ' **** remise à zéro étiquette lblValDemiP ****
+   ' **** remise Ã  zÃ©ro Ã©tiquette lblValDemiP ****
    ' *********************************************
    FenetreTriangle.lblValDemiP.Caption = ""
    ' ********************************************
-   ' **** remise à zéro étiquette lblValSurf ****
+   ' **** remise Ã  zÃ©ro Ã©tiquette lblValSurf ****
    ' ********************************************
    FenetreTriangle.lblValSurf.Caption = ""
    ' ********************************************
@@ -1236,7 +1236,7 @@ Private Sub mnuTroisAnglesAigus_Click()
       FenetreTriangle.GridSom.Text = Format(Ytrian(i%), "0.000000")
    Next i%
    ' **********************************************
-   ' **** remise à zéro grille angles et côtés ****
+   ' **** remise Ã  zÃ©ro grille angles et cÃ´tÃ©s ****
    ' **********************************************
    For i% = 1 To 3
       GridAngCot.Row = i%
@@ -1247,7 +1247,7 @@ Private Sub mnuTroisAnglesAigus_Click()
    Next i%
    ' ***************************************************
    ' **************************************
-   ' **** remise à zéro grille MHBM ****
+   ' **** remise Ã  zÃ©ro grille MHBM ****
    ' **************************************
    For i% = 1 To 4
       FenetreTriangle.GridMHBM.Row = i%
@@ -1259,7 +1259,7 @@ Private Sub mnuTroisAnglesAigus_Click()
       FenetreTriangle.GridMHBM.Text = ""
    Next i%
    ' **************************************
-   ' **** remise à zéro grille Centres ****
+   ' **** remise Ã  zÃ©ro grille Centres ****
    ' **************************************
    For i% = 1 To 5
       FenetreTriangle.GridCentres.Row = i%
@@ -1271,11 +1271,11 @@ Private Sub mnuTroisAnglesAigus_Click()
       FenetreTriangle.GridCentres.Text = ""
    Next i%
    ' *********************************************
-   ' **** remise à zéro étiquette lblValDemiP ****
+   ' **** remise Ã  zÃ©ro Ã©tiquette lblValDemiP ****
    ' *********************************************
    FenetreTriangle.lblValDemiP.Caption = ""
    ' ********************************************
-   ' **** remise à zéro étiquette lblValSurf ****
+   ' **** remise Ã  zÃ©ro Ã©tiquette lblValSurf ****
    ' ********************************************
    FenetreTriangle.lblValSurf.Caption = ""
    ' ********************************************
@@ -1304,7 +1304,7 @@ Private Sub mnuUnAngleObtus_Click()
       FenetreTriangle.GridSom.Text = Format(Ytrian(i%), "0.000000")
    Next i%
    ' **********************************************
-   ' **** remise à zéro grille angles et côtés ****
+   ' **** remise Ã  zÃ©ro grille angles et cÃ´tÃ©s ****
    ' **********************************************
    For i% = 1 To 3
       GridAngCot.Row = i%
@@ -1315,7 +1315,7 @@ Private Sub mnuUnAngleObtus_Click()
    Next i%
    ' ***************************************************
    ' **************************************
-   ' **** remise à zéro grille MHBM ****
+   ' **** remise Ã  zÃ©ro grille MHBM ****
    ' **************************************
    For i% = 1 To 4
       FenetreTriangle.GridMHBM.Row = i%
@@ -1327,7 +1327,7 @@ Private Sub mnuUnAngleObtus_Click()
       FenetreTriangle.GridMHBM.Text = ""
    Next i%
    ' **************************************
-   ' **** remise à zéro grille Centres ****
+   ' **** remise Ã  zÃ©ro grille Centres ****
    ' **************************************
    For i% = 1 To 5
       FenetreTriangle.GridCentres.Row = i%
@@ -1339,11 +1339,11 @@ Private Sub mnuUnAngleObtus_Click()
       FenetreTriangle.GridCentres.Text = ""
    Next i%
    ' *********************************************
-   ' **** remise à zéro étiquette lblValDemiP ****
+   ' **** remise Ã  zÃ©ro Ã©tiquette lblValDemiP ****
    ' *********************************************
    FenetreTriangle.lblValDemiP.Caption = ""
    ' ********************************************
-   ' **** remise à zéro étiquette lblValSurf ****
+   ' **** remise Ã  zÃ©ro Ã©tiquette lblValSurf ****
    ' ********************************************
    FenetreTriangle.lblValSurf.Caption = ""
    ' ********************************************
@@ -1359,12 +1359,12 @@ End Sub
 
 Private Sub PresenteResultats()
    '****************************************************
-   '            Demi-périmètre et Surface
+   '            Demi-pÃ©rimÃ¨tre et Surface
    '****************************************************
    lblValDemiP.Caption = Format(DemiPerTrian, "0.000")
    lblValSurf.Caption = Format(AireTrian, "0.000")
    '****************************************************
-   'grille médianes, hauteurs, bissectrices, médiatrices
+   'grille mÃ©dianes, hauteurs, bissectrices, mÃ©diatrices
    '****************************************************
    GridMHBM.Row = 1
    For i% = 1 To 3
@@ -1430,11 +1430,11 @@ End Sub
 
 Private Sub SomVersAngCot()
 ' ----------------------------------------------------
-' Calcule les angles et les côtés à partir des sommets
+' Calcule les angles et les cÃ´tÃ©s Ã  partir des sommets
 ' ----------------------------------------------------
-' coordonnées des sommets
+' coordonnÃ©es des sommets
 'Public Xtrian(1 To 3), Ytrian(1 To 3)
-' différences de coordonnées des sommets
+' diffÃ©rences de coordonnÃ©es des sommets
 'Public DXtrian(1 To 3), DYtrian(1 To 3)
 ' angles et sommets
 'Public AngleTrian(1 To 3), Cote(1 To 3)
@@ -1449,17 +1449,17 @@ For i% = 1 To 3
    DYtrian(i%) = Ytrian(k%) - Ytrian(j%)
    Cote(i%) = Sqr(DXtrian(i%) * DXtrian(i%) + DYtrian(i%) * DYtrian(i%))
 Next i%
-' demi-périmètre :
+' demi-pÃ©rimÃ¨tre :
 DemiPerTrian = (Cote(1) + Cote(2) + Cote(3)) / 2
 If DemiPerTrian <= 0 Then
    ErrTrian = True
    Beep
-   MsgBox "Erreur dans les données !", 48, "TRIANGLE"
+   MsgBox "Erreur dans les donnÃ©es !", 48, "TRIANGLE"
    Exit Sub
 End If
 ' aire
 AireTrian = 0
-' rayon du cercle circonscrit (médiatrices)
+' rayon du cercle circonscrit (mÃ©diatrices)
 RayonCirc = 1
 For i% = 1 To 3
    DemiPerMoinsCote(i%) = DemiPerTrian - Cote(i%)
@@ -1469,9 +1469,9 @@ Next i%
 AireTrian = AireTrian / 2
 If AireTrian <= 0 Then
    AireTrian = -AireTrian
-   ' A, B et C ne se succèdent pas
-   ' dans le sens trigonométrique
-   MsgBox "A, B et C ne se succèdent pas dans le sens trigonométrique", 64, "TRIANGLE"
+   ' A, B et C ne se succÃ¨dent pas
+   ' dans le sens trigonomÃ©trique
+   MsgBox "A, B et C ne se succÃ¨dent pas dans le sens trigonomÃ©trique", 64, "TRIANGLE"
 End If
 RayonInscrit = AireTrian / DemiPerTrian
 RayonCirc = RayonCirc / AireTrian / 4
@@ -1485,7 +1485,7 @@ For i% = 1 To 3
    CosAng(i%) = TanM / TanP
 Next i%
 ' ***************************************************
-'           Affichage angles et côtés
+'           Affichage angles et cÃ´tÃ©s
 ' ***************************************************
 For i% = 1 To 3
    GridAngCot.Row = i%
