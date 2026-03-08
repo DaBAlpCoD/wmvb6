@@ -1,6 +1,6 @@
 VERSION 5.00
 Begin VB.Form FenetreDecFaPre 
-   Caption         =   "Décomposition d'un nombre entier en produit de facteurs premiers"
+   Caption         =   "DÃ©composition d'un nombre entier en produit de facteurs premiers"
    ClientHeight    =   4785
    ClientLeft      =   1080
    ClientTop       =   2130
@@ -153,7 +153,7 @@ Private Sub DecFaPre()
 Traite_ErreursDPFP:
    Select Case Err
       Case 13
-         Message$ = "Erreur dans la frappe des données"
+         Message$ = "Erreur dans la frappe des donnÃ©es"
          MsgBox Message$, 48
       Case Else
          MsgBox Error$, 48
