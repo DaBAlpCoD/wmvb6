@@ -1,6 +1,6 @@
 VERSION 5.00
 Begin VB.Form FenetreSolEq 
-   Caption         =   "Solution de l'équation F(X)=0"
+   Caption         =   "Solution de l'Ã©quation F(X)=0"
    ClientHeight    =   5085
    ClientLeft      =   720
    ClientTop       =   1590
@@ -69,7 +69,7 @@ Begin VB.Form FenetreSolEq
       Width           =   5415
    End
    Begin VB.Label lblMethode 
-      Caption         =   " Recherche des solutions de l'équation F(X)=0 par la méthode de NEWTON-RAPHSON."
+      Caption         =   " Recherche des solutions de l'Ã©quation F(X)=0 par la mÃ©thode de NEWTON-RAPHSON."
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -136,7 +136,7 @@ Begin VB.Form FenetreSolEq
       Width           =   495
    End
    Begin VB.Label lblValAp 
-      Caption         =   "Valeur approchée de la solution :"
+      Caption         =   "Valeur approchÃ©e de la solution :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -252,9 +252,9 @@ Private Sub mnuCalculer_Click()
    FenetreSolEq.lblMessage.Caption = " CALCUL EN COURS ..."
    DoEvents
    '--------------------------------------------------------------
-   '--------- Première manipulation des chaines DefVar : ---------
+   '--------- PremiÃ¨re manipulation des chaines DefVar : ---------
    '--------- Suppression des blancs dans les formules,  ---------
-   '--------- vérification du nombre de parenthèses et   ---------
+   '--------- vÃ©rification du nombre de parenthÃ¨ses et   ---------
    '--------- remplacement des constantes par leur valeur --------
    '--------------------------------------------------------------
    NombVar% = 1
