@@ -1,6 +1,6 @@
 VERSION 5.00
 Begin VB.Form FenetreDerive 
-   Caption         =   "Dérivée d'une expression numérique"
+   Caption         =   "DÃ©rivÃ©e d'une expression numÃ©rique"
    ClientHeight    =   3915
    ClientLeft      =   690
    ClientTop       =   1770
@@ -52,7 +52,7 @@ Begin VB.Form FenetreDerive
       Width           =   6135
    End
    Begin VB.Label lblExpressionDerivee 
-      Caption         =   "Expression dérivée :"
+      Caption         =   "Expression dÃ©rivÃ©e :"
       Height          =   255
       Left            =   120
       TabIndex        =   7
@@ -92,7 +92,7 @@ Begin VB.Form FenetreDerive
       Width           =   975
    End
    Begin VB.Label lblVariable 
-      Caption         =   "Variable de dérivation :"
+      Caption         =   "Variable de dÃ©rivation :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -126,7 +126,7 @@ Begin VB.Form FenetreDerive
       Width           =   375
    End
    Begin VB.Label lblExpr 
-      Caption         =   "Expression à dériver :"
+      Caption         =   "Expression Ã  dÃ©river :"
       Height          =   255
       Left            =   120
       TabIndex        =   6
@@ -177,8 +177,8 @@ End Sub
 
 Private Sub Form_Load()
    '-----------------------------------------------------
-   '---------------- valeurs par défaut -----------------
-   '----------------    pour Dérivée    -----------------
+   '---------------- valeurs par dÃ©faut -----------------
+   '----------------    pour DÃ©rivÃ©e    -----------------
    '-----------------------------------------------------
    nomvar$ = "X"
    expression$ = "X^X"
@@ -198,19 +198,19 @@ End Sub
 Private Sub mnuCalculer_Click()
    If lblExprDerivee.Caption = "" Then
       '--------------------------------------------------------------
-      '--------- Première manipulation de l'expression :    ---------
+      '--------- PremiÃ¨re manipulation de l'expression :    ---------
       '--------- Suppression des blancs dans les formules,  ---------
-      '--------- vérification du nombre de parenthèses et   ---------
+      '--------- vÃ©rification du nombre de parenthÃ¨ses et   ---------
       '--------------------------------------------------------------
       Call OteBlancs(UCase(expression$), expression$)
       If Erreur = True Then Exit Sub
       '--------------------------------------------------------------
-      '--------- Dérivation    ---------
+      '--------- DÃ©rivation    ---------
       '--------------------------------------------------------------
       Call DeriveSomme(expression$, nomvar$, exprderivee$)
       If Erreur = True Then Exit Sub
       '--------------------------------------------------------------
-      '--------- Affichage du résultat ---------
+      '--------- Affichage du rÃ©sultat ---------
       '--------------------------------------------------------------
       lblExprDerivee.Caption = exprderivee$
    End If
