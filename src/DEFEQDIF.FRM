@@ -1,6 +1,6 @@
 VERSION 5.00
 Begin VB.Form FenetreDefEqDif 
-   Caption         =   "Définition de la courbe [équation différentielle du premier ordre]"
+   Caption         =   "DÃ©finition de la courbe [Ã©quation diffÃ©rentielle du premier ordre]"
    ClientHeight    =   6705
    ClientLeft      =   480
    ClientTop       =   1035
@@ -409,7 +409,7 @@ Begin VB.Form FenetreDefEqDif
       Width           =   1695
    End
    Begin VB.CheckBox MemeEchelle 
-      Caption         =   "même echelle sur les deux axes"
+      Caption         =   "mÃªme echelle sur les deux axes"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -534,7 +534,7 @@ Begin VB.Form FenetreDefEqDif
       Width           =   855
    End
    Begin VB.Frame CadreGarder 
-      Caption         =   "Tracés précédents"
+      Caption         =   "TracÃ©s prÃ©cÃ©dents"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -775,7 +775,7 @@ Begin VB.Form FenetreDefEqDif
       Width           =   735
    End
    Begin VB.Label EtiquetteDefiniCour 
-      Caption         =   "Fonction définissant la courbe :"
+      Caption         =   "Fonction dÃ©finissant la courbe :"
       Height          =   255
       Left            =   360
       TabIndex        =   25
@@ -834,7 +834,7 @@ Begin VB.Form FenetreDefEqDif
       Width           =   495
    End
    Begin VB.Label EtiquetteLimitesY 
-      Caption         =   "Limites de l'axe des ordonnées "
+      Caption         =   "Limites de l'axe des ordonnÃ©es "
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -1007,7 +1007,7 @@ Begin VB.Form FenetreDefEqDif
       End
    End
    Begin VB.Menu mnuDefPts 
-      Caption         =   "&Définir un ensemble de points"
+      Caption         =   "&DÃ©finir un ensemble de points"
    End
    Begin VB.Menu mnuTracer 
       Caption         =   "&Tracer..."
@@ -1177,7 +1177,7 @@ End Sub
 
 Private Sub Form_Load()
    '-----------------------------------------------------------------
-   '-----------        Valeurs par défaut             ---------------
+   '-----------        Valeurs par dÃ©faut             ---------------
    '-----------      de certaines variables           ---------------
    '-----------------------------------------------------------------
    DoFlag = False
@@ -1203,7 +1203,7 @@ Private Sub Form_Load()
    CouleurCou& = ROUGE
    CouleurPts& = BLEU
    '-----------------------------------------------------------------
-   '-----------        Valeurs par défaut             ---------------
+   '-----------        Valeurs par dÃ©faut             ---------------
    '-----------        d'autres variables             ---------------
    '-----------------------------------------------------------------
    LX% = Dessin.ScaleWidth
@@ -1258,8 +1258,8 @@ Private Sub mnuEnrPoints_Click()
    Maths.ctrlCMDialog.Flags = &H2&
    Maths.ctrlCMDialog.Action = 2
    '-----------------------------------------------------
-   ' Création du fichier de points
-   ' et écriture de leurs coordonnées Xpt() et Ypt()
+   ' CrÃ©ation du fichier de points
+   ' et Ã©criture de leurs coordonnÃ©es Xpt() et Ypt()
    ' ou autres...
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Output As #1
@@ -1305,13 +1305,13 @@ Private Sub mnuOuvPoints_Click()
    On Error GoTo Traite_ErreursOuvPts
    Maths.ctrlCMDialog.Filter = "Points (*.xy)|*.xy"
    ' nom de fichier et chemin doivent exister
-   ' sinon apparait un message d'erreur spécifique
+   ' sinon apparait un message d'erreur spÃ©cifique
    Maths.ctrlCMDialog.Flags = &H1000& Or &H800&
    Maths.ctrlCMDialog.CancelError = True
    Maths.ctrlCMDialog.Action = 1
    '-----------------------------------------------------
    ' Ouverture et lecture du fichier de points
-   ' et écriture de leurs coordonnées dans Xpt() et Ypt()
+   ' et Ã©criture de leurs coordonnÃ©es dans Xpt() et Ypt()
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Input As #1
    Input #1, NbPts%
@@ -1325,13 +1325,13 @@ Private Sub mnuOuvPoints_Click()
    '-----------------------------------------------------
    ' activation de certaines cases
    '-------------------------------
-   EtiquettePoints.ForeColor = &H80000012     'Texte activé
-   PointsTracer.ForeColor = &H80000012        'Texte activé
+   EtiquettePoints.ForeColor = &H80000012     'Texte activÃ©
+   PointsTracer.ForeColor = &H80000012        'Texte activÃ©
    PointsTracer.Value = 1                         'Checked
-   PointsRelier.ForeColor = &H80000012        'Texte activé
+   PointsRelier.ForeColor = &H80000012        'Texte activÃ©
    PointsRelier.Value = 0                         'Unchecked
-   EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activé
-   EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activé
+   EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activÃ©
+   EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activÃ©
    '-----------------------------------------------------
    Exit Sub
 Traite_ErreursOuvPts:
@@ -1354,10 +1354,10 @@ End Sub
 
 Private Sub mnuTracer_Click()
    '-----------------------------------------------------
-   '---------   Vérifications avant   -------------------
-   '--------- fermeture de la fenêtre -------------------
+   '---------   VÃ©rifications avant   -------------------
+   '--------- fermeture de la fenÃªtre -------------------
    '-----------------------------------------------------
-   '-----  1- Bornes écrites correctement  --------------
+   '-----  1- Bornes Ã©crites correctement  --------------
    On Error Resume Next
    Xmax = CSng(DefXmax.Text)
    If Err.Number <> 0 Then
@@ -1389,26 +1389,26 @@ Private Sub mnuTracer_Click()
       AY = Ymax - Ymin
    End If
    If AX < 0 Then
-      MsgBox "Xmax doit être supérieur à Xmin", 48, "COURBE"
+      MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin", 48, "COURBE"
       Exit Sub
    ElseIf AY < 0 Then
-      MsgBox "Ymax doit être supérieur à Ymin", 48, "COURBE"
+      MsgBox "Ymax doit Ãªtre supÃ©rieur Ã  Ymin", 48, "COURBE"
       Exit Sub
    End If
    '-----------------------------------------------------
    '--------        Ouverture            ----------------
-   '--------  des fenêtres pour le tracé ----------------
+   '--------  des fenÃªtres pour le tracÃ© ----------------
    '-----------------------------------------------------
    Fenetre_Prin.Show
    Fenetre_Val.Show
    Dessin.Show
    '--------------------------------------------------------------
    '--------- Affichage de la formule ----------------------------
-   '---------     définissant la courbe        -------------------
+   '---------     dÃ©finissant la courbe        -------------------
    '--------------------------------------------------------------
-   Fenetre_Prin.Caption = "Equation différentielle du premier ordre"
+   Fenetre_Prin.Caption = "Equation diffÃ©rentielle du premier ordre"
    Fenetre_Prin.LabelExplications.ForeColor = MAGENTA
-   Fenetre_Prin.LabelExplications.Caption = "Courbe Y(X) solution de l'équation différentielle du premier ordre dY/dX = F(X,Y)." & Chr$(13) & "Résolution par la méthode de RUNGE-KUTTA."
+   Fenetre_Prin.LabelExplications.Caption = "Courbe Y(X) solution de l'Ã©quation diffÃ©rentielle du premier ordre dY/dX = F(X,Y)." & Chr$(13) & "RÃ©solution par la mÃ©thode de RUNGE-KUTTA."
    Fenetre_Val.Cls
    Fenetre_Val.ForeColor = CouleurCou&
    Fenetre_Val.lblFormule.ForeColor = CouleurCou&
