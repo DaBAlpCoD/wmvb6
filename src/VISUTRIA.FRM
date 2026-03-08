@@ -164,7 +164,7 @@ Begin VB.Form FenetreVisuTriangle
       Width           =   1575
    End
    Begin VB.Label lblMediat 
-      Caption         =   "Médiatrices :"
+      Caption         =   "MÃ©diatrices :"
       Height          =   255
       Left            =   6240
       TabIndex        =   4
@@ -188,7 +188,7 @@ Begin VB.Form FenetreVisuTriangle
       Width           =   1575
    End
    Begin VB.Label lblMedianes 
-      Caption         =   "Médianes :"
+      Caption         =   "MÃ©dianes :"
       Height          =   255
       Left            =   6240
       TabIndex        =   1
@@ -223,7 +223,7 @@ Dim CP(1 To 3)
 Dim UP(1 To 3)
 
 Private Sub CalculPourTrace()
-' ------------------- Calculs pour tracé  --------------------
+' ------------------- Calculs pour tracÃ©  --------------------
 ' Centrage sur cercle circonscrit sur ABC (ou HBC si angle A obtus )
    If Obtus% = 0 Then
       RayonMaxTrian = RayonCirc
@@ -331,7 +331,7 @@ Private Sub cmdEHauteur_Click()
    For i% = 1 To 3
       pctVueTrian.Line (XTdes(Xtrian(i%)), YTdes(Ytrian(i%)))-(XTdes(Xhauteur(i%)), YTdes(Yhauteur(i%)))
       If Obtus% <> 0 Then
-         pctVueTrian.DrawStyle = 2  ' pointillés
+         pctVueTrian.DrawStyle = 2  ' pointillÃ©s
          pctVueTrian.Line (XTdes(Xort), YTdes(Yort))-(XTdes(Xhauteur(i%)), YTdes(Yhauteur(i%)))
          pctVueTrian.DrawStyle = 0  ' continu
       End If
@@ -368,7 +368,7 @@ Private Sub cmdEMediat_Click()
    For i% = 1 To 3
       pctVueTrian.Line (XTdes(Xmediat(i%)), YTdes(Ymediat(i%)))-(XTdes(Xmediane(i%)), YTdes(Ymediane(i%)))
       If Obtus% <> 0 Then
-         pctVueTrian.DrawStyle = 2  ' pointillés
+         pctVueTrian.DrawStyle = 2  ' pointillÃ©s
          pctVueTrian.Line (XTdes(Xcir), YTdes(Ycir))-(XTdes(Xmediat(i%)), YTdes(Ymediat(i%)))
          pctVueTrian.DrawStyle = 0  ' continu
       End If
@@ -412,7 +412,7 @@ Private Sub cmdTHauteur_Click()
    For i% = 1 To 3
       pctVueTrian.Line (XTdes(Xtrian(i%)), YTdes(Ytrian(i%)))-(XTdes(Xhauteur(i%)), YTdes(Yhauteur(i%)))
       If Obtus% <> 0 Then
-         pctVueTrian.DrawStyle = 2  ' pointillés
+         pctVueTrian.DrawStyle = 2  ' pointillÃ©s
          pctVueTrian.Line (XTdes(Xort), YTdes(Yort))-(XTdes(Xhauteur(i%)), YTdes(Yhauteur(i%)))
          pctVueTrian.DrawStyle = 0  ' continu
       End If
@@ -431,7 +431,7 @@ Private Sub cmdTMediat_Click()
    For i% = 1 To 3
       pctVueTrian.Line (XTdes(Xmediat(i%)), YTdes(Ymediat(i%)))-(XTdes(Xmediane(i%)), YTdes(Ymediane(i%)))
       If Obtus% <> 0 Then
-         pctVueTrian.DrawStyle = 2  ' pointillés
+         pctVueTrian.DrawStyle = 2  ' pointillÃ©s
          pctVueTrian.Line (XTdes(Xcir), YTdes(Ycir))-(XTdes(Xmediat(i%)), YTdes(Ymediat(i%)))
          pctVueTrian.DrawStyle = 0  ' continu
       End If
@@ -442,7 +442,7 @@ Private Sub Form_Activate()
    Call CalculPourTrace
    '--------------------------------------------------
    ' *************************************************
-   ' ****       paramètres pour le tracé        ******
+   ' ****       paramÃ¨tres pour le tracÃ©        ******
    ' ****  dans la zone d'image pctVueTriangle  ******
    ' *************************************************
    Det% = FenetreVisuTriangle.pctVueTrian.ScaleWidth
