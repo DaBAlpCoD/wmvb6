@@ -54,11 +54,11 @@ Private Sub Form_Load()
     Aide.Print
     Aide.Print "   Le menu ";
     Aide.ForeColor = ROUGE
-    Aide.Print "Définir... ";
+    Aide.Print "DÃ©finir... ";
     Aide.ForeColor = NOIR
-    Aide.Print "permet de définir une nouvelle"
+    Aide.Print "permet de dÃ©finir une nouvelle"
     Aide.Print "courbe, sur un fond blanc ou par dessus une ou"
-    Aide.Print "des courbes déjà tracées ou chargées."
+    Aide.Print "des courbes dÃ©jÃ  tracÃ©es ou chargÃ©es."
     Aide.Print "   Le menu ";
     Aide.ForeColor = ROUGE
     Aide.Print "Ouvrir... ";
@@ -75,21 +75,21 @@ Private Sub Form_Load()
     Aide.ForeColor = ROUGE
     Aide.Print "Tracer ";
     Aide.ForeColor = NOIR
-    Aide.Print "lance le tracé de la courbe"
-    Aide.Print "préalablement définie."
-    Aide.Print "   Ce même bouton devient alors"
+    Aide.Print "lance le tracÃ© de la courbe"
+    Aide.Print "prÃ©alablement dÃ©finie."
+    Aide.Print "   Ce mÃªme bouton devient alors"
     Aide.Print "   le bouton ";
     Aide.ForeColor = ROUGE
-    Aide.Print "Geler le tacé ";
+    Aide.Print "Geler le tacÃ© ";
     Aide.ForeColor = NOIR
-    Aide.Print "qui arrête provisoirement "
-    Aide.Print "le tracé, tandis que"
+    Aide.Print "qui arrÃªte provisoirement "
+    Aide.Print "le tracÃ©, tandis que"
     Aide.Print "   le bouton ";
     Aide.ForeColor = ROUGE
-    Aide.Print "Arrêter le tracé ";
+    Aide.Print "ArrÃªter le tracÃ© ";
     Aide.ForeColor = NOIR
-    Aide.Print "arrête définitivement"
-    Aide.Print "le tracé."
+    Aide.Print "arrÃªte dÃ©finitivement"
+    Aide.Print "le tracÃ©."
     Aide.Print "   Le menu ";
     Aide.ForeColor = ROUGE
     Aide.Print "Enregistrer... ";
@@ -100,7 +100,7 @@ Private Sub Form_Load()
     Aide.ForeColor = ROUGE
     Aide.Print "Imprimer ";
     Aide.ForeColor = NOIR
-    Aide.Print "imprime cette même image"
+    Aide.Print "imprime cette mÃªme image"
     Aide.Print "   Le menu ";
     Aide.ForeColor = ROUGE
     Aide.Print "Quitter ";
@@ -110,8 +110,8 @@ Private Sub Form_Load()
     Aide.ForeColor = ROUGE
     Aide.Print "? ";
     Aide.ForeColor = NOIR
-    Aide.Print "permet d'accéder à la présente Aide"
-    Aide.Print "ainsi qu'aux informations légales"
+    Aide.Print "permet d'accÃ©der Ã  la prÃ©sente Aide"
+    Aide.Print "ainsi qu'aux informations lÃ©gales"
     Aide.Print
     Aide.Print
     Aide.Print
