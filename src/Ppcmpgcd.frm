@@ -98,7 +98,7 @@ Begin VB.Form FenetrePPCMPGCD
       Width           =   1455
    End
    Begin VB.Label Label2Nombre 
-      Caption         =   "2ème nombre "
+      Caption         =   "2Ã¨me nombre "
       BeginProperty Font 
          Name            =   "Times New Roman"
          Size            =   13.5
@@ -202,7 +202,7 @@ Private Sub Calcule_PPCMPGCD()
 Traite_ErreursPP:
    Select Case Err
       Case 13
-         Message$ = "Erreur dans la frappe des données"
+         Message$ = "Erreur dans la frappe des donnÃ©es"
          MsgBox Message$, 48
       Case Else
          MsgBox Error$, 48
