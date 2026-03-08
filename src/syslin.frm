@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form FenetreSysLin 
-   Caption         =   "Système linéaire"
+   Caption         =   "SystÃ¨me linÃ©aire"
    ClientHeight    =   5880
    ClientLeft      =   210
    ClientTop       =   990
@@ -173,7 +173,7 @@ Begin VB.Form FenetreSysLin
       Width           =   1095
    End
    Begin VB.Label lblNbEq 
-      Caption         =   "Nombre d'équations :"
+      Caption         =   "Nombre d'Ã©quations :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -252,7 +252,7 @@ Private Sub Form_Load()
    pctExplic.Cls
    pctExplic.ForeColor = BLEU
    pctExplic.Font.underline = False
-   pctExplic.Print " Système de n équations linéaires à n inconnues :"
+   pctExplic.Print " SystÃ¨me de n Ã©quations linÃ©aires Ã  n inconnues :"
    pctExplic.Print
    pctExplic.Print " M(1,1)*X(1)+...+M(1,j)*X(j)+...+M(1,n)*X(n) = Y(1)"
    pctExplic.Print " M(2,1)*X(1)+...+M(2,j)*X(j)+...+M(2,n)*X(n) = Y(2)"
@@ -262,9 +262,9 @@ Private Sub Form_Load()
    pctExplic.Print " M(n,1)*X(1)+...+M(n,j)*X(j)+...+M(n,n)*X(n) = Y(n)"
    pctExplic.Print
    pctExplic.Print
-   pctExplic.Print " Ceci peut aussi s'écrire :  M x X = Y"
-   pctExplic.Print " où M est une matrice carrée nxn,"
-   pctExplic.Print " et X et Y deux vecteurs à n composantes."
+   pctExplic.Print " Ceci peut aussi s'Ã©crire :  M x X = Y"
+   pctExplic.Print " oÃ¹ M est une matrice carrÃ©e nxn,"
+   pctExplic.Print " et X et Y deux vecteurs Ã  n composantes."
    '***************************************
    OrdreMat% = 3
    txtNbEq.Text = OrdreMat%
@@ -295,7 +295,7 @@ Private Sub Form_Load()
    GridVvec.ColWidth(0) = 500
    GridVvec.ColWidth(1) = 1000
    ' ********************************
-   ' numérotation 1ères lignes
+   ' numÃ©rotation 1Ã¨res lignes
    ' ********************************
    GridMmat.Row = 0
    For i% = 1 To OrdreMat%
@@ -309,7 +309,7 @@ Private Sub Form_Load()
    GridVvec.Col = 1
    GridVvec.Text = ""
    ' *********************************
-   ' numérotation 1ères colonnes
+   ' numÃ©rotation 1Ã¨res colonnes
    ' *********************************
    GridMmat.Col = 0
    GridUvec.Col = 0
@@ -323,7 +323,7 @@ Private Sub Form_Load()
       GridVvec.Text = i%
    Next i%
    ' ****************************************
-   '       Valeurs par défaut
+   '       Valeurs par dÃ©faut
    ' ****************************************
    Mmat(1, 1) = -4
    Mmat(1, 2) = 1
@@ -345,7 +345,7 @@ Private Sub Form_Load()
    ' -------------
    ' Solution : 1,2,3
    ' ****************************************
-   ' placement des valeurs par défaut de Mmat
+   ' placement des valeurs par dÃ©faut de Mmat
    ' ****************************************
    For i% = 1 To OrdreMat%
       For j% = 1 To OrdreMat%
@@ -355,7 +355,7 @@ Private Sub Form_Load()
       Next j%
    Next i%
    ' ****************************************
-   ' placement des valeurs par défaut de Uvec
+   ' placement des valeurs par dÃ©faut de Uvec
    ' ****************************************
    GridUvec.Col = 1
    For i% = 1 To OrdreMat%
@@ -363,7 +363,7 @@ Private Sub Form_Load()
       GridUvec.Text = ""
    Next i%
    ' ****************************************
-   ' placement des valeurs par défaut de Vvec
+   ' placement des valeurs par dÃ©faut de Vvec
    ' ****************************************
    GridVvec.Col = 1
    For i% = 1 To OrdreMat%
@@ -473,13 +473,13 @@ Public Sub OuvreMat()
    On Error GoTo Traite_ErreursOuvMat
    Maths.ctrlCMDialog.Filter = "Matrice (*.mat)|*.mat"
    ' nom de fichier et chemin doivent exister
-   ' sinon apparait un message d'erreur spécifique
+   ' sinon apparait un message d'erreur spÃ©cifique
    Maths.ctrlCMDialog.Flags = &H1000& Or &H800&
    Maths.ctrlCMDialog.CancelError = True
    Maths.ctrlCMDialog.Action = 1
    '-----------------------------------------------------
-   ' Ouverture et lecture du fichier d'éléments de matrice
-   ' et écriture de ces éléments dans Mmat(i%,j%)
+   ' Ouverture et lecture du fichier d'Ã©lÃ©ments de matrice
+   ' et Ã©criture de ces Ã©lÃ©ments dans Mmat(i%,j%)
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Input As #1
    Input #1, OrdreMatLoc%
@@ -501,7 +501,7 @@ Public Sub OuvreMat()
    Erase Uvec
    ReDim Uvec(1 To OrdreMat%)
    ' *************************************************
-   ' lecture des éléments de la matrice
+   ' lecture des Ã©lÃ©ments de la matrice
    ' *************************************************
    For i% = 1 To OrdreMat%
       If NomMatVec$ = "Y" Then
@@ -564,7 +564,7 @@ Public Sub EnregMat()
    ReDim Uvec(1 To OrdreMat%)
    ReDim Vvec(1 To OrdreMat%)
    ' *****************************************
-   ' affectation de leurs valeurs aux éléments
+   ' affectation de leurs valeurs aux Ã©lÃ©ments
    ' des matrices et vecteurs
    ' *****************************************
    For i% = 1 To OrdreMat%
@@ -600,8 +600,8 @@ Public Sub EnregMat()
    Next i%
    ' *************************************************
    '-----------------------------------------------------
-   ' Création du fichier d'éléments de matrice
-   ' et écriture de ces éléments dans le fichier
+   ' CrÃ©ation du fichier d'Ã©lÃ©ments de matrice
+   ' et Ã©criture de ces Ã©lÃ©ments dans le fichier
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Output As #1
       Write #1, OrdreMat%
@@ -643,12 +643,12 @@ Private Sub txtNbEq_Change()
    End If
    If OrdreMat% < 1 Then
       Beep
-      MsgBox "le nombre d'équations doit être supérieur ou égal à 1 !", 48, "SYSLIN"
+      MsgBox "le nombre d'Ã©quations doit Ãªtre supÃ©rieur ou Ã©gal Ã  1 !", 48, "SYSLIN"
       OrdreMat% = 1
       txtNbEq.Text = "1"
    ElseIf OrdreMat% > 30000 Then
       Beep
-      MsgBox "le nombre d'équations doit être inférieur à 30000 !", 48, "SYSLIN"
+      MsgBox "le nombre d'Ã©quations doit Ãªtre infÃ©rieur Ã  30000 !", 48, "SYSLIN"
       OrdreMat% = 1
    End If
    GridMmat.Rows = OrdreMat% + 1
@@ -668,38 +668,38 @@ Private Sub txtNbEq_Change()
       GridMmat.ColWidth(i%) = 1000
    Next i%
    ' ********************************
-   ' renumérotation 1ère ligne Mmat
+   ' renumÃ©rotation 1Ã¨re ligne Mmat
    GridMmat.Row = 0
    For i% = 1 To OrdreMat%
       GridMmat.Col = i%
       GridMmat.Text = i%
    Next i%
    ' ********************************
-   ' renumérotation 1ère colonne Mmat
+   ' renumÃ©rotation 1Ã¨re colonne Mmat
    GridMmat.Col = 0
    For i% = 1 To OrdreMat%
       GridMmat.Row = i%
       GridMmat.Text = i%
    Next i%
    ' ********************************
-   ' renumérotation 1ère ligne Uvec
+   ' renumÃ©rotation 1Ã¨re ligne Uvec
    GridUvec.Row = 0
    GridUvec.Col = 1
    GridUvec.Text = ""
    ' ********************************
-   ' renumérotation 1ère colonne Uvec
+   ' renumÃ©rotation 1Ã¨re colonne Uvec
    GridUvec.Col = 0
    For i% = 1 To OrdreMat%
       GridUvec.Row = i%
       GridUvec.Text = i%
    Next i%
    ' ********************************
-   ' renumérotation 1ère ligne Vvec
+   ' renumÃ©rotation 1Ã¨re ligne Vvec
    GridVvec.Row = 0
    GridVvec.Col = 1
    GridVvec.Text = ""
    ' ********************************
-   ' renumérotation 1ère colonne Vvec
+   ' renumÃ©rotation 1Ã¨re colonne Vvec
    GridVvec.Col = 0
    For i% = 1 To OrdreMat%
       GridVvec.Row = i%
@@ -736,19 +736,19 @@ Public Sub SolSys()
    GridVvec.FixedAlignment(1) = 2
    GridVvec.ColWidth(1) = 1000
    ' ********************************
-   ' renumérotation 1ère ligne Uvec
+   ' renumÃ©rotation 1Ã¨re ligne Uvec
    GridUvec.Row = 0
    GridUvec.Col = 1
    GridUvec.Text = ""
    ' ********************************
-   ' renumérotation 1ère colonne Uvec
+   ' renumÃ©rotation 1Ã¨re colonne Uvec
    GridUvec.Col = 0
    For i% = 1 To OrdreMat%
       GridUvec.Row = i%
       GridUvec.Text = i%
    Next i%
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de Mmat
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de Mmat
    ' *************************************************
    For i% = 1 To OrdreMat%
       For j% = 1 To OrdreMat%
@@ -763,7 +763,7 @@ Public Sub SolSys()
       Next j%
    Next i%
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de Vvec
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de Vvec
    ' *************************************************
    GridVvec.Col = 1
    For i% = 1 To OrdreMat%
@@ -780,12 +780,12 @@ Public Sub SolSys()
    ' *************************************************
    Call TrianMat
    If Erreur = True Then
-      Message$ = "Système insoluble"
+      Message$ = "SystÃ¨me insoluble"
       MsgBox Message$, 48
       Exit Sub
    End If
    ' *************************************************
-   ' affichage des éléments de Uvec
+   ' affichage des Ã©lÃ©ments de Uvec
    ' *************************************************
    GridUvec.Col = 1
    For i% = 1 To OrdreMat%
