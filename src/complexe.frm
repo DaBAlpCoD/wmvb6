@@ -397,7 +397,7 @@ Begin VB.Form FenetreComplexe
       Width           =   135
    End
    Begin VB.Label lblReZ2 
-      Caption         =   "partie réelle :"
+      Caption         =   "partie rÃ©elle :"
       BeginProperty Font 
          Name            =   "Times New Roman"
          Size            =   9.75
@@ -482,7 +482,7 @@ Begin VB.Form FenetreComplexe
       Width           =   975
    End
    Begin VB.Label lblReZ1 
-      Caption         =   "partie réelle :"
+      Caption         =   "partie rÃ©elle :"
       BeginProperty Font 
          Name            =   "Times New Roman"
          Size            =   9.75
@@ -582,18 +582,18 @@ Public Sub ProduitComplexe(PartR1, PartI1, PartR2, PartI2, PartRp, PartIp)
 'Print "                 CALCULS SUR LES NOMBRES COMPLEXES"
 'Print
 'Print
-'Print "                                                           i . tˆta"
-'Print "z = x + i . y = rh“ . [cos(tˆta) + i . sin(tˆta)] = rh“ . e"
+'Print "                                                           i . tÂˆta"
+'Print "z = x + i . y = rhÂ“ . [cos(tÂˆta) + i . sin(tÂˆta)] = rhÂ“ . e"
 'Print
 'Print "                                       0.5        "
-'Print "On a :  module de z   = |z| = (xý + yý)    = rh“  "
+'Print "On a :  module de z   = |z| = (xÃ½ + yÃ½)    = rhÂ“  "
 'Print
-'Print "        argument de z = Arg(z) = tˆta"
+'Print "        argument de z = Arg(z) = tÂˆta"
 'Print
 'Print
 'Do
    ' *****************************************************
-   ' effacement des lignes 14 … 25
+   ' effacement des lignes 14 Â… 25
    ' *****************************************************
 '   LOCATE 13
 '   For ligne% = 14 To 25
@@ -605,16 +605,16 @@ Public Sub ProduitComplexe(PartR1, PartI1, PartR2, PartI2, PartRp, PartIp)
 '   LOCATE 14, 1
 '   Print "Voulez-vous :"
 '   Print
-'   Print " 0) arrˆter"
-'   Print " 1) passer de (x,y) … (rh“, tˆta)"
-'  Print " 2) passer de (rh“, tˆta) … (x,y)"
+'   Print " 0) arrÂˆter"
+'   Print " 1) passer de (x,y) Â… (rhÂ“, tÂˆta)"
+'  Print " 2) passer de (rhÂ“, tÂˆta) Â… (x,y)"
 '   Print " 3) multiplier deux complexes"
 '   Print " 4) diviser deux complexes"
 '   Do
 '      a$ = INKEY$
 '   Loop While a$ = ""
 '   ' *****************************************************
-   ' effacement des lignes 14 … 25
+   ' effacement des lignes 14 Â… 25
    ' *****************************************************
 '   LOCATE 13
 '   For ligne% = 14 To 25
@@ -630,13 +630,13 @@ Public Sub ProduitComplexe(PartR1, PartI1, PartR2, PartI2, PartRp, PartIp)
 '      End
 '   Case 1
 '      ' *****************************************************
-'      ' passer de (x,y) … (rh“, tˆta)"
+'      ' passer de (x,y) Â… (rhÂ“, tÂˆta)"
 '      ' *****************************************************
 '      LOCATE 14, 1
 '      INPUT "x = ", x
 '      INPUT "y = ", y
 '      ' *****************************************************
-      ' calcul de rh“ et tˆta … partir de x et y
+      ' calcul de rhÂ“ et tÂˆta Â… partir de x et y
       ' *****************************************************
 '      rho = Sqr(X * X + Y * Y)
 '      If Abs(Y) < eps Then
@@ -665,11 +665,11 @@ Public Sub ProduitComplexe(PartR1, PartI1, PartR2, PartI2, PartRp, PartIp)
 '         End If
 '      End If
       ' *****************************************************
-      ' pr‚sentation des r‚sultats
+      ' prÂ‚sentation des rÂ‚sultats
       ' *****************************************************
 '      Print
-'      Print "rh“  = "; rho
-'      Print "tˆta = "; TETA
+'      Print "rhÂ“  = "; rho
+'      Print "tÂˆta = "; TETA
 '      ' *****************************************************
 '      ' suite
 '      ' *****************************************************
@@ -681,18 +681,18 @@ Public Sub ProduitComplexe(PartR1, PartI1, PartR2, PartI2, PartRp, PartIp)
 '      ' *****************************************************
 '   Case 2
       ' *****************************************************
-      ' passer de (x,y) … (rh“, tˆta)"
+      ' passer de (x,y) Â… (rhÂ“, tÂˆta)"
       ' *****************************************************
 '      LOCATE 14, 1
-'      INPUT "rh“  = ", rho
-'      INPUT "tˆta = ", teta
+'      INPUT "rhÂ“  = ", rho
+'      INPUT "tÂˆta = ", teta
       ' *****************************************************
-      ' calcul de x et y … partir de rh“ et tˆta
+      ' calcul de x et y Â… partir de rhÂ“ et tÂˆta
       ' *****************************************************
 '      X = rho * Cos(TETA)
 '      Y = rho * Sin(TETA)
       ' *****************************************************
-      ' pr‚sentation des r‚sultats
+      ' prÂ‚sentation des rÂ‚sultats
       ' *****************************************************
 '      Print
 '      Print "x = "; X
@@ -714,16 +714,16 @@ Public Sub ProduitComplexe(PartR1, PartI1, PartR2, PartI2, PartRp, PartIp)
 '      Print "Premier complexe z1 :"
 '      INPUT "x1 = ", x1
 '      INPUT "y1 = ", y1
-'      Print "DeuxiŠme complexe z2 :"
+'      Print "DeuxiÂŠme complexe z2 :"
 '      INPUT "x2 = ", x2
 '      INPUT "y2 = ", y2
       ' *****************************************************
-      ' calcul de z1.z2 … partir de (x1,x2) et (y1,y2)
+      ' calcul de z1.z2 Â… partir de (x1,x2) et (y1,y2)
       ' *****************************************************
 '      X = X1 * X2 - Y1 * Y2
 '      Y = X1 * Y2 + X2 * Y1
       ' *****************************************************
-      ' pr‚sentation des r‚sultats
+      ' prÂ‚sentation des rÂ‚sultats
       ' *****************************************************
 '      Print
 '      Print "z = z1 . z2 =  "; X; " + "; Y; " . i"
@@ -744,11 +744,11 @@ Public Sub ProduitComplexe(PartR1, PartI1, PartR2, PartI2, PartRp, PartIp)
 '      Print "Premier complexe z1 :"
 '      INPUT "x1 = ", x1
 '      INPUT "y1 = ", y1
-'      Print "DeuxiŠme complexe z2 :"
+'      Print "DeuxiÂŠme complexe z2 :"
 '      INPUT "x2 = ", x2
 '      INPUT "y2 = ", y2
       ' *****************************************************
-      ' calcul de z1/z2 … partir de (x1,x2) et (y1,y2)
+      ' calcul de z1/z2 Â… partir de (x1,x2) et (y1,y2)
       ' *****************************************************
 '      If Abs(X2) < eps And Abs(Y2) < eps Then
 '         Print
@@ -758,7 +758,7 @@ Public Sub ProduitComplexe(PartR1, PartI1, PartR2, PartI2, PartRp, PartIp)
 '         X = (X1 * X2 + Y1 * Y2) / den
 '         Y = (X2 * Y1 - X1 * Y2) / den
    ' *****************************************************
-   ' pr‚sentation des r‚sultats
+   ' prÂ‚sentation des rÂ‚sultats
    ' *****************************************************
 '         Print
 '         Print "z = z1 / z2 =  "; X; " + "; Y; " . i"
@@ -781,7 +781,7 @@ End Sub
 Public Sub ReImaModArg(ReZ, ImZ, ModZ, ArgZ)
    ' *********************************************
    ' Calcule le module et l'argument d'un complexe
-   ' à partir de ses parties réelle et imaginaire
+   ' Ã  partir de ses parties rÃ©elle et imaginaire
    ' *********************************************
    eps = 0.000001
    ModZ = Sqr(ReZ * ReZ + ImZ * ImZ)
@@ -814,15 +814,15 @@ End Sub
 
 Public Sub ModArgaReIm(ReZ, ImZ, ModZ, ArgZ)
    ' ******************************************************
-   ' Calcule les parties réelle et imaginaire d'un complexe
-   ' à partir de son module et de son argument
+   ' Calcule les parties rÃ©elle et imaginaire d'un complexe
+   ' Ã  partir de son module et de son argument
    ' ******************************************************
    ReZ = ModZ * Cos(ArgZ)
    ImZ = ModZ * Sin(ArgZ)
 End Sub
 
 Private Sub Form_Load()
-   ' Mise en place des valeurs par défaut
+   ' Mise en place des valeurs par dÃ©faut
    ReZ1 = 1
    ImZ1 = 2
    txtReZ1.Text = Format(ReZ1, "0.0000")
@@ -860,7 +860,7 @@ ZProd$ = ZProd$ & Format(ArgZp, "0.0000") & " * i * PI)"
 txtProduit.Text = ZProd$
 Call DivisionComplexe(ReZ1, ImZ1, ReZ2, ImZ2, ReZq, ImZq)
 If DivisionParZero = True Then
-   txtQuotient.Text = "Division par zéro !"
+   txtQuotient.Text = "Division par zÃ©ro !"
 Else
    Call ReImaModArg(ReZq, ImZq, ModZq, ArgZq)
    ZQuot$ = Format(ReZq, "0.0000") & " + " & Format(ImZq, "0.0000") & " * i"
@@ -890,7 +890,7 @@ ZProd$ = ZProd$ & Format(ArgZp, "0.0000") & " * i * PI)"
 txtProduit.Text = ZProd$
 Call DivisionComplexe(ReZ1, ImZ1, ReZ2, ImZ2, ReZq, ImZq)
 If DivisionParZero = True Then
-   txtQuotient.Text = "Division par zéro !"
+   txtQuotient.Text = "Division par zÃ©ro !"
 Else
    Call ReImaModArg(ReZq, ImZq, ModZq, ArgZq)
    ZQuot$ = Format(ReZq, "0.0000") & " + " & Format(ImZq, "0.0000") & " * i"
@@ -920,7 +920,7 @@ ZProd$ = ZProd$ & Format(ArgZp, "0.0000") & " * i * PI)"
 txtProduit.Text = ZProd$
 Call DivisionComplexe(ReZ1, ImZ1, ReZ2, ImZ2, ReZq, ImZq)
 If DivisionParZero = True Then
-   txtQuotient.Text = "Division par zéro !"
+   txtQuotient.Text = "Division par zÃ©ro !"
 Else
    Call ReImaModArg(ReZq, ImZq, ModZq, ArgZq)
    ZQuot$ = Format(ReZq, "0.0000") & " + " & Format(ImZq, "0.0000") & " * i"
@@ -949,7 +949,7 @@ ZProd$ = ZProd$ & Format(ArgZp, "0.0000") & " * i * PI)"
 txtProduit.Text = ZProd$
 Call DivisionComplexe(ReZ1, ImZ1, ReZ2, ImZ2, ReZq, ImZq)
 If DivisionParZero = True Then
-   txtQuotient.Text = "Division par zéro !"
+   txtQuotient.Text = "Division par zÃ©ro !"
 Else
    Call ReImaModArg(ReZq, ImZq, ModZq, ArgZq)
    ZQuot$ = Format(ReZq, "0.0000") & " + " & Format(ImZq, "0.0000") & " * i"
@@ -979,7 +979,7 @@ ZProd$ = ZProd$ & Format(ArgZp, "0.0000") & " * i * PI)"
 txtProduit.Text = ZProd$
 Call DivisionComplexe(ReZ1, ImZ1, ReZ2, ImZ2, ReZq, ImZq)
 If DivisionParZero = True Then
-   txtQuotient.Text = "Division par zéro !"
+   txtQuotient.Text = "Division par zÃ©ro !"
 Else
    Call ReImaModArg(ReZq, ImZq, ModZq, ArgZq)
    ZQuot$ = Format(ReZq, "0.0000") & " + " & Format(ImZq, "0.0000") & " * i"
@@ -1009,7 +1009,7 @@ ZProd$ = ZProd$ & Format(ArgZp, "0.0000") & " * i * PI)"
 txtProduit.Text = ZProd$
 Call DivisionComplexe(ReZ1, ImZ1, ReZ2, ImZ2, ReZq, ImZq)
 If DivisionParZero = True Then
-   txtQuotient.Text = "Division par zéro !"
+   txtQuotient.Text = "Division par zÃ©ro !"
 Else
    Call ReImaModArg(ReZq, ImZq, ModZq, ArgZq)
    ZQuot$ = Format(ReZq, "0.0000") & " + " & Format(ImZq, "0.0000") & " * i"
@@ -1039,7 +1039,7 @@ ZProd$ = ZProd$ & Format(ArgZp, "0.0000") & " * i * PI)"
 txtProduit.Text = ZProd$
 Call DivisionComplexe(ReZ1, ImZ1, ReZ2, ImZ2, ReZq, ImZq)
 If DivisionParZero = True Then
-   txtQuotient.Text = "Division par zéro !"
+   txtQuotient.Text = "Division par zÃ©ro !"
 Else
    Call ReImaModArg(ReZq, ImZq, ModZq, ArgZq)
    ZQuot$ = Format(ReZq, "0.0000") & " + " & Format(ImZq, "0.0000") & " * i"
@@ -1069,7 +1069,7 @@ ZProd$ = ZProd$ & Format(ArgZp, "0.0000") & " * i * PI)"
 txtProduit.Text = ZProd$
 Call DivisionComplexe(ReZ1, ImZ1, ReZ2, ImZ2, ReZq, ImZq)
 If DivisionParZero = True Then
-   txtQuotient.Text = "Division par zéro !"
+   txtQuotient.Text = "Division par zÃ©ro !"
 Else
    Call ReImaModArg(ReZq, ImZq, ModZq, ArgZq)
    ZQuot$ = Format(ReZq, "0.0000") & " + " & Format(ImZq, "0.0000") & " * i"
