@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form FenetreDefPolynome 
-   Caption         =   "Définition de la courbe [polynômes]"
+   Caption         =   "DÃ©finition de la courbe [polynÃ´mes]"
    ClientHeight    =   6615
    ClientLeft      =   165
    ClientTop       =   900
@@ -518,7 +518,7 @@ Begin VB.Form FenetreDefPolynome
       Width           =   855
    End
    Begin VB.Frame CadreGarder 
-      Caption         =   "Tracés précédents"
+      Caption         =   "TracÃ©s prÃ©cÃ©dents"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -615,7 +615,7 @@ Begin VB.Form FenetreDefPolynome
       Width           =   735
    End
    Begin VB.Label lblMemeEch 
-      Caption         =   "même échelle sur les deux axes"
+      Caption         =   "mÃªme Ã©chelle sur les deux axes"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -632,7 +632,7 @@ Begin VB.Form FenetreDefPolynome
       Width           =   1575
    End
    Begin VB.Label lblDegP 
-      Caption         =   "Degré :"
+      Caption         =   "DegrÃ© :"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -666,7 +666,7 @@ Begin VB.Form FenetreDefPolynome
       Width           =   1215
    End
    Begin VB.Label lblPol 
-      Caption         =   "Polynôme "
+      Caption         =   "PolynÃ´me "
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -759,7 +759,7 @@ Begin VB.Form FenetreDefPolynome
       Width           =   3855
    End
    Begin VB.Label lblDefiniCour 
-      Caption         =   "Fonction définissant la courbe :"
+      Caption         =   "Fonction dÃ©finissant la courbe :"
       Height          =   255
       Left            =   120
       TabIndex        =   25
@@ -818,7 +818,7 @@ Begin VB.Form FenetreDefPolynome
       Width           =   495
    End
    Begin VB.Label EtiquetteLimitesY 
-      Caption         =   "Limites de l'axe des ordonnées "
+      Caption         =   "Limites de l'axe des ordonnÃ©es "
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -991,7 +991,7 @@ Begin VB.Form FenetreDefPolynome
       End
    End
    Begin VB.Menu mnuDefPts 
-      Caption         =   "&Définir un ensemble de points"
+      Caption         =   "&DÃ©finir un ensemble de points"
    End
    Begin VB.Menu mnuTracer 
       Caption         =   "&Tracer..."
@@ -1149,7 +1149,7 @@ Private Sub Form_Activate()
       FenetreDefPolynome.gridPpol.Text = Format(Ppol(i%), "0.000")
    Next i%
    ' *****************************************
-   ' ****  placement du degré du polynôme ****
+   ' ****  placement du degrÃ© du polynÃ´me ****
    ' *****************************************
    FenetreDefPolynome.txtValDegP.Text = Format(DegPpol%, "0")
    ' ATTENTION ! ceci provoque un ReDim
@@ -1159,7 +1159,7 @@ End Sub
 
 Private Sub Form_Deactivate()
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de Ppol
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de Ppol
    ' *************************************************
    FenetreDefPolynome.gridPpol.Col = 1
    For i% = 0 To DegPpol%
@@ -1176,7 +1176,7 @@ End Sub
 
 Private Sub Form_Load()
    '-----------------------------------------------------------------
-   '-----------        Valeurs par défaut             ---------------
+   '-----------        Valeurs par dÃ©faut             ---------------
    '-----------      de certaines variables           ---------------
    '-----------------------------------------------------------------
    DoFlag = False
@@ -1197,7 +1197,7 @@ Private Sub Form_Load()
    CouleurCou& = ROUGE
    CouleurPts& = BLEU
    '-----------------------------------------------------------------
-   '-----------        Valeurs par défaut             ---------------
+   '-----------        Valeurs par dÃ©faut             ---------------
    '-----------        d'autres variables             ---------------
    '-----------------------------------------------------------------
    LX% = Dessin.ScaleWidth
@@ -1220,7 +1220,7 @@ Private Sub Form_Load()
    FenetreDefPolynome.gridPpol.Col = 1
    FenetreDefPolynome.gridPpol.Text = "Up"
    ' ********************************
-   ' numérotation 1ère colonne
+   ' numÃ©rotation 1Ã¨re colonne
    ' ********************************
    FenetreDefPolynome.gridPpol.Col = 0
    For i% = 0 To DegPpol%
@@ -1289,8 +1289,8 @@ Private Sub mnuEnrPoints_Click()
    Maths.ctrlCMDialog.Flags = &H2&
    Maths.ctrlCMDialog.Action = 2
    '-----------------------------------------------------
-   ' Création du fichier de points
-   ' et écriture de leurs coordonnées Xpt() et Ypt()
+   ' CrÃ©ation du fichier de points
+   ' et Ã©criture de leurs coordonnÃ©es Xpt() et Ypt()
    ' ou autres...
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Output As #1
@@ -1336,13 +1336,13 @@ Private Sub mnuOuvPoints_Click()
    On Error GoTo Traite_ErreursOuvPts
    Maths.ctrlCMDialog.Filter = "Points (*.xy)|*.xy"
    ' nom de fichier et chemin doivent exister
-   ' sinon apparait un message d'erreur spécifique
+   ' sinon apparait un message d'erreur spÃ©cifique
    Maths.ctrlCMDialog.Flags = &H1000& Or &H800&
    Maths.ctrlCMDialog.CancelError = True
    Maths.ctrlCMDialog.Action = 1
    '-----------------------------------------------------
    ' Ouverture et lecture du fichier de points
-   ' et écriture de leurs coordonnées dans Xpt() et Ypt()
+   ' et Ã©criture de leurs coordonnÃ©es dans Xpt() et Ypt()
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Input As #1
    Input #1, NbPts%
@@ -1356,13 +1356,13 @@ Private Sub mnuOuvPoints_Click()
    '-----------------------------------------------------
    ' activation de certaines cases
    '-------------------------------
-   EtiquettePoints.ForeColor = &H80000012     'Texte activé
-   PointsTracer.ForeColor = &H80000012        'Texte activé
+   EtiquettePoints.ForeColor = &H80000012     'Texte activÃ©
+   PointsTracer.ForeColor = &H80000012        'Texte activÃ©
    PointsTracer.Value = 1                         'Checked
-   PointsRelier.ForeColor = &H80000012        'Texte activé
+   PointsRelier.ForeColor = &H80000012        'Texte activÃ©
    PointsRelier.Value = 0                         'Unchecked
-   EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activé
-   EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activé
+   EtiquetteCoulPoints.ForeColor = &H80000012 'Texte activÃ©
+   EtiquetteCoulPtsChoisie.ForeColor = &H80000012 'Texte activÃ©
    '-----------------------------------------------------
    Exit Sub
 Traite_ErreursOuvPts:
@@ -1386,10 +1386,10 @@ End Sub
 
 Private Sub mnuTracer_Click()
    '-----------------------------------------------------
-   '---------   Vérifications avant   -------------------
-   '--------- fermeture de la fenêtre -------------------
+   '---------   VÃ©rifications avant   -------------------
+   '--------- fermeture de la fenÃªtre -------------------
    '-----------------------------------------------------
-   '-----  1- Bornes écrites correctement  --------------
+   '-----  1- Bornes Ã©crites correctement  --------------
    On Error Resume Next
    Xmax = CSng(DefXmax.Text)
    If Err.Number <> 0 Then
@@ -1421,17 +1421,17 @@ Private Sub mnuTracer_Click()
       AY = Ymax - Ymin
    End If
    If DegPpol% < 0 Then
-      MsgBox "le degré de P doit être supérieur ou égal à 0 !", 48, "FenetreDefPolynome.mnuTracer"
+      MsgBox "le degrÃ© de P doit Ãªtre supÃ©rieur ou Ã©gal Ã  0 !", 48, "FenetreDefPolynome.mnuTracer"
       Exit Sub
    ElseIf AX < 0 Then
-      MsgBox "Xmax doit être supérieur à Xmin", 48, "FenetreDefPolynome.mnuTracer"
+      MsgBox "Xmax doit Ãªtre supÃ©rieur Ã  Xmin", 48, "FenetreDefPolynome.mnuTracer"
       Exit Sub
    ElseIf AY < 0 Then
-      MsgBox "Ymax doit être supérieur à Ymin", 48, "FenetreDefPolynome.mnuTracer"
+      MsgBox "Ymax doit Ãªtre supÃ©rieur Ã  Ymin", 48, "FenetreDefPolynome.mnuTracer"
       Exit Sub
    End If
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de Ppol
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de Ppol
    ' *************************************************
    FenetreDefPolynome.gridPpol.Col = 1
    For i% = 0 To DegPpol%
@@ -1446,18 +1446,18 @@ Private Sub mnuTracer_Click()
    ' *************************************************
    '-----------------------------------------------------
    '--------        Ouverture            ----------------
-   '--------  des fenêtres pour le tracé ----------------
+   '--------  des fenÃªtres pour le tracÃ© ----------------
    '-----------------------------------------------------
    Fenetre_Prin.Show
    Fenetre_Val.Show
    Dessin.Show
    '-----------------------------------------------------
    '--------- Affichage de la formule -------------------
-   '---------  définissant la courbe  -------------------
+   '---------  dÃ©finissant la courbe  -------------------
    '-----------------------------------------------------
-   Fenetre_Prin.Caption = "Polynôme"
+   Fenetre_Prin.Caption = "PolynÃ´me"
    Fenetre_Prin.LabelExplications.ForeColor = MAGENTA
-   Fenetre_Prin.LabelExplications.Caption = "Tracé d'une courbe définie par un polynôme."
+   Fenetre_Prin.LabelExplications.Caption = "TracÃ© d'une courbe dÃ©finie par un polynÃ´me."
    Fenetre_Val.Cls
    Fenetre_Val.ForeColor = CouleurCou&
    Fenetre_Val.lblFormule.ForeColor = CouleurCou&
@@ -1508,7 +1508,7 @@ Private Sub txtValDegP_Change()
    End If
    If DegPpol% < 0 Then
       Beep
-      MsgBox "le degré de P doit être supérieur ou égal à 0 !", 48, "POLYNOME"
+      MsgBox "le degrÃ© de P doit Ãªtre supÃ©rieur ou Ã©gal Ã  0 !", 48, "POLYNOME"
       DegPpol% = 0
       txtValDegP.Text = "0"
    End If
@@ -1516,7 +1516,7 @@ Private Sub txtValDegP_Change()
    '***************************************
    ReDim Ppol(0 To DegPpol%)
    '***************************************
-   ' renumérotation 1ère colonne
+   ' renumÃ©rotation 1Ã¨re colonne
    ' ********************************
    FenetreDefPolynome.gridPpol.Col = 0
    For i% = 0 To DegPpol%
