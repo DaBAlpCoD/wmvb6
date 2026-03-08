@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form FenetreMatrice 
-   Caption         =   "Matrices carrées"
+   Caption         =   "Matrices carrÃ©es"
    ClientHeight    =   6615
    ClientLeft      =   1485
    ClientTop       =   1455
@@ -214,7 +214,7 @@ Begin VB.Form FenetreMatrice
       Width           =   1335
    End
    Begin VB.Label lblDetMmat 
-      Caption         =   "Déterminant de M :"
+      Caption         =   "DÃ©terminant de M :"
       Height          =   255
       Left            =   5280
       TabIndex        =   6
@@ -300,31 +300,31 @@ Begin VB.Form FenetreMatrice
       Begin VB.Menu mnuInversion 
          Caption         =   "&Inversion de M..."
          Begin VB.Menu mnuInvMet1 
-            Caption         =   "Méthode n°&1 : méthode exacte passant par le calcul du déterminant. Limitée aux ordres inférieurs à 8."
+            Caption         =   "MÃ©thode nÂ°&1 : mÃ©thode exacte passant par le calcul du dÃ©terminant. LimitÃ©e aux ordres infÃ©rieurs Ã  8."
          End
          Begin VB.Menu mnuInvMet2 
-            Caption         =   "Méthode n°&2 : Méthode modifiée d'élimination de GAUSS-JORDAN."
+            Caption         =   "MÃ©thode nÂ°&2 : MÃ©thode modifiÃ©e d'Ã©limination de GAUSS-JORDAN."
          End
          Begin VB.Menu mnuInvMet3 
-            Caption         =   "Méthode n°&3 : Méthode itérative passant par le calcul du polynôme caractéristique et du déterminant."
+            Caption         =   "MÃ©thode nÂ°&3 : MÃ©thode itÃ©rative passant par le calcul du polynÃ´me caractÃ©ristique et du dÃ©terminant."
          End
          Begin VB.Menu mnuInvMet4 
-            Caption         =   "Méthode n°&4 : Méthode de CHOLEVSKI (pour une matrice symétrique définie positive)."
+            Caption         =   "MÃ©thode nÂ°&4 : MÃ©thode de CHOLEVSKI (pour une matrice symÃ©trique dÃ©finie positive)."
          End
       End
       Begin VB.Menu mnuDiagonalisation 
          Caption         =   "&Diagonalisation de M..."
          Begin VB.Menu mnuDiagMet1 
-            Caption         =   "Méthode n°1 : Méthode du double QR avec déplacement."
+            Caption         =   "MÃ©thode nÂ°1 : MÃ©thode du double QR avec dÃ©placement."
          End
          Begin VB.Menu mnuDiagMet2 
-            Caption         =   "Méthode n°2 : Détermination du polynôme caractéristique (méthode de SOURIAU), recherche de ses zéros"
+            Caption         =   "MÃ©thode nÂ°2 : DÃ©termination du polynÃ´me caractÃ©ristique (mÃ©thode de SOURIAU), recherche de ses zÃ©ros"
          End
          Begin VB.Menu mnuDiagMet2bis 
-            Caption         =   " (méthode de BAIRSTOW) et détermination des vecteurs propres par résolution de systèmes sur-déterminés."
+            Caption         =   " (mÃ©thode de BAIRSTOW) et dÃ©termination des vecteurs propres par rÃ©solution de systÃ¨mes sur-dÃ©terminÃ©s."
          End
          Begin VB.Menu mnuDiagMet3 
-            Caption         =   "Méthode n°3 : Méthode de JACOBI classique (pour une matrice symétrique)."
+            Caption         =   "MÃ©thode nÂ°3 : MÃ©thode de JACOBI classique (pour une matrice symÃ©trique)."
          End
       End
    End
@@ -380,7 +380,7 @@ Private Sub Form_Load()
       FenetreMatrice.GridPImat.ColWidth(i%) = 1000
    Next i%
    ' ********************************
-   ' numérotation 1ères lignes
+   ' numÃ©rotation 1Ã¨res lignes
    ' ********************************
    GridMmat.Row = 0
    GridWmat.Row = 0
@@ -403,7 +403,7 @@ Private Sub Form_Load()
       GridPImat.Text = i%
    Next i%
    ' *********************************
-   ' numérotation 1ères colonnes
+   ' numÃ©rotation 1Ã¨res colonnes
    ' *********************************
    GridMmat.Col = 0
    GridWmat.Col = 0
@@ -426,7 +426,7 @@ Private Sub Form_Load()
       GridPImat.Text = i%
    Next i%
    ' ****************************************
-   '       Valeurs par défaut
+   '       Valeurs par dÃ©faut
    ' ****************************************
    Mmat(1, 1) = -4
    Mmat(1, 2) = 1
@@ -448,7 +448,7 @@ Private Sub Form_Load()
    M2mat(3, 2) = 2
    M2mat(3, 3) = 1
    ' ****************************************
-   ' placement des valeurs par défaut de Mmat
+   ' placement des valeurs par dÃ©faut de Mmat
    ' ****************************************
    For i% = 1 To OrdreMat%
       For j% = 1 To OrdreMat%
@@ -458,7 +458,7 @@ Private Sub Form_Load()
       Next j%
    Next i%
    ' ****************************************
-   ' placement des valeurs par défaut de M2mat
+   ' placement des valeurs par dÃ©faut de M2mat
    ' ****************************************
    For i% = 1 To OrdreMat%
       For j% = 1 To OrdreMat%
@@ -528,7 +528,7 @@ Private Sub InverseMat()
       FenetreMatrice.GridWmat.ColWidth(i%) = 1000
    Next i%
    ' ********************************
-   ' numérotation 1ère ligne
+   ' numÃ©rotation 1Ã¨re ligne
    ' ********************************
    GridWmat.Row = 0
    For i% = 1 To OrdreMat%
@@ -536,7 +536,7 @@ Private Sub InverseMat()
       GridWmat.Text = i%
    Next i%
    ' *********************************
-   ' numérotation 1ère colonne
+   ' numÃ©rotation 1Ã¨re colonne
    ' *********************************
    GridWmat.Col = 0
    For i% = 1 To OrdreMat%
@@ -544,7 +544,7 @@ Private Sub InverseMat()
       GridWmat.Text = i%
    Next i%
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de Mmat
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de Mmat
    ' *************************************************
    For i% = 1 To OrdreMat%
       For j% = 1 To OrdreMat%
@@ -564,12 +564,12 @@ Private Sub InverseMat()
    Select Case NumMethodInv%
    Case 1
       Call InvMat01
-      lblValDet.Caption = Format(DetMmat, "0.000")  ' affichage du déterminant de Mmat
+      lblValDet.Caption = Format(DetMmat, "0.000")  ' affichage du dÃ©terminant de Mmat
    Case 2
       Call InvMat02
    Case 3
       Call InvMat03
-      lblValDet.Caption = Format(DetMmat, "0.000")  ' affichage du déterminant de Mmat
+      lblValDet.Caption = Format(DetMmat, "0.000")  ' affichage du dÃ©terminant de Mmat
    Case 4
       Call VerifieMatSym(OrdreMat%, Mmat())
       If Erreur = True Then
@@ -579,15 +579,15 @@ Private Sub InverseMat()
       DePo = True
       Call InvMatCholeski(OrdreMat%, DePo, DetMmat, Mmat(), Wmat())
       If DePo = False Then
-         Message$ = "La matrice n'est pas définie positive !"
+         Message$ = "La matrice n'est pas dÃ©finie positive !"
          MsgBox Message$, 48, "InverseMat"
          lblInfo.Caption = ""
          Exit Sub
       End If
-      lblValDet.Caption = Format(DetMmat, "0.000")  ' affichage du déterminant de Mmat
+      lblValDet.Caption = Format(DetMmat, "0.000")  ' affichage du dÃ©terminant de Mmat
    End Select
    ' *************************************************
-   ' affichage des éléments de Wmat
+   ' affichage des Ã©lÃ©ments de Wmat
    ' *************************************************
    lblWmat.Caption = "Matrice W inverse de M :"
    For i% = 1 To OrdreMat%
@@ -604,16 +604,16 @@ Private Sub InverseMat()
    '***************************************
    '************ Explications *************
    '***************************************
-   Info$ = "Dernier calcul effectué : Inversion de M : "
+   Info$ = "Dernier calcul effectuÃ© : Inversion de M : "
    Select Case NumMethodInv%
    Case 1
-      Info$ = Info$ & "Méthode n°1 : Méthode exacte passant par le calcul du déterminant. Limitée aux ordres inférieurs à 8."
+      Info$ = Info$ & "MÃ©thode nÂ°1 : MÃ©thode exacte passant par le calcul du dÃ©terminant. LimitÃ©e aux ordres infÃ©rieurs Ã  8."
    Case 2
-      Info$ = Info$ & "Méthode n°2 : Méthode modifiée d'élimination de GAUSS-JORDAN."
+      Info$ = Info$ & "MÃ©thode nÂ°2 : MÃ©thode modifiÃ©e d'Ã©limination de GAUSS-JORDAN."
    Case 3
-      Info$ = Info$ & "Méthode n°3 : Méthode itérative passant par le calcul du polynôme caractéristique et du déterminant."
+      Info$ = Info$ & "MÃ©thode nÂ°3 : MÃ©thode itÃ©rative passant par le calcul du polynÃ´me caractÃ©ristique et du dÃ©terminant."
    Case 4
-      Info$ = Info$ & "Méthode n°4 : Méthode de CHOLEVSKI (pour une matrice symétrique définie positive)."
+      Info$ = Info$ & "MÃ©thode nÂ°4 : MÃ©thode de CHOLEVSKI (pour une matrice symÃ©trique dÃ©finie positive)."
    End Select
    lblInfo.ForeColor = BLEU
    lblInfo.Font.bold = True
@@ -758,7 +758,7 @@ Private Sub ProduitMxM2()
    lblInfo.Caption = "CALCUL EN COURS..."
    DoEvents
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de Mmat
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de Mmat
    ' *************************************************
    For i% = 1 To OrdreMat%
       For j% = 1 To OrdreMat%
@@ -773,7 +773,7 @@ Private Sub ProduitMxM2()
       Next j%
    Next i%
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de M2mat
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de M2mat
    ' *************************************************
    For i% = 1 To OrdreMat%
       For j% = 1 To OrdreMat%
@@ -798,7 +798,7 @@ Private Sub ProduitMxM2()
       FenetreMatrice.GridPmat.ColWidth(i%) = 1000
    Next i%
    ' **********************************
-   ' renumérotation 1ère ligne gridPmat
+   ' renumÃ©rotation 1Ã¨re ligne gridPmat
    ' **********************************
    GridPmat.Row = 0
    For i% = 1 To OrdreMat%
@@ -806,7 +806,7 @@ Private Sub ProduitMxM2()
       GridPmat.Text = i%
    Next i%
    ' ************************************
-   ' renumérotation 1ère colonne gridPmat
+   ' renumÃ©rotation 1Ã¨re colonne gridPmat
    ' ************************************
    GridPmat.Col = 0
    For i% = 1 To OrdreMat%
@@ -825,11 +825,11 @@ Private Sub ProduitMxM2()
       Next j%
    Next i%
    ' *************************************************
-   'affichage du produit effectué
+   'affichage du produit effectuÃ©
    ' *************************************************
    lblPmat.Caption = "Matrice P produit de M et M2 :"
    ' *************************************************
-   ' affichage des éléments de Pmat
+   ' affichage des Ã©lÃ©ments de Pmat
    ' *************************************************
    For i% = 1 To OrdreMat%
       For j% = 1 To OrdreMat%
@@ -844,7 +844,7 @@ Private Sub ProduitMxM2()
    '***************************************
    '************ Explications *************
    '***************************************
-   Info$ = "Dernier calcul effectué : Produit MxM2"
+   Info$ = "Dernier calcul effectuÃ© : Produit MxM2"
    lblInfo.ForeColor = BLEU
    lblInfo.Font.bold = True
    lblInfo.Font.underline = False
@@ -864,7 +864,7 @@ Private Sub ProduitWxM2()
    On Error Resume Next
    DoEvents
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de M2mat
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de M2mat
    ' *************************************************
    For i% = 1 To OrdreMat%
       For j% = 1 To OrdreMat%
@@ -896,11 +896,11 @@ Private Sub ProduitWxM2()
       Next j%
    Next i%
    ' *************************************************
-   'affichage du produit effectué
+   'affichage du produit effectuÃ©
    ' *************************************************
    lblPmat.Caption = "Matrice P produit de W et M2 :"
    ' *************************************************
-   ' affichage des éléments de Pmat
+   ' affichage des Ã©lÃ©ments de Pmat
    ' *************************************************
    For i% = 1 To OrdreMat%
       For j% = 1 To OrdreMat%
@@ -915,7 +915,7 @@ Private Sub ProduitWxM2()
    '***************************************
    '************ Explications *************
    '***************************************
-   Info$ = "Dernier calcul effectué : Produit WxM2"
+   Info$ = "Dernier calcul effectuÃ© : Produit WxM2"
    lblInfo.ForeColor = BLEU
    lblInfo.Font.bold = True
    lblInfo.Font.underline = False
@@ -934,12 +934,12 @@ Private Sub txtOrdreMat_Change()
    End If
    If OrdreMat% < 1 Then
       Beep
-      MsgBox "l'ordre de M doit être supérieur ou égal à 1 !", 48, "MATRICE"
+      MsgBox "l'ordre de M doit Ãªtre supÃ©rieur ou Ã©gal Ã  1 !", 48, "MATRICE"
       OrdreMat% = 1
       txtOrdreMat.Text = "1"
    ElseIf OrdreMat% > 30000 Then
       Beep
-      MsgBox "l'ordre de M doit être inférieur à 30000 !", 48, "MATRICE"
+      MsgBox "l'ordre de M doit Ãªtre infÃ©rieur Ã  30000 !", 48, "MATRICE"
       OrdreMat% = 1
    End If
    GridMmat.Rows = OrdreMat% + 1
@@ -970,7 +970,7 @@ Private Sub txtOrdreMat_Change()
       FenetreMatrice.GridPImat.ColWidth(i%) = 1000
    Next i%
    ' **********************************
-   ' renumérotation 1ère ligne gridMmat
+   ' renumÃ©rotation 1Ã¨re ligne gridMmat
    ' **********************************
    GridMmat.Row = 0
    For i% = 1 To OrdreMat%
@@ -979,7 +979,7 @@ Private Sub txtOrdreMat_Change()
       GridMmat.Text = Format(i%, "0")
    Next i%
    ' ************************************
-   ' renumérotation 1ère colonne gridMmat
+   ' renumÃ©rotation 1Ã¨re colonne gridMmat
    ' ************************************
    GridMmat.Col = 0
    For i% = 1 To OrdreMat%
@@ -988,7 +988,7 @@ Private Sub txtOrdreMat_Change()
       GridMmat.Text = Format(i%, "0")
    Next i%
    ' **********************************
-   ' renumérotation 1ère ligne gridWmat
+   ' renumÃ©rotation 1Ã¨re ligne gridWmat
    ' **********************************
    GridWmat.Row = 0
    For i% = 1 To OrdreMat%
@@ -997,7 +997,7 @@ Private Sub txtOrdreMat_Change()
       GridWmat.Text = Format(i%, "0")
    Next i%
    ' ************************************
-   ' renumérotation 1ère colonne gridWmat
+   ' renumÃ©rotation 1Ã¨re colonne gridWmat
    ' ************************************
    GridWmat.Col = 0
    For i% = 1 To OrdreMat%
@@ -1006,7 +1006,7 @@ Private Sub txtOrdreMat_Change()
       GridWmat.Text = Format(i%, "0")
    Next i%
    ' ***********************************
-   ' renumérotation 1ère ligne gridM2mat
+   ' renumÃ©rotation 1Ã¨re ligne gridM2mat
    ' ***********************************
    GridM2mat.Row = 0
    For i% = 1 To OrdreMat%
@@ -1015,7 +1015,7 @@ Private Sub txtOrdreMat_Change()
       GridM2mat.Text = Format(i%, "0")
    Next i%
    ' *************************************
-   ' renumérotation 1ère colonne gridM2mat
+   ' renumÃ©rotation 1Ã¨re colonne gridM2mat
    ' *************************************
    GridM2mat.Col = 0
    For i% = 1 To OrdreMat%
@@ -1024,7 +1024,7 @@ Private Sub txtOrdreMat_Change()
       GridM2mat.Text = Format(i%, "0")
    Next i%
    ' **********************************
-   ' renumérotation 1ère ligne gridPmat
+   ' renumÃ©rotation 1Ã¨re ligne gridPmat
    ' **********************************
    GridPmat.Row = 0
    For i% = 1 To OrdreMat%
@@ -1033,7 +1033,7 @@ Private Sub txtOrdreMat_Change()
       GridPmat.Text = Format(i%, "0")
    Next i%
    ' ************************************
-   ' renumérotation 1ère colonne gridPmat
+   ' renumÃ©rotation 1Ã¨re colonne gridPmat
    ' ************************************
    GridPmat.Col = 0
    For i% = 1 To OrdreMat%
@@ -1042,7 +1042,7 @@ Private Sub txtOrdreMat_Change()
       GridPmat.Text = Format(i%, "0")
    Next i%
    ' ***********************************
-   ' renumérotation 1ère ligne gridPRmat
+   ' renumÃ©rotation 1Ã¨re ligne gridPRmat
    ' ***********************************
    GridPRmat.Row = 0
    For i% = 1 To OrdreMat%
@@ -1051,7 +1051,7 @@ Private Sub txtOrdreMat_Change()
       GridPRmat.Text = Format(i%, "0")
    Next i%
    ' *************************************
-   ' renumérotation 1ère colonne gridPRmat
+   ' renumÃ©rotation 1Ã¨re colonne gridPRmat
    ' *************************************
    GridPRmat.Col = 0
    For i% = 1 To OrdreMat%
@@ -1060,7 +1060,7 @@ Private Sub txtOrdreMat_Change()
       GridPRmat.Text = Format(i%, "0")
    Next i%
    ' ***********************************
-   ' renumérotation 1ère ligne gridPImat
+   ' renumÃ©rotation 1Ã¨re ligne gridPImat
    ' ***********************************
    GridPImat.Row = 0
    For i% = 1 To OrdreMat%
@@ -1069,7 +1069,7 @@ Private Sub txtOrdreMat_Change()
       GridPImat.Text = Format(i%, "0")
    Next i%
    ' *************************************
-   ' renumérotation 1ère colonne gridPImat
+   ' renumÃ©rotation 1Ã¨re colonne gridPImat
    ' *************************************
    GridPImat.Col = 0
    For i% = 1 To OrdreMat%
@@ -1084,13 +1084,13 @@ Public Sub OuvreMat()
    On Error GoTo Traite_ErreursOuvMat
    Maths.ctrlCMDialog.Filter = "Matrice (*.mat)|*.mat"
    ' nom de fichier et chemin doivent exister
-   ' sinon apparait un message d'erreur spécifique
+   ' sinon apparait un message d'erreur spÃ©cifique
    Maths.ctrlCMDialog.Flags = &H1000& Or &H800&
    Maths.ctrlCMDialog.CancelError = True
    Maths.ctrlCMDialog.Action = 1
    '-----------------------------------------------------
-   ' Ouverture et lecture du fichier d'éléments de matrice
-   ' et écriture de ces éléments dans Mmat(i%,j%)
+   ' Ouverture et lecture du fichier d'Ã©lÃ©ments de matrice
+   ' et Ã©criture de ces Ã©lÃ©ments dans Mmat(i%,j%)
    '-----------------------------------------------------
    Open Maths.ctrlCMDialog.FileName For Input As #1
    Input #1, OrdreMatLoc%
@@ -1104,7 +1104,7 @@ Public Sub OuvreMat()
       ReDim M2mat(1 To OrdreMat%, 1 To OrdreMat%)
    End If
    ' *************************************************
-   ' lecture des éléments de la matrice
+   ' lecture des Ã©lÃ©ments de la matrice
    ' *************************************************
    For i% = 1 To OrdreMat%
       For j% = 1 To OrdreMat%
@@ -1168,7 +1168,7 @@ Public Sub EnregMat()
       Erase Mmat
       ReDim Mmat(1 To OrdreMat%, 1 To OrdreMat%)
       ' *******************************************************
-      ' affectation de leurs valeurs aux éléments de la matrice
+      ' affectation de leurs valeurs aux Ã©lÃ©ments de la matrice
       ' *******************************************************
       For i% = 1 To OrdreMat%
          For j% = 1 To OrdreMat%
@@ -1184,8 +1184,8 @@ Public Sub EnregMat()
       Next i%
       ' *************************************************
       '-----------------------------------------------------
-      ' Création du fichier d'éléments de matrice
-      ' et écriture de ces éléments dans le fichier
+      ' CrÃ©ation du fichier d'Ã©lÃ©ments de matrice
+      ' et Ã©criture de ces Ã©lÃ©ments dans le fichier
       '-----------------------------------------------------
       Open Maths.ctrlCMDialog.FileName For Output As #1
          Write #1, OrdreMat%
@@ -1208,7 +1208,7 @@ Public Sub EnregMat()
       Erase M2mat
       ReDim M2mat(1 To OrdreMat%, 1 To OrdreMat%)
       ' *******************************************************
-      ' affectation de leurs valeurs aux éléments de la matrice
+      ' affectation de leurs valeurs aux Ã©lÃ©ments de la matrice
       ' *******************************************************
       For i% = 1 To OrdreMat%
          For j% = 1 To OrdreMat%
@@ -1224,8 +1224,8 @@ Public Sub EnregMat()
       Next i%
       ' *************************************************
       '-----------------------------------------------------
-      ' Création du fichier d'éléments de matrice
-      ' et écriture de ces éléments dans le fichier
+      ' CrÃ©ation du fichier d'Ã©lÃ©ments de matrice
+      ' et Ã©criture de ces Ã©lÃ©ments dans le fichier
       '-----------------------------------------------------
       Open Maths.ctrlCMDialog.FileName For Output As #1
          Write #1, OrdreMat%
@@ -1249,7 +1249,7 @@ Public Sub EnregMat()
          Erase Pmat
          ReDim Pmat(1 To OrdreMat%, 1 To OrdreMat%)
          ' *******************************************************
-         ' affectation de leurs valeurs aux éléments de la matrice
+         ' affectation de leurs valeurs aux Ã©lÃ©ments de la matrice
          ' *******************************************************
          For i% = 1 To OrdreMat%
             For j% = 1 To OrdreMat%
@@ -1265,8 +1265,8 @@ Public Sub EnregMat()
          Next i%
          ' *************************************************
          '-----------------------------------------------------
-         ' Création du fichier d'éléments de matrice
-         ' et écriture de ces éléments dans le fichier
+         ' CrÃ©ation du fichier d'Ã©lÃ©ments de matrice
+         ' et Ã©criture de ces Ã©lÃ©ments dans le fichier
          '-----------------------------------------------------
          Open Maths.ctrlCMDialog.FileName For Output As #1
             Write #1, OrdreMat%
@@ -1278,7 +1278,7 @@ Public Sub EnregMat()
          Close #1
          ' *************************************************
       Else
-         Message$ = " La matrice produit P n'a pas été calculée ! "
+         Message$ = " La matrice produit P n'a pas Ã©tÃ© calculÃ©e ! "
          MsgBox Message$, 16, "EnregMat"
       End If
    Case "Vap"
@@ -1292,12 +1292,12 @@ Public Sub EnregMat()
          If lblPmat.Caption = "Valeurs propres :" Then
             ' certaines valeurs propres complexes
             '-----------------------------------------------------
-            ' Création du fichier des valeurs propres
-            ' et écriture de ces éléments dans le fichier
+            ' CrÃ©ation du fichier des valeurs propres
+            ' et Ã©criture de ces Ã©lÃ©ments dans le fichier
             '-----------------------------------------------------
             Open Maths.ctrlCMDialog.FileName For Output As #1
             Write #1, OrdreMat%
-            ' Indication du caractère complexe
+            ' Indication du caractÃ¨re complexe
             ' de certaines valeurs propres
             Write #1, "1"
             GridWmat.Col = 1
@@ -1311,14 +1311,14 @@ Public Sub EnregMat()
             Close #1
             ' *************************************************
          Else
-            ' toutes les valeurs propres réelles
+            ' toutes les valeurs propres rÃ©elles
             '-----------------------------------------------------
-            ' Création du fichier des valeurs propres
-            ' et écriture de ces éléments dans le fichier
+            ' CrÃ©ation du fichier des valeurs propres
+            ' et Ã©criture de ces Ã©lÃ©ments dans le fichier
             '-----------------------------------------------------
             Open Maths.ctrlCMDialog.FileName For Output As #1
                Write #1, OrdreMat%
-               ' Indication du caractère réel
+               ' Indication du caractÃ¨re rÃ©el
                ' de toutes les valeurs propres
                Write #1, "0"
                GridWmat.Col = 1
@@ -1330,7 +1330,7 @@ Public Sub EnregMat()
             ' *************************************************
          End If
       Else
-         Message$ = " Les valeurs propres de M n'ont pas été calculées ! "
+         Message$ = " Les valeurs propres de M n'ont pas Ã©tÃ© calculÃ©es ! "
          MsgBox Message$, 16, "EnregMat"
       End If
    Case "Vep"
@@ -1342,14 +1342,14 @@ Public Sub EnregMat()
       ' *************************************************
       If lblPRmat.Caption = "Matrice des vecteurs propres :" Then
          ' *************************************************
-         ' tous les vecteurs propres réels
+         ' tous les vecteurs propres rÃ©els
          '-----------------------------------------------------
-         ' Création du fichier des vecteurs propres
-         ' et écriture de ces éléments dans le fichier
+         ' CrÃ©ation du fichier des vecteurs propres
+         ' et Ã©criture de ces Ã©lÃ©ments dans le fichier
          '-----------------------------------------------------
          Open Maths.ctrlCMDialog.FileName For Output As #1
          Write #1, OrdreMat%
-         ' Indication du caractère réel
+         ' Indication du caractÃ¨re rÃ©el
          ' de tous les vecteurs propres
          Write #1, "0"
          For i% = 1 To OrdreMat%
@@ -1359,15 +1359,15 @@ Public Sub EnregMat()
          Next i%
          Close #1
          ' *************************************************
-      ElseIf lblPRmat.Caption = "Matrice des vecteurs propres (partie réelle):" Then
+      ElseIf lblPRmat.Caption = "Matrice des vecteurs propres (partie rÃ©elle):" Then
          ' certains vecteurs propres complexes
          '-----------------------------------------------------
-         ' Création du fichier des vecteurs propres
-         ' et écriture de ces éléments dans le fichier
+         ' CrÃ©ation du fichier des vecteurs propres
+         ' et Ã©criture de ces Ã©lÃ©ments dans le fichier
          '-----------------------------------------------------
          Open Maths.ctrlCMDialog.FileName For Output As #1
          Write #1, OrdreMat%
-         ' Indication du caractère complexe
+         ' Indication du caractÃ¨re complexe
          ' de certains vecteurs propres
          Write #1, "1"
          For i% = 1 To OrdreMat%
@@ -1378,7 +1378,7 @@ Public Sub EnregMat()
          Close #1
          ' *************************************************
       Else
-         Message$ = " Les vecteurs propres de M n'ont pas été calculés ! "
+         Message$ = " Les vecteurs propres de M n'ont pas Ã©tÃ© calculÃ©s ! "
          MsgBox Message$, 16, "EnregMat"
       End If
    Case "W"
@@ -1394,7 +1394,7 @@ Public Sub EnregMat()
          Erase Wmat
          ReDim Wmat(1 To OrdreMat%, 1 To OrdreMat%)
          ' *******************************************************
-         ' affectation de leurs valeurs aux éléments de la matrice
+         ' affectation de leurs valeurs aux Ã©lÃ©ments de la matrice
          ' *******************************************************
          For i% = 1 To OrdreMat%
             For j% = 1 To OrdreMat%
@@ -1410,8 +1410,8 @@ Public Sub EnregMat()
          Next i%
          ' *************************************************
          '-----------------------------------------------------
-         ' Création du fichier d'éléments de matrice
-         ' et écriture de ces éléments dans le fichier
+         ' CrÃ©ation du fichier d'Ã©lÃ©ments de matrice
+         ' et Ã©criture de ces Ã©lÃ©ments dans le fichier
          '-----------------------------------------------------
          Open Maths.ctrlCMDialog.FileName For Output As #1
             Write #1, OrdreMat%
@@ -1423,7 +1423,7 @@ Public Sub EnregMat()
          Close #1
          ' *************************************************
       Else
-         Message$ = " La matrice W inverse de M n'a pas été calculée ! "
+         Message$ = " La matrice W inverse de M n'a pas Ã©tÃ© calculÃ©e ! "
          MsgBox Message$, 16, "EnregMat"
       End If
    End Select
@@ -1458,7 +1458,7 @@ Public Sub DiaMat()
    lblInfo.Caption = "CALCUL EN COURS..."
    'DoEvents
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de Mmat
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de Mmat
    ' *************************************************
    For i% = 1 To OrdreMat%
       For j% = 1 To OrdreMat%
@@ -1478,10 +1478,10 @@ Public Sub DiaMat()
    Select Case NumMethodDiag%
    Case 1
       Call DiaMaQR
-      ' Méthode du double QR
+      ' MÃ©thode du double QR
    Case 2
       Call DiaMaSoBaSS
-      ' SOURIAU+BAIRSTOW+SystèmeSurdéterminé
+      ' SOURIAU+BAIRSTOW+SystÃ¨meSurdÃ©terminÃ©
    Case 3
       Call VerifieMatSym(OrdreMat%, Mmat())
       If Erreur = True Then
@@ -1492,7 +1492,7 @@ Public Sub DiaMat()
       Call DiaMaJacobi(OrdreMat%, Mmat(), RacineR(), Pmat())
    End Select
    ' *************************************************
-   ' affichage de la partie réelle des valeurs propres
+   ' affichage de la partie rÃ©elle des valeurs propres
    ' sur une colonne
    ' *************************************************
    ' 1)- mise en place de la grille gridWmat
@@ -1505,17 +1505,17 @@ Public Sub DiaMat()
    GridWmat.FixedAlignment(1) = 2
    GridWmat.ColWidth(1) = 3000
    ' ********************************
-   ' numérotation 1ère ligne
+   ' numÃ©rotation 1Ã¨re ligne
    ' ********************************
    GridWmat.Row = 0
    GridWmat.Col = 1
    If racinecomplexe% = 0 Then
       GridWmat.Text = ""
    Else
-      GridWmat.Text = "partie réelle"
+      GridWmat.Text = "partie rÃ©elle"
    End If
    ' *********************************
-   ' numérotation 1ère colonne
+   ' numÃ©rotation 1Ã¨re colonne
    ' *********************************
    GridWmat.Col = 0
    For i% = 1 To OrdreMat%
@@ -1523,7 +1523,7 @@ Public Sub DiaMat()
       GridWmat.Text = Format(i%, "0")
    Next i%
    ' *****************************************************
-   ' 2)- affichage de la partie réelle des valeurs propres
+   ' 2)- affichage de la partie rÃ©elle des valeurs propres
    ' *****************************************************
    lblWmat.Caption = "Valeurs propres :"
    For i% = 1 To OrdreMat%
@@ -1533,7 +1533,7 @@ Public Sub DiaMat()
       GridWmat.Text = Format(RacineR(i%), "0.000")
    Next i%
    ' **************************************************************
-   ' affichage éventuel de la partie imaginaire des valeurs propres
+   ' affichage Ã©ventuel de la partie imaginaire des valeurs propres
    ' sur une colonne
    ' **************************************************************
    ' 1)- mise en place de la grille gridPmat
@@ -1546,7 +1546,7 @@ Public Sub DiaMat()
    GridPmat.FixedAlignment(1) = 2
    GridPmat.ColWidth(1) = 3000
    ' ********************************
-   ' numérotation 1ère ligne
+   ' numÃ©rotation 1Ã¨re ligne
    ' ********************************
    GridPmat.Row = 0
    GridPmat.Col = 1
@@ -1556,7 +1556,7 @@ Public Sub DiaMat()
       GridPmat.Text = "partie imaginaire"
    End If
    ' *********************************
-   ' numérotation 1ère colonne
+   ' numÃ©rotation 1Ã¨re colonne
    ' *********************************
    GridPmat.Col = 0
    For i% = 1 To OrdreMat%
@@ -1587,10 +1587,10 @@ Public Sub DiaMat()
    ' *************************************************
    If racinecomplexe% = 0 Then
       ' ***************************************
-      ' Toutes les valeurs propres sont réelles
+      ' Toutes les valeurs propres sont rÃ©elles
       ' ***************************************
       ' *****************************************************
-      ' affichage des éléments
+      ' affichage des Ã©lÃ©ments
       ' *****************************************************
       lblPRmat.Caption = "Matrice des vecteurs propres :"
       For i% = 1 To OrdreMat%
@@ -1602,7 +1602,7 @@ Public Sub DiaMat()
          Next j%
       Next i%
       ' *****************************************************
-      ' affichage des éléments
+      ' affichage des Ã©lÃ©ments
       ' *****************************************************
       lblPImat.Caption = ""
       For i% = 1 To OrdreMat%
@@ -1617,13 +1617,13 @@ Public Sub DiaMat()
       ' Certaines valeurs propres sont complexes
       If NumMethodDiag% = 1 Then
          ' *********************************************
-         ' Les vecteurs propres sont calculés, y compris
+         ' Les vecteurs propres sont calculÃ©s, y compris
          ' les vecteurs propres complexes correspondant
          ' aux valeurs propres complexes
          ' *********************************************
-         ' affichage des éléments
+         ' affichage des Ã©lÃ©ments
          ' *****************************************************
-         lblPRmat.Caption = "Matrice des vecteurs propres (partie réelle):"
+         lblPRmat.Caption = "Matrice des vecteurs propres (partie rÃ©elle):"
          lblPImat.Caption = "Matrice des vecteurs propres (partie imaginaire):"
          j% = 0
          Do
@@ -1664,25 +1664,25 @@ Public Sub DiaMat()
          Loop Until j% = OrdreMat%
       Else
          ' *********************************************
-         ' Les vecteurs propres ne peuvent être calculés.
+         ' Les vecteurs propres ne peuvent Ãªtre calculÃ©s.
          ' *********************************************
          Message$ = " Certaines valeurs propres sont complexes "
-         Message$ = Message$ & Chr$(13) & " Les vecteurs propres ne seront pas calculés."
+         Message$ = Message$ & Chr$(13) & " Les vecteurs propres ne seront pas calculÃ©s."
          MsgBox Message$, 16, "DiaMat"
       End If
    End If
    '***************************************
    '************ Explications *************
    '***************************************
-   Info$ = "Dernier calcul effectué : Diagonalisation de M : "
+   Info$ = "Dernier calcul effectuÃ© : Diagonalisation de M : "
    Select Case NumMethodDiag%
    Case 1
-      Info$ = Info$ & "Méthode n°1 : Méthode du double QR avec déplacement."
+      Info$ = Info$ & "MÃ©thode nÂ°1 : MÃ©thode du double QR avec dÃ©placement."
    Case 2
-      Info$ = Info$ & "Méthode n°2 : Détermination du polynôme caractéristique (méthode de SOURIAU), recherche de ses zéros "
-      Info$ = Info$ & "(méthode de BAIRSTOW) et détermination des vecteurs propres par résolution de systèmes sur-déterminés."
+      Info$ = Info$ & "MÃ©thode nÂ°2 : DÃ©termination du polynÃ´me caractÃ©ristique (mÃ©thode de SOURIAU), recherche de ses zÃ©ros "
+      Info$ = Info$ & "(mÃ©thode de BAIRSTOW) et dÃ©termination des vecteurs propres par rÃ©solution de systÃ¨mes sur-dÃ©terminÃ©s."
    Case 3
-      Info$ = Info$ & "Méthode n°3 : Méthode de JACOBI classique (pour une matrice symétrique)."
+      Info$ = Info$ & "MÃ©thode nÂ°3 : MÃ©thode de JACOBI classique (pour une matrice symÃ©trique)."
    End Select
    lblInfo.ForeColor = BLEU
    lblInfo.Font.bold = True
@@ -1694,25 +1694,25 @@ Public Sub DiaMaSoBaSS()
 ' -------------------------------------------------------------
 ' David BLUM
 ' 15/01/1997
-'    Diagonalisation de matrice (méthode n°1) :
-' 1] Détermination du polynôme caractéristique
-' (méthode de SOURIAU);
-' 2] Recherche des zéros de ce polynôme
-' (méthode de BAIRSTOW);
-' 3] Détermination des vecteurs propres
-' par résolution de systèmes sur-déterminés."
+'    Diagonalisation de matrice (mÃ©thode nÂ°1) :
+' 1] DÃ©termination du polynÃ´me caractÃ©ristique
+' (mÃ©thode de SOURIAU);
+' 2] Recherche des zÃ©ros de ce polynÃ´me
+' (mÃ©thode de BAIRSTOW);
+' 3] DÃ©termination des vecteurs propres
+' par rÃ©solution de systÃ¨mes sur-dÃ©terminÃ©s."
 ' ------------------------------------------------
-'1] Détermination du polynôme caractéristique
-' (méthode de SOURIAU)
+'1] DÃ©termination du polynÃ´me caractÃ©ristique
+' (mÃ©thode de SOURIAU)
 ' ------------------------------------------------
 ' (-1)^n
 mupun% = (-1) ^ OrdreMat%
 ' ----------------------------------------------------------------------
 ' Dims
-ReDim MA(1 To OrdreMat%, 1 To OrdreMat%)      ' matrice intermédiaire de calcul
-ReDim MB(1 To OrdreMat%, 1 To OrdreMat%)      ' matrice intermédiaire de calcul
-ReDim Ppol(0 To OrdreMat%)             ' coefficients du polynôme caractéristique
-ReDim apol(0 To OrdreMat%)             ' coefficients intermédiaires de calcul
+ReDim MA(1 To OrdreMat%, 1 To OrdreMat%)      ' matrice intermÃ©diaire de calcul
+ReDim MB(1 To OrdreMat%, 1 To OrdreMat%)      ' matrice intermÃ©diaire de calcul
+ReDim Ppol(0 To OrdreMat%)             ' coefficients du polynÃ´me caractÃ©ristique
+ReDim apol(0 To OrdreMat%)             ' coefficients intermÃ©diaires de calcul
 ' ----------------------------------------------------------------------
 ' Initialisation de MA et MB
 For iloc% = 1 To OrdreMat%
@@ -1725,7 +1725,7 @@ Next iloc%
 ' Initialisations
 apol(0) = 1
 ' -------------------------------------------
-' Itérations
+' ItÃ©rations
 For i% = 1 To OrdreMat%
    ' ----------------------------------------------------------------
    For iloc% = 1 To OrdreMat%
@@ -1755,7 +1755,7 @@ For i% = 1 To OrdreMat%
    ' ----------------------------------------------------------------
 Next i%
 ' -----------------------------------------------------------------
-' Polynôme caractéristique de Mmat :
+' PolynÃ´me caractÃ©ristique de Mmat :
 For i% = 0 To OrdreMat%
    Ppol(i%) = mupun% * apol(OrdreMat% - i%)
 Next i%
@@ -1767,11 +1767,11 @@ DegPpol% = OrdreMat%
 Call ZerosPolBairstow
 ' -----------------------------------------------------------------
 ' S'il existe des racines complexes,
-' ne pas chercher à calculer les vecteurs propres
+' ne pas chercher Ã  calculer les vecteurs propres
 ' -----------------------------------------------------------------
 If NbComplexe% = 1 Then
    Message$ = " Certaines valeurs propres sont complexes "
-   Message$ = Message$ & Chr$(13) & " Les vecteurs propres ne seront pas calculés."
+   Message$ = Message$ & Chr$(13) & " Les vecteurs propres ne seront pas calculÃ©s."
    MsgBox Message$, 16, "DiaMat01"
    Exit Sub
 End If
@@ -1785,10 +1785,10 @@ ReDim mp(1 To OrdreMat%, 1 To OrdreMat%)             ' matrice de passage
                                                    ' = matrice des vecteurs propres (en colonne)
 ReDim MLI(1 To OrdreMat%, 1 To OrdreMat%)            ' matrice (Mat - Lambda * I)
 ReDim MLIC(1 To OrdreMat%, 1 To OrdMatMoinsUn%)      ' matrice (MLI - colonne numcolonne% de MLI)
-ReDim MMC(1 To OrdMatMoinsUn%, 1 To OrdMatMoinsUn%)  ' matrice symétrique ((transposée de MLIC) * MLIC)
+ReDim MMC(1 To OrdMatMoinsUn%, 1 To OrdMatMoinsUn%)  ' matrice symÃ©trique ((transposÃ©e de MLIC) * MLIC)
 ReDim WWC(1 To OrdMatMoinsUn%, 1 To OrdMatMoinsUn%)  ' matrice inverse de MMC
-ReDim DM(1 To OrdMatMoinsUn%)                        ' vecteur deuxième membre
-                                                     ' -(transposée de MLIC) * (colonne numcolonne% de MLI)
+ReDim DM(1 To OrdMatMoinsUn%)                        ' vecteur deuxiÃ¨me membre
+                                                     ' -(transposÃ©e de MLIC) * (colonne numcolonne% de MLI)
 ' -------------------------------------------------------------------------
 ' Principe du calcul :
 ' (colonne numvap% de MP) = WWC * DM
@@ -1823,7 +1823,7 @@ For numvap% = 1 To OrdreMat%
          End If
       Next colonne%
       ' ********************************
-      ' construction de MMC (symétrique)
+      ' construction de MMC (symÃ©trique)
       ' ********************************
       For ligne% = 1 To OrdMatMoinsUn%
          For colonne% = 1 To OrdMatMoinsUn%
@@ -1846,8 +1846,8 @@ For numvap% = 1 To OrdreMat%
       If DePo = True Then
       ' MMC est inversible
          ' ******************************************************
-         ' calcul du deuxième membre
-         ' DM = - (transposée de MLIC) * (colonne numcolonne% de MLI)
+         ' calcul du deuxiÃ¨me membre
+         ' DM = - (transposÃ©e de MLIC) * (colonne numcolonne% de MLI)
          ' ******************************************************
          For iloc% = 1 To OrdMatMoinsUn%
             DM(iloc%) = 0
@@ -1876,7 +1876,7 @@ For numvap% = 1 To OrdreMat%
       ' MMC n'est pas inversible
       ' la composante numcolonne% du vecteur propre est sans doute nulle
       ' on va essayer avec une autre composante,
-      ' sauf si on les a déjà toutes essayées, auquel cas :
+      ' sauf si on les a dÃ©jÃ  toutes essayÃ©es, auquel cas :
       If numcolonne% = 1 Then
          Message$ = " Echec dans la recherches des vecteurs propres."
          MsgBox Message$, 16, "DiaMat01"
@@ -1886,7 +1886,7 @@ For numvap% = 1 To OrdreMat%
 Next numvap%
 ' --------------------------------------------------
 ' Normalisation des vecteurs propres
-' et remplissage des matrices avec les résultats
+' et remplissage des matrices avec les rÃ©sultats
 ' ( Pmat =  Matrice de passage                     )
 ' (      =  matrice des vecteurs propres en colonne)
 ' ----------------------------------
@@ -1904,16 +1904,16 @@ Next jloc%
 End Sub
 Public Sub DiaMaQR2Vap(OrdreDqr%, NbComplexe%, Gdqr(), VaPRdqr(), VaPIdqr())
 ' **************************************************
-' Recherche des valeurs propres réelles et complexes
-' d'une matrice réelle par l'algorithme du double QR
+' Recherche des valeurs propres rÃ©elles et complexes
+' d'une matrice rÃ©elle par l'algorithme du double QR
 ' **************************************************
-' En entrée :
+' En entrÃ©e :
 ' OrdreDqr%    = ordre des matrices en jeu
-' Gdqr()       = matrice de départ M déjà sous forme de la
+' Gdqr()       = matrice de dÃ©part M dÃ©jÃ  sous forme de la
 '                matrice de HESSENBERG Gdqr
 ' En sortie :
 ' NbComplexe%  = nombre de valeurs propres complexes
-' VaPRdqr()    = partie réelle des valeurs propres
+' VaPRdqr()    = partie rÃ©elle des valeurs propres
 ' VaPIdqr()    = partie imaginaire des valeurs propres
 ' -------------------------------------------------------------------
 eps = 0.000001
@@ -1921,18 +1921,18 @@ eps = 0.000001
 ' Examen de OrdreDqr%
 ' ---------------------------------------------------
 If OrdreDqr% < 3 Then
-   Message$ = " L'ordre de la matrice doit être supérieur à 2 !!!"
+   Message$ = " L'ordre de la matrice doit Ãªtre supÃ©rieur Ã  2 !!!"
    MsgBox Message$, 16, "DiaMaQR2Vap"
 End If
 ' ---------------------------------------------------
 ' DIMs
 ' ---------------------------------------------------
-ReDim GKdqr(1 To OrdreDqr%, 1 To OrdreDqr%)  ' matrice de Hessenberg supérieure
+ReDim GKdqr(1 To OrdreDqr%, 1 To OrdreDqr%)  ' matrice de Hessenberg supÃ©rieure
 '                                            ' (matrice de travail)
-ReDim VaPRdqr(1 To OrdreDqr%)                ' partie réelle des valeurs propres
+ReDim VaPRdqr(1 To OrdreDqr%)                ' partie rÃ©elle des valeurs propres
 ReDim VaPIdqr(1 To OrdreDqr%)                ' partie imaginaire des valeurs propres
 ' *****************************************************
-' On suppose que M a été mise sous forme
+' On suppose que M a Ã©tÃ© mise sous forme
 ' d'une matrice de HESSENBERG G (par la Sub Hessenberg)
 ' *****************************************************
 ' Algorithme du double QR avec translation
@@ -1976,8 +1976,8 @@ Do
    na% = en% - 1
    enm2% = na% - 1
    ' ---------------------------------------------------
-   ' Recherche un petit élément sous-diagonal isolé
-   ' pour ll% = en% pas -1 jusqu'à 1
+   ' Recherche un petit Ã©lÃ©ment sous-diagonal isolÃ©
+   ' pour ll% = en% pas -1 jusqu'Ã  1
    ' ---------------------------------------------------
    Do
       For ll% = 1 To en%
@@ -1996,7 +1996,7 @@ Do
          End If
       Next ll%
       ' ---------------------------------------------------
-      ' forme un déplacement ("shift")
+      ' forme un dÃ©placement ("shift")
       ' ---------------------------------------------------
       Xloc = GKdqr(en%, en%)
       If l% = en% Then
@@ -2009,14 +2009,14 @@ Do
       End If
       If itn% = 0 Then
          Erreur = True
-         Message$ = " Pas de convergence après " & 30 * OrdreDqr% & " itérations" & Chr$(13)
-         Message$ = Message$ & " pour la valeur propre numéro " & en%
+         Message$ = " Pas de convergence aprÃ¨s " & 30 * OrdreDqr% & " itÃ©rations" & Chr$(13)
+         Message$ = Message$ & " pour la valeur propre numÃ©ro " & en%
          MsgBox Message$, 16, "DiaMaQR2Vap"
          Exit Sub
       End If
       If its% = 10 Or its% = 20 Then
          ' ---------------------------------------------------
-         ' forme un déplacement exceptionnel
+         ' forme un dÃ©placement exceptionnel
          ' ---------------------------------------------------
          Tloc = Tloc + Xloc
          For i% = 1 To en%
@@ -2031,8 +2031,8 @@ Do
       its% = its% + 1
       itn% = itn% - 1
       ' ---------------------------------------------------
-      ' Recherche deux petits éléments sous-diagonaux
-      ' consécutifs pour m% = en%-2 pas -1 jusqu'à l%
+      ' Recherche deux petits Ã©lÃ©ments sous-diagonaux
+      ' consÃ©cutifs pour m% = en%-2 pas -1 jusqu'Ã  l%
       ' ---------------------------------------------------
       For mm% = l% To enm2%
          mloc% = enm2% + l% - mm%
@@ -2063,8 +2063,8 @@ Do
          End If
       Next i%
       ' ---------------------------------------------------
-      ' Etape de double QR impliquant les lignes l% à en%
-      ' et les colonnes m% à en%
+      ' Etape de double QR impliquant les lignes l% Ã  en%
+      ' et les colonnes m% Ã  en%
       ' ---------------------------------------------------
       For k% = mloc% To na%
          If k% <> mloc% Then
@@ -2150,14 +2150,14 @@ Do
    Loop
    If l% = en% Then
       ' ---------------------------------------------------
-      ' Une racine trouvée
+      ' Une racine trouvÃ©e
       ' ---------------------------------------------------
       VaPRdqr(en%) = Xloc + Tloc
       VaPIdqr(en%) = 0
       en% = na%
    ElseIf l% = na% Then
       ' ---------------------------------------------------
-      ' Deux racines trouvées
+      ' Deux racines trouvÃ©es
       ' ---------------------------------------------------
       Ploc = (Yloc - Xloc) / 2
       Qloc = Ploc * Ploc + Wloc
@@ -2165,7 +2165,7 @@ Do
       Xloc = Xloc + Tloc
       If Qloc >= 0 Then
          ' ---------------------------------------------------
-         ' Paire réelle
+         ' Paire rÃ©elle
          ' ---------------------------------------------------
          Zloc = Ploc + Sgn(Ploc) * Zloc
          VaPRdqr(na%) = Xloc + Zloc
@@ -2192,11 +2192,11 @@ Loop
 End Sub
 Public Sub DiaMaQR()
 ' ******************************************************
-' Recherche des éléments propres d'une matrice réelle M;
+' Recherche des Ã©lÃ©ments propres d'une matrice rÃ©elle M;
 ' 1) Transformation de M en une matrice de type
-' HESSENBERG supérieure G;
+' HESSENBERG supÃ©rieure G;
 ' 2) Recherche de valeurs et vecteurs propres de G
-' par l'algorithme du double QR avec déplacement.
+' par l'algorithme du double QR avec dÃ©placement.
 ' *********************************************
 ' ---------------------------------------------------
 ' Initialisations
@@ -2208,15 +2208,15 @@ Erreur = False
 ' ---------------------------------------------------
 If OrdreMat% < 3 Then
    Erreur = True
-   Message$ = " L'ordre de la matrice doit être supérieur à 2 !!!"
+   Message$ = " L'ordre de la matrice doit Ãªtre supÃ©rieur Ã  2 !!!"
    MsgBox Message$, 16, "DiaMaQR"
    Exit Sub
 End If
 ' ---------------------------------------------------
 ' DIMs
 ' ---------------------------------------------------
-ReDim Gmat(1 To OrdreMat%, 1 To OrdreMat%)   ' matrice de Hessenberg supérieure
-ReDim PMGmat(1 To OrdreMat%, 1 To OrdreMat%) ' matrice de passage de M à G
+ReDim Gmat(1 To OrdreMat%, 1 To OrdreMat%)   ' matrice de Hessenberg supÃ©rieure
+ReDim PMGmat(1 To OrdreMat%, 1 To OrdreMat%) ' matrice de passage de M Ã  G
 ReDim PermVec%(1 To OrdreMat%)                ' vecteur permutation M -> G
 ' ***********************************
 ' On commence par mettre M sous forme
@@ -2227,7 +2227,7 @@ Call PassMatHes(OrdreMat%, PMGmat(), Gmat(), PermVec%())
 Erase PermVec%
 ' +++++++++++++++++++++++++++++++++++++++++++++
 ' A ce stade :
-' G = (transposée de PMG) x M x PMG
+' G = (transposÃ©e de PMG) x M x PMG
 ' ****************************************
 ' Algorithme du double QR avec translation
 ' ****************************************
@@ -2237,22 +2237,22 @@ If Erreur = True Then Exit Sub
 End Sub
 Public Sub DiaMaJacobi(OrdreJa%, Mja(), Vja(), Pja())
 ' *********************************************
-'  Recherche des éléments propres d'une matrice
-'  symétrique réelle par la méthode de JACOBI
+'  Recherche des Ã©lÃ©ments propres d'une matrice
+'  symÃ©trique rÃ©elle par la mÃ©thode de JACOBI
 '  classique
 ' *********************************************
-' En entrée :
+' En entrÃ©e :
 ' OrdreJa%     = ordre des matrices en jeu
-' Mja()        = matrice symétrique à diagonaliser
+' Mja()        = matrice symÃ©trique Ã  diagonaliser
 ' En sortie :
-' Pja()        = matrice unitaire de passage de M à Wqr
+' Pja()        = matrice unitaire de passage de M Ã  Wqr
 '               (vecteurs propres en colonnes)
 ' Vja()        = valeurs propres
 ' ---------------------------------------------------
 ' Examen de OrdreJa%
 ' ---------------------------------------------------
 If OrdreJa% < 3 Then
-   Message$ = " L'ordre de la matrice doit être supérieur à 2 !!!"
+   Message$ = " L'ordre de la matrice doit Ãªtre supÃ©rieur Ã  2 !!!"
    MsgBox Message$, 16, "DiaJacobi"
 End If
 ' ---------------------------------------------------
@@ -2279,18 +2279,18 @@ For i% = 1 To OrdreJa%
    Next j%
 Next i%
 ' ---------------------------------------------------------
-' Précision de convergence
+' PrÃ©cision de convergence
 eps = 0.01
 ' ---------------------------------------------------------
-' Nombre de cycles à effectuer
+' Nombre de cycles Ã  effectuer
 numcyclesmax% = 100
 ' ---------------------------------------------------------
-' Début du cycle numcycle%
+' DÃ©but du cycle numcycle%
 numcycle% = 0
 Do
    numcycle% = numcycle% + 1
    ' ----------------------------
-   ' tolérance dynamique
+   ' tolÃ©rance dynamique
    epsdyn = 1 / (100 ^ numcycle%)
    ' ----------------------------
    For i% = 1 To OrdreJa% - 1
@@ -2345,7 +2345,7 @@ Do
             QINVja(j%, j%) = costeta
             ' --------------------------------------------------------
             ' calcul de Wja : Wja = QINVja * Wja * Qja
-            ' 1ère étape : MKja = Wja * Qja
+            ' 1Ã¨re Ã©tape : MKja = Wja * Qja
             ' --------------------------------------------------------
             For iloc% = 1 To OrdreJa%
                For jloc% = 1 To OrdreJa%
@@ -2357,7 +2357,7 @@ Do
                Next jloc%
             Next iloc%
             ' --------------------------------------------------------
-            ' 2ème étape : Wja = QINVja * MKja
+            ' 2Ã¨me Ã©tape : Wja = QINVja * MKja
             ' --------------------------------------------------------
             For iloc% = 1 To OrdreJa%
                For jloc% = 1 To OrdreJa%
@@ -2370,7 +2370,7 @@ Do
             Next iloc%
             ' --------------------------------------------------------
             ' calcul de Pja : Pja = Pja * Qja
-            ' 1ère étape : MKja = Pja * Qja
+            ' 1Ã¨re Ã©tape : MKja = Pja * Qja
             ' --------------------------------------------------------
             For iloc% = 1 To OrdreJa%
                For jloc% = 1 To OrdreJa%
@@ -2382,7 +2382,7 @@ Do
                Next jloc%
             Next iloc%
             ' --------------------------------------------------------
-            ' 2ème étape : Pja = MKja
+            ' 2Ã¨me Ã©tape : Pja = MKja
             ' --------------------------------------------------------
             For iloc% = 1 To OrdreJa%
                For jloc% = 1 To OrdreJa%
@@ -2418,7 +2418,7 @@ Do
       Next i%
    End If
    ' -----------------------------------------------------
-   ' valeurs propres du cycle précédent :
+   ' valeurs propres du cycle prÃ©cÃ©dent :
    ' -----------------------------------------------------
    For i% = 1 To OrdreJa%
       Vja0(i%) = Vja(i%)
@@ -2448,10 +2448,10 @@ Do
       Exit Do
    End If
    ' -----------------------------------------------------
-   ' sortie après numcyclesmax% cycles
+   ' sortie aprÃ¨s numcyclesmax% cycles
    ' -----------------------------------------------------
    If numcycle% = numcyclesmax% Then
-      Message$ = "Pas de convergence après " & numcycle% & " cycles."
+      Message$ = "Pas de convergence aprÃ¨s " & numcycle% & " cycles."
       MsgBox Message$, 16, "DiaMaJacobi"
       Exit Sub
    End If
@@ -2473,19 +2473,19 @@ Next i%
 End Sub
 Public Sub DiaMaShiftedQR(OrdreQr%, Gqr(), Pmg(), Wqr(), Pqr())
 ' ***********************************************
-'  Recherche des éléments propres d'une matrice
-'  réelle par l'algorithme du QR avec déplacement
-'  (valeurs propres réelles seulement)
+'  Recherche des Ã©lÃ©ments propres d'une matrice
+'  rÃ©elle par l'algorithme du QR avec dÃ©placement
+'  (valeurs propres rÃ©elles seulement)
 ' ***********************************************
-' En entrée :
+' En entrÃ©e :
 ' OrdreQr%    = ordre des matrices en jeu
-' Gqr()       = matrice de départ M déjà sous forme de la
+' Gqr()       = matrice de dÃ©part M dÃ©jÃ  sous forme de la
 '               matrice de HESSENBERG Gqr
-' Pmg()       = matrice de passage de M à Gqr :
-' Gqr = (transposée de Pmg) x M x Pmg
+' Pmg()       = matrice de passage de M Ã  Gqr :
+' Gqr = (transposÃ©e de Pmg) x M x Pmg
 ' En sortie :
 ' Wqr()       = matrice diagonale
-' Pqr()       = matrice unitaire de passage de M à Wqr
+' Pqr()       = matrice unitaire de passage de M Ã  Wqr
 '               (vecteurs propres en colonnes)
 ' -------------------------------------------------------------------
 eps = 0.000001
@@ -2494,27 +2494,27 @@ eps2 = 0.0001
 ' Examen de OrdreQr%
 ' ---------------------------------------------------
 If OrdreQr% < 3 Then
-   Message$ = " L'ordre de la matrice doit être supérieur à 2 !!!"
+   Message$ = " L'ordre de la matrice doit Ãªtre supÃ©rieur Ã  2 !!!"
    MsgBox Message$, 16, "DiaMaQR"
 End If
 ' ---------------------------------------------------
 ' DIMs
 ' ---------------------------------------------------
-'ReDim Gqr(1 To OrdreQr%, 1 To OrdreQr%)  ' matrice de Hessenberg supérieure
+'ReDim Gqr(1 To OrdreQr%, 1 To OrdreQr%)  ' matrice de Hessenberg supÃ©rieure
 ReDim Hqr(1 To OrdreQr%, 1 To OrdreQr%)   ' matrice de Householder unitaire
 ReDim MKqr(1 To OrdreQr%, 1 To OrdreQr%)  ' matrice de travail
-'ReDim Pmg(1 To OrdreQr%, 1 To OrdreQr%)  ' matrice de passage de M à G
-ReDim Pgt(1 To OrdreQr%, 1 To OrdreQr%)   ' matrice de passage de G à (G triangulaire)
+'ReDim Pmg(1 To OrdreQr%, 1 To OrdreQr%)  ' matrice de passage de M Ã  G
+ReDim Pgt(1 To OrdreQr%, 1 To OrdreQr%)   ' matrice de passage de G Ã  (G triangulaire)
 ReDim Qqr(1 To OrdreQr%, 1 To OrdreQr%)   ' matrice unitaire
-ReDim Rqr(1 To OrdreQr%, 1 To OrdreQr%)   ' matrice triangulaire supérieure
+ReDim Rqr(1 To OrdreQr%, 1 To OrdreQr%)   ' matrice triangulaire supÃ©rieure
 ReDim Vqr(1 To OrdreQr%)                  ' vecteur
 ReDim Uqr(1 To OrdreQr%, 1 To OrdreQr%)   ' matrice des vecteurs propres de G
 ' *****************************************************
-' On suppose que M a été mise sous forme
+' On suppose que M a Ã©tÃ© mise sous forme
 ' d'une matrice de HESSENBERG G (par la Sub Hessenberg)
 ' *****************************************************
 ' A ce stade :
-' G = (transposée de Pmg) x M x Pmg
+' G = (transposÃ©e de Pmg) x M x Pmg
 ' *********************************
 ' Algorithme du QR avec translation
 ' *********************************
@@ -2580,7 +2580,7 @@ Do
       ' ++++++++++++++++++++++++++++++++++++++++++++++++++++++
       For kloc% = 1 To OrdreSousMat% - 1
          ' ---------------------------------------------------
-         ' Initialisation de la matrice de Householder Hqr() à I
+         ' Initialisation de la matrice de Householder Hqr() Ã  I
          ' ---------------------------------------------------
          For iloc% = 1 To OrdreQr%
             For jloc% = 1 To OrdreQr%
@@ -2592,7 +2592,7 @@ Do
             Next jloc%
          Next iloc%
          ' ----------------------------
-         ' Carré et norme du vecteur Ak
+         ' CarrÃ© et norme du vecteur Ak
          ' ----------------------------
          CarreAk = 0
          NormeAk = 0
@@ -2676,7 +2676,7 @@ Do
          Next jloc%
       Next iloc%
       ' ----------------------------------------------------------
-      ' Calcul de la matrice Gk+1() = (transposée de Qk) x Gk x Qk
+      ' Calcul de la matrice Gk+1() = (transposÃ©e de Qk) x Gk x Qk
       ' ----------------------------------------------------------
       For iloc% = 1 To OrdreQr%
          For jloc% = 1 To OrdreQr%
@@ -2706,7 +2706,7 @@ Do
       ' Test en cas de non convergence
       ' ----------------------------------------------------------
       If iBoucle% > nBoucle% Then
-         Message$ = "Pas de convergence après " & nBoucle% & " boucles"
+         Message$ = "Pas de convergence aprÃ¨s " & nBoucle% & " boucles"
          MsgBox Message$, 16, "DiaMaShiftedQR"
          Exit Sub
       End If
@@ -2725,8 +2725,8 @@ For iloc% = 1 To OrdreQr%
 Next iloc%
 ' -------------------------------------------------------
 ' A ce stade :
-' G = (transposée de Pgt) x (transposée de Pmg) x M x Pmg x Pgt
-' G est triangulaire supérieure d'éléments diagonaux
+' G = (transposÃ©e de Pgt) x (transposÃ©e de Pmg) x M x Pmg x Pgt
+' G est triangulaire supÃ©rieure d'Ã©lÃ©ments diagonaux
 ' les valeurs propres de M
 ' ---------------------------------------
 ' Calcul de la matrice Wqr() diagonale
@@ -2744,8 +2744,8 @@ Next iloc%
 ' Calcul des vecteurs propres
 ' *********************************
 ' ------------------------------------------------------
-' Uqr(i,j) = j-ème composante du vecteur propre Ui de G
-' correspondant à la valeur propre Gqr(i,i)
+' Uqr(i,j) = j-Ã¨me composante du vecteur propre Ui de G
+' correspondant Ã  la valeur propre Gqr(i,i)
 ' ------------------------------------------------------
 Uqr(1, 1) = 1
 For jloc% = 2 To OrdreQr%
@@ -2765,8 +2765,8 @@ For iloc% = 2 To OrdreQr%
    Next jloc%
 Next iloc%
 ' ------------------------------------------------------
-' Pqr(i,j) = j-ème composante du vecteur propre Vi de M
-' correspondant à la valeur propre Gqr(i,i)
+' Pqr(i,j) = j-Ã¨me composante du vecteur propre Vi de M
+' correspondant Ã  la valeur propre Gqr(i,i)
 ' Vi = Pmg x Pgt x Ui
 ' ------------------------------------------------------
 For iloc% = 1 To OrdreQr%
@@ -2806,42 +2806,42 @@ End Sub
 Public Sub DiaMaQR2VapVep(OrdreDqr%, NbComplexe%, Gdqr(), PMGdqr(), Pdqr(), VaPRdqr(), VaPIdqr())
 ' *****************************************************
 ' Recherche des valeurs propres et les vecteurs
-' propres réels et complexes d'une matrice réelle
+' propres rÃ©els et complexes d'une matrice rÃ©elle
 ' par l'algorithme du double QR
 ' *********************************************
-' En entrée :
+' En entrÃ©e :
 ' OrdreDqr%    = ordre des matrices en jeu
-' Gdqr()       = matrice de départ M déjà sous forme de la
+' Gdqr()       = matrice de dÃ©part M dÃ©jÃ  sous forme de la
 '                matrice de HESSENBERG Gdqr
-' PMGdqr()     = matrice de passage de M à Gdqr :
-' Gdqr = (transposée de PMGdqr) x M x PMGdqr
+' PMGdqr()     = matrice de passage de M Ã  Gdqr :
+' Gdqr = (transposÃ©e de PMGdqr) x M x PMGdqr
 
 ' En sortie :
 ' NbComplexe%  = nombre de valeurs propres complexes
-' VaPRdqr()    = partie réelle des valeurs propres
+' VaPRdqr()    = partie rÃ©elle des valeurs propres
 ' VaPIdqr()    = partie imaginaire des valeurs propres
 ' Pdqr()       = matrice unitaire de passage de M
-'                à la matrice des valeurs propres
+'                Ã  la matrice des valeurs propres
 '               (vecteurs propres en colonnes; si la valeur propre
-'               numéro i est complexe, les colonnes i et i+1 de Pdqr()
-'               contiennent les parties réelle et imaginaire du
+'               numÃ©ro i est complexe, les colonnes i et i+1 de Pdqr()
+'               contiennent les parties rÃ©elle et imaginaire du
 '               vecteur propre correspondant).
 ' -------------------------------------------------------------------
 ' Examen de OrdreDqr%
 ' ---------------------------------------------------
 If OrdreDqr% < 3 Then
-   Message$ = " L'ordre de la matrice doit être supérieur à 2 !!!"
+   Message$ = " L'ordre de la matrice doit Ãªtre supÃ©rieur Ã  2 !!!"
    MsgBox Message$, 16, "DiaMaQR2VapVep"
 End If
 ' ---------------------------------------------------
 ' DIMs
 ' ---------------------------------------------------
-ReDim GKdqr(1 To OrdreDqr%, 1 To OrdreDqr%)  ' matrice de Hessenberg supérieure
+ReDim GKdqr(1 To OrdreDqr%, 1 To OrdreDqr%)  ' matrice de Hessenberg supÃ©rieure
 '                                            ' (matrice de travail)
-'ReDim VaPRdqr(1 To OrdreDqr%)                ' partie réelle des valeurs propres
+'ReDim VaPRdqr(1 To OrdreDqr%)                ' partie rÃ©elle des valeurs propres
 'ReDim VaPIdqr(1 To OrdreDqr%)                ' partie imaginaire des valeurs propres
 ' *****************************************************
-' On suppose que M a été mise sous forme
+' On suppose que M a Ã©tÃ© mise sous forme
 ' d'une matrice de HESSENBERG G (par la Sub Hessenberg)
 ' *****************************************************
 ' Algorithme du double QR avec translation
@@ -2887,8 +2887,8 @@ Do
    na% = en% - 1
    enm2% = na% - 1
    ' ---------------------------------------------------
-   ' Recherche un petit élément sous-diagonal isolé
-   ' pour lloc% = en% pas -1 jusqu'à 1
+   ' Recherche un petit Ã©lÃ©ment sous-diagonal isolÃ©
+   ' pour lloc% = en% pas -1 jusqu'Ã  1
    ' ---------------------------------------------------
    Do
       For lloc% = en% To 1 Step -1
@@ -2906,7 +2906,7 @@ Do
          End If
       Next lloc%
       ' ---------------------------------------------------
-      ' forme un déplacement ("shift")
+      ' forme un dÃ©placement ("shift")
       ' ---------------------------------------------------
       Xloc = GKdqr(en%, en%)
       If lloc% = en% Then
@@ -2919,14 +2919,14 @@ Do
       End If
       If itn% = 0 Then
          Erreur = True
-         Message$ = " Pas de convergence après " & 30 * OrdreDqr% & " itérations" & Chr$(13)
-         Message$ = Message$ & " pour la valeur propre numéro " & en%
+         Message$ = " Pas de convergence aprÃ¨s " & 30 * OrdreDqr% & " itÃ©rations" & Chr$(13)
+         Message$ = Message$ & " pour la valeur propre numÃ©ro " & en%
          MsgBox Message$, 16, "DiaMaQR2VapVep"
          Exit Sub
       End If
       If its% = 10 Or its% = 20 Then
          ' ---------------------------------------------------
-         ' forme un déplacement exceptionnel
+         ' forme un dÃ©placement exceptionnel
          ' ---------------------------------------------------
          Tloc = Tloc + Xloc
          For i% = 1 To en%
@@ -2941,8 +2941,8 @@ Do
       its% = its% + 1
       itn% = itn% - 1
       ' ---------------------------------------------------
-      ' Recherche deux petits éléments sous-diagonaux
-      ' consécutifs pour mloc% = en%-2 pas -1 jusqu'à lloc%
+      ' Recherche deux petits Ã©lÃ©ments sous-diagonaux
+      ' consÃ©cutifs pour mloc% = en%-2 pas -1 jusqu'Ã  lloc%
       ' ---------------------------------------------------
       For mloc% = enm2% To lloc% Step -1
          Zloc = GKdqr(mloc%, mloc%)
@@ -2972,8 +2972,8 @@ Do
          End If
       Next i%
       ' ---------------------------------------------------
-      ' Etape de double QR impliquant les lignes lloc% à en%
-      ' et les colonnes m% à en%
+      ' Etape de double QR impliquant les lignes lloc% Ã  en%
+      ' et les colonnes m% Ã  en%
       ' ---------------------------------------------------
       For k% = mloc% To na%
          If k% <> mloc% Then
@@ -3076,7 +3076,7 @@ Do
    Loop
    If lloc% = en% Then
       ' ---------------------------------------------------
-      ' Une racine trouvée
+      ' Une racine trouvÃ©e
       ' ---------------------------------------------------
       GKdqr(en%, en%) = Xloc + Tloc
       VaPRdqr(en%) = Xloc + Tloc
@@ -3084,7 +3084,7 @@ Do
       en% = na%
    ElseIf lloc% = na% Then
       ' ---------------------------------------------------
-      ' Deux racines trouvées
+      ' Deux racines trouvÃ©es
       ' ---------------------------------------------------
       Ploc = (Yloc - Xloc) / 2
       Qloc = Ploc * Ploc + Wloc
@@ -3094,7 +3094,7 @@ Do
       GKdqr(na%, na%) = Yloc + Tloc
       If Qloc >= 0 Then
          ' ---------------------------------------------------
-         ' Paire réelle
+         ' Paire rÃ©elle
          ' ---------------------------------------------------
          Zloc = Ploc + Sgn(Ploc) * Zloc
          VaPRdqr(na%) = Xloc + Zloc
@@ -3151,25 +3151,25 @@ Do
    End If
 Loop
 ' ---------------------------------------------------
-' Toutes les racines ont été trouvées.
+' Toutes les racines ont Ã©tÃ© trouvÃ©es.
 ' Recherche des vecteurs propres.
 ' ---------------------------------------------------
 If norm = 0 Then
    Exit Sub
 End If
-' pour en% = OrdreDqr% pas -1 jusqu'à 1
+' pour en% = OrdreDqr% pas -1 jusqu'Ã  1
 For en% = OrdreDqr% To 1 Step -1
    Ploc = VaPRdqr(en%)
    Qloc = VaPIdqr(en%)
    na% = en% - 1
    If Qloc = 0 Then
       ' -------------------------------------
-      ' vecteur réel
+      ' vecteur rÃ©el
       ' -------------------------------------
       mloc% = en%
       GKdqr(en%, en%) = 1
       If na% <> 0 Then
-         ' pour i%=  en%-1 pas -1 jusqu'à 1
+         ' pour i%=  en%-1 pas -1 jusqu'Ã  1
          For i% = na% To 1 Step -1
             Wloc = GKdqr(i%, i%) - Ploc
             Rloc = 0
@@ -3193,7 +3193,7 @@ For en% = OrdreDqr% To 1 Step -1
                   End If
                   GKdqr(i%, en%) = -Rloc / Tloc
                Else
-                  ' résolution des équations réelles
+                  ' rÃ©solution des Ã©quations rÃ©elles
                   Xloc = GKdqr(i%, i% + 1)
                   Yloc = GKdqr(i% + 1, i%)
                   Qloc = (VaPRdqr(i%) - Ploc) ^ 2 + VaPIdqr(i%) ^ 2
@@ -3205,7 +3205,7 @@ For en% = OrdreDqr% To 1 Step -1
                      GKdqr(i% + 1, en%) = (-Sloc - Yloc * Tloc) / Zloc
                   End If
                End If
-               ' contrôle de dépassement de capacité
+               ' contrÃ´le de dÃ©passement de capacitÃ©
                Tloc = Abs(GKdqr(i%, en%))
                If Tloc <> 0 Then
                   tst1 = Tloc
@@ -3218,14 +3218,14 @@ For en% = OrdreDqr% To 1 Step -1
                End If
             End If
          Next i%
-         ' fin de vecteur réel
+         ' fin de vecteur rÃ©el
       End If
    ElseIf Qloc < 0 Then
       ' -------------------------------------
       ' vecteur complexe
       ' -------------------------------------
       mloc% = na%
-      ' la dernière composante du vecteur est choisie imaginaire
+      ' la derniÃ¨re composante du vecteur est choisie imaginaire
       ' pour que la matrice des vecteurs propres soit triangulaire
       If Abs(GKdqr(en%, na%)) > Abs(GKdqr(na%, en%)) Then
          GKdqr(na%, na%) = Qloc / GKdqr(en%, na%)
@@ -3237,7 +3237,7 @@ For en% = OrdreDqr% To 1 Step -1
       GKdqr(en%, en%) = 1
       enm2% = na% - 1
       If enm2% <> 0 Then
-         ' pour i%=en%-2 pas -1 jusqu'à 1
+         ' pour i%=en%-2 pas -1 jusqu'Ã  1
          For i% = enm2% To 1 Step -1
             Wloc = GKdqr(i%, i%) - Ploc
             RAloc = 0
@@ -3255,7 +3255,7 @@ For en% = OrdreDqr% To 1 Step -1
                If VaPIdqr(i%) = 0 Then
                   Call FenetreComplexe.DivisionComplexe(-RAloc, -SAloc, Wloc, Qloc, GKdqr(i%, na%), GKdqr(i%, en%))
                Else
-                  ' résolution des équations complexes
+                  ' rÃ©solution des Ã©quations complexes
                   Xloc = GKdqr(i%, i% + 1)
                   Yloc = GKdqr(i% + 1, i%)
                   VRloc = (VaPRdqr(i%) - Ploc) ^ 2 + VaPIdqr(i%) ^ 2 - Qloc ^ 2
@@ -3276,7 +3276,7 @@ For en% = OrdreDqr% To 1 Step -1
                      Call FenetreComplexe.DivisionComplexe(-Rloc - Yloc * GKdqr(i%, na%), -Sloc - Yloc * GKdqr(i%, en%), Zloc, Qloc, GKdqr(i + 1, na%), GKdqr(i + 1, en%))
                   End If
                End If
-               ' contrôle de dépassement de capacité
+               ' contrÃ´le de dÃ©passement de capacitÃ©
                Tloc = Abs(GKdqr(i%, na%))
                If Tloc < Abs(GKdqr(i%, en%)) Then
                   Tloc = Abs(GKdqr(i%, en%))
@@ -3301,7 +3301,7 @@ Next en%
 ' Multiplication par la matrice de transformation
 ' pour donner les vecteurs propres de M
 ' -----------------------------------------------
-' pour j%=OrdreDqr% pas -1 jusqu'à 1
+' pour j%=OrdreDqr% pas -1 jusqu'Ã  1
 For j% = OrdreDqr% To 1 Step -1
    For i% = 1 To OrdreDqr%
       Zloc = 0
@@ -3313,10 +3313,10 @@ For j% = OrdreDqr% To 1 Step -1
 Next j%
 ' --------------------------------------------------
 ' Normalisation des vecteurs propres
-' et remplissage des matrices avec les résultats
+' et remplissage des matrices avec les rÃ©sultats
 ' --------------------------------------------------
 If NbComplexe% = 0 Then
-   ' tous les vecteurs propres réels
+   ' tous les vecteurs propres rÃ©els
    For j% = 1 To OrdreDqr%
       Zloc = 0
       For i% = 1 To OrdreDqr%
@@ -3362,40 +3362,40 @@ Else
    Loop Until j% = OrdreDqr%
 End If
 ' -----------------------------------------------
-' Libère l'espace mémoire occupé par les tableaux.
+' LibÃ¨re l'espace mÃ©moire occupÃ© par les tableaux.
 ' -----------------------------------------------
 Erase GKdqr
 ' -----------------------------------------------
 End Sub
 Public Sub Hessenberg(OrdreHes%, Mhes(), Ghes(), PermHes%())
 ' *******************************************************
-' Réduction d'une matrice carrée réelle quelconque M
-' en matrice de HESSENBERG supérieure G
+' RÃ©duction d'une matrice carrÃ©e rÃ©elle quelconque M
+' en matrice de HESSENBERG supÃ©rieure G
 ' telle que : G(i,j) = 0 si i > j+1
 ' *******************************************************
-' En entrée :
+' En entrÃ©e :
 ' OrdreHes%    = ordre des matrices en jeu
-' Mhes()       = matrice de départ
+' Mhes()       = matrice de dÃ©part
 
 ' En sortie :
-' Ghes()       = matrice de HESSENBERG; les multiplicateurs utilisés
-'                lors de la réduction de M sont placés dans les
-'                éléments G(i,j) tels que i > j+1
+' Ghes()       = matrice de HESSENBERG; les multiplicateurs utilisÃ©s
+'                lors de la rÃ©duction de M sont placÃ©s dans les
+'                Ã©lÃ©ments G(i,j) tels que i > j+1
 ' PermHes%()   = vecteur de permutation des lignes et colonnes
-'                lors du passage de Mhes à Ghes
-'                (pouvant servir au calcul ultérieur de la matrice
-'                 de passage de M à G)
+'                lors du passage de Mhes Ã  Ghes
+'                (pouvant servir au calcul ultÃ©rieur de la matrice
+'                 de passage de M Ã  G)
 ' -------------------------------------------------------------------
 ' Examen de OrdreHes%
 ' ---------------------------------------------------
 If OrdreHes% < 3 Then
-   Message$ = " L'ordre de la matrice doit être supérieur à 2 !!!"
+   Message$ = " L'ordre de la matrice doit Ãªtre supÃ©rieur Ã  2 !!!"
    MsgBox Message$, 16, "Hessenberg"
 End If
 ' ---------------------------------------------------
 ' DIMs
 ' ---------------------------------------------------
-'ReDim Ghes(1 To OrdreHes%, 1 To OrdreHes%)  ' matrice de Hessenberg supérieure
+'ReDim Ghes(1 To OrdreHes%, 1 To OrdreHes%)  ' matrice de Hessenberg supÃ©rieure
 'Redim PermHes%(1 To OrdreHes%)
 ' *****************************************************
 '
@@ -3469,37 +3469,37 @@ Next mloc%  '180
 End Sub
 Public Sub PassMatHes(OrdrePmh%, PMGpmh(), Gpmh(), PermPmh%())
 ' **************************************************************************
-' Calcul de la matrice de passage d'une matrice carrée réelle quelconque M
-' à une matrice de HESSENBERG supérieure G telle que : G(i,j) = 0 si i > j+1
+' Calcul de la matrice de passage d'une matrice carrÃ©e rÃ©elle quelconque M
+' Ã  une matrice de HESSENBERG supÃ©rieure G telle que : G(i,j) = 0 si i > j+1
 ' **************************************************************************
-' En entrée :
+' En entrÃ©e :
 ' OrdrePmh%    = ordre des matrices en jeu
-' Gpmh()       = matrice de HESSENBERG contenant également les
-'                multiplicateurs utilisés pour sa réduction dans ses
-'                éléments G(i,j) tels que i > j+1
+' Gpmh()       = matrice de HESSENBERG contenant Ã©galement les
+'                multiplicateurs utilisÃ©s pour sa rÃ©duction dans ses
+'                Ã©lÃ©ments G(i,j) tels que i > j+1
 ' PermPmh%()   = vecteur de permutation des lignes et colonnes
-'                lors du passage de M à G
+'                lors du passage de M Ã  G
 
 
 ' En sortie :
-' PMGphm()     = matrice de passage de M à G
+' PMGphm()     = matrice de passage de M Ã  G
 ' -------------------------------------------------------------------
 ' Examen de OrdrePmh%
 ' ---------------------------------------------------
 If OrdrePmh% < 3 Then
-   Message$ = " L'ordre de la matrice doit être supérieur à 2 !!!"
+   Message$ = " L'ordre de la matrice doit Ãªtre supÃ©rieur Ã  2 !!!"
    MsgBox Message$, 16, "PassMatHes"
 End If
 ' ---------------------------------------------------
 ' DIMs
 ' ---------------------------------------------------
-'ReDim Gpmh(1 To OrdrePmh%, 1 To OrdrePmh%)  ' matrice de Hessenberg supérieure
+'ReDim Gpmh(1 To OrdrePmh%, 1 To OrdrePmh%)  ' matrice de Hessenberg supÃ©rieure
 'Redim PermPmh%(1 To OrdrePmh%)
 ' *****************************************************
 '
 ' *****************************************************
 ' ---------------------------------------------------
-' Initialisation de PMGpmh() à la matrice identité I
+' Initialisation de PMGpmh() Ã  la matrice identitÃ© I
 ' ---------------------------------------------------
 For iloc% = 1 To OrdrePmh%
    For jloc% = 1 To OrdrePmh%
@@ -3547,7 +3547,7 @@ Private Sub ProduitWxM2xM()
    On Error Resume Next
    DoEvents
    ' *************************************************
-   ' affectation de leurs valeurs aux éléments de M2mat
+   ' affectation de leurs valeurs aux Ã©lÃ©ments de M2mat
    ' *************************************************
    For i% = 1 To OrdreMat%
       For j% = 1 To OrdreMat%
@@ -3590,11 +3590,11 @@ Private Sub ProduitWxM2xM()
       Next j%
    Next i%
    ' *************************************************
-   ' affichage du produit effectué
+   ' affichage du produit effectuÃ©
    ' *************************************************
    lblPmat.Caption = "Matrice P produit de WxM2xM :"
    ' *************************************************
-   ' affichage des éléments de Pmat
+   ' affichage des Ã©lÃ©ments de Pmat
    ' *************************************************
    For i% = 1 To OrdreMat%
       For j% = 1 To OrdreMat%
@@ -3609,7 +3609,7 @@ Private Sub ProduitWxM2xM()
    '***************************************
    '************ Explications *************
    '***************************************
-   Info$ = "Dernier calcul effectué : Produit WxM2xM"
+   Info$ = "Dernier calcul effectuÃ© : Produit WxM2xM"
    lblInfo.ForeColor = BLEU
    lblInfo.Font.bold = True
    lblInfo.Font.underline = False
