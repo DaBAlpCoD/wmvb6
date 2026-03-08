@@ -71,7 +71,7 @@ Private Sub Form_Load()
    ListMath.FontUnderline = False
    ListMath.ForeColor = NOIR
    ListMath.List(NUMBLANC2) = ""
-   ListMath.List(NUMDECFAPRE) = "Décomposition d'un nombre entier en produit de facteurs premiers"
+   ListMath.List(NUMDECFAPRE) = "DÃ©composition d'un nombre entier en produit de facteurs premiers"
    ListMath.List(NUMPPCMPGCD) = "Plus Petit Commun Multiple et Plus Grand Commun Diviseur de deux nombres entiers"
    ListMath.List(NUMNOMBPREM) = "Liste des nombres premiers"
    ListMath.List(NUMTRINOMB) = "Tri de nombres"
@@ -83,15 +83,15 @@ Private Sub Form_Load()
    ListMath.Font.underline = False
    ListMath.ForeColor = NOIR
    ListMath.List(NUMBLANC4) = ""
-   ListMath.List(NUMPOLYNOME) = "Polynômes"
-   ListMath.List(NUMSOLEQ) = "Solution de l'équation F(X)=0"
+   ListMath.List(NUMPOLYNOME) = "PolynÃ´mes"
+   ListMath.List(NUMSOLEQ) = "Solution de l'Ã©quation F(X)=0"
    ListMath.ForeColor = BLEU
    ListMath.List(NUMALGLIN) = "ALGEBRE LINEAIRE :"
    ListMath.ForeColor = NOIR
    ListMath.List(NUMATRICE) = "Calculs sur les matrices"
-   ListMath.List(NUMSYSLIN) = "Système linéaire de n équations à n inconnues"
-   ListMath.List(NUMSYSNONLIN) = "Système non linéaire de n équations à n inconnues"
-   ListMath.List(NUMPROLIN) = "Programmation linéaire (obtimisation d'une fonction objectif sous certaines contraintes)"
+   ListMath.List(NUMSYSLIN) = "SystÃ¨me linÃ©aire de n Ã©quations Ã  n inconnues"
+   ListMath.List(NUMSYSNONLIN) = "SystÃ¨me non linÃ©aire de n Ã©quations Ã  n inconnues"
+   ListMath.List(NUMPROLIN) = "Programmation linÃ©aire (obtimisation d'une fonction objectif sous certaines contraintes)"
    ListMath.List(NUMBLANC5) = ""
    ListMath.ForeColor = ROUGE
    ListMath.Font.underline = True
@@ -99,18 +99,18 @@ Private Sub Form_Load()
    ListMath.Font.underline = False
    ListMath.ForeColor = NOIR
    ListMath.List(NUMBLANC6) = ""
-   ListMath.List(NUMCOUR) = "Tracé d'une courbe"
-   ListMath.List(NUMDERIVE) = "Dérivée d'une expression numérique"
-   ListMath.List(NUMEQUADIF) = "Résolution graphique d'une équation différentielle du premier ordre du type dY/dX = F(X,Y)"
-   ListMath.List(NUMEQUADIF2) = "Résolution graphique d'une équation différentielle du second ordre du type d²Y/dX² = F(X,Y,dY/dX)"
-   ListMath.List(NUMPRIMITIVE) = "Tracé de la primitive d'une fonction"
-   ListMath.List(NUMINTEGRALE) = "Intégrale d'une fonction"
+   ListMath.List(NUMCOUR) = "TracÃ© d'une courbe"
+   ListMath.List(NUMDERIVE) = "DÃ©rivÃ©e d'une expression numÃ©rique"
+   ListMath.List(NUMEQUADIF) = "RÃ©solution graphique d'une Ã©quation diffÃ©rentielle du premier ordre du type dY/dX = F(X,Y)"
+   ListMath.List(NUMEQUADIF2) = "RÃ©solution graphique d'une Ã©quation diffÃ©rentielle du second ordre du type dÂ²Y/dXÂ² = F(X,Y,dY/dX)"
+   ListMath.List(NUMPRIMITIVE) = "TracÃ© de la primitive d'une fonction"
+   ListMath.List(NUMINTEGRALE) = "IntÃ©grale d'une fonction"
    ListMath.ForeColor = BLEU
    ListMath.List(NUMINTERAP) = "INTERPOLATION ET APPROXIMATION :"
    ListMath.ForeColor = NOIR
-   ListMath.List(NUMOINCAR) = "Ajustement d'une courbe à un nuage de points (affinement par moindres carrés)"
-   ListMath.List(NUMREGRELIN) = "Regression linéaire (ajustement d'une droite à un nuage de points)"
-   ListMath.List(NUMINPOLAG) = "Passage d'une courbe par un nuage de points (polynôme de Lagrange)"
+   ListMath.List(NUMOINCAR) = "Ajustement d'une courbe Ã  un nuage de points (affinement par moindres carrÃ©s)"
+   ListMath.List(NUMREGRELIN) = "Regression linÃ©aire (ajustement d'une droite Ã  un nuage de points)"
+   ListMath.List(NUMINPOLAG) = "Passage d'une courbe par un nuage de points (polynÃ´me de Lagrange)"
    ListMath.List(NUMSPLINE) = "Passage d'une courbe par un nuage de points (Spline)"
    ListMath.List(NUMBLANC7) = ""
    ListMath.ForeColor = ROUGE
@@ -120,11 +120,11 @@ Private Sub Form_Load()
    ListMath.ForeColor = NOIR
    ListMath.List(NUMBLANC8) = ""
    ListMath.List(NUMTRIANGLE) = "Triangles"
-   ListMath.List(NUMPOLYEDRE) = "Polyèdres"
+   ListMath.List(NUMPOLYEDRE) = "PolyÃ¨dres"
    ListMath.List(NUMSURF3D) = "Surface 3D"
    ListMath.Selected(NUMCOUR) = True
    '---------------------------------------------------------------
-   '--------------------- Fonctions numériques --------------------
+   '--------------------- Fonctions numÃ©riques --------------------
    '---------------------------------------------------------------
    FoNum$(1) = "ABS("
    FoNum$(2) = "ATN("
