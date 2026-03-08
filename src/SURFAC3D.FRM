@@ -1,6 +1,6 @@
 VERSION 5.00
 Begin VB.Form FenetreSurf3D 
-   Caption         =   "Définition de la surface 3D"
+   Caption         =   "DÃ©finition de la surface 3D"
    ClientHeight    =   5520
    ClientLeft      =   285
    ClientTop       =   1065
@@ -271,7 +271,7 @@ Begin VB.Form FenetreSurf3D
       Width           =   975
    End
    Begin VB.CheckBox chkMemeEchelle 
-      Caption         =   "même echelle sur les trois axes"
+      Caption         =   "mÃªme echelle sur les trois axes"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -443,7 +443,7 @@ Begin VB.Form FenetreSurf3D
       Width           =   375
    End
    Begin VB.Label EtiquetteDefiniCour 
-      Caption         =   "Fonction définissant la courbe :"
+      Caption         =   "Fonction dÃ©finissant la courbe :"
       Height          =   255
       Left            =   360
       TabIndex        =   24
@@ -502,7 +502,7 @@ Begin VB.Form FenetreSurf3D
       Width           =   495
    End
    Begin VB.Label lblLimitesY 
-      Caption         =   "Limites de l'axe des ordonnées "
+      Caption         =   "Limites de l'axe des ordonnÃ©es "
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -768,7 +768,7 @@ Private Sub Form_Load()
    ' Col ou selle
    TextVar2$ = "X*X-Y*Y"
    ' --------------------------
-   ' Facteur d'échelle
+   ' Facteur d'Ã©chelle
    chkMemeEchelle.Value = 1
    Ech% = 1
    FE = 1
